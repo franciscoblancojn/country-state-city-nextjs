@@ -54,27 +54,27 @@ export const parseNameFolder = (e: { text: string; id: number }) => {
 };
 
 export const getRuteDir = () => {
-    return `${__dirname}`;
+    return `https://raw.githubusercontent.com/franciscoblancojn/country-state-city-nextjs/master/cjs`;
 };
 
 export const getRuteCountrys = () => {
-    return `${getRuteDir()}/country`;
+    return `${getRuteDir()}/country/index.js`;
 };
 export const getRuteCountrysWidthImg = () => {
-    return `${getRuteDir()}/country_img`;
+    return `${getRuteDir()}/country_img.js`;
 };
 export const getRuteStates = () => {
-    return `${getRuteDir()}/state`;
+    return `${getRuteDir()}/state/index.js`;
 };
 
 export const getRuteStatesByCountry = (country: {
     text: string;
     id: number;
 }) => {
-    return `${getRuteDir()}/country/${parseNameFolder(country)}/states`;
+    return `${getRuteDir()}/country/${parseNameFolder(country)}/states.js`;
 };
 export const getRuteCitys = () => {
-    return `${getRuteDir()}/city`;
+    return `${getRuteDir()}/city/index.js`;
 };
 
 export const getRuteCitysByStateAndCountry = (
@@ -89,5 +89,5 @@ export const getRuteCitysByStateAndCountry = (
 ) => {
     return `${getRuteDir()}/country/${parseNameFolder(
         country
-    )}/${parseNameFolder(state)}/citys`;
+    )}/${parseNameFolder(state)}/citys.js`;
 };
