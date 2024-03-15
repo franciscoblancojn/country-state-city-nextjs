@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 280485, id_state: 1104, text: "Alikarnassós", id_country: 20 },
+    { id: 281630, id_state: 1104, text: "Arkalochóri", id_country: 20 },
+    { id: 282856, id_state: 1104, text: "Candia", id_country: 20 },
+    { id: 282920, id_state: 1104, text: "Chárakas", id_country: 20 },
+    { id: 283062, id_state: 1104, text: "Cnossus", id_country: 20 },
+    { id: 284281, id_state: 1104, text: "Erakleion", id_country: 20 },
+    { id: 285263, id_state: 1104, text: "Goúrnes", id_country: 20 },
+    { id: 285280, id_state: 1104, text: "Goúvai", id_country: 20 },
+    { id: 285462, id_state: 1104, text: "Herákleion", id_country: 20 },
+    { id: 285463, id_state: 1104, text: "Heraklion", id_country: 20 },
+    { id: 285598, id_state: 1104, text: "Iraclion", id_country: 20 },
+    { id: 285602, id_state: 1104, text: "Irákleio", id_country: 20 },
+    { id: 285603, id_state: 1104, text: "Irákleion", id_country: 20 },
+    { id: 285609, id_state: 1104, text: "Iráklion", id_country: 20 },
+    { id: 286862, id_state: 1104, text: "Kastéli", id_country: 20 },
+    { id: 288520, id_state: 1104, text: "Knosós", id_country: 20 },
+    { id: 292285, id_state: 1104, text: "Míres", id_country: 20 },
+    { id: 292388, id_state: 1104, text: "Moíres", id_country: 20 },
+    { id: 292726, id_state: 1104, text: "Néa Alikarnassós", id_country: 20 },
+];
+//# sourceMappingURL=citys.js.map

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 269797, id_state: 1045, text: "Cakovec", id_country: 71 },
+    { id: 270771, id_state: 1045, text: "Donji Mihaljevec", id_country: 71 },
+    { id: 275288, id_state: 1045, text: "Orehovica", id_country: 71 },
+    { id: 276226, id_state: 1045, text: "Prelog", id_country: 71 },
+];
+//# sourceMappingURL=citys.js.map

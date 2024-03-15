@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 306181, id_state: 1135, text: "Gellénháza", id_country: 14 },
+    { id: 309029, id_state: 1135, text: "Keszthely", id_country: 14 },
+    { id: 310959, id_state: 1135, text: "Lenti", id_country: 14 },
+    { id: 312539, id_state: 1135, text: "Nagykanizsa", id_country: 14 },
+    { id: 315838, id_state: 1135, text: "Sümegcsehi", id_country: 14 },
+    { id: 317675, id_state: 1135, text: "Tornyiszentmiklós", id_country: 14 },
+    { id: 319079, id_state: 1135, text: "Zalaegerszeg", id_country: 14 },
+    { id: 319104, id_state: 1135, text: "Zalaszántó", id_country: 14 },
+];
+//# sourceMappingURL=citys.js.map

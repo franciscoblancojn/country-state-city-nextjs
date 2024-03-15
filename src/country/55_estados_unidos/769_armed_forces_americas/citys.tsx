@@ -1,0 +1,8 @@
+export const citys = [
+    {
+        id: 788887,
+        id_state: 769,
+        text: "Armed Forces Americas",
+        id_country: 55,
+    },
+];

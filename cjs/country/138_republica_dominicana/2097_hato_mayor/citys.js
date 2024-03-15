@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 787723, id_state: 2097, text: "El Valle", id_country: 138 },
+    { id: 787737, id_state: 2097, text: "Guayabo Dulce", id_country: 138 },
+    { id: 787741, id_state: 2097, text: "Hato Mayor", id_country: 138 },
+    { id: 787836, id_state: 2097, text: "Sabana de la Mar", id_country: 138 },
+    { id: 787877, id_state: 2097, text: "Yerba Buena", id_country: 138 },
+];
+//# sourceMappingURL=citys.js.map

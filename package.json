@@ -1,0 +1,55 @@
+{
+  "name": "country-state-city-nextjs",
+  "version": "4.1.0",
+  "description": "Get all countrys, states and citys of world",
+  "main": "./cjs/index.js",
+  "module": "./cjs/index.js",
+  "types": "./cjs/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoblancojn/country-state-city-nextjs.git"
+  },
+  "keywords": [
+    "country",
+    "state",
+    "city"
+  ],
+  "author": "franciscoblancojn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscoblancojn/country-state-city-nextjs/issues"
+  },
+  "homepage": "https://github.com/franciscoblancojn/country-state-city-nextjs#readme",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "echo 'esm'",
+    "build:cjs": "tsc --module commonjs --outDir cjs",
+    "lint": "npx eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src '!**/*.stories.tsx' --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "flb": "npm run format && npm run lint && npm run build",
+    "bun-city-co": "bun ./bun/city-co.tsx",
+    "bun-state-co": "bun ./bun/state-co.tsx",
+    "bun-generate-csc": "bun ./bun/generateCSC.tsx",
+    "test-load": "bun ./test/load.tsx"
+  },
+  "dependencies": { },
+  "devDependencies": {
+    "@types/node": "18.7.5",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "bun": "^1.0.30",
+    "eslint": "8.24.0",
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4"
+  },
+  "files": [
+    "cjs",
+    "esm"
+  ]
+}

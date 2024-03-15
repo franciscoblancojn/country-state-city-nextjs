@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 771225, id_state: 2038, text: "Cahirsiveen", id_country: 27 },
+    { id: 771227, id_state: 2038, text: "Dingle", id_country: 27 },
+    { id: 771228, id_state: 2038, text: "Kenmare", id_country: 27 },
+    { id: 771229, id_state: 2038, text: "Killarney", id_country: 27 },
+    { id: 771230, id_state: 2038, text: "Killorglin", id_country: 27 },
+    { id: 771231, id_state: 2038, text: "Listowel", id_country: 27 },
+    { id: 771232, id_state: 2038, text: "Tralee", id_country: 27 },
+];
+//# sourceMappingURL=citys.js.map

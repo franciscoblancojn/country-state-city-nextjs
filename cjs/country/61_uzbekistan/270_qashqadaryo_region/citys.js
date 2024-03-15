@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 3760, id_state: 270, text: "Karshi", id_country: 61 },
+    { id: 3762, id_state: 270, text: "Kitab", id_country: 61 },
+    { id: 3763, id_state: 270, text: "Shakhrisabz", id_country: 61 },
+];
+//# sourceMappingURL=citys.js.map

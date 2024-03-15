@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 387876, id_state: 1386, text: "Maros-Vásárhely", id_country: 72 },
+    { id: 388872, id_state: 1386, text: "Muresh", id_country: 72 },
+    {
+        id: 389238,
+        id_state: 1386,
+        text: "Neumarkt am Mieresch",
+        id_country: 72,
+    },
+    { id: 395607, id_state: 1386, text: "Targul-Mures", id_country: 72 },
+    { id: 395616, id_state: 1386, text: "Targu-Mures", id_country: 72 },
+    { id: 396169, id_state: 1386, text: "Tirgu Mures", id_country: 72 },
+    { id: 396617, id_state: 1386, text: "Turgul Mures", id_country: 72 },
+];
+//# sourceMappingURL=citys.js.map

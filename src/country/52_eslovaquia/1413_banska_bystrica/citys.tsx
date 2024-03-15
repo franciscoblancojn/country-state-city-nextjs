@@ -1,0 +1,4 @@
+export const citys = [
+    { id: 398880, id_state: 1413, text: "Banská Bystrica", id_country: 52 },
+    { id: 398995, id_state: 1413, text: "Beszterczebánya", id_country: 52 },
+];

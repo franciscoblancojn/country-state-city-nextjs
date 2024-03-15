@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 4811, id_state: 359, text: "Iwaki", id_country: 70 },
+    { id: 4812, id_state: 359, text: "Koriyama", id_country: 70 },
+    { id: 788042, id_state: 359, text: "Shirakawa", id_country: 70 },
+    { id: 788046, id_state: 359, text: "Tamura", id_country: 70 },
+    { id: 788051, id_state: 359, text: "Inawashiro", id_country: 70 },
+    { id: 788056, id_state: 359, text: "Fukushima", id_country: 70 },
+    { id: 788057, id_state: 359, text: "Soma", id_country: 70 },
+    { id: 788058, id_state: 359, text: "Date", id_country: 70 },
+];
+//# sourceMappingURL=citys.js.map

@@ -1,0 +1,4 @@
+export const citys = [
+    { id: 375879, id_state: 1364, text: "Bacau", id_country: 72 },
+    { id: 376085, id_state: 1364, text: "Bákó", id_country: 72 },
+];

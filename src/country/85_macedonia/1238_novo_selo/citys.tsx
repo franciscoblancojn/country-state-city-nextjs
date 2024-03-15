@@ -1,0 +1,3 @@
+export const citys = [
+    { id: 322295, id_state: 1238, text: "Novo Selo", id_country: 85 },
+];

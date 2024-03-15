@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.states = void 0;
+exports.states = [
+    { id: 5, id_country: 7, text: "Brestskaya obl." },
+    { id: 6, id_country: 7, text: "Vitebskaya obl." },
+    { id: 7, id_country: 7, text: "Gomelskaya obl." },
+    { id: 8, id_country: 7, text: "Grodnenskaya obl." },
+    { id: 9, id_country: 7, text: "Minskaya obl." },
+    { id: 10, id_country: 7, text: "Mogilevskaya obl." },
+];
+//# sourceMappingURL=states.js.map

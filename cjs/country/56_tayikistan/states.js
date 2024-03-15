@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.states = void 0;
+exports.states = [
+    { id: 216, id_country: 56, text: "Gorno-Badakhshan Region" },
+    { id: 217, id_country: 56, text: "Kuljabsk Region" },
+    { id: 218, id_country: 56, text: "Kurgan-Tjube Region" },
+    { id: 219, id_country: 56, text: "Sughd Region" },
+    { id: 220, id_country: 56, text: "Tajikistan" },
+];
+//# sourceMappingURL=states.js.map

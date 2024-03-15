@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.states = void 0;
+exports.states = [
+    { id: 32, id_country: 23, text: "Al QÃ„Â�hira" },
+    { id: 33, id_country: 23, text: "Aswan" },
+    { id: 34, id_country: 23, text: "Asyut" },
+    { id: 35, id_country: 23, text: "Beni Suef" },
+    { id: 36, id_country: 23, text: "Gharbia" },
+    { id: 37, id_country: 23, text: "Damietta" },
+    { id: 377, id_country: 23, text: "Egypt" },
+    { id: 389, id_country: 23, text: "Sinai" },
+];
+//# sourceMappingURL=states.js.map

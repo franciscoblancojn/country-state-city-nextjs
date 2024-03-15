@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 280090, id_state: 1105, text: "Ágios Nikólaos", id_country: 20 },
+    { id: 282310, id_state: 1105, text: "Áyios Nikólaos", id_country: 20 },
+    { id: 285506, id_state: 1105, text: "Ierápetra", id_country: 20 },
+    { id: 292843, id_state: 1105, text: "Neápoli", id_country: 20 },
+    { id: 297000, id_state: 1105, text: "Sitía", id_country: 20 },
+    { id: 298813, id_state: 1105, text: "Tympákion", id_country: 20 },
+];
+//# sourceMappingURL=citys.js.map

@@ -1,0 +1,3 @@
+export const citys = [
+    { id: 788721, id_state: 1930, text: "Akureyri", id_country: 83 },
+];

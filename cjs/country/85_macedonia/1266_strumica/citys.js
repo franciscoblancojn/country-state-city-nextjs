@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 323073, id_state: 1266, text: "Stromitza", id_country: 85 },
+    { id: 323075, id_state: 1266, text: "Stromnitza", id_country: 85 },
+    { id: 323081, id_state: 1266, text: "Strumica", id_country: 85 },
+    { id: 323082, id_state: 1266, text: "Strumitsa", id_country: 85 },
+    { id: 323083, id_state: 1266, text: "Strumitza", id_country: 85 },
+    { id: 323302, id_state: 1266, text: "Ustrumcha", id_country: 85 },
+    { id: 788638, id_state: 1266, text: "Bosilovo", id_country: 85 },
+    { id: 788665, id_state: 1266, text: "Kukliš", id_country: 85 },
+    { id: 788677, id_state: 1266, text: "Novo Selo", id_country: 85 },
+];
+//# sourceMappingURL=citys.js.map

@@ -1,0 +1,19204 @@
+import Bun from "bun";
+import { citys } from "../src/_city";
+
+
+const cityAVE = [
+    { "id": 451016, "id_state": 1699, "text": "Abisinia", "id_country": 82 },
+    { "id": 451245, "id_state": 1699, "text": "Alegría", "id_country": 82 },
+    { "id": 451289, "id_state": 1699, "text": "Alianza", "id_country": 82 },
+    { "id": 451305, "id_state": 1699, "text": "Alpena", "id_country": 82 },
+    { "id": 451447, "id_state": 1699, "text": "Amacocha", "id_country": 82 },
+    { "id": 451538, "id_state": 1699, "text": "Angostura", "id_country": 82 },
+    { "id": 451627, "id_state": 1699, "text": "Arambaza", "id_country": 82 },
+    { "id": 451637, "id_state": 1699, "text": "Ararac", "id_country": 82 },
+    { "id": 451638, "id_state": 1699, "text": "Araracuara", "id_country": 82 },
+    {
+        "id": 451640,
+        "id_state": 1699,
+        "text": "Araras de Coemas",
+        "id_country": 82
+    },
+    { "id": 451709, "id_state": 1699, "text": "Argelia", "id_country": 82 },
+    { "id": 451836, "id_state": 1699, "text": "Atenas", "id_country": 82 },
+    { "id": 451864, "id_state": 1699, "text": "Avila", "id_country": 82 },
+    {
+        "id": 452069,
+        "id_state": 1699,
+        "text": "Barranquilla",
+        "id_country": 82
+    },
+    { "id": 452217, "id_state": 1699, "text": "Bellavista", "id_country": 82 },
+    {
+        "id": 452429,
+        "id_state": 1699,
+        "text": "Bocas de Cahuinarí",
+        "id_country": 82
+    },
+    {
+        "id": 452707,
+        "id_state": 1699,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    { "id": 452749, "id_state": 1699, "text": "Burí Burí", "id_country": 82 },
+    { "id": 452946, "id_state": 1699, "text": "Calderón", "id_country": 82 },
+    { "id": 453524, "id_state": 1699, "text": "Cartagena", "id_country": 82 },
+    { "id": 454297, "id_state": 1699, "text": "Characa", "id_country": 82 },
+    { "id": 454504, "id_state": 1699, "text": "Chorrera", "id_country": 82 },
+    { "id": 454758, "id_state": 1699, "text": "Concepción", "id_country": 82 },
+    { "id": 454854, "id_state": 1699, "text": "Córdoba", "id_country": 82 },
+    { "id": 455299, "id_state": 1699, "text": "Cuira", "id_country": 82 },
+    { "id": 457487, "id_state": 1699, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457606, "id_state": 1699, "text": "El Refugio", "id_country": 82 },
+    { "id": 458423, "id_state": 1699, "text": "Fitata", "id_country": 82 },
+    { "id": 458693, "id_state": 1699, "text": "Gaudencia", "id_country": 82 },
+    { "id": 458782, "id_state": 1699, "text": "Granada", "id_country": 82 },
+    {
+        "id": 460105,
+        "id_state": 1699,
+        "text": "Internado Santa Sofia",
+        "id_country": 82
+    },
+    { "id": 460117, "id_state": 1699, "text": "Ipunas", "id_country": 82 },
+    { "id": 460187, "id_state": 1699, "text": "Itiquilla", "id_country": 82 },
+    { "id": 460449, "id_state": 1699, "text": "Junín", "id_country": 82 },
+    { "id": 461092, "id_state": 1699, "text": "La Chorrera", "id_country": 82 },
+    {
+        "id": 462168,
+        "id_state": 1699,
+        "text": "La Milagrosa",
+        "id_country": 82
+    },
+    { "id": 462399, "id_state": 1699, "text": "La Pedrera", "id_country": 82 },
+    { "id": 463521, "id_state": 1699, "text": "La Unión", "id_country": 82 },
+    {
+        "id": 463764,
+        "id_state": 1699,
+        "text": "Leticia",
+        "id_country": 82,
+        "nameAve": "LETICIA(AMAZONAS)"
+    },
+    { "id": 463961, "id_state": 1699, "text": "Loreto", "id_country": 82 },
+    { "id": 464520, "id_state": 1699, "text": "Lunas", "id_country": 82 },
+    { "id": 464569, "id_state": 1699, "text": "Macedonia", "id_country": 82 },
+    { "id": 465211, "id_state": 1699, "text": "Menaje", "id_country": 82 },
+    {
+        "id": 465386,
+        "id_state": 1699,
+        "text": "Mirití Paraná",
+        "id_country": 82
+    },
+    { "id": 465611, "id_state": 1699, "text": "Morelia", "id_country": 82 },
+    { "id": 466328, "id_state": 1699, "text": "Palmeras", "id_country": 82 },
+    {
+        "id": 467650,
+        "id_state": 1699,
+        "text": "Puerto Colombia",
+        "id_country": 82
+    },
+    {
+        "id": 467788,
+        "id_state": 1699,
+        "text": "Puerto Nariño",
+        "id_country": 82,
+        "nameAve": "PUERTO NARINO(AMAZONAS)"
+    },
+    {
+        "id": 467896,
+        "id_state": 1699,
+        "text": "Puerto Tolima",
+        "id_country": 82
+    },
+    { "id": 468006, "id_state": 1699, "text": "Purma", "id_country": 82 },
+    { "id": 468416, "id_state": 1699, "text": "Ronda", "id_country": 82 },
+    { "id": 469147, "id_state": 1699, "text": "San Martín", "id_country": 82 },
+    { "id": 469276, "id_state": 1699, "text": "San Rafael", "id_country": 82 },
+    { "id": 470346, "id_state": 1699, "text": "Tarapacá", "id_country": 82 },
+    {
+        "id": 470909,
+        "id_state": 1699,
+        "text": "Último Retiro",
+        "id_country": 82
+    },
+    { "id": 470925, "id_state": 1699, "text": "Unión", "id_country": 82 },
+    { "id": 471011, "id_state": 1699, "text": "Valderrama", "id_country": 82 },
+    {
+        "id": 471272,
+        "id_state": 1699,
+        "text": "Villa Ciencia",
+        "id_country": 82
+    },
+    {
+        "id": 471551,
+        "id_state": 1699,
+        "text": "Yauna Moloca",
+        "id_country": 82
+    },
+    { "id": 471673, "id_state": 1699, "text": "Zaragoza", "id_country": 82 },
+    {
+        "id": 790481,
+        "id_state": 1699,
+        "text": "Asentamiento humano takana  km 11",
+        "id_country": 82,
+        "nameAve": "ASENTAMIENTO HUMANO TAKANA  KM 11(AMAZONAS)"
+    },
+    {
+        "id": 790494,
+        "id_state": 1699,
+        "text": "Barrio san miguel",
+        "id_country": 82,
+        "nameAve": "BARRIO SAN MIGUEL(AMAZONAS)"
+    },
+    {
+        "id": 790610,
+        "id_state": 1699,
+        "text": "Comunidad indigena canaan",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA CANAAN(AMAZONAS)"
+    },
+    {
+        "id": 790611,
+        "id_state": 1699,
+        "text": "Comunidad indigena el progreso",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA EL PROGRESO(AMAZONAS)"
+    },
+    {
+        "id": 790612,
+        "id_state": 1699,
+        "text": "Comunidad indigena el vergel",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA EL VERGEL(AMAZONAS)"
+    },
+    {
+        "id": 790613,
+        "id_state": 1699,
+        "text": "Comunidad indigena isla de ronda",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA ISLA DE RONDA(AMAZONAS)"
+    },
+    {
+        "id": 790614,
+        "id_state": 1699,
+        "text": "Comunidad indigena jussy monilla amena",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA JUSSY MONILLA AMENA(AMAZONAS)"
+    },
+    {
+        "id": 790615,
+        "id_state": 1699,
+        "text": "Comunidad indigena la libertad",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA LA LIBERTAD(AMAZONAS)"
+    },
+    {
+        "id": 790616,
+        "id_state": 1699,
+        "text": "Comunidad indigena la milagrosa",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA LA MILAGROSA(AMAZONAS)"
+    },
+    {
+        "id": 790617,
+        "id_state": 1699,
+        "text": "Comunidad indigena loma linda",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA LOMA LINDA(AMAZONAS)"
+    },
+    {
+        "id": 790618,
+        "id_state": 1699,
+        "text": "Comunidad indigena macedonia",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA MACEDONIA(AMAZONAS)"
+    },
+    {
+        "id": 790619,
+        "id_state": 1699,
+        "text": "Comunidad indigena maloka yaguas",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA MALOKA YAGUAS(AMAZONAS)"
+    },
+    {
+        "id": 790620,
+        "id_state": 1699,
+        "text": "Comunidad indigena mocagua",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA MOCAGUA(AMAZONAS)"
+    },
+    {
+        "id": 790621,
+        "id_state": 1699,
+        "text": "Comunidad indigena nazareth",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA NAZARETH(AMAZONAS)"
+    },
+    {
+        "id": 790622,
+        "id_state": 1699,
+        "text": "Comunidad indigena nuevo jardin",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA NUEVO JARDIN(AMAZONAS)"
+    },
+    {
+        "id": 790623,
+        "id_state": 1699,
+        "text": "Comunidad indigena palmeras",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA PALMERAS(AMAZONAS)"
+    },
+    {
+        "id": 790624,
+        "id_state": 1699,
+        "text": "Comunidad indigena patio de ciencia dulce  km 11",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA PATIO DE CIENCIA DULCE  KM 11(AMAZONAS)"
+    },
+    {
+        "id": 790625,
+        "id_state": 1699,
+        "text": "Comunidad indigena pichuna km 18",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA PICHUNA KM 18(AMAZONAS)"
+    },
+    {
+        "id": 790626,
+        "id_state": 1699,
+        "text": "Comunidad indigena puerto triunfo",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA PUERTO TRIUNFO(AMAZONAS)"
+    },
+    {
+        "id": 790627,
+        "id_state": 1699,
+        "text": "Comunidad indigena san antonio de los lagos",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA SAN ANTONIO DE LOS LAGOS(AMAZONAS)"
+    },
+    {
+        "id": 790628,
+        "id_state": 1699,
+        "text": "Comunidad indigena san jose del rio",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA SAN JOSE DEL RIO(AMAZONAS)"
+    },
+    {
+        "id": 790629,
+        "id_state": 1699,
+        "text": "Comunidad indigena san juan de los parentes",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA SAN JUAN DE LOS PARENTES(AMAZONAS)"
+    },
+    {
+        "id": 790630,
+        "id_state": 1699,
+        "text": "Comunidad indigena san martin de amacayacu",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA SAN MARTIN DE AMACAYACU(AMAZONAS)"
+    },
+    {
+        "id": 790631,
+        "id_state": 1699,
+        "text": "Comunidad indigena san pedro de los lagos",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA SAN PEDRO DE LOS LAGOS(AMAZONAS)"
+    },
+    {
+        "id": 790632,
+        "id_state": 1699,
+        "text": "Comunidad indigena santa sofia",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA SANTA SOFIA(AMAZONAS)"
+    },
+    {
+        "id": 790633,
+        "id_state": 1699,
+        "text": "Comunidad indigena sector la playa",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA SECTOR LA PLAYA(AMAZONAS)"
+    },
+    {
+        "id": 790634,
+        "id_state": 1699,
+        "text": "Comunidad indigena tikuna de arara",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA TIKUNA DE ARARA(AMAZONAS)"
+    },
+    {
+        "id": 790635,
+        "id_state": 1699,
+        "text": "Comunidad indigena zaragoza",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA ZARAGOZA(AMAZONAS)"
+    },
+    {
+        "id": 790636,
+        "id_state": 1699,
+        "text": "Comunidad indigena ziera amena",
+        "id_country": 82,
+        "nameAve": "COMUNIDAD INDIGENA ZIERA AMENA(AMAZONAS)"
+    },
+    {
+        "id": 465167,
+        "id_state": 1700,
+        "text": "Medellín",
+        "id_country": 82,
+        "nameAve": "MEDELLIN(ANTIOQUIA)"
+    },
+    {
+        "id": 790315,
+        "id_state": 1700,
+        "text": "Abejorral",
+        "id_country": 82,
+        "nameAve": "ABEJORRAL(ANTIOQUIA)"
+    },
+    {
+        "id": 790316,
+        "id_state": 1700,
+        "text": "Abriaquí",
+        "id_country": 82,
+        "nameAve": "ABRIAQUI(ANTIOQUIA)"
+    },
+    {
+        "id": 790317,
+        "id_state": 1700,
+        "text": "Alejandría",
+        "id_country": 82,
+        "nameAve": "ALEJANDRIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790318,
+        "id_state": 1700,
+        "text": "Amagá",
+        "id_country": 82,
+        "nameAve": "AMAGA(ANTIOQUIA)"
+    },
+    {
+        "id": 790319,
+        "id_state": 1700,
+        "text": "Amalfi",
+        "id_country": 82,
+        "nameAve": "AMALFI(ANTIOQUIA)"
+    },
+    {
+        "id": 790320,
+        "id_state": 1700,
+        "text": "Andes",
+        "id_country": 82,
+        "nameAve": "ANDES(ANTIOQUIA)"
+    },
+    {
+        "id": 790321,
+        "id_state": 1700,
+        "text": "Angelópolis",
+        "id_country": 82,
+        "nameAve": "ANGELOPOLIS(ANTIOQUIA)"
+    },
+    {
+        "id": 790322,
+        "id_state": 1700,
+        "text": "Angostura",
+        "id_country": 82,
+        "nameAve": "ANGOSTURA(ANTIOQUIA)"
+    },
+    {
+        "id": 790323,
+        "id_state": 1700,
+        "text": "Anorí",
+        "id_country": 82,
+        "nameAve": "ANORI(ANTIOQUIA)"
+    },
+    {
+        "id": 790324,
+        "id_state": 1700,
+        "text": "Anzá",
+        "id_country": 82,
+        "nameAve": "ANZA(ANTIOQUIA)"
+    },
+    {
+        "id": 790325,
+        "id_state": 1700,
+        "text": "Apartadó",
+        "id_country": 82,
+        "nameAve": "APARTADO(ANTIOQUIA)"
+    },
+    {
+        "id": 790326,
+        "id_state": 1700,
+        "text": "Arboletes",
+        "id_country": 82,
+        "nameAve": "ARBOLETES(ANTIOQUIA)"
+    },
+    {
+        "id": 790327,
+        "id_state": 1700,
+        "text": "Argelia",
+        "id_country": 82,
+        "nameAve": "ARGELIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790328,
+        "id_state": 1700,
+        "text": "Armenia",
+        "id_country": 82,
+        "nameAve": "ARMENIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790329,
+        "id_state": 1700,
+        "text": "Barbosa",
+        "id_country": 82,
+        "nameAve": "BARBOSA(ANTIOQUIA)"
+    },
+    {
+        "id": 790330,
+        "id_state": 1700,
+        "text": "Bello",
+        "id_country": 82,
+        "nameAve": "BELLO(ANTIOQUIA)"
+    },
+    {
+        "id": 790331,
+        "id_state": 1700,
+        "text": "Belmira",
+        "id_country": 82,
+        "nameAve": "BELMIRA(ANTIOQUIA)"
+    },
+    {
+        "id": 790332,
+        "id_state": 1700,
+        "text": "Betania",
+        "id_country": 82,
+        "nameAve": "BETANIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790333,
+        "id_state": 1700,
+        "text": "Betulia",
+        "id_country": 82,
+        "nameAve": "BETULIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790334,
+        "id_state": 1700,
+        "text": "Briceño",
+        "id_country": 82,
+        "nameAve": "BRICENO(ANTIOQUIA)"
+    },
+    {
+        "id": 790335,
+        "id_state": 1700,
+        "text": "Buriticá",
+        "id_country": 82,
+        "nameAve": "BURITICA(ANTIOQUIA)"
+    },
+    {
+        "id": 790336,
+        "id_state": 1700,
+        "text": "Cáceres",
+        "id_country": 82,
+        "nameAve": "CACERES(ANTIOQUIA)"
+    },
+    {
+        "id": 790337,
+        "id_state": 1700,
+        "text": "Caicedo",
+        "id_country": 82,
+        "nameAve": "CAICEDO(ANTIOQUIA)"
+    },
+    {
+        "id": 790338,
+        "id_state": 1700,
+        "text": "Caldas",
+        "id_country": 82,
+        "nameAve": "CALDAS(ANTIOQUIA)"
+    },
+    {
+        "id": 790339,
+        "id_state": 1700,
+        "text": "Campamento",
+        "id_country": 82,
+        "nameAve": "CAMPAMENTO(ANTIOQUIA)"
+    },
+    {
+        "id": 790340,
+        "id_state": 1700,
+        "text": "Cañasgordas",
+        "id_country": 82,
+        "nameAve": "CANASGORDAS(ANTIOQUIA)"
+    },
+    {
+        "id": 790341,
+        "id_state": 1700,
+        "text": "Caracolí",
+        "id_country": 82,
+        "nameAve": "CARACOLI(ANTIOQUIA)"
+    },
+    {
+        "id": 790342,
+        "id_state": 1700,
+        "text": "Caramanta",
+        "id_country": 82,
+        "nameAve": "CARAMANTA(ANTIOQUIA)"
+    },
+    {
+        "id": 790343,
+        "id_state": 1700,
+        "text": "Carepa",
+        "id_country": 82,
+        "nameAve": "CAREPA(ANTIOQUIA)"
+    },
+    {
+        "id": 790344,
+        "id_state": 1700,
+        "text": "Carmen de Viboral",
+        "id_country": 82
+    },
+    {
+        "id": 790345,
+        "id_state": 1700,
+        "text": "Carolina del Príncipe",
+        "id_country": 82
+    },
+    {
+        "id": 790346,
+        "id_state": 1700,
+        "text": "Caucasia",
+        "id_country": 82,
+        "nameAve": "CAUCASIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790347,
+        "id_state": 1700,
+        "text": "Chigorodó",
+        "id_country": 82,
+        "nameAve": "CHIGORODO(ANTIOQUIA)"
+    },
+    {
+        "id": 790348,
+        "id_state": 1700,
+        "text": "Cisneros",
+        "id_country": 82,
+        "nameAve": "CISNEROS(ANTIOQUIA)"
+    },
+    {
+        "id": 790349,
+        "id_state": 1700,
+        "text": "Ciudad Bolívar",
+        "id_country": 82,
+        "nameAve": "CIUDAD BOLIVAR(ANTIOQUIA)"
+    },
+    {
+        "id": 790350,
+        "id_state": 1700,
+        "text": "Cocorná",
+        "id_country": 82,
+        "nameAve": "COCORNA(ANTIOQUIA)"
+    },
+    {
+        "id": 790351,
+        "id_state": 1700,
+        "text": "Concepción",
+        "id_country": 82,
+        "nameAve": "CONCEPCION(ANTIOQUIA)"
+    },
+    {
+        "id": 790352,
+        "id_state": 1700,
+        "text": "Concordia",
+        "id_country": 82,
+        "nameAve": "CONCORDIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790353,
+        "id_state": 1700,
+        "text": "Copacabana",
+        "id_country": 82,
+        "nameAve": "COPACABANA(ANTIOQUIA)"
+    },
+    {
+        "id": 790354,
+        "id_state": 1700,
+        "text": "Dabeiba",
+        "id_country": 82,
+        "nameAve": "DABEIBA(ANTIOQUIA)"
+    },
+    { "id": 790355, "id_state": 1700, "text": "Don Matías", "id_country": 82 },
+    {
+        "id": 790356,
+        "id_state": 1700,
+        "text": "Ebéjico",
+        "id_country": 82,
+        "nameAve": "EBEJICO(ANTIOQUIA)"
+    },
+    {
+        "id": 790357,
+        "id_state": 1700,
+        "text": "El Bagre",
+        "id_country": 82,
+        "nameAve": "EL BAGRE(ANTIOQUIA)"
+    },
+    { "id": 790358, "id_state": 1700, "text": "El Peñol", "id_country": 82 },
+    {
+        "id": 790359,
+        "id_state": 1700,
+        "text": "El Retiro",
+        "id_country": 82,
+        "nameAve": "EL RETIRO(ANTIOQUIA)"
+    },
+    {
+        "id": 790360,
+        "id_state": 1700,
+        "text": "El Santuario",
+        "id_country": 82,
+        "nameAve": "EL SANTUARIO(ANTIOQUIA)"
+    },
+    {
+        "id": 790361,
+        "id_state": 1700,
+        "text": "Entrerríos",
+        "id_country": 82,
+        "nameAve": "ENTRERRIOS(ANTIOQUIA)"
+    },
+    {
+        "id": 790362,
+        "id_state": 1700,
+        "text": "Envigado",
+        "id_country": 82,
+        "nameAve": "ENVIGADO(ANTIOQUIA)"
+    },
+    {
+        "id": 790363,
+        "id_state": 1700,
+        "text": "Fredonia",
+        "id_country": 82,
+        "nameAve": "FREDONIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790364,
+        "id_state": 1700,
+        "text": "Frontino",
+        "id_country": 82,
+        "nameAve": "FRONTINO(ANTIOQUIA)"
+    },
+    {
+        "id": 790365,
+        "id_state": 1700,
+        "text": "Giraldo",
+        "id_country": 82,
+        "nameAve": "GIRALDO(ANTIOQUIA)"
+    },
+    {
+        "id": 790366,
+        "id_state": 1700,
+        "text": "Girardota",
+        "id_country": 82,
+        "nameAve": "GIRARDOTA(ANTIOQUIA)"
+    },
+    {
+        "id": 790367,
+        "id_state": 1700,
+        "text": "Gómez Plata",
+        "id_country": 82,
+        "nameAve": "GOMEZ PLATA(ANTIOQUIA)"
+    },
+    {
+        "id": 790368,
+        "id_state": 1700,
+        "text": "Granada",
+        "id_country": 82,
+        "nameAve": "GRANADA(ANTIOQUIA)"
+    },
+    {
+        "id": 790369,
+        "id_state": 1700,
+        "text": "Guadalupe",
+        "id_country": 82,
+        "nameAve": "GUADALUPE(ANTIOQUIA)"
+    },
+    {
+        "id": 790370,
+        "id_state": 1700,
+        "text": "Guarne",
+        "id_country": 82,
+        "nameAve": "GUARNE(ANTIOQUIA)"
+    },
+    {
+        "id": 790371,
+        "id_state": 1700,
+        "text": "Guatapé",
+        "id_country": 82,
+        "nameAve": "GUATAPE(ANTIOQUIA)"
+    },
+    {
+        "id": 790372,
+        "id_state": 1700,
+        "text": "Heliconia",
+        "id_country": 82,
+        "nameAve": "HELICONIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790373,
+        "id_state": 1700,
+        "text": "Hispania",
+        "id_country": 82,
+        "nameAve": "HISPANIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790374,
+        "id_state": 1700,
+        "text": "Itagüí",
+        "id_country": 82,
+        "nameAve": "ITAGUI(ANTIOQUIA)"
+    },
+    {
+        "id": 790375,
+        "id_state": 1700,
+        "text": "Ituango",
+        "id_country": 82,
+        "nameAve": "ITUANGO(ANTIOQUIA)"
+    },
+    {
+        "id": 790376,
+        "id_state": 1700,
+        "text": "Jardín",
+        "id_country": 82,
+        "nameAve": "JARDIN(ANTIOQUIA)"
+    },
+    {
+        "id": 790377,
+        "id_state": 1700,
+        "text": "Jericó",
+        "id_country": 82,
+        "nameAve": "JERICO(ANTIOQUIA)"
+    },
+    {
+        "id": 790378,
+        "id_state": 1700,
+        "text": "La Ceja",
+        "id_country": 82,
+        "nameAve": "LA CEJA(ANTIOQUIA)"
+    },
+    {
+        "id": 790379,
+        "id_state": 1700,
+        "text": "La Estrella",
+        "id_country": 82,
+        "nameAve": "LA ESTRELLA(ANTIOQUIA)"
+    },
+    {
+        "id": 790380,
+        "id_state": 1700,
+        "text": "La Pintada",
+        "id_country": 82,
+        "nameAve": "LA PINTADA(ANTIOQUIA)"
+    },
+    {
+        "id": 790381,
+        "id_state": 1700,
+        "text": "La Unión",
+        "id_country": 82,
+        "nameAve": "LA UNION(ANTIOQUIA)"
+    },
+    {
+        "id": 790382,
+        "id_state": 1700,
+        "text": "Liborina",
+        "id_country": 82,
+        "nameAve": "LIBORINA(ANTIOQUIA)"
+    },
+    {
+        "id": 790383,
+        "id_state": 1700,
+        "text": "Maceo",
+        "id_country": 82,
+        "nameAve": "MACEO(ANTIOQUIA)"
+    },
+    {
+        "id": 790384,
+        "id_state": 1700,
+        "text": "Marinilla",
+        "id_country": 82,
+        "nameAve": "MARINILLA(ANTIOQUIA)"
+    },
+    {
+        "id": 790385,
+        "id_state": 1700,
+        "text": "Montebello",
+        "id_country": 82,
+        "nameAve": "MONTEBELLO(ANTIOQUIA)"
+    },
+    {
+        "id": 790386,
+        "id_state": 1700,
+        "text": "Murindó",
+        "id_country": 82,
+        "nameAve": "MURINDO(ANTIOQUIA)"
+    },
+    {
+        "id": 790387,
+        "id_state": 1700,
+        "text": "Mutatá",
+        "id_country": 82,
+        "nameAve": "MUTATA(ANTIOQUIA)"
+    },
+    {
+        "id": 790388,
+        "id_state": 1700,
+        "text": "Nariño",
+        "id_country": 82,
+        "nameAve": "NARINO(ANTIOQUIA)"
+    },
+    {
+        "id": 790389,
+        "id_state": 1700,
+        "text": "Nechí",
+        "id_country": 82,
+        "nameAve": "NECHI(ANTIOQUIA)"
+    },
+    {
+        "id": 790390,
+        "id_state": 1700,
+        "text": "Necoclí",
+        "id_country": 82,
+        "nameAve": "NECOCLI(ANTIOQUIA)"
+    },
+    {
+        "id": 790391,
+        "id_state": 1700,
+        "text": "Olaya",
+        "id_country": 82,
+        "nameAve": "OLAYA(ANTIOQUIA)"
+    },
+    {
+        "id": 790392,
+        "id_state": 1700,
+        "text": "Peque",
+        "id_country": 82,
+        "nameAve": "PEQUE(ANTIOQUIA)"
+    },
+    {
+        "id": 790393,
+        "id_state": 1700,
+        "text": "Pueblorrico",
+        "id_country": 82,
+        "nameAve": "PUEBLORRICO(ANTIOQUIA)"
+    },
+    {
+        "id": 790394,
+        "id_state": 1700,
+        "text": "Puerto Berrío",
+        "id_country": 82,
+        "nameAve": "PUERTO BERRIO(ANTIOQUIA)"
+    },
+    {
+        "id": 790395,
+        "id_state": 1700,
+        "text": "Puerto Nare",
+        "id_country": 82,
+        "nameAve": "PUERTO NARE(ANTIOQUIA)"
+    },
+    {
+        "id": 790396,
+        "id_state": 1700,
+        "text": "Puerto Triunfo",
+        "id_country": 82,
+        "nameAve": "PUERTO TRIUNFO(ANTIOQUIA)"
+    },
+    {
+        "id": 790397,
+        "id_state": 1700,
+        "text": "Remedios",
+        "id_country": 82,
+        "nameAve": "REMEDIOS(ANTIOQUIA)"
+    },
+    {
+        "id": 790398,
+        "id_state": 1700,
+        "text": "Rionegro",
+        "id_country": 82,
+        "nameAve": "RIONEGRO(ANTIOQUIA)"
+    },
+    {
+        "id": 790399,
+        "id_state": 1700,
+        "text": "Sabanalarga",
+        "id_country": 82,
+        "nameAve": "SABANALARGA(ANTIOQUIA)"
+    },
+    {
+        "id": 790400,
+        "id_state": 1700,
+        "text": "Sabaneta",
+        "id_country": 82,
+        "nameAve": "SABANETA(ANTIOQUIA)"
+    },
+    {
+        "id": 790401,
+        "id_state": 1700,
+        "text": "Salgar",
+        "id_country": 82,
+        "nameAve": "SALGAR(ANTIOQUIA)"
+    },
+    {
+        "id": 790402,
+        "id_state": 1700,
+        "text": "San Andrés de Cuerquia",
+        "id_country": 82,
+        "nameAve": "SAN ANDRES DE CUERQUIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790403,
+        "id_state": 1700,
+        "text": "San Carlos",
+        "id_country": 82,
+        "nameAve": "SAN CARLOS(ANTIOQUIA)"
+    },
+    {
+        "id": 790404,
+        "id_state": 1700,
+        "text": "San Francisco",
+        "id_country": 82,
+        "nameAve": "SAN FRANCISCO(ANTIOQUIA)"
+    },
+    {
+        "id": 790405,
+        "id_state": 1700,
+        "text": "San Jerónimo",
+        "id_country": 82,
+        "nameAve": "SAN JERONIMO(ANTIOQUIA)"
+    },
+    {
+        "id": 790406,
+        "id_state": 1700,
+        "text": "San José de la Montaña",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DE LA MONTANA(ANTIOQUIA)"
+    },
+    {
+        "id": 790407,
+        "id_state": 1700,
+        "text": "San Juan de Urabá",
+        "id_country": 82,
+        "nameAve": "SAN JUAN DE URABA(ANTIOQUIA)"
+    },
+    {
+        "id": 790408,
+        "id_state": 1700,
+        "text": "San Luis",
+        "id_country": 82,
+        "nameAve": "SAN LUIS(ANTIOQUIA)"
+    },
+    {
+        "id": 790409,
+        "id_state": 1700,
+        "text": "San Pedro de los Milagros",
+        "id_country": 82,
+        "nameAve": "SAN PEDRO DE LOS MILAGROS(ANTIOQUIA)"
+    },
+    {
+        "id": 790410,
+        "id_state": 1700,
+        "text": "San Pedro de Urabá",
+        "id_country": 82,
+        "nameAve": "SAN PEDRO DE URABA(ANTIOQUIA)"
+    },
+    {
+        "id": 790411,
+        "id_state": 1700,
+        "text": "San Rafael",
+        "id_country": 82,
+        "nameAve": "SAN RAFAEL(ANTIOQUIA)"
+    },
+    {
+        "id": 790412,
+        "id_state": 1700,
+        "text": "San Roque",
+        "id_country": 82,
+        "nameAve": "SAN ROQUE(ANTIOQUIA)"
+    },
+    {
+        "id": 790413,
+        "id_state": 1700,
+        "text": "San Vicente",
+        "id_country": 82,
+        "nameAve": "SAN VICENTE(ANTIOQUIA)"
+    },
+    {
+        "id": 790414,
+        "id_state": 1700,
+        "text": "Santa Bárbara",
+        "id_country": 82,
+        "nameAve": "SANTA BARBARA(ANTIOQUIA)"
+    },
+    {
+        "id": 790415,
+        "id_state": 1700,
+        "text": "Santa Rosa de Osos",
+        "id_country": 82,
+        "nameAve": "SANTA ROSA DE OSOS(ANTIOQUIA)"
+    },
+    {
+        "id": 790416,
+        "id_state": 1700,
+        "text": "Santo Domingo",
+        "id_country": 82,
+        "nameAve": "SANTO DOMINGO(ANTIOQUIA)"
+    },
+    {
+        "id": 790417,
+        "id_state": 1700,
+        "text": "Segovia",
+        "id_country": 82,
+        "nameAve": "SEGOVIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790418,
+        "id_state": 1700,
+        "text": "Sonsón",
+        "id_country": 82,
+        "nameAve": "SONSON(ANTIOQUIA)"
+    },
+    {
+        "id": 790419,
+        "id_state": 1700,
+        "text": "Sopetrán",
+        "id_country": 82,
+        "nameAve": "SOPETRAN(ANTIOQUIA)"
+    },
+    {
+        "id": 790420,
+        "id_state": 1700,
+        "text": "Támesis",
+        "id_country": 82,
+        "nameAve": "TAMESIS(ANTIOQUIA)"
+    },
+    {
+        "id": 790421,
+        "id_state": 1700,
+        "text": "Tarazá",
+        "id_country": 82,
+        "nameAve": "TARAZA(ANTIOQUIA)"
+    },
+    {
+        "id": 790422,
+        "id_state": 1700,
+        "text": "Tarso",
+        "id_country": 82,
+        "nameAve": "TARSO(ANTIOQUIA)"
+    },
+    {
+        "id": 790423,
+        "id_state": 1700,
+        "text": "Titiribí",
+        "id_country": 82,
+        "nameAve": "TITIRIBI(ANTIOQUIA)"
+    },
+    {
+        "id": 790424,
+        "id_state": 1700,
+        "text": "Toledo",
+        "id_country": 82,
+        "nameAve": "TOLEDO(ANTIOQUIA)"
+    },
+    {
+        "id": 790425,
+        "id_state": 1700,
+        "text": "Turbo",
+        "id_country": 82,
+        "nameAve": "TURBO(ANTIOQUIA)"
+    },
+    {
+        "id": 790426,
+        "id_state": 1700,
+        "text": "Uramita",
+        "id_country": 82,
+        "nameAve": "URAMITA(ANTIOQUIA)"
+    },
+    {
+        "id": 790427,
+        "id_state": 1700,
+        "text": "Urrao",
+        "id_country": 82,
+        "nameAve": "URRAO(ANTIOQUIA)"
+    },
+    {
+        "id": 790428,
+        "id_state": 1700,
+        "text": "Valdivia",
+        "id_country": 82,
+        "nameAve": "VALDIVIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790429,
+        "id_state": 1700,
+        "text": "Valparaíso",
+        "id_country": 82,
+        "nameAve": "VALPARAISO(ANTIOQUIA)"
+    },
+    {
+        "id": 790430,
+        "id_state": 1700,
+        "text": "Vegachí",
+        "id_country": 82,
+        "nameAve": "VEGACHI(ANTIOQUIA)"
+    },
+    {
+        "id": 790431,
+        "id_state": 1700,
+        "text": "Venecia",
+        "id_country": 82,
+        "nameAve": "VENECIA(ANTIOQUIA)"
+    },
+    {
+        "id": 790432,
+        "id_state": 1700,
+        "text": "Vigía del Fuerte",
+        "id_country": 82,
+        "nameAve": "VIGIA DEL FUERTE(ANTIOQUIA)"
+    },
+    {
+        "id": 790433,
+        "id_state": 1700,
+        "text": "Yalí",
+        "id_country": 82,
+        "nameAve": "YALI(ANTIOQUIA)"
+    },
+    {
+        "id": 790434,
+        "id_state": 1700,
+        "text": "Yarumal",
+        "id_country": 82,
+        "nameAve": "YARUMAL(ANTIOQUIA)"
+    },
+    {
+        "id": 790435,
+        "id_state": 1700,
+        "text": "Yolombó",
+        "id_country": 82,
+        "nameAve": "YOLOMBO(ANTIOQUIA)"
+    },
+    {
+        "id": 790436,
+        "id_state": 1700,
+        "text": "Yondó",
+        "id_country": 82,
+        "nameAve": "YONDO(ANTIOQUIA)"
+    },
+    {
+        "id": 790437,
+        "id_state": 1700,
+        "text": "Zaragoza",
+        "id_country": 82,
+        "nameAve": "ZARAGOZA(ANTIOQUIA)"
+    },
+    {
+        "id": 790438,
+        "id_state": 1700,
+        "text": "Santafé de Antioquia",
+        "id_country": 82
+    },
+    {
+        "id": 790447,
+        "id_state": 1700,
+        "text": "Aguas frias",
+        "id_country": 82,
+        "nameAve": "AGUAS FRIAS(ANTIOQUIA)"
+    },
+    {
+        "id": 790451,
+        "id_state": 1700,
+        "text": "Altavista",
+        "id_country": 82,
+        "nameAve": "ALTAVISTA(ANTIOQUIA)"
+    },
+    {
+        "id": 790495,
+        "id_state": 1700,
+        "text": "Barro blanco",
+        "id_country": 82,
+        "nameAve": "BARRO BLANCO(ANTIOQUIA)"
+    },
+    {
+        "id": 790512,
+        "id_state": 1700,
+        "text": "Bolombolo",
+        "id_country": 82,
+        "nameAve": "BOLOMBOLO(ANTIOQUIA)"
+    },
+    {
+        "id": 790514,
+        "id_state": 1700,
+        "text": "Boqueron",
+        "id_country": 82,
+        "nameAve": "BOQUERON(ANTIOQUIA)"
+    },
+    {
+        "id": 790558,
+        "id_state": 1700,
+        "text": "Carolina",
+        "id_country": 82,
+        "nameAve": "CAROLINA(ANTIOQUIA)"
+    },
+    {
+        "id": 790672,
+        "id_state": 1700,
+        "text": "Currulao",
+        "id_country": 82,
+        "nameAve": "CURRULAO(ANTIOQUIA)"
+    },
+    {
+        "id": 790678,
+        "id_state": 1700,
+        "text": "Donmatias",
+        "id_country": 82,
+        "nameAve": "DONMATIAS(ANTIOQUIA)"
+    },
+    {
+        "id": 790679,
+        "id_state": 1700,
+        "text": "Doradal",
+        "id_country": 82,
+        "nameAve": "DORADAL(ANTIOQUIA)"
+    },
+    {
+        "id": 790698,
+        "id_state": 1700,
+        "text": "El carmen de viboral",
+        "id_country": 82,
+        "nameAve": "EL CARMEN DE VIBORAL(ANTIOQUIA)"
+    },
+    {
+        "id": 790702,
+        "id_state": 1700,
+        "text": "El cerro",
+        "id_country": 82,
+        "nameAve": "EL CERRO(ANTIOQUIA)"
+    },
+    {
+        "id": 790726,
+        "id_state": 1700,
+        "text": "El llano 1",
+        "id_country": 82,
+        "nameAve": "EL LLANO 1(ANTIOQUIA)"
+    },
+    {
+        "id": 790727,
+        "id_state": 1700,
+        "text": "El llano",
+        "id_country": 82,
+        "nameAve": "EL LLANO(ANTIOQUIA)"
+    },
+    {
+        "id": 790735,
+        "id_state": 1700,
+        "text": "El patio",
+        "id_country": 82,
+        "nameAve": "EL PATIO(ANTIOQUIA)"
+    },
+    {
+        "id": 790741,
+        "id_state": 1700,
+        "text": "El placer",
+        "id_country": 82,
+        "nameAve": "EL PLACER(ANTIOQUIA)"
+    },
+    {
+        "id": 790742,
+        "id_state": 1700,
+        "text": "El plan",
+        "id_country": 82,
+        "nameAve": "EL PLAN(ANTIOQUIA)"
+    },
+    {
+        "id": 790848,
+        "id_state": 1700,
+        "text": "La aldea",
+        "id_country": 82,
+        "nameAve": "LA ALDEA(ANTIOQUIA)"
+    },
+    {
+        "id": 790873,
+        "id_state": 1700,
+        "text": "La cuchilla",
+        "id_country": 82,
+        "nameAve": "LA CUCHILLA(ANTIOQUIA)"
+    },
+    {
+        "id": 790907,
+        "id_state": 1700,
+        "text": "La palma",
+        "id_country": 82,
+        "nameAve": "LA PALMA(ANTIOQUIA)"
+    },
+    {
+        "id": 790918,
+        "id_state": 1700,
+        "text": "La sierra",
+        "id_country": 82,
+        "nameAve": "LA SIERRA(ANTIOQUIA)"
+    },
+    {
+        "id": 790927,
+        "id_state": 1700,
+        "text": "La verde",
+        "id_country": 82,
+        "nameAve": "LA VERDE(ANTIOQUIA)"
+    },
+    {
+        "id": 790938,
+        "id_state": 1700,
+        "text": "Las camelias",
+        "id_country": 82,
+        "nameAve": "LAS CAMELIAS(ANTIOQUIA)"
+    },
+    {
+        "id": 790955,
+        "id_state": 1700,
+        "text": "Las playas",
+        "id_country": 82,
+        "nameAve": "LAS PLAYAS(ANTIOQUIA)"
+    },
+    {
+        "id": 790964,
+        "id_state": 1700,
+        "text": "Llanos de cuiva",
+        "id_country": 82,
+        "nameAve": "LLANOS DE CUIVA(ANTIOQUIA)"
+    },
+    {
+        "id": 791012,
+        "id_state": 1700,
+        "text": "Matasano 2",
+        "id_country": 82,
+        "nameAve": "MATASANO 2(ANTIOQUIA)"
+    },
+    {
+        "id": 791013,
+        "id_state": 1700,
+        "text": "Matasano",
+        "id_country": 82,
+        "nameAve": "MATASANO(ANTIOQUIA)"
+    },
+    {
+        "id": 791016,
+        "id_state": 1700,
+        "text": "Mazo",
+        "id_country": 82,
+        "nameAve": "MAZO(ANTIOQUIA)"
+    },
+    {
+        "id": 791017,
+        "id_state": 1700,
+        "text": "Media luna",
+        "id_country": 82,
+        "nameAve": "MEDIA LUNA(ANTIOQUIA)"
+    },
+    {
+        "id": 791084,
+        "id_state": 1700,
+        "text": "Palmitas",
+        "id_country": 82,
+        "nameAve": "PALMITAS(ANTIOQUIA)"
+    },
+    {
+        "id": 791106,
+        "id_state": 1700,
+        "text": "Penol",
+        "id_country": 82,
+        "nameAve": "PENOL(ANTIOQUIA)"
+    },
+    {
+        "id": 791118,
+        "id_state": 1700,
+        "text": "Piedra gorda",
+        "id_country": 82,
+        "nameAve": "PIEDRA GORDA(ANTIOQUIA)"
+    },
+    {
+        "id": 791139,
+        "id_state": 1700,
+        "text": "Potrerito",
+        "id_country": 82,
+        "nameAve": "POTRERITO(ANTIOQUIA)"
+    },
+    {
+        "id": 791169,
+        "id_state": 1700,
+        "text": "Puerto valdivia",
+        "id_country": 82,
+        "nameAve": "PUERTO VALDIVIA(ANTIOQUIA)"
+    },
+    {
+        "id": 791226,
+        "id_state": 1700,
+        "text": "San antonio de prado",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO DE PRADO(ANTIOQUIA)"
+    },
+    {
+        "id": 791231,
+        "id_state": 1700,
+        "text": "San cristobal",
+        "id_country": 82,
+        "nameAve": "SAN CRISTOBAL(ANTIOQUIA)"
+    },
+    {
+        "id": 791245,
+        "id_state": 1700,
+        "text": "San jose del manzanillo",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DEL MANZANILLO(ANTIOQUIA)"
+    },
+    {
+        "id": 791279,
+        "id_state": 1700,
+        "text": "Santa elena",
+        "id_country": 82,
+        "nameAve": "SANTA ELENA(ANTIOQUIA)"
+    },
+    {
+        "id": 791280,
+        "id_state": 1700,
+        "text": "Santa fe de antioquia",
+        "id_country": 82,
+        "nameAve": "SANTA FE DE ANTIOQUIA(ANTIOQUIA)"
+    },
+    {
+        "id": 791366,
+        "id_state": 1700,
+        "text": "Travesias",
+        "id_country": 82,
+        "nameAve": "TRAVESIAS(ANTIOQUIA)"
+    },
+    {
+        "id": 791380,
+        "id_state": 1700,
+        "text": "Urquita",
+        "id_country": 82,
+        "nameAve": "URQUITA(ANTIOQUIA)"
+    },
+    { "id": 451027, "id_state": 1701, "text": "Abuyama", "id_country": 82 },
+    { "id": 451034, "id_state": 1701, "text": "Acapulco", "id_country": 82 },
+    { "id": 451067, "id_state": 1701, "text": "Agrumito", "id_country": 82 },
+    { "id": 451139, "id_state": 1701, "text": "Agua Linda", "id_country": 82 },
+    { "id": 451141, "id_state": 1701, "text": "Agualinda", "id_country": 82 },
+    { "id": 451167, "id_state": 1701, "text": "Aguasclaras", "id_country": 82 },
+    { "id": 451235, "id_state": 1701, "text": "Alcalá", "id_country": 82 },
+    { "id": 451279, "id_state": 1701, "text": "Algarrobo", "id_country": 82 },
+    { "id": 451335, "id_state": 1701, "text": "Altamira", "id_country": 82 },
+    { "id": 451410, "id_state": 1701, "text": "Alto Mira", "id_country": 82 },
+    {
+        "id": 451648,
+        "id_state": 1701,
+        "text": "Arauca",
+        "id_country": 82,
+        "nameAve": "ARAUCA(ARAUCA)"
+    },
+    {
+        "id": 451650,
+        "id_state": 1701,
+        "text": "Arauquita",
+        "id_country": 82,
+        "nameAve": "ARAUQUITA(ARAUCA)"
+    },
+    { "id": 451723, "id_state": 1701, "text": "Argentina", "id_country": 82 },
+    { "id": 451768, "id_state": 1701, "text": "Arrecife", "id_country": 82 },
+    { "id": 451975, "id_state": 1701, "text": "Banco", "id_country": 82 },
+    { "id": 452062, "id_state": 1701, "text": "Barrancón", "id_country": 82 },
+    { "id": 452223, "id_state": 1701, "text": "Bellavista", "id_country": 82 },
+    { "id": 452464, "id_state": 1701, "text": "Bogador", "id_country": 82 },
+    { "id": 452568, "id_state": 1701, "text": "Botalón", "id_country": 82 },
+    { "id": 452578, "id_state": 1701, "text": "Bototal", "id_country": 82 },
+    { "id": 452765, "id_state": 1701, "text": "Caballos", "id_country": 82 },
+    { "id": 453284, "id_state": 1701, "text": "Caño Negro", "id_country": 82 },
+    { "id": 453598, "id_state": 1701, "text": "Casanare", "id_country": 82 },
+    { "id": 454114, "id_state": 1701, "text": "Ceiba", "id_country": 82 },
+    { "id": 454668, "id_state": 1701, "text": "Cocuicitas", "id_country": 82 },
+    { "id": 454888, "id_state": 1701, "text": "Corocora", "id_country": 82 },
+    {
+        "id": 455143,
+        "id_state": 1701,
+        "text": "Cravo Norte",
+        "id_country": 82,
+        "nameAve": "CRAVO NORTE(ARAUCA)"
+    },
+    { "id": 456049, "id_state": 1701, "text": "El Cedral", "id_country": 82 },
+    {
+        "id": 456402,
+        "id_state": 1701,
+        "text": "El Desengaño",
+        "id_country": 82
+    },
+    { "id": 457342, "id_state": 1701, "text": "El Peligro", "id_country": 82 },
+    { "id": 457817, "id_state": 1701, "text": "El Sarare", "id_country": 82 },
+    { "id": 457819, "id_state": 1701, "text": "El Sarre", "id_country": 82 },
+    {
+        "id": 458438,
+        "id_state": 1701,
+        "text": "Flor Amarillo",
+        "id_country": 82
+    },
+    { "id": 458497, "id_state": 1701, "text": "Fortoul", "id_country": 82 },
+    {
+        "id": 458498,
+        "id_state": 1701,
+        "text": "Fortul",
+        "id_country": 82,
+        "nameAve": "FORTUL(ARAUCA)"
+    },
+    { "id": 460633, "id_state": 1701, "text": "La Alegría", "id_country": 82 },
+    {
+        "id": 461199,
+        "id_state": 1701,
+        "text": "La Cordialidad",
+        "id_country": 82
+    },
+    {
+        "id": 461373,
+        "id_state": 1701,
+        "text": "La Esmeralda",
+        "id_country": 82,
+        "nameAve": "LA ESMERALDA(ARAUCA)"
+    },
+    { "id": 462341, "id_state": 1701, "text": "La Palmita", "id_country": 82 },
+    { "id": 462691, "id_state": 1701, "text": "La Reserva", "id_country": 82 },
+    { "id": 463236, "id_state": 1701, "text": "La Sonrisa", "id_country": 82 },
+    { "id": 463823, "id_state": 1701, "text": "Lipa", "id_country": 82 },
+    {
+        "id": 464040,
+        "id_state": 1701,
+        "text": "Los Angelitos",
+        "id_country": 82
+    },
+    { "id": 465357, "id_state": 1701, "text": "Miramar", "id_country": 82 },
+    { "id": 465878, "id_state": 1701, "text": "Neiva", "id_country": 82 },
+    { "id": 466443, "id_state": 1701, "text": "Panamá", "id_country": 82 },
+    { "id": 467795, "id_state": 1701, "text": "Puerto Niño", "id_country": 82 },
+    {
+        "id": 467863,
+        "id_state": 1701,
+        "text": "Puerto Rondón",
+        "id_country": 82,
+        "nameAve": "PUERTO RONDON(ARAUCA)"
+    },
+    {
+        "id": 469374,
+        "id_state": 1701,
+        "text": "Santa Bárbara",
+        "id_country": 82
+    },
+    { "id": 469454, "id_state": 1701, "text": "Santa Fé", "id_country": 82 },
+    { "id": 469582, "id_state": 1701, "text": "Santa Marta", "id_country": 82 },
+    {
+        "id": 469703,
+        "id_state": 1701,
+        "text": "Santa Teresa",
+        "id_country": 82
+    },
+    {
+        "id": 469802,
+        "id_state": 1701,
+        "text": "Saravena",
+        "id_country": 82,
+        "nameAve": "SARAVENA(ARAUCA)"
+    },
+    { "id": 469882, "id_state": 1701, "text": "Sevilla", "id_country": 82 },
+    {
+        "id": 469966,
+        "id_state": 1701,
+        "text": "Simón Bolívar",
+        "id_country": 82
+    },
+    { "id": 470055, "id_state": 1701, "text": "Socorro", "id_country": 82 },
+    {
+        "id": 470294,
+        "id_state": 1701,
+        "text": "Tame",
+        "id_country": 82,
+        "nameAve": "TAME(ARAUCA)"
+    },
+    { "id": 471228, "id_state": 1701, "text": "Victoria", "id_country": 82 },
+    { "id": 471368, "id_state": 1701, "text": "Villanueva", "id_country": 82 },
+    { "id": 471582, "id_state": 1701, "text": "Yopo", "id_country": 82 },
+    {
+        "id": 790602,
+        "id_state": 1701,
+        "text": "Clarinetero",
+        "id_country": 82,
+        "nameAve": "CLARINETERO(ARAUCA)"
+    },
+    {
+        "id": 790695,
+        "id_state": 1701,
+        "text": "El caracol",
+        "id_country": 82,
+        "nameAve": "EL CARACOL(ARAUCA)"
+    },
+    {
+        "id": 790947,
+        "id_state": 1701,
+        "text": "Las nubes",
+        "id_country": 82,
+        "nameAve": "LAS NUBES(ARAUCA)"
+    },
+    {
+        "id": 790993,
+        "id_state": 1701,
+        "text": "Manhatan",
+        "id_country": 82,
+        "nameAve": "MANHATAN(ARAUCA)"
+    },
+    {
+        "id": 791036,
+        "id_state": 1701,
+        "text": "Monserrate",
+        "id_country": 82,
+        "nameAve": "MONSERRATE(ARAUCA)"
+    },
+    { "id": 451046, "id_state": 1702, "text": "Achotal", "id_country": 82 },
+    {
+        "id": 451115,
+        "id_state": 1702,
+        "text": "Aguada de Pablo",
+        "id_country": 82
+    },
+    {
+        "id": 451119,
+        "id_state": 1702,
+        "text": "Agua de Pablo",
+        "id_country": 82
+    },
+    { "id": 451131, "id_state": 1702, "text": "Aguafría", "id_country": 82 },
+    { "id": 451179, "id_state": 1702, "text": "Aguasvivas", "id_country": 82 },
+    { "id": 451184, "id_state": 1702, "text": "Aguaviva", "id_country": 82 },
+    { "id": 451231, "id_state": 1702, "text": "Albornoz", "id_country": 82 },
+    { "id": 451233, "id_state": 1702, "text": "Albricias", "id_country": 82 },
+    { "id": 451240, "id_state": 1702, "text": "Alcázar", "id_country": 82 },
+    { "id": 451275, "id_state": 1702, "text": "Algarrobo", "id_country": 82 },
+    { "id": 451338, "id_state": 1702, "text": "Altamira", "id_country": 82 },
+    { "id": 451411, "id_state": 1702, "text": "Altomira", "id_country": 82 },
+    { "id": 451480, "id_state": 1702, "text": "Ambrosia", "id_country": 82 },
+    { "id": 451481, "id_state": 1702, "text": "Ambrosio", "id_country": 82 },
+    { "id": 451523, "id_state": 1702, "text": "Andes", "id_country": 82 },
+    { "id": 451530, "id_state": 1702, "text": "Andrea", "id_country": 82 },
+    { "id": 451741, "id_state": 1702, "text": "Armadillo", "id_country": 82 },
+    {
+        "id": 451742,
+        "id_state": 1702,
+        "text": "Armadillo Número Tres",
+        "id_country": 82
+    },
+    {
+        "id": 451779,
+        "id_state": 1702,
+        "text": "Arroyo Barro",
+        "id_country": 82
+    },
+    { "id": 451781, "id_state": 1702, "text": "Arroyo Cojo", "id_country": 82 },
+    {
+        "id": 451782,
+        "id_state": 1702,
+        "text": "Arroyo de Piedra",
+        "id_country": 82
+    },
+    {
+        "id": 451783,
+        "id_state": 1702,
+        "text": "Arroyo de Piedras",
+        "id_country": 82
+    },
+    {
+        "id": 451785,
+        "id_state": 1702,
+        "text": "Arroyo Grande",
+        "id_country": 82
+    },
+    {
+        "id": 451786,
+        "id_state": 1702,
+        "text": "Arroyo Hondo",
+        "id_country": 82
+    },
+    {
+        "id": 451791,
+        "id_state": 1702,
+        "text": "Arroyo Negro",
+        "id_country": 82
+    },
+    {
+        "id": 451793,
+        "id_state": 1702,
+        "text": "Arroyo Piedras",
+        "id_country": 82
+    },
+    {
+        "id": 451863,
+        "id_state": 1702,
+        "text": "Avícola Brisas de Huila",
+        "id_country": 82
+    },
+    { "id": 451872, "id_state": 1702, "text": "Ayacucho", "id_country": 82 },
+    { "id": 451881, "id_state": 1702, "text": "Azucena", "id_country": 82 },
+    {
+        "id": 451911,
+        "id_state": 1702,
+        "text": "Bajo de Felipe",
+        "id_country": 82
+    },
+    {
+        "id": 451912,
+        "id_state": 1702,
+        "text": "Bajo de Unira",
+        "id_country": 82
+    },
+    { "id": 451946, "id_state": 1702, "text": "Ballesteros", "id_country": 82 },
+    { "id": 451972, "id_state": 1702, "text": "Banco", "id_country": 82 },
+    {
+        "id": 451993,
+        "id_state": 1702,
+        "text": "Baranoa",
+        "id_country": 82,
+        "nameAve": "BARANOA(ATLANTICO)"
+    },
+    {
+        "id": 452055,
+        "id_state": 1702,
+        "text": "Barrancas de San Nicolás",
+        "id_country": 82
+    },
+    {
+        "id": 452072,
+        "id_state": 1702,
+        "text": "Barranquilla",
+        "id_country": 82,
+        "nameAve": "BARRANQUILLA(ATLANTICO)"
+    },
+    {
+        "id": 452092,
+        "id_state": 1702,
+        "text": "Barrio Buenos Aires",
+        "id_country": 82
+    },
+    { "id": 452227, "id_state": 1702, "text": "Bellavista", "id_country": 82 },
+    { "id": 452300, "id_state": 1702, "text": "Betania", "id_country": 82 },
+    { "id": 452479, "id_state": 1702, "text": "Bohoquez", "id_country": 82 },
+    {
+        "id": 452480,
+        "id_state": 1702,
+        "text": "Bohórquez",
+        "id_country": 82,
+        "nameAve": "BOHORQUEZ(ATLANTICO)"
+    },
+    { "id": 452524, "id_state": 1702, "text": "Bonilla", "id_country": 82 },
+    { "id": 452585, "id_state": 1702, "text": "Boyacá", "id_country": 82 },
+    {
+        "id": 452658,
+        "id_state": 1702,
+        "text": "Buena Esperanza",
+        "id_country": 82
+    },
+    { "id": 452693, "id_state": 1702, "text": "Buenavista", "id_country": 82 },
+    {
+        "id": 452718,
+        "id_state": 1702,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    { "id": 452962, "id_state": 1702, "text": "California", "id_country": 82 },
+    { "id": 453042, "id_state": 1702, "text": "Campamento", "id_country": 82 },
+    {
+        "id": 453072,
+        "id_state": 1702,
+        "text": "Campeche",
+        "id_country": 82,
+        "nameAve": "CAMPECHE(ATLANTICO)"
+    },
+    {
+        "id": 453130,
+        "id_state": 1702,
+        "text": "Campo de la Cruz",
+        "id_country": 82,
+        "nameAve": "CAMPO DE LA CRUZ(ATLANTICO)"
+    },
+    {
+        "id": 453244,
+        "id_state": 1702,
+        "text": "Candelaria",
+        "id_country": 82,
+        "nameAve": "CANDELARIA(ATLANTICO)"
+    },
+    { "id": 453388, "id_state": 1702, "text": "Caracolí", "id_country": 82 },
+    { "id": 453464, "id_state": 1702, "text": "Carmen", "id_country": 82 },
+    { "id": 453513, "id_state": 1702, "text": "Carrizal", "id_country": 82 },
+    {
+        "id": 453583,
+        "id_state": 1702,
+        "text": "Casa de Piedra",
+        "id_country": 82
+    },
+    { "id": 453645, "id_state": 1702, "text": "Cascarón", "id_country": 82 },
+    {
+        "id": 453975,
+        "id_state": 1702,
+        "text": "Caserio Santa Rita",
+        "id_country": 82
+    },
+    { "id": 454153, "id_state": 1702, "text": "Centro", "id_country": 82 },
+    { "id": 454195, "id_state": 1702, "text": "Cevillar", "id_country": 82 },
+    {
+        "id": 454444,
+        "id_state": 1702,
+        "text": "Chiquinquirá",
+        "id_country": 82
+    },
+    { "id": 454502, "id_state": 1702, "text": "Chorrera", "id_country": 82 },
+    {
+        "id": 454621,
+        "id_state": 1702,
+        "text": "Ciudad Jardín",
+        "id_country": 82
+    },
+    { "id": 454693, "id_state": 1702, "text": "Colombia", "id_country": 82 },
+    { "id": 454862, "id_state": 1702, "text": "Corea", "id_country": 82 },
+    {
+        "id": 454985,
+        "id_state": 1702,
+        "text": "Corregimiento El Morro",
+        "id_country": 82
+    },
+    { "id": 455230, "id_state": 1702, "text": "Cuba", "id_country": 82 },
+    { "id": 455321, "id_state": 1702, "text": "Cumaco", "id_country": 82 },
+    { "id": 455451, "id_state": 1702, "text": "Delicias", "id_country": 82 },
+    {
+        "id": 455598,
+        "id_state": 1702,
+        "text": "Eduardo Santos",
+        "id_country": 82
+    },
+    { "id": 455868, "id_state": 1702, "text": "El Caballo", "id_country": 82 },
+    { "id": 455992, "id_state": 1702, "text": "El Carmen", "id_country": 82 },
+    { "id": 456905, "id_state": 1702, "text": "El Limón", "id_country": 82 },
+    { "id": 457077, "id_state": 1702, "text": "El Morro", "id_country": 82 },
+    { "id": 457253, "id_state": 1702, "text": "El Pantano", "id_country": 82 },
+    { "id": 457280, "id_state": 1702, "text": "El Paraíso", "id_country": 82 },
+    { "id": 457481, "id_state": 1702, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457494, "id_state": 1702, "text": "El Poste", "id_country": 82 },
+    { "id": 457516, "id_state": 1702, "text": "El Prado", "id_country": 82 },
+    { "id": 457718, "id_state": 1702, "text": "El Rodeo", "id_country": 82 },
+    { "id": 457870, "id_state": 1702, "text": "El Socorro", "id_country": 82 },
+    { "id": 457976, "id_state": 1702, "text": "El Tesoro", "id_country": 82 },
+    { "id": 458120, "id_state": 1702, "text": "El Valle", "id_country": 82 },
+    { "id": 458127, "id_state": 1702, "text": "El Valven", "id_country": 82 },
+    {
+        "id": 458613,
+        "id_state": 1702,
+        "text": "Galapa",
+        "id_country": 82,
+        "nameAve": "GALAPA(ATLANTICO)"
+    },
+    { "id": 458635, "id_state": 1702, "text": "Gallego", "id_country": 82 },
+    { "id": 458736, "id_state": 1702, "text": "Giraldo", "id_country": 82 },
+    {
+        "id": 459296,
+        "id_state": 1702,
+        "text": "Hacienda Bonilla",
+        "id_country": 82
+    },
+    {
+        "id": 459387,
+        "id_state": 1702,
+        "text": "Hacienda El Paraiso",
+        "id_country": 82
+    },
+    {
+        "id": 459491,
+        "id_state": 1702,
+        "text": "Hacienda Las Maravillas",
+        "id_country": 82
+    },
+    { "id": 459871, "id_state": 1702, "text": "Hibácharo", "id_country": 82 },
+    {
+        "id": 460139,
+        "id_state": 1702,
+        "text": "Isabel López",
+        "id_country": 82
+    },
+    { "id": 460158, "id_state": 1702, "text": "Isidro", "id_country": 82 },
+    {
+        "id": 460404,
+        "id_state": 1702,
+        "text": "Juan de Acosta",
+        "id_country": 82,
+        "nameAve": "JUAN DE ACOSTA(ATLANTICO)"
+    },
+    { "id": 460421, "id_state": 1702, "text": "Juan Mina", "id_country": 82 },
+    { "id": 460684, "id_state": 1702, "text": "La Arena", "id_country": 82 },
+    { "id": 460921, "id_state": 1702, "text": "La Cam", "id_country": 82 },
+    { "id": 460934, "id_state": 1702, "text": "La Campiña", "id_country": 82 },
+    {
+        "id": 460993,
+        "id_state": 1702,
+        "text": "La Cartillera",
+        "id_country": 82
+    },
+    {
+        "id": 461368,
+        "id_state": 1702,
+        "text": "La Esmeralda",
+        "id_country": 82
+    },
+    { "id": 462173, "id_state": 1702, "text": "La Mina", "id_country": 82 },
+    { "id": 462408, "id_state": 1702, "text": "La Peña", "id_country": 82 },
+    { "id": 462489, "id_state": 1702, "text": "La Playa", "id_country": 82 },
+    {
+        "id": 462787,
+        "id_state": 1702,
+        "text": "Las Américas",
+        "id_country": 82
+    },
+    { "id": 462968, "id_state": 1702, "text": "La Serranía", "id_country": 82 },
+    { "id": 462975, "id_state": 1702, "text": "Las Floras", "id_country": 82 },
+    { "id": 462980, "id_state": 1702, "text": "Las Flores", "id_country": 82 },
+    {
+        "id": 463013,
+        "id_state": 1702,
+        "text": "Las Hermanas",
+        "id_country": 82
+    },
+    {
+        "id": 463149,
+        "id_state": 1702,
+        "text": "Las Mercedes",
+        "id_country": 82
+    },
+    { "id": 463179, "id_state": 1702, "text": "Las Moras", "id_country": 82 },
+    { "id": 463198, "id_state": 1702, "text": "Las Nieves", "id_country": 82 },
+    { "id": 463520, "id_state": 1702, "text": "La Unión", "id_country": 82 },
+    { "id": 463628, "id_state": 1702, "text": "La Victoria", "id_country": 82 },
+    { "id": 463899, "id_state": 1702, "text": "Loma Arena", "id_country": 82 },
+    { "id": 464012, "id_state": 1702, "text": "Los Andes", "id_country": 82 },
+    { "id": 464035, "id_state": 1702, "text": "Los Ángeles", "id_country": 82 },
+    { "id": 464152, "id_state": 1702, "text": "Los Colinas", "id_country": 82 },
+    { "id": 464371, "id_state": 1702, "text": "Los Olvidos", "id_country": 82 },
+    {
+        "id": 464525,
+        "id_state": 1702,
+        "text": "Luruaco",
+        "id_country": 82,
+        "nameAve": "LURUACO(ATLANTICO)"
+    },
+    {
+        "id": 464697,
+        "id_state": 1702,
+        "text": "Malambo",
+        "id_country": 82,
+        "nameAve": "MALAMBO(ATLANTICO)"
+    },
+    {
+        "id": 464698,
+        "id_state": 1702,
+        "text": "Malambo Viejo",
+        "id_country": 82
+    },
+    {
+        "id": 464747,
+        "id_state": 1702,
+        "text": "Manatí",
+        "id_country": 82,
+        "nameAve": "MANATI(ATLANTICO)"
+    },
+    { "id": 465328, "id_state": 1702, "text": "Mirador", "id_country": 82 },
+    { "id": 465359, "id_state": 1702, "text": "Miramar", "id_country": 82 },
+    {
+        "id": 465541,
+        "id_state": 1702,
+        "text": "Monte Grande",
+        "id_country": 82
+    },
+    { "id": 465580, "id_state": 1702, "text": "Montes", "id_country": 82 },
+    { "id": 465855, "id_state": 1702, "text": "Nazaret", "id_country": 82 },
+    { "id": 465902, "id_state": 1702, "text": "Niña Tilde", "id_country": 82 },
+    {
+        "id": 466074,
+        "id_state": 1702,
+        "text": "Olaya Herrera",
+        "id_country": 82
+    },
+    {
+        "id": 466278,
+        "id_state": 1702,
+        "text": "Palma de Varela",
+        "id_country": 82
+    },
+    { "id": 466286, "id_state": 1702, "text": "Palmar", "id_country": 82 },
+    {
+        "id": 466298,
+        "id_state": 1702,
+        "text": "Palmar de Varela",
+        "id_country": 82,
+        "nameAve": "PALMAR DE VARELA(ATLANTICO)"
+    },
+    { "id": 466652, "id_state": 1702, "text": "Patilla", "id_country": 82 },
+    { "id": 466851, "id_state": 1702, "text": "Perdices", "id_country": 82 },
+    { "id": 467027, "id_state": 1702, "text": "Piñique", "id_country": 82 },
+    { "id": 467155, "id_state": 1702, "text": "Playa", "id_country": 82 },
+    {
+        "id": 467217,
+        "id_state": 1702,
+        "text": "Polonuevo",
+        "id_country": 82,
+        "nameAve": "POLONUEVO(ATLANTICO)"
+    },
+    {
+        "id": 467233,
+        "id_state": 1702,
+        "text": "Ponedera",
+        "id_country": 82,
+        "nameAve": "PONEDERA(ATLANTICO)"
+    },
+    { "id": 467300, "id_state": 1702, "text": "Porvenir", "id_country": 82 },
+    { "id": 467384, "id_state": 1702, "text": "Pradomar", "id_country": 82 },
+    {
+        "id": 467614,
+        "id_state": 1702,
+        "text": "Puerto Caimán",
+        "id_country": 82
+    },
+    {
+        "id": 467654,
+        "id_state": 1702,
+        "text": "Puerto Colombia",
+        "id_country": 82,
+        "nameAve": "PUERTO COLOMBIA(ATLANTICO)"
+    },
+    {
+        "id": 467672,
+        "id_state": 1702,
+        "text": "Puerto del Totumo",
+        "id_country": 82
+    },
+    {
+        "id": 467701,
+        "id_state": 1702,
+        "text": "Puerto Giraldo",
+        "id_country": 82
+    },
+    {
+        "id": 467873,
+        "id_state": 1702,
+        "text": "Puerto Salgar",
+        "id_country": 82
+    },
+    { "id": 467948, "id_state": 1702, "text": "Pumarejo", "id_country": 82 },
+    { "id": 468182, "id_state": 1702, "text": "Recreo", "id_country": 82 },
+    {
+        "id": 468222,
+        "id_state": 1702,
+        "text": "Repelón",
+        "id_country": 82,
+        "nameAve": "REPELON(ATLANTICO)"
+    },
+    { "id": 468337, "id_state": 1702, "text": "Ríomar", "id_country": 82 },
+    { "id": 468453, "id_state": 1702, "text": "Rotinet", "id_country": 82 },
+    {
+        "id": 468496,
+        "id_state": 1702,
+        "text": "Sabanagrande",
+        "id_country": 82,
+        "nameAve": "SABANAGRANDE(ATLANTICO)"
+    },
+    {
+        "id": 468504,
+        "id_state": 1702,
+        "text": "Sabanalarga",
+        "id_country": 82,
+        "nameAve": "SABANALARGA(ATLANTICO)"
+    },
+    { "id": 468540, "id_state": 1702, "text": "Sabanilla", "id_country": 82 },
+    { "id": 468581, "id_state": 1702, "text": "Saldaña", "id_country": 82 },
+    { "id": 468678, "id_state": 1702, "text": "San Andrés", "id_country": 82 },
+    { "id": 468815, "id_state": 1702, "text": "San Diego", "id_country": 82 },
+    { "id": 468837, "id_state": 1702, "text": "San Felipe", "id_country": 82 },
+    {
+        "id": 468874,
+        "id_state": 1702,
+        "text": "San Francisco",
+        "id_country": 82
+    },
+    { "id": 468922, "id_state": 1702, "text": "San Isidro", "id_country": 82 },
+    { "id": 468928, "id_state": 1702, "text": "San Jacinto", "id_country": 82 },
+    { "id": 468988, "id_state": 1702, "text": "San José", "id_country": 82 },
+    { "id": 469048, "id_state": 1702, "text": "San Juan", "id_country": 82 },
+    { "id": 469200, "id_state": 1702, "text": "San Nicolás", "id_country": 82 },
+    { "id": 469309, "id_state": 1702, "text": "San Roque", "id_country": 82 },
+    { "id": 469343, "id_state": 1702, "text": "Santa Ana", "id_country": 82 },
+    { "id": 469447, "id_state": 1702, "text": "Santa Elena", "id_country": 82 },
+    {
+        "id": 469545,
+        "id_state": 1702,
+        "text": "Santa Lucía",
+        "id_country": 82,
+        "nameAve": "SANTA LUCIA(ATLANTICO)"
+    },
+    {
+        "id": 469700,
+        "id_state": 1702,
+        "text": "Santa Teresa",
+        "id_country": 82
+    },
+    {
+        "id": 469744,
+        "id_state": 1702,
+        "text": "Santo Domingo",
+        "id_country": 82
+    },
+    {
+        "id": 469751,
+        "id_state": 1702,
+        "text": "Santo Tomás",
+        "id_country": 82,
+        "nameAve": "SANTO TOMAS(ATLANTICO)"
+    },
+    { "id": 469769, "id_state": 1702, "text": "San Vicente", "id_country": 82 },
+    { "id": 469823, "id_state": 1702, "text": "Savanilla", "id_country": 82 },
+    { "id": 469883, "id_state": 1702, "text": "Sevilla", "id_country": 82 },
+    { "id": 469909, "id_state": 1702, "text": "Siape", "id_country": 82 },
+    { "id": 470056, "id_state": 1702, "text": "Socorro", "id_country": 82 },
+    {
+        "id": 470076,
+        "id_state": 1702,
+        "text": "Soledad",
+        "id_country": 82,
+        "nameAve": "SOLEDAD(ATLANTICO)"
+    },
+    {
+        "id": 470119,
+        "id_state": 1702,
+        "text": "Suan",
+        "id_country": 82,
+        "nameAve": "SUAN(ATLANTICO)"
+    },
+    {
+        "id": 470480,
+        "id_state": 1702,
+        "text": "Tierra Buena",
+        "id_country": 82
+    },
+    {
+        "id": 471253,
+        "id_state": 1702,
+        "text": "Villa Amparo",
+        "id_country": 82
+    },
+    { "id": 471270, "id_state": 1702, "text": "Villa Celia", "id_country": 82 },
+    { "id": 471321, "id_state": 1702, "text": "Villa Julia", "id_country": 82 },
+    { "id": 471365, "id_state": 1702, "text": "Villa Nueva", "id_country": 82 },
+    {
+        "id": 471391,
+        "id_state": 1702,
+        "text": "Villa Rosa",
+        "id_country": 82,
+        "nameAve": "VILLA ROSA(ATLANTICO)"
+    },
+    { "id": 471448, "id_state": 1702, "text": "Vitelma", "id_country": 82 },
+    { "id": 471451, "id_state": 1702, "text": "Vito", "id_country": 82 },
+    {
+        "id": 791122,
+        "id_state": 1702,
+        "text": "Piojo",
+        "id_country": 82,
+        "nameAve": "PIOJO(ATLANTICO)"
+    },
+    {
+        "id": 791371,
+        "id_state": 1702,
+        "text": "Tubara",
+        "id_country": 82,
+        "nameAve": "TUBARA(ATLANTICO)"
+    },
+    {
+        "id": 791381,
+        "id_state": 1702,
+        "text": "Usiacuri",
+        "id_country": 82,
+        "nameAve": "USIACURI(ATLANTICO)"
+    },
+    { "id": 451033, "id_state": 1703, "text": "Acapulco", "id_country": 82 },
+    { "id": 451037, "id_state": 1703, "text": "Acayali", "id_country": 82 },
+    {
+        "id": 451227,
+        "id_state": 1703,
+        "text": "Albania",
+        "id_country": 82,
+        "nameAve": "ALBANIA(CAQUETA)"
+    },
+    { "id": 451356, "id_state": 1703, "text": "Alto Bonito", "id_country": 82 },
+    { "id": 451422, "id_state": 1703, "text": "Altoros", "id_country": 82 },
+    { "id": 451545, "id_state": 1703, "text": "Angosturas", "id_country": 82 },
+    { "id": 451716, "id_state": 1703, "text": "Argelia", "id_country": 82 },
+    { "id": 451726, "id_state": 1703, "text": "Argentina", "id_country": 82 },
+    { "id": 451917, "id_state": 1703, "text": "Bajo Pato", "id_country": 82 },
+    { "id": 451958, "id_state": 1703, "text": "Balsillas", "id_country": 82 },
+    { "id": 452173, "id_state": 1703, "text": "Belén", "id_country": 82 },
+    {
+        "id": 452179,
+        "id_state": 1703,
+        "text": "Belén del Andaqui",
+        "id_country": 82
+    },
+    {
+        "id": 452180,
+        "id_state": 1703,
+        "text": "Belén de los Andaquíes",
+        "id_country": 82,
+        "nameAve": "BELEN DE LOS ANDAQUIES(CAQUETA)"
+    },
+    { "id": 452228, "id_state": 1703, "text": "Bellavista", "id_country": 82 },
+    { "id": 452301, "id_state": 1703, "text": "Betania", "id_country": 82 },
+    { "id": 452609, "id_state": 1703, "text": "Briceño", "id_country": 82 },
+    {
+        "id": 452721,
+        "id_state": 1703,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    {
+        "id": 453529,
+        "id_state": 1703,
+        "text": "Cartagena del Chairá",
+        "id_country": 82,
+        "nameAve": "CARTAGENA DEL CHAIRA(CAQUETA)"
+    },
+    { "id": 454082, "id_state": 1703, "text": "Cayali", "id_country": 82 },
+    { "id": 455159, "id_state": 1703, "text": "Cristales", "id_country": 82 },
+    { "id": 455269, "id_state": 1703, "text": "Cúcuta", "id_country": 82 },
+    {
+        "id": 455374,
+        "id_state": 1703,
+        "text": "Curillo",
+        "id_country": 82,
+        "nameAve": "CURILLO(CAQUETA)"
+    },
+    {
+        "id": 456466,
+        "id_state": 1703,
+        "text": "El Doncello",
+        "id_country": 82,
+        "nameAve": "EL DONCELLO(CAQUETA)"
+    },
+    { "id": 456469, "id_state": 1703, "text": "El Dorado", "id_country": 82 },
+    { "id": 456698, "id_state": 1703, "text": "El Güio", "id_country": 82 },
+    {
+        "id": 457324,
+        "id_state": 1703,
+        "text": "El Paujil",
+        "id_country": 82,
+        "nameAve": "EL PAUJIL(CAQUETA)"
+    },
+    { "id": 457469, "id_state": 1703, "text": "El Porvenir", "id_country": 82 },
+    {
+        "id": 458455,
+        "id_state": 1703,
+        "text": "Florencia",
+        "id_country": 82,
+        "nameAve": "FLORENCIA(CAQUETA)"
+    },
+    { "id": 458840, "id_state": 1703, "text": "Guacamayas", "id_country": 82 },
+    { "id": 461443, "id_state": 1703, "text": "La Estrella", "id_country": 82 },
+    {
+        "id": 462204,
+        "id_state": 1703,
+        "text": "La Montañita",
+        "id_country": 82,
+        "nameAve": "LA MONTANITA(CAQUETA)"
+    },
+    { "id": 462799, "id_state": 1703, "text": "La Sardina", "id_country": 82 },
+    { "id": 463973, "id_state": 1703, "text": "Los Alamos", "id_country": 82 },
+    { "id": 464430, "id_state": 1703, "text": "Los Pozos", "id_country": 82 },
+    {
+        "id": 465296,
+        "id_state": 1703,
+        "text": "Milán",
+        "id_country": 82,
+        "nameAve": "MILAN(CAQUETA)"
+    },
+    { "id": 465604, "id_state": 1703, "text": "Moralia", "id_country": 82 },
+    {
+        "id": 465613,
+        "id_state": 1703,
+        "text": "Morelia",
+        "id_country": 82,
+        "nameAve": "MORELIA(CAQUETA)"
+    },
+    { "id": 466220, "id_state": 1703, "text": "Pajuil", "id_country": 82 },
+    {
+        "id": 467769,
+        "id_state": 1703,
+        "text": "Puerto Mercedes",
+        "id_country": 82
+    },
+    {
+        "id": 467857,
+        "id_state": 1703,
+        "text": "Puerto Rico",
+        "id_country": 82,
+        "nameAve": "PUERTO RICO(CAQUETA)"
+    },
+    { "id": 468697, "id_state": 1703, "text": "San Antonio", "id_country": 82 },
+    {
+        "id": 468896,
+        "id_state": 1703,
+        "text": "San Guillermo",
+        "id_country": 82
+    },
+    {
+        "id": 469017,
+        "id_state": 1703,
+        "text": "San José del Fragua",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DEL FRAGUA(CAQUETA)"
+    },
+    { "id": 469775, "id_state": 1703, "text": "San Vicente", "id_country": 82 },
+    {
+        "id": 469776,
+        "id_state": 1703,
+        "text": "San Vicente de Caguán",
+        "id_country": 82
+    },
+    {
+        "id": 469778,
+        "id_state": 1703,
+        "text": "San Vicente del Caguán",
+        "id_country": 82,
+        "nameAve": "SAN VICENTE DEL CAGUAN(CAQUETA)"
+    },
+    {
+        "id": 471052,
+        "id_state": 1703,
+        "text": "Valparaíso",
+        "id_country": 82,
+        "nameAve": "VALPARAISO(CAQUETA)"
+    },
+    {
+        "id": 790550,
+        "id_state": 1703,
+        "text": "Capitolio",
+        "id_country": 82,
+        "nameAve": "CAPITOLIO(CAQUETA)"
+    },
+    {
+        "id": 790554,
+        "id_state": 1703,
+        "text": "Carano",
+        "id_country": 82,
+        "nameAve": "CARANO(CAQUETA)"
+    },
+    {
+        "id": 790734,
+        "id_state": 1703,
+        "text": "El para",
+        "id_country": 82,
+        "nameAve": "EL PARA(CAQUETA)"
+    },
+    {
+        "id": 790879,
+        "id_state": 1703,
+        "text": "La esperanza",
+        "id_country": 82,
+        "nameAve": "LA ESPERANZA(CAQUETA)"
+    },
+    {
+        "id": 791052,
+        "id_state": 1703,
+        "text": "Norcacia",
+        "id_country": 82,
+        "nameAve": "NORCACIA(CAQUETA)"
+    },
+    {
+        "id": 791154,
+        "id_state": 1703,
+        "text": "Puerto arango",
+        "id_country": 82,
+        "nameAve": "PUERTO ARANGO(CAQUETA)"
+    },
+    {
+        "id": 791223,
+        "id_state": 1703,
+        "text": "San antonio de atenas",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO DE ATENAS(CAQUETA)"
+    },
+    {
+        "id": 791224,
+        "id_state": 1703,
+        "text": "San antonio de getucha",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO DE GETUCHA(CAQUETA)"
+    },
+    {
+        "id": 791293,
+        "id_state": 1703,
+        "text": "Santana las hermosas",
+        "id_country": 82,
+        "nameAve": "SANTANA LAS HERMOSAS(CAQUETA)"
+    },
+    {
+        "id": 791303,
+        "id_state": 1703,
+        "text": "Sebastopol",
+        "id_country": 82,
+        "nameAve": "SEBASTOPOL(CAQUETA)"
+    },
+    {
+        "id": 791316,
+        "id_state": 1703,
+        "text": "Solano",
+        "id_country": 82,
+        "nameAve": "SOLANO(CAQUETA)"
+    },
+    {
+        "id": 791317,
+        "id_state": 1703,
+        "text": "Solita",
+        "id_country": 82,
+        "nameAve": "SOLITA(CAQUETA)"
+    },
+    {
+        "id": 791385,
+        "id_state": 1703,
+        "text": "Venecia",
+        "id_country": 82,
+        "nameAve": "VENECIA(CAQUETA)"
+    },
+    { "id": 451022, "id_state": 1704, "text": "Abrego", "id_country": 82 },
+    { "id": 451041, "id_state": 1704, "text": "Acevedo", "id_country": 82 },
+    { "id": 451059, "id_state": 1704, "text": "Adoretes", "id_country": 82 },
+    { "id": 451064, "id_state": 1704, "text": "Aganche", "id_country": 82 },
+    { "id": 451073, "id_state": 1704, "text": "Agua Blanca", "id_country": 82 },
+    { "id": 451106, "id_state": 1704, "text": "Aguaclara", "id_country": 82 },
+    { "id": 451125, "id_state": 1704, "text": "Agua Dulce", "id_country": 82 },
+    { "id": 451151, "id_state": 1704, "text": "Aguanegra", "id_country": 82 },
+    {
+        "id": 451267,
+        "id_state": 1704,
+        "text": "Alfonso López",
+        "id_country": 82
+    },
+    {
+        "id": 451297,
+        "id_state": 1704,
+        "text": "Almaguer",
+        "id_country": 82,
+        "nameAve": "ALMAGUER(CAUCA)"
+    },
+    { "id": 451351, "id_state": 1704, "text": "Alto", "id_country": 82 },
+    {
+        "id": 451381,
+        "id_state": 1704,
+        "text": "Alto de Mayo",
+        "id_country": 82
+    },
+    { "id": 451505, "id_state": 1704, "text": "Anasu", "id_country": 82 },
+    { "id": 451661, "id_state": 1704, "text": "Arboleda", "id_country": 82 },
+    { "id": 451663, "id_state": 1704, "text": "Arboledas", "id_country": 82 },
+    {
+        "id": 451714,
+        "id_state": 1704,
+        "text": "Argelia",
+        "id_country": 82,
+        "nameAve": "ARGELIA(CAUCA)"
+    },
+    {
+        "id": 451933,
+        "id_state": 1704,
+        "text": "Balboa",
+        "id_country": 82,
+        "nameAve": "BALBOA(CAUCA)"
+    },
+    {
+        "id": 452163,
+        "id_state": 1704,
+        "text": "Belalcazar",
+        "id_country": 82,
+        "nameAve": "BELALCAZAR(CAUCA)"
+    },
+    { "id": 452165, "id_state": 1704, "text": "Belalcázer", "id_country": 82 },
+    { "id": 452167, "id_state": 1704, "text": "Belén", "id_country": 82 },
+    { "id": 452229, "id_state": 1704, "text": "Bellavista", "id_country": 82 },
+    { "id": 452278, "id_state": 1704, "text": "Bernardino", "id_country": 82 },
+    { "id": 452305, "id_state": 1704, "text": "Betania", "id_country": 82 },
+    {
+        "id": 452495,
+        "id_state": 1704,
+        "text": "Bolívar",
+        "id_country": 82,
+        "nameAve": "BOLIVAR(CAUCA)"
+    },
+    { "id": 452515, "id_state": 1704, "text": "Bombona", "id_country": 82 },
+    { "id": 452615, "id_state": 1704, "text": "Brisas", "id_country": 82 },
+    {
+        "id": 452620,
+        "id_state": 1704,
+        "text": "Brisas del Cauca",
+        "id_country": 82
+    },
+    { "id": 452678, "id_state": 1704, "text": "Buena Vista", "id_country": 82 },
+    {
+        "id": 452723,
+        "id_state": 1704,
+        "text": "Buenos Aires",
+        "id_country": 82,
+        "nameAve": "BUENOS AIRES(CAUCA)"
+    },
+    { "id": 452767, "id_state": 1704, "text": "Cabaña", "id_country": 82 },
+    { "id": 452828, "id_state": 1704, "text": "Cachimbal", "id_country": 82 },
+    { "id": 452861, "id_state": 1704, "text": "Cafetal", "id_country": 82 },
+    {
+        "id": 452897,
+        "id_state": 1704,
+        "text": "Cajete",
+        "id_country": 82,
+        "nameAve": "CAJETE(CAUCA)"
+    },
+    {
+        "id": 452898,
+        "id_state": 1704,
+        "text": "Cajibío",
+        "id_country": 82,
+        "nameAve": "CAJIBIO(CAUCA)"
+    },
+    { "id": 452933, "id_state": 1704, "text": "Calarca", "id_country": 82 },
+    { "id": 452944, "id_state": 1704, "text": "Calderas", "id_country": 82 },
+    {
+        "id": 452948,
+        "id_state": 1704,
+        "text": "Caldono",
+        "id_country": 82,
+        "nameAve": "CALDONO(CAUCA)"
+    },
+    {
+        "id": 452953,
+        "id_state": 1704,
+        "text": "Calibío",
+        "id_country": 82,
+        "nameAve": "CALIBIO(CAUCA)"
+    },
+    { "id": 452955, "id_state": 1704, "text": "Calicanto", "id_country": 82 },
+    { "id": 452967, "id_state": 1704, "text": "California", "id_country": 82 },
+    {
+        "id": 453000,
+        "id_state": 1704,
+        "text": "Caloto",
+        "id_country": 82,
+        "nameAve": "CALOTO(CAUCA)"
+    },
+    {
+        "id": 453030,
+        "id_state": 1704,
+        "text": "Camilo Torres",
+        "id_country": 82
+    },
+    { "id": 453057, "id_state": 1704, "text": "Campamentos", "id_country": 82 },
+    {
+        "id": 453081,
+        "id_state": 1704,
+        "text": "Campo Alegre",
+        "id_country": 82
+    },
+    { "id": 453121, "id_state": 1704, "text": "Campo Bello", "id_country": 82 },
+    { "id": 453123, "id_state": 1704, "text": "Campobello", "id_country": 82 },
+    { "id": 453224, "id_state": 1704, "text": "Cañaveral", "id_country": 82 },
+    {
+        "id": 453417,
+        "id_state": 1704,
+        "text": "Carbón Catacorte",
+        "id_country": 82
+    },
+    { "id": 453466, "id_state": 1704, "text": "Carmen", "id_country": 82 },
+    { "id": 453562, "id_state": 1704, "text": "Casablanca", "id_country": 82 },
+    { "id": 454063, "id_state": 1704, "text": "Cauca", "id_country": 82 },
+    { "id": 454192, "id_state": 1704, "text": "Cesteadero", "id_country": 82 },
+    { "id": 454203, "id_state": 1704, "text": "Chacón", "id_country": 82 },
+    { "id": 454224, "id_state": 1704, "text": "Chalbuayaco", "id_country": 82 },
+    { "id": 454226, "id_state": 1704, "text": "Chalguayaco", "id_country": 82 },
+    { "id": 454259, "id_state": 1704, "text": "Chapa", "id_country": 82 },
+    { "id": 454585, "id_state": 1704, "text": "Címarronas", "id_country": 82 },
+    {
+        "id": 454876,
+        "id_state": 1704,
+        "text": "Corinto",
+        "id_country": 82,
+        "nameAve": "CORINTO(CAUCA)"
+    },
+    {
+        "id": 455215,
+        "id_state": 1704,
+        "text": "Cuatro Esquinas",
+        "id_country": 82
+    },
+    { "id": 455372, "id_state": 1704, "text": "Curiaco", "id_country": 82 },
+    { "id": 455540, "id_state": 1704, "text": "Don Joaquín", "id_country": 82 },
+    { "id": 455564, "id_state": 1704, "text": "Dos Guaduas", "id_country": 82 },
+    {
+        "id": 455827,
+        "id_state": 1704,
+        "text": "El Bordo",
+        "id_country": 82,
+        "nameAve": "EL BORDO(CAUCA)"
+    },
+    { "id": 455835, "id_state": 1704, "text": "El Bosque", "id_country": 82 },
+    { "id": 456194, "id_state": 1704, "text": "El Ciprés", "id_country": 82 },
+    { "id": 456631, "id_state": 1704, "text": "El Guabal", "id_country": 82 },
+    { "id": 456918, "id_state": 1704, "text": "El Limonal", "id_country": 82 },
+    { "id": 456939, "id_state": 1704, "text": "El Llano", "id_country": 82 },
+    { "id": 457050, "id_state": 1704, "text": "El Mirador", "id_country": 82 },
+    { "id": 457080, "id_state": 1704, "text": "El Morro", "id_country": 82 },
+    { "id": 457104, "id_state": 1704, "text": "El Natal", "id_country": 82 },
+    { "id": 457286, "id_state": 1704, "text": "El Paraíso", "id_country": 82 },
+    { "id": 457331, "id_state": 1704, "text": "El Pedregal", "id_country": 82 },
+    { "id": 457598, "id_state": 1704, "text": "El Recuerdo", "id_country": 82 },
+    { "id": 457613, "id_state": 1704, "text": "El Refugio", "id_country": 82 },
+    {
+        "id": 457940,
+        "id_state": 1704,
+        "text": "El Tambo",
+        "id_country": 82,
+        "nameAve": "EL TAMBO(CAUCA)"
+    },
+    { "id": 458111, "id_state": 1704, "text": "El Uvo", "id_country": 82 },
+    { "id": 458157, "id_state": 1704, "text": "El Vergel", "id_country": 82 },
+    { "id": 458287, "id_state": 1704, "text": "Esmeralda", "id_country": 82 },
+    { "id": 458292, "id_state": 1704, "text": "Esmeraldas", "id_country": 82 },
+    { "id": 458308, "id_state": 1704, "text": "Esperanza", "id_country": 82 },
+    {
+        "id": 458453,
+        "id_state": 1704,
+        "text": "Florencia",
+        "id_country": 82,
+        "nameAve": "FLORENCIA(CAUCA)"
+    },
+    {
+        "id": 458596,
+        "id_state": 1704,
+        "text": "Gabriel López",
+        "id_country": 82
+    },
+    { "id": 458850, "id_state": 1704, "text": "Guacas", "id_country": 82 },
+    { "id": 458917, "id_state": 1704, "text": "Guadualito", "id_country": 82 },
+    {
+        "id": 459043,
+        "id_state": 1704,
+        "text": "Guapi",
+        "id_country": 82,
+        "nameAve": "GUAPI(CAUCA)"
+    },
+    {
+        "id": 459313,
+        "id_state": 1704,
+        "text": "Hacienda Cascajal",
+        "id_country": 82
+    },
+    { "id": 459840, "id_state": 1704, "text": "Hato Viejo", "id_country": 82 },
+    {
+        "id": 460108,
+        "id_state": 1704,
+        "text": "Inzá",
+        "id_country": 82,
+        "nameAve": "INZA(CAUCA)"
+    },
+    {
+        "id": 460234,
+        "id_state": 1704,
+        "text": "Jambaló",
+        "id_country": 82,
+        "nameAve": "JAMBALO(CAUCA)"
+    },
+    {
+        "id": 460235,
+        "id_state": 1704,
+        "text": "Jambalo",
+        "id_country": 82,
+        "nameAve": "JAMBALO(CAUCA)"
+    },
+    {
+        "id": 460441,
+        "id_state": 1704,
+        "text": "Julumito",
+        "id_country": 82,
+        "nameAve": "JULUMITO(CAUCA)"
+    },
+    { "id": 460862, "id_state": 1704, "text": "La Buitrera", "id_country": 82 },
+    { "id": 460871, "id_state": 1704, "text": "La Cabaña", "id_country": 82 },
+    { "id": 461289, "id_state": 1704, "text": "La Despensa", "id_country": 82 },
+    {
+        "id": 461377,
+        "id_state": 1704,
+        "text": "La Esmeralda",
+        "id_country": 82
+    },
+    { "id": 461422, "id_state": 1704, "text": "La Estancia", "id_country": 82 },
+    { "id": 461510, "id_state": 1704, "text": "La Florida", "id_country": 82 },
+    {
+        "id": 461738,
+        "id_state": 1704,
+        "text": "La Herradura",
+        "id_country": 82
+    },
+    { "id": 462383, "id_state": 1704, "text": "La Paz", "id_country": 82 },
+    {
+        "id": 462479,
+        "id_state": 1704,
+        "text": "La Playa",
+        "id_country": 82,
+        "nameAve": "LA PLAYA(CAUCA)"
+    },
+    {
+        "id": 462685,
+        "id_state": 1704,
+        "text": "La Rejoya",
+        "id_country": 82,
+        "nameAve": "LA REJOYA(CAUCA)"
+    },
+    { "id": 462793, "id_state": 1704, "text": "Las Animas", "id_country": 82 },
+    {
+        "id": 463034,
+        "id_state": 1704,
+        "text": "La Sierra",
+        "id_country": 82,
+        "nameAve": "LA SIERRA(CAUCA)"
+    },
+    { "id": 463300, "id_state": 1704, "text": "Las Piedras", "id_country": 82 },
+    {
+        "id": 463563,
+        "id_state": 1704,
+        "text": "La Vega",
+        "id_country": 82,
+        "nameAve": "LA VEGA(CAUCA)"
+    },
+    { "id": 463654, "id_state": 1704, "text": "La Villa", "id_country": 82 },
+    { "id": 463754, "id_state": 1704, "text": "Lerma", "id_country": 82 },
+    { "id": 463941, "id_state": 1704, "text": "Lomitas", "id_country": 82 },
+    { "id": 463952, "id_state": 1704, "text": "López", "id_country": 82 },
+    { "id": 464005, "id_state": 1704, "text": "Los Anayes", "id_country": 82 },
+    {
+        "id": 464153,
+        "id_state": 1704,
+        "text": "Los Colorados",
+        "id_country": 82
+    },
+    {
+        "id": 464174,
+        "id_state": 1704,
+        "text": "Los Corrales",
+        "id_country": 82
+    },
+    {
+        "id": 464234,
+        "id_state": 1704,
+        "text": "Los Higuerones",
+        "id_country": 82
+    },
+    { "id": 464436, "id_state": 1704, "text": "Los Ramos", "id_country": 82 },
+    {
+        "id": 464438,
+        "id_state": 1704,
+        "text": "Los Rastrojos",
+        "id_country": 82
+    },
+    {
+        "id": 465220,
+        "id_state": 1704,
+        "text": "Mercaderes",
+        "id_country": 82,
+        "nameAve": "MERCADERES(CAUCA)"
+    },
+    { "id": 465277, "id_state": 1704, "text": "Micay", "id_country": 82 },
+    { "id": 465311, "id_state": 1704, "text": "Minayuco", "id_country": 82 },
+    { "id": 465334, "id_state": 1704, "text": "Miraflores", "id_country": 82 },
+    {
+        "id": 465374,
+        "id_state": 1704,
+        "text": "Miranda",
+        "id_country": 82,
+        "nameAve": "MIRANDA(CAUCA)"
+    },
+    {
+        "id": 465459,
+        "id_state": 1704,
+        "text": "Mondomó",
+        "id_country": 82,
+        "nameAve": "MONDOMO(CAUCA)"
+    },
+    { "id": 465514, "id_state": 1704, "text": "Montebello", "id_country": 82 },
+    {
+        "id": 465564,
+        "id_state": 1704,
+        "text": "Monte Redondo",
+        "id_country": 82
+    },
+    {
+        "id": 465602,
+        "id_state": 1704,
+        "text": "Morales",
+        "id_country": 82,
+        "nameAve": "MORALES(CAUCA)"
+    },
+    { "id": 465636, "id_state": 1704, "text": "Morinda", "id_country": 82 },
+    { "id": 465678, "id_state": 1704, "text": "Moscopán", "id_country": 82 },
+    { "id": 465684, "id_state": 1704, "text": "Mosquera", "id_country": 82 },
+    { "id": 465796, "id_state": 1704, "text": "Nápoles", "id_country": 82 },
+    { "id": 465927, "id_state": 1704, "text": "Normal", "id_country": 82 },
+    {
+        "id": 466069,
+        "id_state": 1704,
+        "text": "Olaya Herrera",
+        "id_country": 82
+    },
+    {
+        "id": 466184,
+        "id_state": 1704,
+        "text": "Padilla",
+        "id_country": 82,
+        "nameAve": "PADILLA(CAUCA)"
+    },
+    { "id": 466188, "id_state": 1704, "text": "Páez", "id_country": 82 },
+    { "id": 466203, "id_state": 1704, "text": "Paispamba", "id_country": 82 },
+    { "id": 466395, "id_state": 1704, "text": "Palomera", "id_country": 82 },
+    { "id": 466438, "id_state": 1704, "text": "Panama", "id_country": 82 },
+    { "id": 466451, "id_state": 1704, "text": "Pancitará", "id_country": 82 },
+    { "id": 466460, "id_state": 1704, "text": "Pandiguando", "id_country": 82 },
+    { "id": 466648, "id_state": 1704, "text": "Patía", "id_country": 82 },
+    { "id": 466737, "id_state": 1704, "text": "Pedregal", "id_country": 82 },
+    { "id": 466742, "id_state": 1704, "text": "Pedregales", "id_country": 82 },
+    { "id": 466894, "id_state": 1704, "text": "Pescador", "id_country": 82 },
+    {
+        "id": 466975,
+        "id_state": 1704,
+        "text": "Piedra Sentada",
+        "id_country": 82
+    },
+    {
+        "id": 466981,
+        "id_state": 1704,
+        "text": "Piendamó",
+        "id_country": 82,
+        "nameAve": "PIENDAMO(CAUCA)"
+    },
+    { "id": 466982, "id_state": 1704, "text": "Piendomó", "id_country": 82 },
+    { "id": 467038, "id_state": 1704, "text": "Pinulpí", "id_country": 82 },
+    { "id": 467048, "id_state": 1704, "text": "Pioyá", "id_country": 82 },
+    { "id": 467097, "id_state": 1704, "text": "Placer", "id_country": 82 },
+    {
+        "id": 467199,
+        "id_state": 1704,
+        "text": "Poblazón",
+        "id_country": 82,
+        "nameAve": "POBLAZON(CAUCA)"
+    },
+    { "id": 467236, "id_state": 1704, "text": "Poniquitá", "id_country": 82 },
+    {
+        "id": 467245,
+        "id_state": 1704,
+        "text": "Popayán",
+        "id_country": 82,
+        "nameAve": "POPAYAN(CAUCA)"
+    },
+    {
+        "id": 467439,
+        "id_state": 1704,
+        "text": "Pueblillo",
+        "id_country": 82,
+        "nameAve": "PUEBLILLO(CAUCA)"
+    },
+    { "id": 467440, "id_state": 1704, "text": "Pueblito", "id_country": 82 },
+    {
+        "id": 467503,
+        "id_state": 1704,
+        "text": "Puelenje",
+        "id_country": 82,
+        "nameAve": "PUELENJE(CAUCA)"
+    },
+    { "id": 467526, "id_state": 1704, "text": "Puente Mayo", "id_country": 82 },
+    {
+        "id": 467538,
+        "id_state": 1704,
+        "text": "Puente San José",
+        "id_country": 82
+    },
+    { "id": 467849, "id_state": 1704, "text": "Puerto Rico", "id_country": 82 },
+    {
+        "id": 467894,
+        "id_state": 1704,
+        "text": "Puerto Tejada",
+        "id_country": 82,
+        "nameAve": "PUERTO TEJADA(CAUCA)"
+    },
+    { "id": 467983, "id_state": 1704, "text": "Puntellano", "id_country": 82 },
+    {
+        "id": 467993,
+        "id_state": 1704,
+        "text": "Puracé",
+        "id_country": 82,
+        "nameAve": "PURACE(CAUCA)"
+    },
+    { "id": 468072, "id_state": 1704, "text": "Quilichao", "id_country": 82 },
+    {
+        "id": 468306,
+        "id_state": 1704,
+        "text": "Río Blanco",
+        "id_country": 82,
+        "nameAve": "RIO BLANCO(CAUCA)"
+    },
+    { "id": 468307, "id_state": 1704, "text": "Ríoblanco", "id_country": 82 },
+    { "id": 468400, "id_state": 1704, "text": "Rodeo", "id_country": 82 },
+    { "id": 468676, "id_state": 1704, "text": "San Andrés", "id_country": 82 },
+    { "id": 468700, "id_state": 1704, "text": "San Antonio", "id_country": 82 },
+    {
+        "id": 468853,
+        "id_state": 1704,
+        "text": "San Fernando",
+        "id_country": 82
+    },
+    { "id": 468969, "id_state": 1704, "text": "San Jorge", "id_country": 82 },
+    { "id": 469169, "id_state": 1704, "text": "San Miguel", "id_country": 82 },
+    {
+        "id": 469367,
+        "id_state": 1704,
+        "text": "Santa Bárbara",
+        "id_country": 82
+    },
+    { "id": 469407, "id_state": 1704, "text": "Santa Clara", "id_country": 82 },
+    { "id": 469427, "id_state": 1704, "text": "Santa Cruz", "id_country": 82 },
+    {
+        "id": 469485,
+        "id_state": 1704,
+        "text": "Santa Helena",
+        "id_country": 82
+    },
+    { "id": 469585, "id_state": 1704, "text": "Santa Marta", "id_country": 82 },
+    { "id": 469614, "id_state": 1704, "text": "Santander", "id_country": 82 },
+    {
+        "id": 469618,
+        "id_state": 1704,
+        "text": "Santander de Quilichao",
+        "id_country": 82,
+        "nameAve": "SANTANDER DE QUILICHAO(CAUCA)"
+    },
+    {
+        "id": 469653,
+        "id_state": 1704,
+        "text": "Santa Rosa",
+        "id_country": 82,
+        "nameAve": "SANTA ROSA(CAUCA)"
+    },
+    { "id": 469721, "id_state": 1704, "text": "Santiago", "id_country": 82 },
+    {
+        "id": 469960,
+        "id_state": 1704,
+        "text": "Silvia",
+        "id_country": 82,
+        "nameAve": "SILVIA(CAUCA)"
+    },
+    { "id": 470107, "id_state": 1704, "text": "Sotará", "id_country": 82 },
+    {
+        "id": 470132,
+        "id_state": 1704,
+        "text": "Sucre",
+        "id_country": 82,
+        "nameAve": "SUCRE(CAUCA)"
+    },
+    { "id": 470229, "id_state": 1704, "text": "Tacueyó", "id_country": 82 },
+    { "id": 470265, "id_state": 1704, "text": "Tamarindo", "id_country": 82 },
+    { "id": 470282, "id_state": 1704, "text": "Tambo", "id_country": 82 },
+    {
+        "id": 470530,
+        "id_state": 1704,
+        "text": "Timba",
+        "id_country": 82,
+        "nameAve": "TIMBA(CAUCA)"
+    },
+    {
+        "id": 470533,
+        "id_state": 1704,
+        "text": "Timbío",
+        "id_country": 82,
+        "nameAve": "TIMBIO(CAUCA)"
+    },
+    { "id": 470626, "id_state": 1704, "text": "Tomás", "id_country": 82 },
+    {
+        "id": 470652,
+        "id_state": 1704,
+        "text": "Toribío",
+        "id_country": 82,
+        "nameAve": "TORIBIO(CAUCA)"
+    },
+    {
+        "id": 470681,
+        "id_state": 1704,
+        "text": "Totoró",
+        "id_country": 82,
+        "nameAve": "TOTORO(CAUCA)"
+    },
+    { "id": 470851, "id_state": 1704, "text": "Tunía", "id_country": 82 },
+    { "id": 470959, "id_state": 1704, "text": "Uribe", "id_country": 82 },
+    { "id": 471021, "id_state": 1704, "text": "Valencia", "id_country": 82 },
+    { "id": 471028, "id_state": 1704, "text": "Valle", "id_country": 82 },
+    { "id": 471139, "id_state": 1704, "text": "Venero", "id_country": 82 },
+    {
+        "id": 471251,
+        "id_state": 1704,
+        "text": "Villa al Mar",
+        "id_country": 82
+    },
+    {
+        "id": 471385,
+        "id_state": 1704,
+        "text": "Villa Rica",
+        "id_country": 82,
+        "nameAve": "VILLA RICA(CAUCA)"
+    },
+    { "id": 471398, "id_state": 1704, "text": "Villarrica", "id_country": 82 },
+    { "id": 471515, "id_state": 1704, "text": "Yanaconas", "id_country": 82 },
+    { "id": 471671, "id_state": 1704, "text": "Zaragoza", "id_country": 82 },
+    { "id": 471680, "id_state": 1704, "text": "Zarzal", "id_country": 82 },
+    { "id": 471691, "id_state": 1704, "text": "Zocabán", "id_country": 82 },
+    { "id": 471692, "id_state": 1704, "text": "Zocabón", "id_country": 82 },
+    {
+        "id": 790661,
+        "id_state": 1704,
+        "text": "Crucero de puelenje",
+        "id_country": 82,
+        "nameAve": "CRUCERO DE PUELENJE(CAUCA)"
+    },
+    {
+        "id": 790743,
+        "id_state": 1704,
+        "text": "El plateado",
+        "id_country": 82,
+        "nameAve": "EL PLATEADO(CAUCA)"
+    },
+    {
+        "id": 790758,
+        "id_state": 1704,
+        "text": "El salvador",
+        "id_country": 82,
+        "nameAve": "EL SALVADOR(CAUCA)"
+    },
+    {
+        "id": 790766,
+        "id_state": 1704,
+        "text": "El tunel",
+        "id_country": 82,
+        "nameAve": "EL TUNEL(CAUCA)"
+    },
+    {
+        "id": 790800,
+        "id_state": 1704,
+        "text": "Guachene",
+        "id_country": 82,
+        "nameAve": "GUACHENE(CAUCA)"
+    },
+    {
+        "id": 790843,
+        "id_state": 1704,
+        "text": "Julumito alto",
+        "id_country": 82,
+        "nameAve": "JULUMITO ALTO(CAUCA)"
+    },
+    {
+        "id": 790860,
+        "id_state": 1704,
+        "text": "La cabuyera",
+        "id_country": 82,
+        "nameAve": "LA CABUYERA(CAUCA)"
+    },
+    {
+        "id": 790884,
+        "id_state": 1704,
+        "text": "La fortaleza",
+        "id_country": 82,
+        "nameAve": "LA FORTALEZA(CAUCA)"
+    },
+    {
+        "id": 790936,
+        "id_state": 1704,
+        "text": "Lame",
+        "id_country": 82,
+        "nameAve": "LAME(CAUCA)"
+    },
+    {
+        "id": 790968,
+        "id_state": 1704,
+        "text": "Lopez de micay",
+        "id_country": 82,
+        "nameAve": "LOPEZ DE MICAY(CAUCA)"
+    },
+    {
+        "id": 790979,
+        "id_state": 1704,
+        "text": "Los llanos",
+        "id_country": 82,
+        "nameAve": "LOS LLANOS(CAUCA)"
+    },
+    {
+        "id": 791071,
+        "id_state": 1704,
+        "text": "Ortigal",
+        "id_country": 82,
+        "nameAve": "ORTIGAL(CAUCA)"
+    },
+    {
+        "id": 791089,
+        "id_state": 1704,
+        "text": "Parcelacion atardeceres de la pradera",
+        "id_country": 82,
+        "nameAve": "PARCELACION ATARDECERES DE LA PRADERA(CAUCA)"
+    },
+    {
+        "id": 791113,
+        "id_state": 1704,
+        "text": "Piamonte",
+        "id_country": 82,
+        "nameAve": "PIAMONTE(CAUCA)"
+    },
+    {
+        "id": 791203,
+        "id_state": 1704,
+        "text": "Rosas",
+        "id_country": 82,
+        "nameAve": "ROSAS(CAUCA)"
+    },
+    {
+        "id": 791217,
+        "id_state": 1704,
+        "text": "Samuel silverio",
+        "id_country": 82,
+        "nameAve": "SAMUEL SILVERIO(CAUCA)"
+    },
+    {
+        "id": 791269,
+        "id_state": 1704,
+        "text": "San sebastian",
+        "id_country": 82,
+        "nameAve": "SAN SEBASTIAN(CAUCA)"
+    },
+    {
+        "id": 791322,
+        "id_state": 1704,
+        "text": "Sotara - paispamba",
+        "id_country": 82,
+        "nameAve": "SOTARA - PAISPAMBA(CAUCA)"
+    },
+    {
+        "id": 791323,
+        "id_state": 1704,
+        "text": "Suarez",
+        "id_country": 82,
+        "nameAve": "SUAREZ(CAUCA)"
+    },
+    {
+        "id": 791354,
+        "id_state": 1704,
+        "text": "Timbiqui",
+        "id_country": 82,
+        "nameAve": "TIMBIQUI(CAUCA)"
+    },
+    {
+        "id": 791387,
+        "id_state": 1704,
+        "text": "Vereda de torres",
+        "id_country": 82,
+        "nameAve": "VEREDA DE TORRES(CAUCA)"
+    },
+    { "id": 451055, "id_state": 1705, "text": "Adán", "id_country": 82 },
+    { "id": 451060, "id_state": 1705, "text": "Adriana", "id_country": 82 },
+    { "id": 451071, "id_state": 1705, "text": "Agua Blanca", "id_country": 82 },
+    { "id": 451093, "id_state": 1705, "text": "Aguacatal", "id_country": 82 },
+    {
+        "id": 451099,
+        "id_state": 1705,
+        "text": "Aguachica",
+        "id_country": 82,
+        "nameAve": "AGUACHICA(CESAR)"
+    },
+    { "id": 451124, "id_state": 1705, "text": "Agua Dulce", "id_country": 82 },
+    { "id": 451132, "id_state": 1705, "text": "Aguafría", "id_country": 82 },
+    {
+        "id": 451156,
+        "id_state": 1705,
+        "text": "Aguas Blancas",
+        "id_country": 82,
+        "nameAve": "AGUAS BLANCAS(CESAR)"
+    },
+    {
+        "id": 451159,
+        "id_state": 1705,
+        "text": "Aguasblancas",
+        "id_country": 82
+    },
+    { "id": 451169, "id_state": 1705, "text": "Aguas Frías", "id_country": 82 },
+    { "id": 451170, "id_state": 1705, "text": "Aguas Frias", "id_country": 82 },
+    {
+        "id": 451173,
+        "id_state": 1705,
+        "text": "Aguas Negras",
+        "id_country": 82
+    },
+    {
+        "id": 451201,
+        "id_state": 1705,
+        "text": "Agustín Codazzi",
+        "id_country": 82,
+        "nameAve": "AGUSTIN CODAZZI(CESAR)"
+    },
+    {
+        "id": 451272,
+        "id_state": 1705,
+        "text": "Algarrobillito",
+        "id_country": 82
+    },
+    { "id": 451336, "id_state": 1705, "text": "Altamira", "id_country": 82 },
+    {
+        "id": 451377,
+        "id_state": 1705,
+        "text": "Alto de Los Patos",
+        "id_country": 82
+    },
+    {
+        "id": 451389,
+        "id_state": 1705,
+        "text": "Alto El Rayo",
+        "id_country": 82
+    },
+    { "id": 451541, "id_state": 1705, "text": "Angostura", "id_country": 82 },
+    { "id": 451554, "id_state": 1705, "text": "Anolaima", "id_country": 82 },
+    { "id": 451607, "id_state": 1705, "text": "Aquachía", "id_country": 82 },
+    { "id": 451720, "id_state": 1705, "text": "Argentina", "id_country": 82 },
+    {
+        "id": 451823,
+        "id_state": 1705,
+        "text": "Astrea",
+        "id_country": 82,
+        "nameAve": "ASTREA(CESAR)"
+    },
+    {
+        "id": 451833,
+        "id_state": 1705,
+        "text": "Atanquez",
+        "id_country": 82,
+        "nameAve": "ATANQUEZ(CESAR)"
+    },
+    { "id": 451871, "id_state": 1705, "text": "Ayacucho", "id_country": 82 },
+    { "id": 451988, "id_state": 1705, "text": "Baramona", "id_country": 82 },
+    { "id": 452042, "id_state": 1705, "text": "Barranca", "id_country": 82 },
+    {
+        "id": 452154,
+        "id_state": 1705,
+        "text": "Becerril",
+        "id_country": 82,
+        "nameAve": "BECERRIL(CESAR)"
+    },
+    { "id": 452291, "id_state": 1705, "text": "Besote", "id_country": 82 },
+    {
+        "id": 452385,
+        "id_state": 1705,
+        "text": "Boca de La Miel",
+        "id_country": 82
+    },
+    {
+        "id": 452560,
+        "id_state": 1705,
+        "text": "Bosconia",
+        "id_country": 82,
+        "nameAve": "BOSCONIA(CESAR)"
+    },
+    { "id": 452743, "id_state": 1705, "text": "Bujaravita", "id_country": 82 },
+    { "id": 453177, "id_state": 1705, "text": "Caña Brava", "id_country": 82 },
+    { "id": 453242, "id_state": 1705, "text": "Candelaria", "id_country": 82 },
+    {
+        "id": 453390,
+        "id_state": 1705,
+        "text": "Caracolicito",
+        "id_country": 82,
+        "nameAve": "CARACOLICITO(CESAR)"
+    },
+    { "id": 453443, "id_state": 1705, "text": "Caribe", "id_country": 82 },
+    { "id": 453527, "id_state": 1705, "text": "Cartagena", "id_country": 82 },
+    { "id": 453531, "id_state": 1705, "text": "Cartago", "id_country": 82 },
+    { "id": 453558, "id_state": 1705, "text": "Casablanca", "id_country": 82 },
+    {
+        "id": 453568,
+        "id_state": 1705,
+        "text": "Casacará",
+        "id_country": 82,
+        "nameAve": "CASACARA(CESAR)"
+    },
+    { "id": 453569, "id_state": 1705, "text": "Casacarás", "id_country": 82 },
+    { "id": 453570, "id_state": 1705, "text": "Casacaro", "id_country": 82 },
+    {
+        "id": 453689,
+        "id_state": 1705,
+        "text": "Caserío Cerrajones",
+        "id_country": 82
+    },
+    {
+        "id": 453833,
+        "id_state": 1705,
+        "text": "Caserío La Loma",
+        "id_country": 82
+    },
+    {
+        "id": 453912,
+        "id_state": 1705,
+        "text": "Caserio Palestina",
+        "id_country": 82
+    },
+    {
+        "id": 453923,
+        "id_state": 1705,
+        "text": "Caserío Pelaya",
+        "id_country": 82
+    },
+    {
+        "id": 453968,
+        "id_state": 1705,
+        "text": "Caserío San Roque",
+        "id_country": 82
+    },
+    {
+        "id": 453999,
+        "id_state": 1705,
+        "text": "Caserio Viloria",
+        "id_country": 82
+    },
+    {
+        "id": 454407,
+        "id_state": 1705,
+        "text": "Chimichagua",
+        "id_country": 82,
+        "nameAve": "CHIMICHAGUA(CESAR)"
+    },
+    { "id": 454408, "id_state": 1705, "text": "Chimicragua", "id_country": 82 },
+    {
+        "id": 454457,
+        "id_state": 1705,
+        "text": "Chiriguaná",
+        "id_country": 82,
+        "nameAve": "CHIRIGUANA(CESAR)"
+    },
+    { "id": 454478, "id_state": 1705, "text": "Chocó", "id_country": 82 },
+    { "id": 454815, "id_state": 1705, "text": "Copei", "id_country": 82 },
+    {
+        "id": 454968,
+        "id_state": 1705,
+        "text": "Corregimiento Curumaní",
+        "id_country": 82
+    },
+    {
+        "id": 454983,
+        "id_state": 1705,
+        "text": "Corregimiento El Copey",
+        "id_country": 82
+    },
+    {
+        "id": 455066,
+        "id_state": 1705,
+        "text": "Corregimiento San Diego",
+        "id_country": 82
+    },
+    { "id": 455122, "id_state": 1705, "text": "Costillas", "id_country": 82 },
+    {
+        "id": 455387,
+        "id_state": 1705,
+        "text": "Curumaní",
+        "id_country": 82,
+        "nameAve": "CURUMANI(CESAR)"
+    },
+    { "id": 455460, "id_state": 1705, "text": "Democracia", "id_country": 82 },
+    { "id": 455606, "id_state": 1705, "text": "El Abanico", "id_country": 82 },
+    { "id": 455864, "id_state": 1705, "text": "El Burro", "id_country": 82 },
+    { "id": 456094, "id_state": 1705, "text": "El Cerrito", "id_country": 82 },
+    {
+        "id": 456273,
+        "id_state": 1705,
+        "text": "El Copey",
+        "id_country": 82,
+        "nameAve": "EL COPEY(CESAR)"
+    },
+    {
+        "id": 456308,
+        "id_state": 1705,
+        "text": "El Cruce de La Loma",
+        "id_country": 82
+    },
+    { "id": 456408, "id_state": 1705, "text": "El Deseo", "id_country": 82 },
+    {
+        "id": 457316,
+        "id_state": 1705,
+        "text": "El Paso",
+        "id_country": 82,
+        "nameAve": "EL PASO(CESAR)"
+    },
+    { "id": 457429, "id_state": 1705, "text": "El Placer", "id_country": 82 },
+    { "id": 457635, "id_state": 1705, "text": "El Reposo", "id_country": 82 },
+    { "id": 458126, "id_state": 1705, "text": "El Vallito", "id_country": 82 },
+    {
+        "id": 458652,
+        "id_state": 1705,
+        "text": "Gamarra",
+        "id_country": 82,
+        "nameAve": "GAMARRA(CESAR)"
+    },
+    { "id": 458762, "id_state": 1705, "text": "Gonzáles", "id_country": 82 },
+    {
+        "id": 458764,
+        "id_state": 1705,
+        "text": "González",
+        "id_country": 82,
+        "nameAve": "GONZALEZ(CESAR)"
+    },
+    {
+        "id": 459418,
+        "id_state": 1705,
+        "text": "Hacienda Gobernador",
+        "id_country": 82
+    },
+    {
+        "id": 459447,
+        "id_state": 1705,
+        "text": "Hacienda La Economia",
+        "id_country": 82
+    },
+    {
+        "id": 459461,
+        "id_state": 1705,
+        "text": "Hacienda La Gloria",
+        "id_country": 82
+    },
+    {
+        "id": 459502,
+        "id_state": 1705,
+        "text": "Hacienda Las Piedras",
+        "id_country": 82
+    },
+    {
+        "id": 459626,
+        "id_state": 1705,
+        "text": "Hacienda Santa Rosa",
+        "id_country": 82
+    },
+    { "id": 460209, "id_state": 1705, "text": "Jagua", "id_country": 82 },
+    {
+        "id": 461396,
+        "id_state": 1705,
+        "text": "La Esperanza",
+        "id_country": 82
+    },
+    {
+        "id": 461589,
+        "id_state": 1705,
+        "text": "La Gloria",
+        "id_country": 82,
+        "nameAve": "LA GLORIA(CESAR)"
+    },
+    { "id": 461628, "id_state": 1705, "text": "La Granja", "id_country": 82 },
+    { "id": 461656, "id_state": 1705, "text": "La Guajira", "id_country": 82 },
+    { "id": 461832, "id_state": 1705, "text": "La Jagua", "id_country": 82 },
+    {
+        "id": 461833,
+        "id_state": 1705,
+        "text": "La Jagua de Ibirico",
+        "id_country": 82,
+        "nameAve": "LA JAGUA DE IBIRICO(CESAR)"
+    },
+    {
+        "id": 461965,
+        "id_state": 1705,
+        "text": "La Loma",
+        "id_country": 82,
+        "nameAve": "LA LOMA(CESAR)"
+    },
+    { "id": 461981, "id_state": 1705, "text": "La Loquera", "id_country": 82 },
+    { "id": 462343, "id_state": 1705, "text": "La Palmita", "id_country": 82 },
+    {
+        "id": 462391,
+        "id_state": 1705,
+        "text": "La Paz",
+        "id_country": 82,
+        "nameAve": "LA PAZ(CESAR)"
+    },
+    { "id": 462976, "id_state": 1705, "text": "Las Flores", "id_country": 82 },
+    { "id": 463330, "id_state": 1705, "text": "Las Sabanas", "id_country": 82 },
+    { "id": 463370, "id_state": 1705, "text": "Las Vegas", "id_country": 82 },
+    { "id": 463559, "id_state": 1705, "text": "La Vega", "id_country": 82 },
+    {
+        "id": 463638,
+        "id_state": 1705,
+        "text": "La Victoria de San Isidro",
+        "id_country": 82,
+        "nameAve": "LA VICTORIA DE SAN ISIDRO(CESAR)"
+    },
+    {
+        "id": 464751,
+        "id_state": 1705,
+        "text": "Manaure Balcón del Cesar",
+        "id_country": 82,
+        "nameAve": "MANAURE BALCON DEL CESAR(CESAR)"
+    },
+    { "id": 465164, "id_state": 1705, "text": "Medellín", "id_country": 82 },
+    {
+        "id": 465175,
+        "id_state": 1705,
+        "text": "Media Luna",
+        "id_country": 82,
+        "nameAve": "MEDIA LUNA(CESAR)"
+    },
+    { "id": 465438, "id_state": 1705, "text": "Molina", "id_country": 82 },
+    { "id": 465567, "id_state": 1705, "text": "Montería", "id_country": 82 },
+    {
+        "id": 465956,
+        "id_state": 1705,
+        "text": "Nueva Esperanza",
+        "id_country": 82
+    },
+    {
+        "id": 466199,
+        "id_state": 1705,
+        "text": "Pailitas",
+        "id_country": 82,
+        "nameAve": "PAILITAS(CESAR)"
+    },
+    { "id": 466258, "id_state": 1705, "text": "Palestina", "id_country": 82 },
+    {
+        "id": 466655,
+        "id_state": 1705,
+        "text": "Patillal",
+        "id_country": 82,
+        "nameAve": "PATILLAL(CESAR)"
+    },
+    {
+        "id": 466766,
+        "id_state": 1705,
+        "text": "Pelaya",
+        "id_country": 82,
+        "nameAve": "PELAYA(CESAR)"
+    },
+    { "id": 467422, "id_state": 1705, "text": "Providencia", "id_country": 82 },
+    { "id": 467498, "id_state": 1705, "text": "Puebloviejo", "id_country": 82 },
+    {
+        "id": 467722,
+        "id_state": 1705,
+        "text": "Puerto Lajas",
+        "id_country": 82
+    },
+    {
+        "id": 468321,
+        "id_state": 1705,
+        "text": "Río de Oro",
+        "id_country": 82,
+        "nameAve": "RIO DE ORO(CESAR)"
+    },
+    {
+        "id": 468497,
+        "id_state": 1705,
+        "text": "Sabanagrande",
+        "id_country": 82
+    },
+    { "id": 468509, "id_state": 1705, "text": "Sabanas", "id_country": 82 },
+    {
+        "id": 468665,
+        "id_state": 1705,
+        "text": "San Alberto",
+        "id_country": 82,
+        "nameAve": "SAN ALBERTO(CESAR)"
+    },
+    {
+        "id": 468819,
+        "id_state": 1705,
+        "text": "San Diego",
+        "id_country": 82,
+        "nameAve": "SAN DIEGO(CESAR)"
+    },
+    {
+        "id": 469149,
+        "id_state": 1705,
+        "text": "San Martín",
+        "id_country": 82,
+        "nameAve": "SAN MARTIN(CESAR)"
+    },
+    { "id": 469453, "id_state": 1705, "text": "Santa Fé", "id_country": 82 },
+    {
+        "id": 469702,
+        "id_state": 1705,
+        "text": "Santa Teresa",
+        "id_country": 82
+    },
+    { "id": 469931, "id_state": 1705, "text": "Sicarare", "id_country": 82 },
+    { "id": 469962, "id_state": 1705, "text": "Simaña", "id_country": 82 },
+    { "id": 469983, "id_state": 1705, "text": "Sincelejo", "id_country": 82 },
+    { "id": 470218, "id_state": 1705, "text": "Tabú", "id_country": 82 },
+    {
+        "id": 470254,
+        "id_state": 1705,
+        "text": "Tamalameque",
+        "id_country": 82,
+        "nameAve": "TAMALAMEQUE(CESAR)"
+    },
+    { "id": 470515, "id_state": 1705, "text": "Tigre", "id_country": 82 },
+    { "id": 470908, "id_state": 1705, "text": "Ultimo Caso", "id_country": 82 },
+    {
+        "id": 471041,
+        "id_state": 1705,
+        "text": "Valledupar",
+        "id_country": 82,
+        "nameAve": "VALLEDUPAR(CESAR)"
+    },
+    { "id": 471046, "id_state": 1705, "text": "Vallito", "id_country": 82 },
+    { "id": 471063, "id_state": 1705, "text": "Varasanta", "id_country": 82 },
+    { "id": 471266, "id_state": 1705, "text": "Villa Caro", "id_country": 82 },
+    {
+        "id": 471309,
+        "id_state": 1705,
+        "text": "Villa Graciela",
+        "id_country": 82
+    },
+    {
+        "id": 471313,
+        "id_state": 1705,
+        "text": "Villa Hermosa",
+        "id_country": 82
+    },
+    { "id": 471345, "id_state": 1705, "text": "Villa Marta", "id_country": 82 },
+    { "id": 471359, "id_state": 1705, "text": "Villa Nueva", "id_country": 82 },
+    { "id": 471374, "id_state": 1705, "text": "Villanueva", "id_country": 82 },
+    { "id": 471661, "id_state": 1705, "text": "Zapatoza", "id_country": 82 },
+    { "id": 471693, "id_state": 1705, "text": "Zorro", "id_country": 82 },
+    {
+        "id": 790473,
+        "id_state": 1705,
+        "text": "Arenas blancas",
+        "id_country": 82,
+        "nameAve": "ARENAS BLANCAS(CESAR)"
+    },
+    {
+        "id": 790475,
+        "id_state": 1705,
+        "text": "Arjona",
+        "id_country": 82,
+        "nameAve": "ARJONA(CESAR)"
+    },
+    {
+        "id": 790483,
+        "id_state": 1705,
+        "text": "Badillo",
+        "id_country": 82,
+        "nameAve": "BADILLO(CESAR)"
+    },
+    {
+        "id": 790515,
+        "id_state": 1705,
+        "text": "Boqueron",
+        "id_country": 82,
+        "nameAve": "BOQUERON(CESAR)"
+    },
+    {
+        "id": 790541,
+        "id_state": 1705,
+        "text": "Camperucho",
+        "id_country": 82,
+        "nameAve": "CAMPERUCHO(CESAR)"
+    },
+    {
+        "id": 790553,
+        "id_state": 1705,
+        "text": "Caracoli",
+        "id_country": 82,
+        "nameAve": "CARACOLI(CESAR)"
+    },
+    {
+        "id": 790585,
+        "id_state": 1705,
+        "text": "Chemesquemena",
+        "id_country": 82,
+        "nameAve": "CHEMESQUEMENA(CESAR)"
+    },
+    {
+        "id": 790665,
+        "id_state": 1705,
+        "text": "Cuatro vientos",
+        "id_country": 82,
+        "nameAve": "CUATRO VIENTOS(CESAR)"
+    },
+    {
+        "id": 790687,
+        "id_state": 1705,
+        "text": "El alto de la vuelta",
+        "id_country": 82,
+        "nameAve": "EL ALTO DE LA VUELTA(CESAR)"
+    },
+    {
+        "id": 790721,
+        "id_state": 1705,
+        "text": "El jabo",
+        "id_country": 82,
+        "nameAve": "EL JABO(CESAR)"
+    },
+    {
+        "id": 790724,
+        "id_state": 1705,
+        "text": "El juncal",
+        "id_country": 82,
+        "nameAve": "EL JUNCAL(CESAR)"
+    },
+    {
+        "id": 790729,
+        "id_state": 1705,
+        "text": "El mojao",
+        "id_country": 82,
+        "nameAve": "EL MOJAO(CESAR)"
+    },
+    {
+        "id": 790738,
+        "id_state": 1705,
+        "text": "El perro",
+        "id_country": 82,
+        "nameAve": "EL PERRO(CESAR)"
+    },
+    {
+        "id": 790803,
+        "id_state": 1705,
+        "text": "Guacoche",
+        "id_country": 82,
+        "nameAve": "GUACOCHE(CESAR)"
+    },
+    {
+        "id": 790804,
+        "id_state": 1705,
+        "text": "Guacochito",
+        "id_country": 82,
+        "nameAve": "GUACOCHITO(CESAR)"
+    },
+    {
+        "id": 790806,
+        "id_state": 1705,
+        "text": "Guaimaral",
+        "id_country": 82,
+        "nameAve": "GUAIMARAL(CESAR)"
+    },
+    {
+        "id": 790815,
+        "id_state": 1705,
+        "text": "Guatapuri",
+        "id_country": 82,
+        "nameAve": "GUATAPURI(CESAR)"
+    },
+    {
+        "id": 790823,
+        "id_state": 1705,
+        "text": "Guaymaral",
+        "id_country": 82,
+        "nameAve": "GUAYMARAL(CESAR)"
+    },
+    {
+        "id": 790825,
+        "id_state": 1705,
+        "text": "Haticos ii",
+        "id_country": 82,
+        "nameAve": "HATICOS II(CESAR)"
+    },
+    {
+        "id": 790854,
+        "id_state": 1705,
+        "text": "La aurora",
+        "id_country": 82,
+        "nameAve": "LA AURORA(CESAR)"
+    },
+    {
+        "id": 790898,
+        "id_state": 1705,
+        "text": "La mata",
+        "id_country": 82,
+        "nameAve": "LA MATA(CESAR)"
+    },
+    {
+        "id": 790902,
+        "id_state": 1705,
+        "text": "La mesa - azucar buena",
+        "id_country": 82,
+        "nameAve": "LA MESA - AZUCAR BUENA(CESAR)"
+    },
+    {
+        "id": 790904,
+        "id_state": 1705,
+        "text": "La mina",
+        "id_country": 82,
+        "nameAve": "LA MINA(CESAR)"
+    },
+    {
+        "id": 790925,
+        "id_state": 1705,
+        "text": "La vega  arriba",
+        "id_country": 82,
+        "nameAve": "LA VEGA  ARRIBA(CESAR)"
+    },
+    {
+        "id": 790939,
+        "id_state": 1705,
+        "text": "Las casitas",
+        "id_country": 82,
+        "nameAve": "LAS CASITAS(CESAR)"
+    },
+    {
+        "id": 790945,
+        "id_state": 1705,
+        "text": "Las mercedes",
+        "id_country": 82,
+        "nameAve": "LAS MERCEDES(CESAR)"
+    },
+    {
+        "id": 790952,
+        "id_state": 1705,
+        "text": "Las palmitas",
+        "id_country": 82,
+        "nameAve": "LAS PALMITAS(CESAR)"
+    },
+    {
+        "id": 790965,
+        "id_state": 1705,
+        "text": "Llerasca",
+        "id_country": 82,
+        "nameAve": "LLERASCA(CESAR)"
+    },
+    {
+        "id": 790971,
+        "id_state": 1705,
+        "text": "Los calabazos",
+        "id_country": 82,
+        "nameAve": "LOS CALABAZOS(CESAR)"
+    },
+    {
+        "id": 790974,
+        "id_state": 1705,
+        "text": "Los corazones",
+        "id_country": 82,
+        "nameAve": "LOS CORAZONES(CESAR)"
+    },
+    {
+        "id": 790975,
+        "id_state": 1705,
+        "text": "Los encantos",
+        "id_country": 82,
+        "nameAve": "LOS ENCANTOS(CESAR)"
+    },
+    {
+        "id": 790977,
+        "id_state": 1705,
+        "text": "Los haticos  i",
+        "id_country": 82,
+        "nameAve": "LOS HATICOS  I(CESAR)"
+    },
+    {
+        "id": 790986,
+        "id_state": 1705,
+        "text": "Los venados",
+        "id_country": 82,
+        "nameAve": "LOS VENADOS(CESAR)"
+    },
+    {
+        "id": 791002,
+        "id_state": 1705,
+        "text": "Mariangola",
+        "id_country": 82,
+        "nameAve": "MARIANGOLA(CESAR)"
+    },
+    {
+        "id": 791008,
+        "id_state": 1705,
+        "text": "Maruamaque",
+        "id_country": 82,
+        "nameAve": "MARUAMAQUE(CESAR)"
+    },
+    {
+        "id": 791135,
+        "id_state": 1705,
+        "text": "Ponton",
+        "id_country": 82,
+        "nameAve": "PONTON(CESAR)"
+    },
+    {
+        "id": 791136,
+        "id_state": 1705,
+        "text": "Poponte",
+        "id_country": 82,
+        "nameAve": "POPONTE(CESAR)"
+    },
+    {
+        "id": 791138,
+        "id_state": 1705,
+        "text": "Potrerillo",
+        "id_country": 82,
+        "nameAve": "POTRERILLO(CESAR)"
+    },
+    {
+        "id": 791144,
+        "id_state": 1705,
+        "text": "Pueblo bello",
+        "id_country": 82,
+        "nameAve": "PUEBLO BELLO(CESAR)"
+    },
+    {
+        "id": 791182,
+        "id_state": 1705,
+        "text": "Raices",
+        "id_country": 82,
+        "nameAve": "RAICES(CESAR)"
+    },
+    {
+        "id": 791183,
+        "id_state": 1705,
+        "text": "Ramalito",
+        "id_country": 82,
+        "nameAve": "RAMALITO(CESAR)"
+    },
+    {
+        "id": 791185,
+        "id_state": 1705,
+        "text": "Rancho de goya",
+        "id_country": 82,
+        "nameAve": "RANCHO DE GOYA(CESAR)"
+    },
+    {
+        "id": 791193,
+        "id_state": 1705,
+        "text": "Rincon hondo",
+        "id_country": 82,
+        "nameAve": "RINCON HONDO(CESAR)"
+    },
+    {
+        "id": 791197,
+        "id_state": 1705,
+        "text": "Rio seco",
+        "id_country": 82,
+        "nameAve": "RIO SECO(CESAR)"
+    },
+    {
+        "id": 791201,
+        "id_state": 1705,
+        "text": "Robles",
+        "id_country": 82,
+        "nameAve": "ROBLES(CESAR)"
+    },
+    {
+        "id": 791205,
+        "id_state": 1705,
+        "text": "Sabana de crespo",
+        "id_country": 82,
+        "nameAve": "SABANA DE CRESPO(CESAR)"
+    },
+    {
+        "id": 791246,
+        "id_state": 1705,
+        "text": "San jose del oriente",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DEL ORIENTE(CESAR)"
+    },
+    {
+        "id": 791267,
+        "id_state": 1705,
+        "text": "San roque",
+        "id_country": 82,
+        "nameAve": "SAN ROQUE(CESAR)"
+    },
+    {
+        "id": 791383,
+        "id_state": 1705,
+        "text": "Valencia de jesus",
+        "id_country": 82,
+        "nameAve": "VALENCIA DE JESUS(CESAR)"
+    },
+    {
+        "id": 791400,
+        "id_state": 1705,
+        "text": "Villa germania",
+        "id_country": 82,
+        "nameAve": "VILLA GERMANIA(CESAR)"
+    },
+    {
+        "id": 791405,
+        "id_state": 1705,
+        "text": "Villa rueda",
+        "id_country": 82,
+        "nameAve": "VILLA RUEDA(CESAR)"
+    },
+    {
+        "id": 451018,
+        "id_state": 1706,
+        "text": "Abrahán Asprilla",
+        "id_country": 82
+    },
+    {
+        "id": 451030,
+        "id_state": 1706,
+        "text": "Acandí",
+        "id_country": 82,
+        "nameAve": "ACANDI(CHOCO)"
+    },
+    { "id": 451031, "id_state": 1706, "text": "Acanti", "id_country": 82 },
+    { "id": 451050, "id_state": 1706, "text": "Acosó", "id_country": 82 },
+    {
+        "id": 451061,
+        "id_state": 1706,
+        "text": "Adriano Potes",
+        "id_country": 82
+    },
+    { "id": 451096, "id_state": 1706, "text": "Aguacate", "id_country": 82 },
+    {
+        "id": 451353,
+        "id_state": 1706,
+        "text": "Alto Baudó",
+        "id_country": 82,
+        "nameAve": "ALTO BAUDO(CHOCO)"
+    },
+    { "id": 451516, "id_state": 1706, "text": "Andagoya", "id_country": 82 },
+    { "id": 451754, "id_state": 1706, "text": "Arquía", "id_country": 82 },
+    { "id": 451757, "id_state": 1706, "text": "Arquisa", "id_country": 82 },
+    { "id": 451802, "id_state": 1706, "text": "Arusí", "id_country": 82 },
+    { "id": 451803, "id_state": 1706, "text": "Aruzí", "id_country": 82 },
+    {
+        "id": 451895,
+        "id_state": 1706,
+        "text": "Bagadó",
+        "id_country": 82,
+        "nameAve": "BAGADO(CHOCO)"
+    },
+    {
+        "id": 451902,
+        "id_state": 1706,
+        "text": "Bahía Solano",
+        "id_country": 82,
+        "nameAve": "BAHIA SOLANO(CHOCO)"
+    },
+    {
+        "id": 451906,
+        "id_state": 1706,
+        "text": "Bajo Baudó",
+        "id_country": 82,
+        "nameAve": "BAJO BAUDO(CHOCO)"
+    },
+    {
+        "id": 452177,
+        "id_state": 1706,
+        "text": "Belén de Docampadó",
+        "id_country": 82
+    },
+    { "id": 452233, "id_state": 1706, "text": "Bellavista", "id_country": 82 },
+    { "id": 452312, "id_state": 1706, "text": "Beté", "id_country": 82 },
+    {
+        "id": 452486,
+        "id_state": 1706,
+        "text": "Bojayá",
+        "id_country": 82,
+        "nameAve": "BOJAYA(CHOCO)"
+    },
+    { "id": 452772, "id_state": 1706, "text": "Cabeceras", "id_country": 82 },
+    { "id": 453225, "id_state": 1706, "text": "Cañaveral", "id_country": 82 },
+    { "id": 453354, "id_state": 1706, "text": "Capitán", "id_country": 82 },
+    { "id": 453365, "id_state": 1706, "text": "Capurganá", "id_country": 82 },
+    { "id": 453468, "id_state": 1706, "text": "Carmen", "id_country": 82 },
+    {
+        "id": 454190,
+        "id_state": 1706,
+        "text": "Cértegui",
+        "id_country": 82,
+        "nameAve": "CERTEGUI(CHOCO)"
+    },
+    { "id": 454191, "id_state": 1706, "text": "Certigui", "id_country": 82 },
+    { "id": 454234, "id_state": 1706, "text": "Chambaré", "id_country": 82 },
+    {
+        "id": 454783,
+        "id_state": 1706,
+        "text": "Condoto",
+        "id_country": 82,
+        "nameAve": "CONDOTO(CHOCO)"
+    },
+    { "id": 455369, "id_state": 1706, "text": "Curbaradó", "id_country": 82 },
+    {
+        "id": 455956,
+        "id_state": 1706,
+        "text": "El Cantón de San Pablo",
+        "id_country": 82
+    },
+    { "id": 455999, "id_state": 1706, "text": "El Carmen", "id_country": 82 },
+    { "id": 457942, "id_state": 1706, "text": "El Tambo", "id_country": 82 },
+    { "id": 458118, "id_state": 1706, "text": "El Valle", "id_country": 82 },
+    { "id": 458446, "id_state": 1706, "text": "Florencia", "id_country": 82 },
+    {
+        "id": 460162,
+        "id_state": 1706,
+        "text": "Isla de Los Palacios",
+        "id_country": 82
+    },
+    { "id": 460173, "id_state": 1706, "text": "Istmia", "id_country": 82 },
+    {
+        "id": 460174,
+        "id_state": 1706,
+        "text": "Istmina",
+        "id_country": 82,
+        "nameAve": "ISTMINA(CHOCO)"
+    },
+    { "id": 460175, "id_state": 1706, "text": "Istmino", "id_country": 82 },
+    { "id": 460189, "id_state": 1706, "text": "Itsmina", "id_country": 82 },
+    {
+        "id": 460472,
+        "id_state": 1706,
+        "text": "Juradó",
+        "id_country": 82,
+        "nameAve": "JURADO(CHOCO)"
+    },
+    { "id": 462951, "id_state": 1706, "text": "La Selva", "id_country": 82 },
+    {
+        "id": 463887,
+        "id_state": 1706,
+        "text": "Lloró",
+        "id_country": 82,
+        "nameAve": "LLORO(CHOCO)"
+    },
+    {
+        "id": 465949,
+        "id_state": 1706,
+        "text": "Nóvita",
+        "id_country": 82,
+        "nameAve": "NOVITA(CHOCO)"
+    },
+    { "id": 466012, "id_state": 1706, "text": "Nugui", "id_country": 82 },
+    {
+        "id": 466021,
+        "id_state": 1706,
+        "text": "Nuquí",
+        "id_country": 82,
+        "nameAve": "NUQUI(CHOCO)"
+    },
+    { "id": 466089, "id_state": 1706, "text": "Opogodó", "id_country": 82 },
+    { "id": 467095, "id_state": 1706, "text": "Pizarro", "id_country": 82 },
+    {
+        "id": 467578,
+        "id_state": 1706,
+        "text": "Puerto Arboleda",
+        "id_country": 82
+    },
+    {
+        "id": 468062,
+        "id_state": 1706,
+        "text": "Quibdó",
+        "id_country": 82,
+        "nameAve": "QUIBDO(CHOCO)"
+    },
+    {
+        "id": 468349,
+        "id_state": 1706,
+        "text": "Riosucio",
+        "id_country": 82,
+        "nameAve": "RIOSUCIO(CHOCO)"
+    },
+    {
+        "id": 469022,
+        "id_state": 1706,
+        "text": "San José del Palmar",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DEL PALMAR(CHOCO)"
+    },
+    { "id": 469135, "id_state": 1706, "text": "San Marino", "id_country": 82 },
+    {
+        "id": 469576,
+        "id_state": 1706,
+        "text": "Santa María La Antigua",
+        "id_country": 82
+    },
+    {
+        "id": 470231,
+        "id_state": 1706,
+        "text": "Tadó",
+        "id_country": 82,
+        "nameAve": "TADO(CHOCO)"
+    },
+    { "id": 470317, "id_state": 1706, "text": "Tanguí", "id_country": 82 },
+    { "id": 470368, "id_state": 1706, "text": "Tatunendó", "id_country": 82 },
+    { "id": 470595, "id_state": 1706, "text": "Togachí", "id_country": 82 },
+    {
+        "id": 470887,
+        "id_state": 1706,
+        "text": "Tutunendó",
+        "id_country": 82,
+        "nameAve": "TUTUNENDO(CHOCO)"
+    },
+    {
+        "id": 470922,
+        "id_state": 1706,
+        "text": "Unguía",
+        "id_country": 82,
+        "nameAve": "UNGUIA(CHOCO)"
+    },
+    {
+        "id": 471237,
+        "id_state": 1706,
+        "text": "Vigía de Curbarado",
+        "id_country": 82
+    },
+    { "id": 471427, "id_state": 1706, "text": "Vira Vira", "id_country": 82 },
+    { "id": 471621, "id_state": 1706, "text": "Yuto", "id_country": 82 },
+    {
+        "id": 790482,
+        "id_state": 1706,
+        "text": "Atrato",
+        "id_country": 82,
+        "nameAve": "ATRATO(CHOCO)"
+    },
+    {
+        "id": 790491,
+        "id_state": 1706,
+        "text": "Barranco",
+        "id_country": 82,
+        "nameAve": "BARRANCO(CHOCO)"
+    },
+    {
+        "id": 790499,
+        "id_state": 1706,
+        "text": "Belen de bajira",
+        "id_country": 82,
+        "nameAve": "BELEN DE BAJIRA(CHOCO)"
+    },
+    {
+        "id": 790507,
+        "id_state": 1706,
+        "text": "Boca de naurita",
+        "id_country": 82,
+        "nameAve": "BOCA DE NAURITA(CHOCO)"
+    },
+    {
+        "id": 790509,
+        "id_state": 1706,
+        "text": "Boca de tanando",
+        "id_country": 82,
+        "nameAve": "BOCA DE TANANDO(CHOCO)"
+    },
+    {
+        "id": 790535,
+        "id_state": 1706,
+        "text": "Calahorra",
+        "id_country": 82,
+        "nameAve": "CALAHORRA(CHOCO)"
+    },
+    {
+        "id": 790543,
+        "id_state": 1706,
+        "text": "Campobonito",
+        "id_country": 82,
+        "nameAve": "CAMPOBONITO(CHOCO)"
+    },
+    {
+        "id": 790557,
+        "id_state": 1706,
+        "text": "Carmen del darien",
+        "id_country": 82,
+        "nameAve": "CARMEN DEL DARIEN(CHOCO)"
+    },
+    {
+        "id": 790684,
+        "id_state": 1706,
+        "text": "El 21",
+        "id_country": 82,
+        "nameAve": "EL 21(CHOCO)"
+    },
+    {
+        "id": 790693,
+        "id_state": 1706,
+        "text": "El canton del san pablo",
+        "id_country": 82,
+        "nameAve": "EL CANTON DEL SAN PABLO(CHOCO)"
+    },
+    {
+        "id": 790696,
+        "id_state": 1706,
+        "text": "El carmen de atrato",
+        "id_country": 82,
+        "nameAve": "EL CARMEN DE ATRATO(CHOCO)"
+    },
+    {
+        "id": 790718,
+        "id_state": 1706,
+        "text": "El fuerte",
+        "id_country": 82,
+        "nameAve": "EL FUERTE(CHOCO)"
+    },
+    {
+        "id": 790725,
+        "id_state": 1706,
+        "text": "El litoral del san juan",
+        "id_country": 82,
+        "nameAve": "EL LITORAL DEL SAN JUAN(CHOCO)"
+    },
+    {
+        "id": 790793,
+        "id_state": 1706,
+        "text": "Gitrado",
+        "id_country": 82,
+        "nameAve": "GITRADO(CHOCO)"
+    },
+    {
+        "id": 790805,
+        "id_state": 1706,
+        "text": "Guadalupe",
+        "id_country": 82,
+        "nameAve": "GUADALUPE(CHOCO)"
+    },
+    {
+        "id": 790812,
+        "id_state": 1706,
+        "text": "Guarando",
+        "id_country": 82,
+        "nameAve": "GUARANDO(CHOCO)"
+    },
+    {
+        "id": 790819,
+        "id_state": 1706,
+        "text": "Guayabal",
+        "id_country": 82,
+        "nameAve": "GUAYABAL(CHOCO)"
+    },
+    {
+        "id": 790923,
+        "id_state": 1706,
+        "text": "La troje",
+        "id_country": 82,
+        "nameAve": "LA TROJE(CHOCO)"
+    },
+    {
+        "id": 790946,
+        "id_state": 1706,
+        "text": "Las mercedes",
+        "id_country": 82,
+        "nameAve": "LAS MERCEDES(CHOCO)"
+    },
+    {
+        "id": 791018,
+        "id_state": 1706,
+        "text": "Medio atrato",
+        "id_country": 82,
+        "nameAve": "MEDIO ATRATO(CHOCO)"
+    },
+    {
+        "id": 791019,
+        "id_state": 1706,
+        "text": "Medio baudo",
+        "id_country": 82,
+        "nameAve": "MEDIO BAUDO(CHOCO)"
+    },
+    {
+        "id": 791020,
+        "id_state": 1706,
+        "text": "Medio san juan",
+        "id_country": 82,
+        "nameAve": "MEDIO SAN JUAN(CHOCO)"
+    },
+    {
+        "id": 791031,
+        "id_state": 1706,
+        "text": "Mojaudo",
+        "id_country": 82,
+        "nameAve": "MOJAUDO(CHOCO)"
+    },
+    {
+        "id": 791195,
+        "id_state": 1706,
+        "text": "Rio iro",
+        "id_country": 82,
+        "nameAve": "RIO IRO(CHOCO)"
+    },
+    {
+        "id": 791196,
+        "id_state": 1706,
+        "text": "Rio quito",
+        "id_country": 82,
+        "nameAve": "RIO QUITO(CHOCO)"
+    },
+    {
+        "id": 791225,
+        "id_state": 1706,
+        "text": "San antonio de icho",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO DE ICHO(CHOCO)"
+    },
+    {
+        "id": 791235,
+        "id_state": 1706,
+        "text": "San francisco de icho",
+        "id_country": 82,
+        "nameAve": "SAN FRANCISCO DE ICHO(CHOCO)"
+    },
+    {
+        "id": 791240,
+        "id_state": 1706,
+        "text": "San joaquin",
+        "id_country": 82,
+        "nameAve": "SAN JOAQUIN(CHOCO)"
+    },
+    {
+        "id": 791265,
+        "id_state": 1706,
+        "text": "San rafael de negua",
+        "id_country": 82,
+        "nameAve": "SAN RAFAEL DE NEGUA(CHOCO)"
+    },
+    {
+        "id": 791272,
+        "id_state": 1706,
+        "text": "Sanceno",
+        "id_country": 82,
+        "nameAve": "SANCENO(CHOCO)"
+    },
+    {
+        "id": 791310,
+        "id_state": 1706,
+        "text": "Sipi",
+        "id_country": 82,
+        "nameAve": "SIPI(CHOCO)"
+    },
+    {
+        "id": 791332,
+        "id_state": 1706,
+        "text": "Tagachi",
+        "id_country": 82,
+        "nameAve": "TAGACHI(CHOCO)"
+    },
+    {
+        "id": 791379,
+        "id_state": 1706,
+        "text": "Union panamericana",
+        "id_country": 82,
+        "nameAve": "UNION PANAMERICANA(CHOCO)"
+    },
+    {
+        "id": 791413,
+        "id_state": 1706,
+        "text": "Winando",
+        "id_country": 82,
+        "nameAve": "WINANDO(CHOCO)"
+    },
+    { "id": 451051, "id_state": 1707, "text": "Acosta", "id_country": 82 },
+    { "id": 451063, "id_state": 1707, "text": "Aflohera", "id_country": 82 },
+    { "id": 451065, "id_state": 1707, "text": "Agárrate", "id_country": 82 },
+    { "id": 451102, "id_state": 1707, "text": "Agua Clara", "id_country": 82 },
+    { "id": 451123, "id_state": 1707, "text": "Aguaditas", "id_country": 82 },
+    { "id": 451128, "id_state": 1707, "text": "Aguadulce", "id_country": 82 },
+    { "id": 451150, "id_state": 1707, "text": "Agua Negra", "id_country": 82 },
+    {
+        "id": 451163,
+        "id_state": 1707,
+        "text": "Aguas Claras",
+        "id_country": 82
+    },
+    {
+        "id": 451175,
+        "id_state": 1707,
+        "text": "Aguas Negras",
+        "id_country": 82
+    },
+    {
+        "id": 451176,
+        "id_state": 1707,
+        "text": "Aguas Prietas",
+        "id_country": 82
+    },
+    { "id": 451178, "id_state": 1707, "text": "Aguas Vivas", "id_country": 82 },
+    { "id": 451185, "id_state": 1707, "text": "Aguaviva", "id_country": 82 },
+    { "id": 451186, "id_state": 1707, "text": "Agua Vives", "id_country": 82 },
+    { "id": 451191, "id_state": 1707, "text": "Águila", "id_country": 82 },
+    { "id": 451260, "id_state": 1707, "text": "Alemania", "id_country": 82 },
+    {
+        "id": 451266,
+        "id_state": 1707,
+        "text": "Alfonso López",
+        "id_country": 82
+    },
+    { "id": 451344, "id_state": 1707, "text": "Altamira", "id_country": 82 },
+    {
+        "id": 451423,
+        "id_state": 1707,
+        "text": "Alto Rosario",
+        "id_country": 82
+    },
+    { "id": 451467, "id_state": 1707, "text": "Amaya", "id_country": 82 },
+    {
+        "id": 451573,
+        "id_state": 1707,
+        "text": "Antonio Garcia",
+        "id_country": 82
+    },
+    { "id": 451620, "id_state": 1707, "text": "Arache", "id_country": 82 },
+    { "id": 451682, "id_state": 1707, "text": "Arena", "id_country": 82 },
+    {
+        "id": 451688,
+        "id_state": 1707,
+        "text": "Arena del Norte",
+        "id_country": 82
+    },
+    {
+        "id": 451701,
+        "id_state": 1707,
+        "text": "Arenas del Norte",
+        "id_country": 82
+    },
+    {
+        "id": 451702,
+        "id_state": 1707,
+        "text": "Arenas del Sur",
+        "id_country": 82
+    },
+    { "id": 451706, "id_state": 1707, "text": "Arenoso", "id_country": 82 },
+    { "id": 451748, "id_state": 1707, "text": "Armenia", "id_country": 82 },
+    {
+        "id": 451776,
+        "id_state": 1707,
+        "text": "Arroyo Arena",
+        "id_country": 82
+    },
+    { "id": 451790, "id_state": 1707, "text": "Arroyón", "id_country": 82 },
+    {
+        "id": 451792,
+        "id_state": 1707,
+        "text": "Arroyo Negro",
+        "id_country": 82
+    },
+    {
+        "id": 451876,
+        "id_state": 1707,
+        "text": "Ayapel",
+        "id_country": 82,
+        "nameAve": "AYAPEL(CORDOBA)"
+    },
+    { "id": 451886, "id_state": 1707, "text": "Babillas", "id_country": 82 },
+    { "id": 451989, "id_state": 1707, "text": "Barandilla", "id_country": 82 },
+    { "id": 452013, "id_state": 1707, "text": "Barcelona", "id_country": 82 },
+    {
+        "id": 452075,
+        "id_state": 1707,
+        "text": "Barranquillita",
+        "id_country": 82
+    },
+    {
+        "id": 452095,
+        "id_state": 1707,
+        "text": "Barrio El Prado",
+        "id_country": 82
+    },
+    { "id": 452114, "id_state": 1707, "text": "Barroprieto", "id_country": 82 },
+    { "id": 452121, "id_state": 1707, "text": "Barú", "id_country": 82 },
+    { "id": 452169, "id_state": 1707, "text": "Belén", "id_country": 82 },
+    {
+        "id": 452200,
+        "id_state": 1707,
+        "text": "Bella Licencia",
+        "id_country": 82
+    },
+    { "id": 452211, "id_state": 1707, "text": "Bella Vista", "id_country": 82 },
+    { "id": 452226, "id_state": 1707, "text": "Bellavista", "id_country": 82 },
+    { "id": 452251, "id_state": 1707, "text": "Berástegui", "id_country": 82 },
+    { "id": 452292, "id_state": 1707, "text": "Betancí", "id_country": 82 },
+    { "id": 452341, "id_state": 1707, "text": "Bijao", "id_country": 82 },
+    { "id": 452361, "id_state": 1707, "text": "Boca Ceiba", "id_country": 82 },
+    { "id": 452379, "id_state": 1707, "text": "Boca de Hui", "id_country": 82 },
+    {
+        "id": 452383,
+        "id_state": 1707,
+        "text": "Boca de La Ceiba",
+        "id_country": 82,
+        "nameAve": "BOCA DE LA CEIBA(CORDOBA)"
+    },
+    {
+        "id": 452391,
+        "id_state": 1707,
+        "text": "Boca de López",
+        "id_country": 82
+    },
+    { "id": 452424, "id_state": 1707, "text": "Boca Negro", "id_country": 82 },
+    { "id": 452445, "id_state": 1707, "text": "Boca Sehebe", "id_country": 82 },
+    { "id": 452457, "id_state": 1707, "text": "Bodega", "id_country": 82 },
+    { "id": 452596, "id_state": 1707, "text": "Brasilia", "id_country": 82 },
+    { "id": 452679, "id_state": 1707, "text": "Buena Vista", "id_country": 82 },
+    {
+        "id": 452690,
+        "id_state": 1707,
+        "text": "Buenavista",
+        "id_country": 82,
+        "nameAve": "BUENAVISTA(CORDOBA)"
+    },
+    {
+        "id": 452716,
+        "id_state": 1707,
+        "text": "Buenos Aires",
+        "id_country": 82,
+        "nameAve": "BUENOS AIRES(CORDOBA)"
+    },
+    { "id": 452795, "id_state": 1707, "text": "Cabuya", "id_country": 82 },
+    { "id": 452869, "id_state": 1707, "text": "Caíman", "id_country": 82 },
+    { "id": 452873, "id_state": 1707, "text": "Caimanera", "id_country": 82 },
+    { "id": 452951, "id_state": 1707, "text": "Cali", "id_country": 82 },
+    { "id": 452969, "id_state": 1707, "text": "California", "id_country": 82 },
+    { "id": 453077, "id_state": 1707, "text": "Campillo", "id_country": 82 },
+    { "id": 453120, "id_state": 1707, "text": "Campo Bello", "id_country": 82 },
+    {
+        "id": 453204,
+        "id_state": 1707,
+        "text": "Canalete",
+        "id_country": 82,
+        "nameAve": "CANALETE(CORDOBA)"
+    },
+    { "id": 453280, "id_state": 1707, "text": "Caño Flecha", "id_country": 82 },
+    { "id": 453288, "id_state": 1707, "text": "Caño Prieto", "id_country": 82 },
+    { "id": 453302, "id_state": 1707, "text": "Cantaclaro", "id_country": 82 },
+    { "id": 453374, "id_state": 1707, "text": "Caracas", "id_country": 82 },
+    { "id": 453398, "id_state": 1707, "text": "Caramelo", "id_country": 82 },
+    { "id": 453449, "id_state": 1707, "text": "Carito", "id_country": 82 },
+    { "id": 453506, "id_state": 1707, "text": "Carrillo", "id_country": 82 },
+    { "id": 453516, "id_state": 1707, "text": "Carrizal", "id_country": 82 },
+    { "id": 453563, "id_state": 1707, "text": "Casablanca", "id_country": 82 },
+    {
+        "id": 453764,
+        "id_state": 1707,
+        "text": "Caserío El Obligado",
+        "id_country": 82
+    },
+    {
+        "id": 453900,
+        "id_state": 1707,
+        "text": "Caserío Medellin Sapo",
+        "id_country": 82
+    },
+    {
+        "id": 453972,
+        "id_state": 1707,
+        "text": "Caserio Santa Fe",
+        "id_country": 82
+    },
+    {
+        "id": 453986,
+        "id_state": 1707,
+        "text": "Caserío Tierralta",
+        "id_country": 82
+    },
+    {
+        "id": 454033,
+        "id_state": 1707,
+        "text": "Castillo de Oro",
+        "id_country": 82
+    },
+    { "id": 454111, "id_state": 1707, "text": "Cedro", "id_country": 82 },
+    {
+        "id": 454154,
+        "id_state": 1707,
+        "text": "Centro Alegre",
+        "id_country": 82
+    },
+    {
+        "id": 454160,
+        "id_state": 1707,
+        "text": "Cereté",
+        "id_country": 82,
+        "nameAve": "CERETE(CORDOBA)"
+    },
+    {
+        "id": 454396,
+        "id_state": 1707,
+        "text": "Chimá",
+        "id_country": 82,
+        "nameAve": "CHIMA(CORDOBA)"
+    },
+    {
+        "id": 454429,
+        "id_state": 1707,
+        "text": "Chinú",
+        "id_country": 82,
+        "nameAve": "CHINU(CORDOBA)"
+    },
+    { "id": 454441, "id_state": 1707, "text": "Chiqui", "id_country": 82 },
+    { "id": 454568, "id_state": 1707, "text": "Cielo Azul", "id_country": 82 },
+    {
+        "id": 454574,
+        "id_state": 1707,
+        "text": "Ciénaga de Oro",
+        "id_country": 82,
+        "nameAve": "CIENAGA DE ORO(CORDOBA)"
+    },
+    { "id": 454580, "id_state": 1707, "text": "Cieneguita", "id_country": 82 },
+    { "id": 454600, "id_state": 1707, "text": "Cintura", "id_country": 82 },
+    { "id": 454630, "id_state": 1707, "text": "Claval", "id_country": 82 },
+    { "id": 454688, "id_state": 1707, "text": "Colombai", "id_country": 82 },
+    { "id": 454692, "id_state": 1707, "text": "Colombia", "id_country": 82 },
+    { "id": 454838, "id_state": 1707, "text": "Corcobado", "id_country": 82 },
+    {
+        "id": 454856,
+        "id_state": 1707,
+        "text": "Córdoba",
+        "id_country": 82,
+        "nameAve": "CORDOBA(CORDOBA)"
+    },
+    {
+        "id": 454939,
+        "id_state": 1707,
+        "text": "Corregimiento Arache",
+        "id_country": 82
+    },
+    {
+        "id": 454957,
+        "id_state": 1707,
+        "text": "Corregimiento Carito",
+        "id_country": 82
+    },
+    {
+        "id": 454964,
+        "id_state": 1707,
+        "text": "Corregimiento Cotorra",
+        "id_country": 82
+    },
+    {
+        "id": 454977,
+        "id_state": 1707,
+        "text": "Corregimiento El Cedro",
+        "id_country": 82
+    },
+    {
+        "id": 454994,
+        "id_state": 1707,
+        "text": "Corregimiento Garzones",
+        "id_country": 82
+    },
+    {
+        "id": 455015,
+        "id_state": 1707,
+        "text": "Corregimiento Las Flores",
+        "id_country": 82
+    },
+    {
+        "id": 455021,
+        "id_state": 1707,
+        "text": "Corregimiento La Ye",
+        "id_country": 82
+    },
+    {
+        "id": 455049,
+        "id_state": 1707,
+        "text": "Corregimiento Palo de Agua",
+        "id_country": 82
+    },
+    {
+        "id": 455072,
+        "id_state": 1707,
+        "text": "Corregimiento San Sebastian",
+        "id_country": 82
+    },
+    { "id": 455105, "id_state": 1707, "text": "Costa Rica", "id_country": 82 },
+    {
+        "id": 455132,
+        "id_state": 1707,
+        "text": "Cotorra",
+        "id_country": 82,
+        "nameAve": "COTORRA(CORDOBA)"
+    },
+    { "id": 455139, "id_state": 1707, "text": "Coveñas", "id_country": 82 },
+    { "id": 455167, "id_state": 1707, "text": "Cristo Rey", "id_country": 82 },
+    { "id": 455246, "id_state": 1707, "text": "Cuchara", "id_country": 82 },
+    { "id": 455271, "id_state": 1707, "text": "Cuello", "id_country": 82 },
+    { "id": 455274, "id_state": 1707, "text": "Cuenca", "id_country": 82 },
+    { "id": 455482, "id_state": 1707, "text": "Diamante", "id_country": 82 },
+    { "id": 455531, "id_state": 1707, "text": "Doña María", "id_country": 82 },
+    { "id": 455815, "id_state": 1707, "text": "El Bongo", "id_country": 82 },
+    { "id": 455989, "id_state": 1707, "text": "El Carmen", "id_country": 82 },
+    { "id": 456066, "id_state": 1707, "text": "El Cedro", "id_country": 82 },
+    { "id": 456074, "id_state": 1707, "text": "El Ceibal", "id_country": 82 },
+    { "id": 456314, "id_state": 1707, "text": "El Crucero", "id_country": 82 },
+    { "id": 456346, "id_state": 1707, "text": "El Damasco", "id_country": 82 },
+    { "id": 456768, "id_state": 1707, "text": "El Hoyal", "id_country": 82 },
+    {
+        "id": 456902,
+        "id_state": 1707,
+        "text": "El Limón",
+        "id_country": 82,
+        "nameAve": "EL LIMON(CORDOBA)"
+    },
+    { "id": 456975, "id_state": 1707, "text": "El Manglar", "id_country": 82 },
+    { "id": 456988, "id_state": 1707, "text": "El Manquito", "id_country": 82 },
+    { "id": 457109, "id_state": 1707, "text": "El Ñeque", "id_country": 82 },
+    { "id": 457151, "id_state": 1707, "text": "El Olivo", "id_country": 82 },
+    { "id": 457222, "id_state": 1707, "text": "El Palmar", "id_country": 82 },
+    { "id": 457399, "id_state": 1707, "text": "El Piñalito", "id_country": 82 },
+    { "id": 457477, "id_state": 1707, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457512, "id_state": 1707, "text": "El Prado", "id_country": 82 },
+    { "id": 457593, "id_state": 1707, "text": "El Recreo", "id_country": 82 },
+    { "id": 457629, "id_state": 1707, "text": "El Reparo", "id_country": 82 },
+    { "id": 457913, "id_state": 1707, "text": "El Tablado", "id_country": 82 },
+    { "id": 457954, "id_state": 1707, "text": "El Tapado", "id_country": 82 },
+    {
+        "id": 458064,
+        "id_state": 1707,
+        "text": "El Treinta y Cinco",
+        "id_country": 82
+    },
+    { "id": 458099, "id_state": 1707, "text": "El Ubérrimo", "id_country": 82 },
+    { "id": 458167, "id_state": 1707, "text": "El Viajano", "id_country": 82 },
+    { "id": 458467, "id_state": 1707, "text": "Floresta", "id_country": 82 },
+    {
+        "id": 458625,
+        "id_state": 1707,
+        "text": "Galilea",
+        "id_country": 82,
+        "nameAve": "GALILEA(CORDOBA)"
+    },
+    { "id": 458691, "id_state": 1707, "text": "Garzones", "id_country": 82 },
+    { "id": 458788, "id_state": 1707, "text": "Granada", "id_country": 82 },
+    { "id": 458861, "id_state": 1707, "text": "Guacharacal", "id_country": 82 },
+    {
+        "id": 459290,
+        "id_state": 1707,
+        "text": "Hacienda Bartolo",
+        "id_country": 82
+    },
+    {
+        "id": 459342,
+        "id_state": 1707,
+        "text": "Hacienda El Burro",
+        "id_country": 82
+    },
+    {
+        "id": 459452,
+        "id_state": 1707,
+        "text": "Hacienda La Estancia",
+        "id_country": 82
+    },
+    { "id": 459855, "id_state": 1707, "text": "Heredia", "id_country": 82 },
+    { "id": 460207, "id_state": 1707, "text": "Jagua", "id_country": 82 },
+    { "id": 460264, "id_state": 1707, "text": "Jardin", "id_country": 82 },
+    { "id": 460378, "id_state": 1707, "text": "José Manuel", "id_country": 82 },
+    { "id": 460724, "id_state": 1707, "text": "La Asamblea", "id_country": 82 },
+    { "id": 460837, "id_state": 1707, "text": "La Bonguita", "id_country": 82 },
+    { "id": 460865, "id_state": 1707, "text": "La Burra", "id_country": 82 },
+    { "id": 460984, "id_state": 1707, "text": "La Carolina", "id_country": 82 },
+    {
+        "id": 461009,
+        "id_state": 1707,
+        "text": "La Castellana",
+        "id_country": 82
+    },
+    { "id": 461021, "id_state": 1707, "text": "La Ceiba", "id_country": 82 },
+    { "id": 461041, "id_state": 1707, "text": "La Ceibita", "id_country": 82 },
+    { "id": 461079, "id_state": 1707, "text": "La China", "id_country": 82 },
+    { "id": 461220, "id_state": 1707, "text": "La Cruz", "id_country": 82 },
+    { "id": 461592, "id_state": 1707, "text": "La Gloria", "id_country": 82 },
+    { "id": 461635, "id_state": 1707, "text": "La Granjita", "id_country": 82 },
+    { "id": 462025, "id_state": 1707, "text": "La Madera", "id_country": 82 },
+    {
+        "id": 462201,
+        "id_state": 1707,
+        "text": "La Montañita",
+        "id_country": 82
+    },
+    { "id": 462230, "id_state": 1707, "text": "La Muerte", "id_country": 82 },
+    { "id": 462314, "id_state": 1707, "text": "La Palma", "id_country": 82 },
+    {
+        "id": 462531,
+        "id_state": 1707,
+        "text": "La Poza",
+        "id_country": 82,
+        "nameAve": "LA POZA(CORDOBA)"
+    },
+    {
+        "id": 462809,
+        "id_state": 1707,
+        "text": "Las Babillas",
+        "id_country": 82
+    },
+    { "id": 462978, "id_state": 1707, "text": "Las Flores", "id_country": 82 },
+    { "id": 463010, "id_state": 1707, "text": "Las Guamas", "id_country": 82 },
+    { "id": 463084, "id_state": 1707, "text": "Las Lamas", "id_country": 82 },
+    {
+        "id": 463120,
+        "id_state": 1707,
+        "text": "Las Margaritas",
+        "id_country": 82
+    },
+    { "id": 463267, "id_state": 1707, "text": "Las Pampas", "id_country": 82 },
+    { "id": 463357, "id_state": 1707, "text": "La Subida", "id_country": 82 },
+    { "id": 463561, "id_state": 1707, "text": "La Vega", "id_country": 82 },
+    { "id": 463700, "id_state": 1707, "text": "La Ye", "id_country": 82 },
+    { "id": 463797, "id_state": 1707, "text": "Limón", "id_country": 82 },
+    {
+        "id": 463964,
+        "id_state": 1707,
+        "text": "Lorica",
+        "id_country": 82,
+        "nameAve": "LORICA(CORDOBA)"
+    },
+    { "id": 464026, "id_state": 1707, "text": "Los Angeles", "id_country": 82 },
+    { "id": 464033, "id_state": 1707, "text": "Los Ángeles", "id_country": 82 },
+    {
+        "id": 464087,
+        "id_state": 1707,
+        "text": "Los Camarones",
+        "id_country": 82
+    },
+    { "id": 464098, "id_state": 1707, "text": "Los Caños", "id_country": 82 },
+    {
+        "id": 464119,
+        "id_state": 1707,
+        "text": "Los Cedros",
+        "id_country": 82,
+        "nameAve": "LOS CEDROS(CORDOBA)"
+    },
+    {
+        "id": 464171,
+        "id_state": 1707,
+        "text": "Los Corazones",
+        "id_country": 82
+    },
+    {
+        "id": 464172,
+        "id_state": 1707,
+        "text": "Los Córdobas",
+        "id_country": 82,
+        "nameAve": "LOS CORDOBAS(CORDOBA)"
+    },
+    {
+        "id": 464207,
+        "id_state": 1707,
+        "text": "Los Garzones",
+        "id_country": 82,
+        "nameAve": "LOS GARZONES(CORDOBA)"
+    },
+    { "id": 464322, "id_state": 1707, "text": "Los Mimbres", "id_country": 82 },
+    { "id": 464333, "id_state": 1707, "text": "Los Morales", "id_country": 82 },
+    { "id": 464396, "id_state": 1707, "text": "Los Pericos", "id_country": 82 },
+    { "id": 464529, "id_state": 1707, "text": "Lusitania", "id_country": 82 },
+    { "id": 464543, "id_state": 1707, "text": "Mabobo", "id_country": 82 },
+    { "id": 464580, "id_state": 1707, "text": "Machín", "id_country": 82 },
+    { "id": 464609, "id_state": 1707, "text": "Madera", "id_country": 82 },
+    { "id": 464775, "id_state": 1707, "text": "Mango", "id_country": 82 },
+    { "id": 464782, "id_state": 1707, "text": "Manguito", "id_country": 82 },
+    {
+        "id": 464892,
+        "id_state": 1707,
+        "text": "Marcelino Reyes",
+        "id_country": 82
+    },
+    { "id": 464904, "id_state": 1707, "text": "Margaritas", "id_country": 82 },
+    { "id": 464983, "id_state": 1707, "text": "Martínez", "id_country": 82 },
+    {
+        "id": 465011,
+        "id_state": 1707,
+        "text": "Mata de Caña",
+        "id_country": 82
+    },
+    { "id": 465034, "id_state": 1707, "text": "Matamoro", "id_country": 82 },
+    { "id": 465097, "id_state": 1707, "text": "Mateo", "id_country": 82 },
+    {
+        "id": 465098,
+        "id_state": 1707,
+        "text": "Mateo Gómez",
+        "id_country": 82,
+        "nameAve": "MATEO GOMEZ(CORDOBA)"
+    },
+    { "id": 465148, "id_state": 1707, "text": "Mazamorra", "id_country": 82 },
+    { "id": 465166, "id_state": 1707, "text": "Medellín", "id_country": 82 },
+    { "id": 465190, "id_state": 1707, "text": "Me Gustó", "id_country": 82 },
+    { "id": 465408, "id_state": 1707, "text": "Mocari", "id_country": 82 },
+    { "id": 465412, "id_state": 1707, "text": "Mochila", "id_country": 82 },
+    {
+        "id": 465450,
+        "id_state": 1707,
+        "text": "Momil",
+        "id_country": 82,
+        "nameAve": "MOMIL(CORDOBA)"
+    },
+    { "id": 465451, "id_state": 1707, "text": "Mompós", "id_country": 82 },
+    { "id": 465470, "id_state": 1707, "text": "Moñito", "id_country": 82 },
+    {
+        "id": 465471,
+        "id_state": 1707,
+        "text": "Moñitos",
+        "id_country": 82,
+        "nameAve": "MONITOS(CORDOBA)"
+    },
+    { "id": 465496, "id_state": 1707, "text": "Montanita", "id_country": 82 },
+    {
+        "id": 465550,
+        "id_state": 1707,
+        "text": "Montelíbano",
+        "id_country": 82,
+        "nameAve": "MONTELIBANO(CORDOBA)"
+    },
+    {
+        "id": 465568,
+        "id_state": 1707,
+        "text": "Montería",
+        "id_country": 82,
+        "nameAve": "MONTERIA(CORDOBA)"
+    },
+    { "id": 465588, "id_state": 1707, "text": "Montevideo", "id_country": 82 },
+    { "id": 465637, "id_state": 1707, "text": "Morindó", "id_country": 82 },
+    { "id": 465662, "id_state": 1707, "text": "Morrocoy", "id_country": 82 },
+    { "id": 465694, "id_state": 1707, "text": "Mote", "id_country": 82 },
+    { "id": 465805, "id_state": 1707, "text": "Naranjal", "id_country": 82 },
+    { "id": 465910, "id_state": 1707, "text": "Noche Azul", "id_country": 82 },
+    {
+        "id": 465916,
+        "id_state": 1707,
+        "text": "No Hay Como Dios",
+        "id_country": 82
+    },
+    {
+        "id": 465951,
+        "id_state": 1707,
+        "text": "Nueva Colombia",
+        "id_country": 82
+    },
+    {
+        "id": 466279,
+        "id_state": 1707,
+        "text": "Palma de Vino",
+        "id_country": 82
+    },
+    { "id": 466360, "id_state": 1707, "text": "Palmitas", "id_country": 82 },
+    {
+        "id": 466364,
+        "id_state": 1707,
+        "text": "Palmito Picado",
+        "id_country": 82
+    },
+    {
+        "id": 466376,
+        "id_state": 1707,
+        "text": "Palo de Agua",
+        "id_country": 82
+    },
+    { "id": 466437, "id_state": 1707, "text": "Panama", "id_country": 82 },
+    { "id": 466494, "id_state": 1707, "text": "Papayal", "id_country": 82 },
+    { "id": 466513, "id_state": 1707, "text": "Paraíso", "id_country": 82 },
+    { "id": 466598, "id_state": 1707, "text": "Pasa Tiempo", "id_country": 82 },
+    { "id": 466624, "id_state": 1707, "text": "Paso Nuevo", "id_country": 82 },
+    { "id": 466717, "id_state": 1707, "text": "Pavos", "id_country": 82 },
+    { "id": 466856, "id_state": 1707, "text": "Pereira", "id_country": 82 },
+    {
+        "id": 467122,
+        "id_state": 1707,
+        "text": "Planeta Rica",
+        "id_country": 82,
+        "nameAve": "PLANETA RICA(CORDOBA)"
+    },
+    { "id": 467129, "id_state": 1707, "text": "Plan Parejo", "id_country": 82 },
+    { "id": 467172, "id_state": 1707, "text": "Playa Rica", "id_country": 82 },
+    { "id": 467194, "id_state": 1707, "text": "Plazabonita", "id_country": 82 },
+    { "id": 467443, "id_state": 1707, "text": "Pueblito", "id_country": 82 },
+    { "id": 467450, "id_state": 1707, "text": "Pueblo Bujo", "id_country": 82 },
+    {
+        "id": 467466,
+        "id_state": 1707,
+        "text": "Pueblo Nuevo",
+        "id_country": 82,
+        "nameAve": "PUEBLO NUEVO(CORDOBA)"
+    },
+    {
+        "id": 467669,
+        "id_state": 1707,
+        "text": "Puerto de La Cruz",
+        "id_country": 82
+    },
+    {
+        "id": 467687,
+        "id_state": 1707,
+        "text": "Puerto Escondido",
+        "id_country": 82,
+        "nameAve": "PUERTO ESCONDIDO(CORDOBA)"
+    },
+    {
+        "id": 467688,
+        "id_state": 1707,
+        "text": "Puerto Escondito",
+        "id_country": 82
+    },
+    {
+        "id": 467802,
+        "id_state": 1707,
+        "text": "Puerto Nuevo",
+        "id_country": 82
+    },
+    { "id": 467859, "id_state": 1707, "text": "Puerto Rico", "id_country": 82 },
+    { "id": 468003, "id_state": 1707, "text": "Purísima", "id_country": 82 },
+    {
+        "id": 468248,
+        "id_state": 1707,
+        "text": "Retiro de los Indios",
+        "id_country": 82,
+        "nameAve": "RETIRO DE LOS INDIOS(CORDOBA)"
+    },
+    {
+        "id": 468287,
+        "id_state": 1707,
+        "text": "Rincón Grande",
+        "id_country": 82
+    },
+    { "id": 468313, "id_state": 1707, "text": "Río Cedro", "id_country": 82 },
+    { "id": 468367, "id_state": 1707, "text": "Rivera", "id_country": 82 },
+    { "id": 468508, "id_state": 1707, "text": "Sabananueva", "id_country": 82 },
+    {
+        "id": 468557,
+        "id_state": 1707,
+        "text": "Sahagún",
+        "id_country": 82,
+        "nameAve": "SAHAGUN(CORDOBA)"
+    },
+    { "id": 468605, "id_state": 1707, "text": "Salitral", "id_country": 82 },
+    { "id": 468685, "id_state": 1707, "text": "San Andrés", "id_country": 82 },
+    {
+        "id": 468689,
+        "id_state": 1707,
+        "text": "San Andres de Sotavento",
+        "id_country": 82,
+        "nameAve": "SAN ANDRES DE SOTAVENTO(CORDOBA)"
+    },
+    {
+        "id": 468693,
+        "id_state": 1707,
+        "text": "San Antero",
+        "id_country": 82,
+        "nameAve": "SAN ANTERO(CORDOBA)"
+    },
+    {
+        "id": 468763,
+        "id_state": 1707,
+        "text": "San Bernardo",
+        "id_country": 82
+    },
+    {
+        "id": 468764,
+        "id_state": 1707,
+        "text": "San Bernardo del Viento",
+        "id_country": 82,
+        "nameAve": "SAN BERNARDO DEL VIENTO(CORDOBA)"
+    },
+    {
+        "id": 468779,
+        "id_state": 1707,
+        "text": "San Carlos",
+        "id_country": 82,
+        "nameAve": "SAN CARLOS(CORDOBA)"
+    },
+    { "id": 468839, "id_state": 1707, "text": "San Felipe", "id_country": 82 },
+    {
+        "id": 468866,
+        "id_state": 1707,
+        "text": "San Francisco",
+        "id_country": 82,
+        "nameAve": "SAN FRANCISCO(CORDOBA)"
+    },
+    { "id": 468994, "id_state": 1707, "text": "San Jose", "id_country": 82 },
+    {
+        "id": 469005,
+        "id_state": 1707,
+        "text": "San José de Canalete",
+        "id_country": 82
+    },
+    {
+        "id": 469273,
+        "id_state": 1707,
+        "text": "San Pelayo",
+        "id_country": 82,
+        "nameAve": "SAN PELAYO(CORDOBA)"
+    },
+    { "id": 469307, "id_state": 1707, "text": "San Roque", "id_country": 82 },
+    {
+        "id": 469323,
+        "id_state": 1707,
+        "text": "San Sebastián",
+        "id_country": 82
+    },
+    {
+        "id": 469393,
+        "id_state": 1707,
+        "text": "Santa Cecilia",
+        "id_country": 82
+    },
+    {
+        "id": 469405,
+        "id_state": 1707,
+        "text": "Santa Clara",
+        "id_country": 82,
+        "nameAve": "SANTA CLARA(CORDOBA)"
+    },
+    { "id": 469419, "id_state": 1707, "text": "Santa Cruz", "id_country": 82 },
+    {
+        "id": 469550,
+        "id_state": 1707,
+        "text": "Santa Lucia",
+        "id_country": 82,
+        "nameAve": "SANTA LUCIA(CORDOBA)"
+    },
+    { "id": 469562, "id_state": 1707, "text": "Santa María", "id_country": 82 },
+    { "id": 469719, "id_state": 1707, "text": "Santiago", "id_country": 82 },
+    {
+        "id": 469742,
+        "id_state": 1707,
+        "text": "Santo Domingo",
+        "id_country": 82
+    },
+    { "id": 469768, "id_state": 1707, "text": "San Vicente", "id_country": 82 },
+    { "id": 469867, "id_state": 1707, "text": "Serrapio", "id_country": 82 },
+    { "id": 470034, "id_state": 1707, "text": "Sitio Viejo", "id_country": 82 },
+    { "id": 470058, "id_state": 1707, "text": "Socorro", "id_country": 82 },
+    { "id": 470114, "id_state": 1707, "text": "Sta Marta", "id_country": 82 },
+    { "id": 470424, "id_state": 1707, "text": "Terán", "id_country": 82 },
+    { "id": 470473, "id_state": 1707, "text": "Tierra Alta", "id_country": 82 },
+    {
+        "id": 470499,
+        "id_state": 1707,
+        "text": "Tierralta",
+        "id_country": 82,
+        "nameAve": "TIERRALTA(CORDOBA)"
+    },
+    { "id": 470756, "id_state": 1707, "text": "Tres Marías", "id_country": 82 },
+    {
+        "id": 470820,
+        "id_state": 1707,
+        "text": "Tuchín",
+        "id_country": 82,
+        "nameAve": "TUCHIN(CORDOBA)"
+    },
+    {
+        "id": 470821,
+        "id_state": 1707,
+        "text": "Tuchin",
+        "id_country": 82,
+        "nameAve": "TUCHIN(CORDOBA)"
+    },
+    {
+        "id": 471017,
+        "id_state": 1707,
+        "text": "Valencia",
+        "id_country": 82,
+        "nameAve": "VALENCIA(CORDOBA)"
+    },
+    { "id": 471066, "id_state": 1707, "text": "Varital", "id_country": 82 },
+    { "id": 471140, "id_state": 1707, "text": "Venezuela", "id_country": 82 },
+    { "id": 471178, "id_state": 1707, "text": "Verástequi", "id_country": 82 },
+    { "id": 471231, "id_state": 1707, "text": "Victoria", "id_country": 82 },
+    {
+        "id": 471302,
+        "id_state": 1707,
+        "text": "Villafrancia",
+        "id_country": 82
+    },
+    { "id": 471356, "id_state": 1707, "text": "Villaneueva", "id_country": 82 },
+    { "id": 471463, "id_state": 1707, "text": "Volcanes", "id_country": 82 },
+    {
+        "id": 471469,
+        "id_state": 1707,
+        "text": "Vuelta del Horno",
+        "id_country": 82
+    },
+    { "id": 471592, "id_state": 1707, "text": "Yuca", "id_country": 82 },
+    { "id": 471639, "id_state": 1707, "text": "Zancibar", "id_country": 82 },
+    { "id": 471665, "id_state": 1707, "text": "Zapote", "id_country": 82 },
+    { "id": 471700, "id_state": 1707, "text": "Zumbador", "id_country": 82 },
+    {
+        "id": 790444,
+        "id_state": 1707,
+        "text": "Agua vivas",
+        "id_country": 82,
+        "nameAve": "AGUA VIVAS(CORDOBA)"
+    },
+    {
+        "id": 790472,
+        "id_state": 1707,
+        "text": "Arenal",
+        "id_country": 82,
+        "nameAve": "ARENAL(CORDOBA)"
+    },
+    {
+        "id": 790523,
+        "id_state": 1707,
+        "text": "Broquelito",
+        "id_country": 82,
+        "nameAve": "BROQUELITO(CORDOBA)"
+    },
+    {
+        "id": 790690,
+        "id_state": 1707,
+        "text": "El barsal",
+        "id_country": 82,
+        "nameAve": "EL BARSAL(CORDOBA)"
+    },
+    {
+        "id": 790701,
+        "id_state": 1707,
+        "text": "El cerrito",
+        "id_country": 82,
+        "nameAve": "EL CERRITO(CORDOBA)"
+    },
+    {
+        "id": 790705,
+        "id_state": 1707,
+        "text": "El cocuelo",
+        "id_country": 82,
+        "nameAve": "EL COCUELO(CORDOBA)"
+    },
+    {
+        "id": 790712,
+        "id_state": 1707,
+        "text": "El doce",
+        "id_country": 82,
+        "nameAve": "EL DOCE(CORDOBA)"
+    },
+    {
+        "id": 790717,
+        "id_state": 1707,
+        "text": "El floral",
+        "id_country": 82,
+        "nameAve": "EL FLORAL(CORDOBA)"
+    },
+    {
+        "id": 790751,
+        "id_state": 1707,
+        "text": "El quince",
+        "id_country": 82,
+        "nameAve": "EL QUINCE(CORDOBA)"
+    },
+    {
+        "id": 790756,
+        "id_state": 1707,
+        "text": "El sabanal",
+        "id_country": 82,
+        "nameAve": "EL SABANAL(CORDOBA)"
+    },
+    {
+        "id": 790761,
+        "id_state": 1707,
+        "text": "El tapao",
+        "id_country": 82,
+        "nameAve": "EL TAPAO(CORDOBA)"
+    },
+    {
+        "id": 790768,
+        "id_state": 1707,
+        "text": "El vidrial",
+        "id_country": 82,
+        "nameAve": "EL VIDRIAL(CORDOBA)"
+    },
+    {
+        "id": 790770,
+        "id_state": 1707,
+        "text": "Ensenada de la hamaca",
+        "id_country": 82,
+        "nameAve": "ENSENADA DE LA HAMACA(CORDOBA)"
+    },
+    {
+        "id": 790814,
+        "id_state": 1707,
+        "text": "Guasimal",
+        "id_country": 82,
+        "nameAve": "GUASIMAL(CORDOBA)"
+    },
+    {
+        "id": 790817,
+        "id_state": 1707,
+        "text": "Guateque",
+        "id_country": 82,
+        "nameAve": "GUATEQUE(CORDOBA)"
+    },
+    {
+        "id": 790836,
+        "id_state": 1707,
+        "text": "Jaraquiel",
+        "id_country": 82,
+        "nameAve": "JARAQUIEL(CORDOBA)"
+    },
+    {
+        "id": 790849,
+        "id_state": 1707,
+        "text": "La apartada",
+        "id_country": 82,
+        "nameAve": "LA APARTADA(CORDOBA)"
+    },
+    {
+        "id": 790880,
+        "id_state": 1707,
+        "text": "La esperanza",
+        "id_country": 82,
+        "nameAve": "LA ESPERANZA(CORDOBA)"
+    },
+    {
+        "id": 790883,
+        "id_state": 1707,
+        "text": "La florida",
+        "id_country": 82,
+        "nameAve": "LA FLORIDA(CORDOBA)"
+    },
+    {
+        "id": 790895,
+        "id_state": 1707,
+        "text": "La lucha",
+        "id_country": 82,
+        "nameAve": "LA LUCHA(CORDOBA)"
+    },
+    {
+        "id": 790897,
+        "id_state": 1707,
+        "text": "La manta",
+        "id_country": 82,
+        "nameAve": "LA MANTA(CORDOBA)"
+    },
+    {
+        "id": 790929,
+        "id_state": 1707,
+        "text": "La victoria",
+        "id_country": 82,
+        "nameAve": "LA VICTORIA(CORDOBA)"
+    },
+    {
+        "id": 790953,
+        "id_state": 1707,
+        "text": "Las palomas",
+        "id_country": 82,
+        "nameAve": "LAS PALOMAS(CORDOBA)"
+    },
+    {
+        "id": 790958,
+        "id_state": 1707,
+        "text": "Leticia - el tronco",
+        "id_country": 82,
+        "nameAve": "LETICIA - EL TRONCO(CORDOBA)"
+    },
+    {
+        "id": 790967,
+        "id_state": 1707,
+        "text": "Loma verde",
+        "id_country": 82,
+        "nameAve": "LOMA VERDE(CORDOBA)"
+    },
+    {
+        "id": 790983,
+        "id_state": 1707,
+        "text": "Los pantanos",
+        "id_country": 82,
+        "nameAve": "LOS PANTANOS(CORDOBA)"
+    },
+    {
+        "id": 790999,
+        "id_state": 1707,
+        "text": "Maquencal",
+        "id_country": 82,
+        "nameAve": "MAQUENCAL(CORDOBA)"
+    },
+    {
+        "id": 791000,
+        "id_state": 1707,
+        "text": "Maracayo",
+        "id_country": 82,
+        "nameAve": "MARACAYO(CORDOBA)"
+    },
+    {
+        "id": 791007,
+        "id_state": 1707,
+        "text": "Martinica",
+        "id_country": 82,
+        "nameAve": "MARTINICA(CORDOBA)"
+    },
+    {
+        "id": 791010,
+        "id_state": 1707,
+        "text": "Matamoros",
+        "id_country": 82,
+        "nameAve": "MATAMOROS(CORDOBA)"
+    },
+    {
+        "id": 791028,
+        "id_state": 1707,
+        "text": "Mochilas",
+        "id_country": 82,
+        "nameAve": "MOCHILAS(CORDOBA)"
+    },
+    {
+        "id": 791040,
+        "id_state": 1707,
+        "text": "Morindo central",
+        "id_country": 82,
+        "nameAve": "MORINDO CENTRAL(CORDOBA)"
+    },
+    {
+        "id": 791054,
+        "id_state": 1707,
+        "text": "Nueva esperanza",
+        "id_country": 82,
+        "nameAve": "NUEVA ESPERANZA(CORDOBA)"
+    },
+    {
+        "id": 791056,
+        "id_state": 1707,
+        "text": "Nueva lucia",
+        "id_country": 82,
+        "nameAve": "NUEVA LUCIA(CORDOBA)"
+    },
+    {
+        "id": 791063,
+        "id_state": 1707,
+        "text": "Nuevo paraiso",
+        "id_country": 82,
+        "nameAve": "NUEVO PARAISO(CORDOBA)"
+    },
+    {
+        "id": 791065,
+        "id_state": 1707,
+        "text": "Nuevos horizontes",
+        "id_country": 82,
+        "nameAve": "NUEVOS HORIZONTES(CORDOBA)"
+    },
+    {
+        "id": 791085,
+        "id_state": 1707,
+        "text": "Palmito picao",
+        "id_country": 82,
+        "nameAve": "PALMITO PICAO(CORDOBA)"
+    },
+    {
+        "id": 791087,
+        "id_state": 1707,
+        "text": "Palotal",
+        "id_country": 82,
+        "nameAve": "PALOTAL(CORDOBA)"
+    },
+    {
+        "id": 791097,
+        "id_state": 1707,
+        "text": "Patio bonito",
+        "id_country": 82,
+        "nameAve": "PATIO BONITO(CORDOBA)"
+    },
+    {
+        "id": 791145,
+        "id_state": 1707,
+        "text": "Pueblo buho",
+        "id_country": 82,
+        "nameAve": "PUEBLO BUHO(CORDOBA)"
+    },
+    {
+        "id": 791148,
+        "id_state": 1707,
+        "text": "Pueblo seco",
+        "id_country": 82,
+        "nameAve": "PUEBLO SECO(CORDOBA)"
+    },
+    {
+        "id": 791162,
+        "id_state": 1707,
+        "text": "Puerto libertador",
+        "id_country": 82,
+        "nameAve": "PUERTO LIBERTADOR(CORDOBA)"
+    },
+    {
+        "id": 791176,
+        "id_state": 1707,
+        "text": "Purisima de la concepcion",
+        "id_country": 82,
+        "nameAve": "PURISIMA DE LA CONCEPCION(CORDOBA)"
+    },
+    {
+        "id": 791220,
+        "id_state": 1707,
+        "text": "San anterito",
+        "id_country": 82,
+        "nameAve": "SAN ANTERITO(CORDOBA)"
+    },
+    {
+        "id": 791238,
+        "id_state": 1707,
+        "text": "San isidro",
+        "id_country": 82,
+        "nameAve": "SAN ISIDRO(CORDOBA)"
+    },
+    {
+        "id": 791244,
+        "id_state": 1707,
+        "text": "San jose de ure",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DE URE(CORDOBA)"
+    },
+    {
+        "id": 791282,
+        "id_state": 1707,
+        "text": "Santa isabel",
+        "id_country": 82,
+        "nameAve": "SANTA ISABEL(CORDOBA)"
+    },
+    {
+        "id": 791341,
+        "id_state": 1707,
+        "text": "Tenerife",
+        "id_country": 82,
+        "nameAve": "TENERIFE(CORDOBA)"
+    },
+    {
+        "id": 791367,
+        "id_state": 1707,
+        "text": "Tres palmas",
+        "id_country": 82,
+        "nameAve": "TRES PALMAS(CORDOBA)"
+    },
+    {
+        "id": 791368,
+        "id_state": 1707,
+        "text": "Tres piedras",
+        "id_country": 82,
+        "nameAve": "TRES PIEDRAS(CORDOBA)"
+    },
+    {
+        "id": 791414,
+        "id_state": 1707,
+        "text": "Ya la lleva",
+        "id_country": 82,
+        "nameAve": "YA LA LLEVA(CORDOBA)"
+    },
+    { "id": 451083, "id_state": 1708, "text": "Agua Bonita", "id_country": 82 },
+    { "id": 451085, "id_state": 1708, "text": "Aguabonita", "id_country": 82 },
+    { "id": 451636, "id_state": 1708, "text": "Arará", "id_country": 82 },
+    { "id": 452065, "id_state": 1708, "text": "Barrancón", "id_country": 82 },
+    {
+        "id": 452073,
+        "id_state": 1708,
+        "text": "Barranquilla",
+        "id_country": 82
+    },
+    {
+        "id": 452428,
+        "id_state": 1708,
+        "text": "Bocas de Buenos Aires",
+        "id_country": 82
+    },
+    {
+        "id": 452927,
+        "id_state": 1708,
+        "text": "Calamar",
+        "id_country": 82,
+        "nameAve": "CALAMAR(GUAVIARE)"
+    },
+    {
+        "id": 457672,
+        "id_state": 1708,
+        "text": "El Retorno",
+        "id_country": 82,
+        "nameAve": "EL RETORNO(GUAVIARE)"
+    },
+    { "id": 462841, "id_state": 1708, "text": "Las Brisas", "id_country": 82 },
+    {
+        "id": 465349,
+        "id_state": 1708,
+        "text": "Miraflores",
+        "id_country": 82,
+        "nameAve": "MIRAFLORES(GUAVIARE)"
+    },
+    {
+        "id": 469018,
+        "id_state": 1708,
+        "text": "San José del Guaviare",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DEL GUAVIARE(GUAVIARE)"
+    },
+    {
+        "id": 790516,
+        "id_state": 1708,
+        "text": "Boqueron",
+        "id_country": 82,
+        "nameAve": "BOQUERON(GUAVIARE)"
+    },
+    {
+        "id": 790532,
+        "id_state": 1708,
+        "text": "Cachicamo",
+        "id_country": 82,
+        "nameAve": "CACHICAMO(GUAVIARE)"
+    },
+    {
+        "id": 790548,
+        "id_state": 1708,
+        "text": "Cano blanco ii",
+        "id_country": 82,
+        "nameAve": "CANO BLANCO II(GUAVIARE)"
+    },
+    {
+        "id": 790552,
+        "id_state": 1708,
+        "text": "Caracol",
+        "id_country": 82,
+        "nameAve": "CARACOL(GUAVIARE)"
+    },
+    {
+        "id": 790575,
+        "id_state": 1708,
+        "text": "Cerro azul",
+        "id_country": 82,
+        "nameAve": "CERRO AZUL(GUAVIARE)"
+    },
+    {
+        "id": 790582,
+        "id_state": 1708,
+        "text": "Charras",
+        "id_country": 82,
+        "nameAve": "CHARRAS(GUAVIARE)"
+    },
+    {
+        "id": 790694,
+        "id_state": 1708,
+        "text": "El capricho",
+        "id_country": 82,
+        "nameAve": "EL CAPRICHO(GUAVIARE)"
+    },
+    {
+        "id": 790710,
+        "id_state": 1708,
+        "text": "El diamante",
+        "id_country": 82,
+        "nameAve": "EL DIAMANTE(GUAVIARE)"
+    },
+    {
+        "id": 790731,
+        "id_state": 1708,
+        "text": "El morro",
+        "id_country": 82,
+        "nameAve": "EL MORRO(GUAVIARE)"
+    },
+    {
+        "id": 790753,
+        "id_state": 1708,
+        "text": "El refugio",
+        "id_country": 82,
+        "nameAve": "EL REFUGIO(GUAVIARE)"
+    },
+    {
+        "id": 790763,
+        "id_state": 1708,
+        "text": "El triunfo",
+        "id_country": 82,
+        "nameAve": "EL TRIUNFO(GUAVIARE)"
+    },
+    {
+        "id": 790798,
+        "id_state": 1708,
+        "text": "Guacamayas",
+        "id_country": 82,
+        "nameAve": "GUACAMAYAS(GUAVIARE)"
+    },
+    {
+        "id": 790864,
+        "id_state": 1708,
+        "text": "La carpa",
+        "id_country": 82,
+        "nameAve": "LA CARPA(GUAVIARE)"
+    },
+    {
+        "id": 790866,
+        "id_state": 1708,
+        "text": "La catalina",
+        "id_country": 82,
+        "nameAve": "LA CATALINA(GUAVIARE)"
+    },
+    {
+        "id": 790877,
+        "id_state": 1708,
+        "text": "La esmeralda",
+        "id_country": 82,
+        "nameAve": "LA ESMERALDA(GUAVIARE)"
+    },
+    {
+        "id": 790937,
+        "id_state": 1708,
+        "text": "Las acacias",
+        "id_country": 82,
+        "nameAve": "LAS ACACIAS(GUAVIARE)"
+    },
+    {
+        "id": 791027,
+        "id_state": 1708,
+        "text": "Miralindo",
+        "id_country": 82,
+        "nameAve": "MIRALINDO(GUAVIARE)"
+    },
+    {
+        "id": 791030,
+        "id_state": 1708,
+        "text": "Mocuare",
+        "id_country": 82,
+        "nameAve": "MOCUARE(GUAVIARE)"
+    },
+    {
+        "id": 791115,
+        "id_state": 1708,
+        "text": "Picalojo",
+        "id_country": 82,
+        "nameAve": "PICALOJO(GUAVIARE)"
+    },
+    {
+        "id": 791156,
+        "id_state": 1708,
+        "text": "Puerto arturo",
+        "id_country": 82,
+        "nameAve": "PUERTO ARTURO(GUAVIARE)"
+    },
+    {
+        "id": 791166,
+        "id_state": 1708,
+        "text": "Puerto nuevo",
+        "id_country": 82,
+        "nameAve": "PUERTO NUEVO(GUAVIARE)"
+    },
+    {
+        "id": 791187,
+        "id_state": 1708,
+        "text": "Raudal del guayabero",
+        "id_country": 82,
+        "nameAve": "RAUDAL DEL GUAYABERO(GUAVIARE)"
+    },
+    {
+        "id": 791190,
+        "id_state": 1708,
+        "text": "Resbalon",
+        "id_country": 82,
+        "nameAve": "RESBALON(GUAVIARE)"
+    },
+    {
+        "id": 791206,
+        "id_state": 1708,
+        "text": "Sabanas de la fuga",
+        "id_country": 82,
+        "nameAve": "SABANAS DE LA FUGA(GUAVIARE)"
+    },
+    {
+        "id": 791299,
+        "id_state": 1708,
+        "text": "Santo domingo",
+        "id_country": 82,
+        "nameAve": "SANTO DOMINGO(GUAVIARE)"
+    },
+    {
+        "id": 791362,
+        "id_state": 1708,
+        "text": "Tomachipan",
+        "id_country": 82,
+        "nameAve": "TOMACHIPAN(GUAVIARE)"
+    },
+    {
+        "id": 791393,
+        "id_state": 1708,
+        "text": "Villa alejandra 2",
+        "id_country": 82,
+        "nameAve": "VILLA ALEJANDRA 2(GUAVIARE)"
+    },
+    {
+        "id": 791394,
+        "id_state": 1708,
+        "text": "Villa alejandra",
+        "id_country": 82,
+        "nameAve": "VILLA ALEJANDRA(GUAVIARE)"
+    },
+    { "id": 451767, "id_state": 1709, "text": "Arrecifal", "id_country": 82 },
+    {
+        "id": 452060,
+        "id_state": 1709,
+        "text": "Barranco Minas",
+        "id_country": 82
+    },
+    {
+        "id": 452061,
+        "id_state": 1709,
+        "text": "Barranco Murciélago",
+        "id_country": 82
+    },
+    { "id": 452234, "id_state": 1709, "text": "Bellavista", "id_country": 82 },
+    { "id": 452635, "id_state": 1709, "text": "Brujas", "id_country": 82 },
+    { "id": 452682, "id_state": 1709, "text": "Buenavista", "id_country": 82 },
+    { "id": 453452, "id_state": 1709, "text": "Carlos", "id_country": 82 },
+    {
+        "id": 460097,
+        "id_state": 1709,
+        "text": "Inírida",
+        "id_country": 82,
+        "nameAve": "INIRIDA(GUAINIA)"
+    },
+    {
+        "id": 467710,
+        "id_state": 1709,
+        "text": "Puerto Inírida",
+        "id_country": 82
+    },
+    {
+        "id": 469591,
+        "id_state": 1709,
+        "text": "Santa Martha",
+        "id_country": 82
+    },
+    { "id": 469641, "id_state": 1709, "text": "Santa Rita", "id_country": 82 },
+    {
+        "id": 790492,
+        "id_state": 1709,
+        "text": "Barrancominas",
+        "id_country": 82,
+        "nameAve": "BARRANCOMINAS(GUAINIA)"
+    },
+    {
+        "id": 790603,
+        "id_state": 1709,
+        "text": "Coayare",
+        "id_country": 82,
+        "nameAve": "COAYARE(GUAINIA)"
+    },
+    {
+        "id": 790604,
+        "id_state": 1709,
+        "text": "Coco nuevo",
+        "id_country": 82,
+        "nameAve": "COCO NUEVO(GUAINIA)"
+    },
+    {
+        "id": 790605,
+        "id_state": 1709,
+        "text": "Coco viejo",
+        "id_country": 82,
+        "nameAve": "COCO VIEJO(GUAINIA)"
+    },
+    {
+        "id": 790830,
+        "id_state": 1709,
+        "text": "Inspeccion barranco tigre",
+        "id_country": 82,
+        "nameAve": "INSPECCION BARRANCO TIGRE(GUAINIA)"
+    },
+    {
+        "id": 791191,
+        "id_state": 1709,
+        "text": "Resguardo cacahual rio atabapo",
+        "id_country": 82,
+        "nameAve": "RESGUARDO CACAHUAL RIO ATABAPO(GUAINIA)"
+    },
+    {
+        "id": 791288,
+        "id_state": 1709,
+        "text": "Santa rosa",
+        "id_country": 82,
+        "nameAve": "SANTA ROSA(GUAINIA)"
+    },
+    {
+        "id": 791421,
+        "id_state": 1709,
+        "text": "Yuri",
+        "id_country": 82,
+        "nameAve": "YURI(GUAINIA)"
+    },
+    {
+        "id": 451042,
+        "id_state": 1710,
+        "text": "Acevedo",
+        "id_country": 82,
+        "nameAve": "ACEVEDO(HUILA)"
+    },
+    {
+        "id": 451066,
+        "id_state": 1710,
+        "text": "Agrado",
+        "id_country": 82,
+        "nameAve": "AGRADO(HUILA)"
+    },
+    { "id": 451081, "id_state": 1710, "text": "Agua Bonita", "id_country": 82 },
+    {
+        "id": 451091,
+        "id_state": 1710,
+        "text": "Aguacaliente",
+        "id_country": 82
+    },
+    {
+        "id": 451133,
+        "id_state": 1710,
+        "text": "Agua Hedionda",
+        "id_country": 82
+    },
+    {
+        "id": 451165,
+        "id_state": 1710,
+        "text": "Aguas Claras",
+        "id_country": 82
+    },
+    {
+        "id": 451209,
+        "id_state": 1710,
+        "text": "Aipe",
+        "id_country": 82,
+        "nameAve": "AIPE(HUILA)"
+    },
+    { "id": 451224, "id_state": 1710, "text": "Albania", "id_country": 82 },
+    { "id": 451262, "id_state": 1710, "text": "Alemania", "id_country": 82 },
+    {
+        "id": 451282,
+        "id_state": 1710,
+        "text": "Algeciras",
+        "id_country": 82,
+        "nameAve": "ALGECIRAS(HUILA)"
+    },
+    {
+        "id": 451340,
+        "id_state": 1710,
+        "text": "Altamira",
+        "id_country": 82,
+        "nameAve": "ALTAMIRA(HUILA)"
+    },
+    {
+        "id": 451370,
+        "id_state": 1710,
+        "text": "Alto de Garzón",
+        "id_country": 82
+    },
+    { "id": 451478, "id_state": 1710, "text": "Amborco", "id_country": 82 },
+    { "id": 451507, "id_state": 1710, "text": "Anayaco", "id_country": 82 },
+    { "id": 451519, "id_state": 1710, "text": "Andalucía", "id_country": 82 },
+    { "id": 451646, "id_state": 1710, "text": "Arauca", "id_country": 82 },
+    { "id": 451727, "id_state": 1710, "text": "Argentina", "id_country": 82 },
+    { "id": 451747, "id_state": 1710, "text": "Armenia", "id_country": 82 },
+    { "id": 451760, "id_state": 1710, "text": "Arrayán", "id_country": 82 },
+    { "id": 451909, "id_state": 1710, "text": "Bajo Cielo", "id_country": 82 },
+    {
+        "id": 451997,
+        "id_state": 1710,
+        "text": "Baraya",
+        "id_country": 82,
+        "nameAve": "BARAYA(HUILA)"
+    },
+    { "id": 452127, "id_state": 1710, "text": "Batalla", "id_country": 82 },
+    { "id": 452138, "id_state": 1710, "text": "Batea", "id_country": 82 },
+    { "id": 452175, "id_state": 1710, "text": "Belén", "id_country": 82 },
+    {
+        "id": 452182,
+        "id_state": 1710,
+        "text": "Belén Pitalito",
+        "id_country": 82
+    },
+    { "id": 452294, "id_state": 1710, "text": "Betania", "id_country": 82 },
+    { "id": 452467, "id_state": 1710, "text": "Bogotá", "id_country": 82 },
+    { "id": 452638, "id_state": 1710, "text": "Bruselas", "id_country": 82 },
+    {
+        "id": 452864,
+        "id_state": 1710,
+        "text": "Caguán",
+        "id_country": 82,
+        "nameAve": "CAGUAN(HUILA)"
+    },
+    { "id": 452975, "id_state": 1710, "text": "Calle", "id_country": 82 },
+    {
+        "id": 453106,
+        "id_state": 1710,
+        "text": "Campoalegre",
+        "id_country": 82,
+        "nameAve": "CAMPOALEGRE(HUILA)"
+    },
+    { "id": 453371, "id_state": 1710, "text": "Caracal", "id_country": 82 },
+    { "id": 453565, "id_state": 1710, "text": "Casablanca", "id_country": 82 },
+    {
+        "id": 454284,
+        "id_state": 1710,
+        "text": "Chapinero",
+        "id_country": 82,
+        "nameAve": "CHAPINERO(HUILA)"
+    },
+    {
+        "id": 454694,
+        "id_state": 1710,
+        "text": "Colombia",
+        "id_country": 82,
+        "nameAve": "COLOMBIA(HUILA)"
+    },
+    { "id": 455563, "id_state": 1710, "text": "Dos Cominos", "id_country": 82 },
+    { "id": 455583, "id_state": 1710, "text": "Dujos", "id_country": 82 },
+    { "id": 455620, "id_state": 1710, "text": "El Achiote", "id_country": 82 },
+    { "id": 455624, "id_state": 1710, "text": "El Agrado", "id_country": 82 },
+    { "id": 455673, "id_state": 1710, "text": "El Altico", "id_country": 82 },
+    { "id": 455823, "id_state": 1710, "text": "El Boquerón", "id_country": 82 },
+    { "id": 455837, "id_state": 1710, "text": "El Bosque", "id_country": 82 },
+    { "id": 456179, "id_state": 1710, "text": "El Chuzo", "id_country": 82 },
+    { "id": 456563, "id_state": 1710, "text": "El Espinal", "id_country": 82 },
+    { "id": 456749, "id_state": 1710, "text": "El Hobo", "id_country": 82 },
+    {
+        "id": 456782,
+        "id_state": 1710,
+        "text": "Elías",
+        "id_country": 82,
+        "nameAve": "ELIAS(HUILA)"
+    },
+    { "id": 456800, "id_state": 1710, "text": "El Isno", "id_country": 82 },
+    { "id": 457334, "id_state": 1710, "text": "El Pedregal", "id_country": 82 },
+    { "id": 457374, "id_state": 1710, "text": "El Perú", "id_country": 82 },
+    { "id": 457684, "id_state": 1710, "text": "El Rincón", "id_country": 82 },
+    { "id": 458122, "id_state": 1710, "text": "El Valle", "id_country": 82 },
+    { "id": 458152, "id_state": 1710, "text": "El Vergel", "id_country": 82 },
+    { "id": 458160, "id_state": 1710, "text": "El Verjel", "id_country": 82 },
+    {
+        "id": 458437,
+        "id_state": 1710,
+        "text": "Flor Amarilla",
+        "id_country": 82
+    },
+    {
+        "id": 458495,
+        "id_state": 1710,
+        "text": "Fortalecilla",
+        "id_country": 82
+    },
+    {
+        "id": 458496,
+        "id_state": 1710,
+        "text": "Fortalecillas",
+        "id_country": 82,
+        "nameAve": "FORTALECILLAS(HUILA)"
+    },
+    { "id": 458677, "id_state": 1710, "text": "Gardonal", "id_country": 82 },
+    {
+        "id": 458690,
+        "id_state": 1710,
+        "text": "Garzón",
+        "id_country": 82,
+        "nameAve": "GARZON(HUILA)"
+    },
+    {
+        "id": 458727,
+        "id_state": 1710,
+        "text": "Gigante",
+        "id_country": 82,
+        "nameAve": "GIGANTE(HUILA)"
+    },
+    {
+        "id": 458900,
+        "id_state": 1710,
+        "text": "Guadalupe",
+        "id_country": 82,
+        "nameAve": "GUADALUPE(HUILA)"
+    },
+    { "id": 459012, "id_state": 1710, "text": "Guamito", "id_country": 82 },
+    { "id": 459047, "id_state": 1710, "text": "Guapotón", "id_country": 82 },
+    { "id": 459885, "id_state": 1710, "text": "Higuillo", "id_country": 82 },
+    {
+        "id": 459897,
+        "id_state": 1710,
+        "text": "Hobo",
+        "id_country": 82,
+        "nameAve": "HOBO(HUILA)"
+    },
+    { "id": 459923, "id_state": 1710, "text": "Honduras", "id_country": 82 },
+    {
+        "id": 460120,
+        "id_state": 1710,
+        "text": "Íquira",
+        "id_country": 82,
+        "nameAve": "IQUIRA(HUILA)"
+    },
+    {
+        "id": 460172,
+        "id_state": 1710,
+        "text": "Isnos",
+        "id_country": 82,
+        "nameAve": "ISNOS(HUILA)"
+    },
+    { "id": 460247, "id_state": 1710, "text": "Japón", "id_country": 82 },
+    {
+        "id": 460711,
+        "id_state": 1710,
+        "text": "La Argentina",
+        "id_country": 82,
+        "nameAve": "LA ARGENTINA(HUILA)"
+    },
+    { "id": 460910, "id_state": 1710, "text": "La Calderón", "id_country": 82 },
+    { "id": 461045, "id_state": 1710, "text": "La Ceja", "id_country": 82 },
+    { "id": 461173, "id_state": 1710, "text": "La Coneja", "id_country": 82 },
+    {
+        "id": 461375,
+        "id_state": 1710,
+        "text": "La Esmeralda",
+        "id_country": 82
+    },
+    {
+        "id": 461445,
+        "id_state": 1710,
+        "text": "La Estrellita",
+        "id_country": 82
+    },
+    { "id": 461709, "id_state": 1710, "text": "Lagunillas", "id_country": 82 },
+    { "id": 461764, "id_state": 1710, "text": "La Hondura", "id_country": 82 },
+    { "id": 461828, "id_state": 1710, "text": "La Jagua", "id_country": 82 },
+    { "id": 462070, "id_state": 1710, "text": "La Maporita", "id_country": 82 },
+    { "id": 462161, "id_state": 1710, "text": "La Meseta", "id_country": 82 },
+    { "id": 462307, "id_state": 1710, "text": "La Palma", "id_country": 82 },
+    {
+        "id": 462474,
+        "id_state": 1710,
+        "text": "La Plata",
+        "id_country": 82,
+        "nameAve": "LA PLATA(HUILA)"
+    },
+    { "id": 462837, "id_state": 1710, "text": "Las Brisas", "id_country": 82 },
+    { "id": 463081, "id_state": 1710, "text": "Las Lajas", "id_country": 82 },
+    { "id": 463199, "id_state": 1710, "text": "Las Nieves", "id_country": 82 },
+    { "id": 463250, "id_state": 1710, "text": "Las Palmas", "id_country": 82 },
+    { "id": 463470, "id_state": 1710, "text": "La Tribuna", "id_country": 82 },
+    { "id": 463673, "id_state": 1710, "text": "La Virginia", "id_country": 82 },
+    { "id": 464401, "id_state": 1710, "text": "Los Pinos", "id_country": 82 },
+    { "id": 464654, "id_state": 1710, "text": "Maito", "id_country": 82 },
+    { "id": 464813, "id_state": 1710, "text": "Manzanares", "id_country": 82 },
+    { "id": 465225, "id_state": 1710, "text": "Mercedes", "id_country": 82 },
+    { "id": 465273, "id_state": 1710, "text": "México", "id_country": 82 },
+    { "id": 465481, "id_state": 1710, "text": "Monserrate", "id_country": 82 },
+    { "id": 465697, "id_state": 1710, "text": "Motilón", "id_country": 82 },
+    { "id": 465735, "id_state": 1710, "text": "Mundo Viejo", "id_country": 82 },
+    { "id": 465810, "id_state": 1710, "text": "Naranjal", "id_country": 82 },
+    {
+        "id": 465841,
+        "id_state": 1710,
+        "text": "Nátaga",
+        "id_country": 82,
+        "nameAve": "NATAGA(HUILA)"
+    },
+    { "id": 465844, "id_state": 1710, "text": "Nátaja", "id_country": 82 },
+    {
+        "id": 465879,
+        "id_state": 1710,
+        "text": "Neiva",
+        "id_country": 82,
+        "nameAve": "NEIVA(HUILA)"
+    },
+    { "id": 465897, "id_state": 1710, "text": "Nila", "id_country": 82 },
+    {
+        "id": 466092,
+        "id_state": 1710,
+        "text": "Oporapa",
+        "id_country": 82,
+        "nameAve": "OPORAPA(HUILA)"
+    },
+    { "id": 466142, "id_state": 1710, "text": "Oso", "id_country": 82 },
+    { "id": 466150, "id_state": 1710, "text": "Otás", "id_country": 82 },
+    { "id": 466169, "id_state": 1710, "text": "Pacarní", "id_country": 82 },
+    {
+        "id": 466197,
+        "id_state": 1710,
+        "text": "Paicol",
+        "id_country": 82,
+        "nameAve": "PAICOL(HUILA)"
+    },
+    {
+        "id": 466249,
+        "id_state": 1710,
+        "text": "Palermo",
+        "id_country": 82,
+        "nameAve": "PALERMO(HUILA)"
+    },
+    {
+        "id": 466252,
+        "id_state": 1710,
+        "text": "Palestina",
+        "id_country": 82,
+        "nameAve": "PALESTINA(HUILA)"
+    },
+    { "id": 466353, "id_state": 1710, "text": "Palmira", "id_country": 82 },
+    { "id": 466745, "id_state": 1710, "text": "Pedregoso", "id_country": 82 },
+    { "id": 466849, "id_state": 1710, "text": "Peralta", "id_country": 82 },
+    { "id": 467074, "id_state": 1710, "text": "Pitajayo", "id_country": 82 },
+    {
+        "id": 467078,
+        "id_state": 1710,
+        "text": "Pital",
+        "id_country": 82,
+        "nameAve": "PITAL(HUILA)"
+    },
+    {
+        "id": 467082,
+        "id_state": 1710,
+        "text": "Pitalito",
+        "id_country": 82,
+        "nameAve": "PITALITO(HUILA)"
+    },
+    { "id": 467149, "id_state": 1710, "text": "Plata Vieja", "id_country": 82 },
+    { "id": 467324, "id_state": 1710, "text": "Potrerillo", "id_country": 82 },
+    { "id": 467335, "id_state": 1710, "text": "Potrerito", "id_country": 82 },
+    {
+        "id": 468368,
+        "id_state": 1710,
+        "text": "Rivera",
+        "id_country": 82,
+        "nameAve": "RIVERA(HUILA)"
+    },
+    {
+        "id": 468569,
+        "id_state": 1710,
+        "text": "Saladoblanco",
+        "id_country": 82,
+        "nameAve": "SALADOBLANCO(HUILA)"
+    },
+    { "id": 468648, "id_state": 1710, "text": "San Adolfo", "id_country": 82 },
+    {
+        "id": 468652,
+        "id_state": 1710,
+        "text": "San Agustín",
+        "id_country": 82,
+        "nameAve": "SAN AGUSTIN(HUILA)"
+    },
+    {
+        "id": 468735,
+        "id_state": 1710,
+        "text": "San Augustín",
+        "id_country": 82
+    },
+    {
+        "id": 469010,
+        "id_state": 1710,
+        "text": "San José de Isnos",
+        "id_country": 82
+    },
+    {
+        "id": 469106,
+        "id_state": 1710,
+        "text": "San Luis",
+        "id_country": 82,
+        "nameAve": "SAN LUIS(HUILA)"
+    },
+    { "id": 469347, "id_state": 1710, "text": "Santa Ana", "id_country": 82 },
+    { "id": 469504, "id_state": 1710, "text": "Santa Inés", "id_country": 82 },
+    {
+        "id": 469559,
+        "id_state": 1710,
+        "text": "Santa María",
+        "id_country": 82,
+        "nameAve": "SANTA MARIA(HUILA)"
+    },
+    {
+        "id": 469683,
+        "id_state": 1710,
+        "text": "Santa Rosalía de Guagua",
+        "id_country": 82
+    },
+    {
+        "id": 470126,
+        "id_state": 1710,
+        "text": "Suaza",
+        "id_country": 82,
+        "nameAve": "SUAZA(HUILA)"
+    },
+    {
+        "id": 470355,
+        "id_state": 1710,
+        "text": "Tarqui",
+        "id_country": 82,
+        "nameAve": "TARQUI(HUILA)"
+    },
+    {
+        "id": 470393,
+        "id_state": 1710,
+        "text": "Tello",
+        "id_country": 82,
+        "nameAve": "TELLO(HUILA)"
+    },
+    {
+        "id": 470440,
+        "id_state": 1710,
+        "text": "Teruel",
+        "id_country": 82,
+        "nameAve": "TERUEL(HUILA)"
+    },
+    {
+        "id": 470441,
+        "id_state": 1710,
+        "text": "Tesalia",
+        "id_country": 82,
+        "nameAve": "TESALIA(HUILA)"
+    },
+    {
+        "id": 470529,
+        "id_state": 1710,
+        "text": "Timaná",
+        "id_country": 82,
+        "nameAve": "TIMANA(HUILA)"
+    },
+    {
+        "id": 470695,
+        "id_state": 1710,
+        "text": "Zanjón del Totumo",
+        "id_country": 82
+    },
+    { "id": 471029, "id_state": 1710, "text": "Valle", "id_country": 82 },
+    {
+        "id": 471094,
+        "id_state": 1710,
+        "text": "Vegalarga",
+        "id_country": 82,
+        "nameAve": "VEGALARGA(HUILA)"
+    },
+    { "id": 471143, "id_state": 1710, "text": "Ventanas", "id_country": 82 },
+    { "id": 471200, "id_state": 1710, "text": "Vergel", "id_country": 82 },
+    {
+        "id": 471414,
+        "id_state": 1710,
+        "text": "Villavieja",
+        "id_country": 82,
+        "nameAve": "VILLAVIEJA(HUILA)"
+    },
+    {
+        "id": 471500,
+        "id_state": 1710,
+        "text": "Yaguará",
+        "id_country": 82,
+        "nameAve": "YAGUARA(HUILA)"
+    },
+    { "id": 471559, "id_state": 1710, "text": "Yeguera", "id_country": 82 },
+    {
+        "id": 471697,
+        "id_state": 1710,
+        "text": "Zuluaga",
+        "id_country": 82,
+        "nameAve": "ZULUAGA(HUILA)"
+    },
+    {
+        "id": 790448,
+        "id_state": 1710,
+        "text": "Aipecito",
+        "id_country": 82,
+        "nameAve": "AIPECITO(HUILA)"
+    },
+    {
+        "id": 790568,
+        "id_state": 1710,
+        "text": "Cedral",
+        "id_country": 82,
+        "nameAve": "CEDRAL(HUILA)"
+    },
+    {
+        "id": 790569,
+        "id_state": 1710,
+        "text": "Cedralito",
+        "id_country": 82,
+        "nameAve": "CEDRALITO(HUILA)"
+    },
+    {
+        "id": 790707,
+        "id_state": 1710,
+        "text": "El colegio",
+        "id_country": 82,
+        "nameAve": "EL COLEGIO(HUILA)"
+    },
+    {
+        "id": 790764,
+        "id_state": 1710,
+        "text": "El triunfo",
+        "id_country": 82,
+        "nameAve": "EL TRIUNFO(HUILA)"
+    },
+    {
+        "id": 790767,
+        "id_state": 1710,
+        "text": "El venado",
+        "id_country": 82,
+        "nameAve": "EL VENADO(HUILA)"
+    },
+    {
+        "id": 790801,
+        "id_state": 1710,
+        "text": "Guacirco",
+        "id_country": 82,
+        "nameAve": "GUACIRCO(HUILA)"
+    },
+    {
+        "id": 790890,
+        "id_state": 1710,
+        "text": "La julia",
+        "id_country": 82,
+        "nameAve": "LA JULIA(HUILA)"
+    },
+    {
+        "id": 790899,
+        "id_state": 1710,
+        "text": "La mata",
+        "id_country": 82,
+        "nameAve": "LA MATA(HUILA)"
+    },
+    {
+        "id": 791041,
+        "id_state": 1710,
+        "text": "Moscovia",
+        "id_country": 82,
+        "nameAve": "MOSCOVIA(HUILA)"
+    },
+    {
+        "id": 791081,
+        "id_state": 1710,
+        "text": "Palacios",
+        "id_country": 82,
+        "nameAve": "PALACIOS(HUILA)"
+    },
+    {
+        "id": 791104,
+        "id_state": 1710,
+        "text": "Penas blancas",
+        "id_country": 82,
+        "nameAve": "PENAS BLANCAS(HUILA)"
+    },
+    {
+        "id": 791119,
+        "id_state": 1710,
+        "text": "Piedra marcada",
+        "id_country": 82,
+        "nameAve": "PIEDRA MARCADA(HUILA)"
+    },
+    {
+        "id": 791141,
+        "id_state": 1710,
+        "text": "Pradera",
+        "id_country": 82,
+        "nameAve": "PRADERA(HUILA)"
+    },
+    {
+        "id": 791222,
+        "id_state": 1710,
+        "text": "San antonio de anaconia",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO DE ANACONIA(HUILA)"
+    },
+    {
+        "id": 791236,
+        "id_state": 1710,
+        "text": "San francisco",
+        "id_country": 82,
+        "nameAve": "SAN FRANCISCO(HUILA)"
+    },
+    {
+        "id": 791242,
+        "id_state": 1710,
+        "text": "San jorge",
+        "id_country": 82,
+        "nameAve": "SAN JORGE(HUILA)"
+    },
+    { "id": 451017, "id_state": 1711, "text": "Abra", "id_country": 82 },
+    { "id": 451019, "id_state": 1711, "text": "Abras", "id_country": 82 },
+    { "id": 451021, "id_state": 1711, "text": "Abre El Ojo", "id_country": 82 },
+    { "id": 451038, "id_state": 1711, "text": "Aceite", "id_country": 82 },
+    { "id": 451054, "id_state": 1711, "text": "Adaluz", "id_country": 82 },
+    { "id": 451204, "id_state": 1711, "text": "Ahuyama", "id_country": 82 },
+    { "id": 451206, "id_state": 1711, "text": "Aichumahana", "id_country": 82 },
+    { "id": 451207, "id_state": 1711, "text": "Aílanapaha", "id_country": 82 },
+    {
+        "id": 451222,
+        "id_state": 1711,
+        "text": "Albania",
+        "id_country": 82,
+        "nameAve": "ALBANIA(LA GUAJIRA)"
+    },
+    { "id": 451418, "id_state": 1711, "text": "Alto Pino", "id_country": 82 },
+    { "id": 451451, "id_state": 1711, "text": "Amaigur", "id_country": 82 },
+    { "id": 451459, "id_state": 1711, "text": "Amámahana", "id_country": 82 },
+    { "id": 451483, "id_state": 1711, "text": "Amchisohu", "id_country": 82 },
+    { "id": 451490, "id_state": 1711, "text": "Amurco", "id_country": 82 },
+    {
+        "id": 451553,
+        "id_state": 1711,
+        "text": "Anjel del Descanso",
+        "id_country": 82
+    },
+    { "id": 451644, "id_state": 1711, "text": "Araua", "id_country": 82 },
+    {
+        "id": 451657,
+        "id_state": 1711,
+        "text": "Árbol del Descanso",
+        "id_country": 82
+    },
+    { "id": 451678, "id_state": 1711, "text": "Aremasain", "id_country": 82 },
+    { "id": 451685, "id_state": 1711, "text": "Arena", "id_country": 82 },
+    { "id": 451889, "id_state": 1711, "text": "Babilonia", "id_country": 82 },
+    { "id": 451900, "id_state": 1711, "text": "Bahía Honda", "id_country": 82 },
+    { "id": 452043, "id_state": 1711, "text": "Barranca", "id_country": 82 },
+    {
+        "id": 452053,
+        "id_state": 1711,
+        "text": "Barrancas",
+        "id_country": 82,
+        "nameAve": "BARRANCAS(LA GUAJIRA)"
+    },
+    { "id": 452086, "id_state": 1711, "text": "Barrialito", "id_country": 82 },
+    {
+        "id": 452390,
+        "id_state": 1711,
+        "text": "Boca del Monte",
+        "id_country": 82
+    },
+    {
+        "id": 452396,
+        "id_state": 1711,
+        "text": "Boca de Monte",
+        "id_country": 82
+    },
+    {
+        "id": 452414,
+        "id_state": 1711,
+        "text": "Boca de Tigre",
+        "id_country": 82
+    },
+    { "id": 452512, "id_state": 1711, "text": "Bomboló", "id_country": 82 },
+    { "id": 452677, "id_state": 1711, "text": "Buena Vista", "id_country": 82 },
+    { "id": 452694, "id_state": 1711, "text": "Buenavista", "id_country": 82 },
+    {
+        "id": 452719,
+        "id_state": 1711,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    { "id": 452784, "id_state": 1711, "text": "Cabra", "id_country": 82 },
+    {
+        "id": 453014,
+        "id_state": 1711,
+        "text": "Camarones",
+        "id_country": 82,
+        "nameAve": "CAMARONES(LA GUAJIRA)"
+    },
+    { "id": 453047, "id_state": 1711, "text": "Campamento", "id_country": 82 },
+    {
+        "id": 453138,
+        "id_state": 1711,
+        "text": "Campoflorido",
+        "id_country": 82
+    },
+    { "id": 453230, "id_state": 1711, "text": "Cañaverales", "id_country": 82 },
+    { "id": 453330, "id_state": 1711, "text": "Canuya", "id_country": 82 },
+    { "id": 453485, "id_state": 1711, "text": "Carorones", "id_country": 82 },
+    { "id": 453491, "id_state": 1711, "text": "Carraipía", "id_country": 82 },
+    { "id": 453512, "id_state": 1711, "text": "Carrizal", "id_country": 82 },
+    {
+        "id": 453680,
+        "id_state": 1711,
+        "text": "Caserío Campana",
+        "id_country": 82
+    },
+    {
+        "id": 453696,
+        "id_state": 1711,
+        "text": "Caserío Chole",
+        "id_country": 82
+    },
+    {
+        "id": 453924,
+        "id_state": 1711,
+        "text": "Caserío Pelechua",
+        "id_country": 82
+    },
+    { "id": 454009, "id_state": 1711, "text": "Casiche", "id_country": 82 },
+    { "id": 454081, "id_state": 1711, "text": "Cauta", "id_country": 82 },
+    { "id": 454165, "id_state": 1711, "text": "Cerrejón", "id_country": 82 },
+    {
+        "id": 454594,
+        "id_state": 1711,
+        "text": "Cinco Hermanas",
+        "id_country": 82
+    },
+    { "id": 454785, "id_state": 1711, "text": "Conejo", "id_country": 82 },
+    {
+        "id": 454950,
+        "id_state": 1711,
+        "text": "Corregimiento Camarones",
+        "id_country": 82
+    },
+    {
+        "id": 454963,
+        "id_state": 1711,
+        "text": "Corregimiento Cotoprix",
+        "id_country": 82
+    },
+    {
+        "id": 454976,
+        "id_state": 1711,
+        "text": "Corregimiento Dibulla",
+        "id_country": 82
+    },
+    {
+        "id": 455014,
+        "id_state": 1711,
+        "text": "Corregimiento La Punta de los Remedios",
+        "id_country": 82
+    },
+    {
+        "id": 455131,
+        "id_state": 1711,
+        "text": "Cotoprix",
+        "id_country": 82,
+        "nameAve": "COTOPRIX(LA GUAJIRA)"
+    },
+    { "id": 455285, "id_state": 1711, "text": "Cuestecita", "id_country": 82 },
+    {
+        "id": 455490,
+        "id_state": 1711,
+        "text": "Dibulla",
+        "id_country": 82,
+        "nameAve": "DIBULLA(LA GUAJIRA)"
+    },
+    {
+        "id": 455507,
+        "id_state": 1711,
+        "text": "Distracción",
+        "id_country": 82,
+        "nameAve": "DISTRACCION(LA GUAJIRA)"
+    },
+    {
+        "id": 457062,
+        "id_state": 1711,
+        "text": "El Molino",
+        "id_country": 82,
+        "nameAve": "EL MOLINO(LA GUAJIRA)"
+    },
+    { "id": 457201, "id_state": 1711, "text": "El Pájaro", "id_country": 82 },
+    { "id": 457225, "id_state": 1711, "text": "El Palmar", "id_country": 82 },
+    { "id": 457917, "id_state": 1711, "text": "El Tablazo", "id_country": 82 },
+    {
+        "id": 458490,
+        "id_state": 1711,
+        "text": "Fonseca",
+        "id_country": 82,
+        "nameAve": "FONSECA(LA GUAJIRA)"
+    },
+    { "id": 459250, "id_state": 1711, "text": "Guita", "id_country": 82 },
+    { "id": 459804, "id_state": 1711, "text": "Hato Nuevo", "id_country": 82 },
+    {
+        "id": 460212,
+        "id_state": 1711,
+        "text": "Jagua del Pedregal",
+        "id_country": 82
+    },
+    { "id": 460270, "id_state": 1711, "text": "Jasapen", "id_country": 82 },
+    { "id": 460326, "id_state": 1711, "text": "Jiguital", "id_country": 82 },
+    {
+        "id": 460564,
+        "id_state": 1711,
+        "text": "Kepérroinporu",
+        "id_country": 82
+    },
+    { "id": 460859, "id_state": 1711, "text": "La Buena Fe", "id_country": 82 },
+    { "id": 461086, "id_state": 1711, "text": "La Chocita", "id_country": 82 },
+    {
+        "id": 461478,
+        "id_state": 1711,
+        "text": "La Flor de la Guajira",
+        "id_country": 82
+    },
+    { "id": 461595, "id_state": 1711, "text": "La Gloria", "id_country": 82 },
+    {
+        "id": 461835,
+        "id_state": 1711,
+        "text": "La Jagua del Pilar",
+        "id_country": 82,
+        "nameAve": "LA JAGUA DEL PILAR(LA GUAJIRA)"
+    },
+    { "id": 462321, "id_state": 1711, "text": "La Palma", "id_country": 82 },
+    { "id": 463068, "id_state": 1711, "text": "Las Juntas", "id_country": 82 },
+    {
+        "id": 464425,
+        "id_state": 1711,
+        "text": "Los Pondores",
+        "id_country": 82
+    },
+    { "id": 464586, "id_state": 1711, "text": "Macho Bayo", "id_country": 82 },
+    { "id": 464587, "id_state": 1711, "text": "Machobayo", "id_country": 82 },
+    { "id": 464644, "id_state": 1711, "text": "Maicaito", "id_country": 82 },
+    {
+        "id": 464646,
+        "id_state": 1711,
+        "text": "Maicao",
+        "id_country": 82,
+        "nameAve": "MAICAO(LA GUAJIRA)"
+    },
+    { "id": 464670, "id_state": 1711, "text": "Majayura", "id_country": 82 },
+    { "id": 464745, "id_state": 1711, "text": "Manare", "id_country": 82 },
+    { "id": 464748, "id_state": 1711, "text": "Mañature", "id_country": 82 },
+    {
+        "id": 464750,
+        "id_state": 1711,
+        "text": "Manaure",
+        "id_country": 82,
+        "nameAve": "MANAURE(LA GUAJIRA)"
+    },
+    { "id": 464808, "id_state": 1711, "text": "Manzanal", "id_country": 82 },
+    { "id": 464847, "id_state": 1711, "text": "Maracaibito", "id_country": 82 },
+    { "id": 464889, "id_state": 1711, "text": "Marbella", "id_country": 82 },
+    { "id": 465191, "id_state": 1711, "text": "Meichonoay", "id_country": 82 },
+    { "id": 465443, "id_state": 1711, "text": "Molino", "id_country": 82 },
+    {
+        "id": 465467,
+        "id_state": 1711,
+        "text": "Monguí",
+        "id_country": 82,
+        "nameAve": "MONGUI(LA GUAJIRA)"
+    },
+    { "id": 465773, "id_state": 1711, "text": "Musichi", "id_country": 82 },
+    { "id": 465859, "id_state": 1711, "text": "Nazareth", "id_country": 82 },
+    { "id": 466096, "id_state": 1711, "text": "Oreganal", "id_country": 82 },
+    { "id": 466130, "id_state": 1711, "text": "Orozco", "id_country": 82 },
+    { "id": 466493, "id_state": 1711, "text": "Papayal", "id_country": 82 },
+    { "id": 466506, "id_state": 1711, "text": "Paraguachón", "id_country": 82 },
+    {
+        "id": 467692,
+        "id_state": 1711,
+        "text": "Puerto Estrella",
+        "id_country": 82
+    },
+    {
+        "id": 467751,
+        "id_state": 1711,
+        "text": "Puerto López",
+        "id_country": 82
+    },
+    { "id": 468128, "id_state": 1711, "text": "Rancheria", "id_country": 82 },
+    { "id": 468314, "id_state": 1711, "text": "Riochacha", "id_country": 82 },
+    {
+        "id": 468330,
+        "id_state": 1711,
+        "text": "Ríohacha",
+        "id_country": 82,
+        "nameAve": "RIOHACHA(LA GUAJIRA)"
+    },
+    {
+        "id": 468507,
+        "id_state": 1711,
+        "text": "Sabana Manuela",
+        "id_country": 82
+    },
+    {
+        "id": 469061,
+        "id_state": 1711,
+        "text": "San Juan de César",
+        "id_country": 82
+    },
+    {
+        "id": 469068,
+        "id_state": 1711,
+        "text": "San Juan del Cesar",
+        "id_country": 82,
+        "nameAve": "SAN JUAN DEL CESAR(LA GUAJIRA)"
+    },
+    { "id": 469589, "id_state": 1711, "text": "Santa Marta", "id_country": 82 },
+    { "id": 470012, "id_state": 1711, "text": "Sirruho", "id_country": 82 },
+    { "id": 470506, "id_state": 1711, "text": "Tierranueva", "id_country": 82 },
+    { "id": 470574, "id_state": 1711, "text": "Tocapalma", "id_country": 82 },
+    { "id": 470624, "id_state": 1711, "text": "Tomarrazón", "id_country": 82 },
+    { "id": 470777, "id_state": 1711, "text": "Trigo", "id_country": 82 },
+    { "id": 470940, "id_state": 1711, "text": "Uramita", "id_country": 82 },
+    {
+        "id": 470964,
+        "id_state": 1711,
+        "text": "Uribia",
+        "id_country": 82,
+        "nameAve": "URIBIA(LA GUAJIRA)"
+    },
+    {
+        "id": 470981,
+        "id_state": 1711,
+        "text": "Urumita",
+        "id_country": 82,
+        "nameAve": "URUMITA(LA GUAJIRA)"
+    },
+    {
+        "id": 471372,
+        "id_state": 1711,
+        "text": "Villanueva",
+        "id_country": 82,
+        "nameAve": "VILLANUEVA(LA GUAJIRA)"
+    },
+    {
+        "id": 790461,
+        "id_state": 1711,
+        "text": "Anaime",
+        "id_country": 82,
+        "nameAve": "ANAIME(LA GUAJIRA)"
+    },
+    {
+        "id": 790477,
+        "id_state": 1711,
+        "text": "Arroyo arena",
+        "id_country": 82,
+        "nameAve": "ARROYO ARENA(LA GUAJIRA)"
+    },
+    {
+        "id": 790487,
+        "id_state": 1711,
+        "text": "Barbacoa",
+        "id_country": 82,
+        "nameAve": "BARBACOA(LA GUAJIRA)"
+    },
+    {
+        "id": 790563,
+        "id_state": 1711,
+        "text": "Cascajalito",
+        "id_country": 82,
+        "nameAve": "CASCAJALITO(LA GUAJIRA)"
+    },
+    {
+        "id": 790573,
+        "id_state": 1711,
+        "text": "Cerrillo",
+        "id_country": 82,
+        "nameAve": "CERRILLO(LA GUAJIRA)"
+    },
+    {
+        "id": 790597,
+        "id_state": 1711,
+        "text": "Choles",
+        "id_country": 82,
+        "nameAve": "CHOLES(LA GUAJIRA)"
+    },
+    {
+        "id": 790609,
+        "id_state": 1711,
+        "text": "Comejenes",
+        "id_country": 82,
+        "nameAve": "COMEJENES(LA GUAJIRA)"
+    },
+    {
+        "id": 790669,
+        "id_state": 1711,
+        "text": "Cucurumana",
+        "id_country": 82,
+        "nameAve": "CUCURUMANA(LA GUAJIRA)"
+    },
+    {
+        "id": 790683,
+        "id_state": 1711,
+        "text": "Ebanal",
+        "id_country": 82,
+        "nameAve": "EBANAL(LA GUAJIRA)"
+    },
+    {
+        "id": 790685,
+        "id_state": 1711,
+        "text": "El abra",
+        "id_country": 82,
+        "nameAve": "EL ABRA(LA GUAJIRA)"
+    },
+    {
+        "id": 790699,
+        "id_state": 1711,
+        "text": "El carmen",
+        "id_country": 82,
+        "nameAve": "EL CARMEN(LA GUAJIRA)"
+    },
+    {
+        "id": 790785,
+        "id_state": 1711,
+        "text": "Galan",
+        "id_country": 82,
+        "nameAve": "GALAN(LA GUAJIRA)"
+    },
+    {
+        "id": 790821,
+        "id_state": 1711,
+        "text": "Guayacanal",
+        "id_country": 82,
+        "nameAve": "GUAYACANAL(LA GUAJIRA)"
+    },
+    {
+        "id": 790827,
+        "id_state": 1711,
+        "text": "Hatonuevo",
+        "id_country": 82,
+        "nameAve": "HATONUEVO(LA GUAJIRA)"
+    },
+    {
+        "id": 790842,
+        "id_state": 1711,
+        "text": "Juan y medio",
+        "id_country": 82,
+        "nameAve": "JUAN Y MEDIO(LA GUAJIRA)"
+    },
+    {
+        "id": 790851,
+        "id_state": 1711,
+        "text": "La arena",
+        "id_country": 82,
+        "nameAve": "LA ARENA(LA GUAJIRA)"
+    },
+    {
+        "id": 790870,
+        "id_state": 1711,
+        "text": "La compania",
+        "id_country": 82,
+        "nameAve": "LA COMPANIA(LA GUAJIRA)"
+    },
+    {
+        "id": 790891,
+        "id_state": 1711,
+        "text": "La junta",
+        "id_country": 82,
+        "nameAve": "LA JUNTA(LA GUAJIRA)"
+    },
+    {
+        "id": 790940,
+        "id_state": 1711,
+        "text": "Las casitas",
+        "id_country": 82,
+        "nameAve": "LAS CASITAS(LA GUAJIRA)"
+    },
+    {
+        "id": 790949,
+        "id_state": 1711,
+        "text": "Las palmas",
+        "id_country": 82,
+        "nameAve": "LAS PALMAS(LA GUAJIRA)"
+    },
+    {
+        "id": 790980,
+        "id_state": 1711,
+        "text": "Los moreneros",
+        "id_country": 82,
+        "nameAve": "LOS MORENEROS(LA GUAJIRA)"
+    },
+    {
+        "id": 791014,
+        "id_state": 1711,
+        "text": "Matitas",
+        "id_country": 82,
+        "nameAve": "MATITAS(LA GUAJIRA)"
+    },
+    {
+        "id": 791025,
+        "id_state": 1711,
+        "text": "Mingueo",
+        "id_country": 82,
+        "nameAve": "MINGUEO(LA GUAJIRA)"
+    },
+    {
+        "id": 791086,
+        "id_state": 1711,
+        "text": "Palomino",
+        "id_country": 82,
+        "nameAve": "PALOMINO(LA GUAJIRA)"
+    },
+    {
+        "id": 791103,
+        "id_state": 1711,
+        "text": "Pelechua",
+        "id_country": 82,
+        "nameAve": "PELECHUA(LA GUAJIRA)"
+    },
+    {
+        "id": 791111,
+        "id_state": 1711,
+        "text": "Perico",
+        "id_country": 82,
+        "nameAve": "PERICO(LA GUAJIRA)"
+    },
+    {
+        "id": 791140,
+        "id_state": 1711,
+        "text": "Pozo hondo",
+        "id_country": 82,
+        "nameAve": "POZO HONDO(LA GUAJIRA)"
+    },
+    {
+        "id": 791151,
+        "id_state": 1711,
+        "text": "Puente bomba",
+        "id_country": 82,
+        "nameAve": "PUENTE BOMBA(LA GUAJIRA)"
+    },
+    {
+        "id": 791159,
+        "id_state": 1711,
+        "text": "Puerto colombia",
+        "id_country": 82,
+        "nameAve": "PUERTO COLOMBIA(LA GUAJIRA)"
+    },
+    {
+        "id": 791351,
+        "id_state": 1711,
+        "text": "Tigrera",
+        "id_country": 82,
+        "nameAve": "TIGRERA(LA GUAJIRA)"
+    },
+    {
+        "id": 791396,
+        "id_state": 1711,
+        "text": "Villa compi",
+        "id_country": 82,
+        "nameAve": "VILLA COMPI(LA GUAJIRA)"
+    },
+    {
+        "id": 451028,
+        "id_state": 1712,
+        "text": "Acacías",
+        "id_country": 82,
+        "nameAve": "ACACIAS(META)"
+    },
+    { "id": 451035, "id_state": 1712, "text": "Acapulco", "id_country": 82 },
+    { "id": 451103, "id_state": 1712, "text": "Agua Clara", "id_country": 82 },
+    { "id": 451136, "id_state": 1712, "text": "Agua Linda", "id_country": 82 },
+    {
+        "id": 451164,
+        "id_state": 1712,
+        "text": "Aguas Claras",
+        "id_country": 82
+    },
+    { "id": 451342, "id_state": 1712, "text": "Altamira", "id_country": 82 },
+    { "id": 451408, "id_state": 1712, "text": "Alto Losada", "id_country": 82 },
+    { "id": 451592, "id_state": 1712, "text": "Apial", "id_country": 82 },
+    {
+        "id": 451593,
+        "id_state": 1712,
+        "text": "Apiay",
+        "id_country": 82,
+        "nameAve": "APIAY(META)"
+    },
+    { "id": 451853, "id_state": 1712, "text": "Aurora", "id_country": 82 },
+    { "id": 452038, "id_state": 1712, "text": "Barranca", "id_country": 82 },
+    {
+        "id": 452046,
+        "id_state": 1712,
+        "text": "Barranca de Upía",
+        "id_country": 82,
+        "nameAve": "BARRANCA DE UPIA(META)"
+    },
+    { "id": 452144, "id_state": 1712, "text": "Bavaria", "id_country": 82 },
+    { "id": 452235, "id_state": 1712, "text": "Bellavista", "id_country": 82 },
+    {
+        "id": 452398,
+        "id_state": 1712,
+        "text": "Boca de Monte",
+        "id_country": 82
+    },
+    { "id": 452465, "id_state": 1712, "text": "Bogante", "id_country": 82 },
+    { "id": 452671, "id_state": 1712, "text": "Buena Vista", "id_country": 82 },
+    {
+        "id": 452684,
+        "id_state": 1712,
+        "text": "Buenavista",
+        "id_country": 82,
+        "nameAve": "BUENAVISTA(META)"
+    },
+    {
+        "id": 452804,
+        "id_state": 1712,
+        "text": "Cabuyaro",
+        "id_country": 82,
+        "nameAve": "CABUYARO(META)"
+    },
+    { "id": 452816, "id_state": 1712, "text": "Cacayal", "id_country": 82 },
+    { "id": 453022, "id_state": 1712, "text": "Cambulos", "id_country": 82 },
+    { "id": 453320, "id_state": 1712, "text": "Cantarrana", "id_country": 82 },
+    { "id": 453528, "id_state": 1712, "text": "Cartagena", "id_country": 82 },
+    {
+        "id": 453998,
+        "id_state": 1712,
+        "text": "Caserio Villavicencio",
+        "id_country": 82
+    },
+    { "id": 454024, "id_state": 1712, "text": "Castilla", "id_country": 82 },
+    {
+        "id": 454025,
+        "id_state": 1712,
+        "text": "Castilla La Nueva",
+        "id_country": 82,
+        "nameAve": "CASTILLA LA NUEVA(META)"
+    },
+    { "id": 454092, "id_state": 1712, "text": "Cayucao", "id_country": 82 },
+    { "id": 454777, "id_state": 1712, "text": "Concordia", "id_country": 82 },
+    { "id": 455111, "id_state": 1712, "text": "Costa Rica", "id_country": 82 },
+    { "id": 455116, "id_state": 1712, "text": "Costarrica", "id_country": 82 },
+    {
+        "id": 455236,
+        "id_state": 1712,
+        "text": "Cubarral",
+        "id_country": 82,
+        "nameAve": "CUBARRAL(META)"
+    },
+    {
+        "id": 455324,
+        "id_state": 1712,
+        "text": "Cumaral",
+        "id_country": 82,
+        "nameAve": "CUMARAL(META)"
+    },
+    { "id": 455388, "id_state": 1712, "text": "Curumare", "id_country": 82 },
+    { "id": 455457, "id_state": 1712, "text": "Delicias", "id_country": 82 },
+    {
+        "id": 455570,
+        "id_state": 1712,
+        "text": "Dos Quebradas",
+        "id_country": 82
+    },
+    { "id": 455763, "id_state": 1712, "text": "El Bambú", "id_country": 82 },
+    {
+        "id": 455923,
+        "id_state": 1712,
+        "text": "El Calvario",
+        "id_country": 82,
+        "nameAve": "EL CALVARIO(META)"
+    },
+    {
+        "id": 456024,
+        "id_state": 1712,
+        "text": "El Castillo",
+        "id_country": 82,
+        "nameAve": "EL CASTILLO(META)"
+    },
+    {
+        "id": 456473,
+        "id_state": 1712,
+        "text": "El Dorado",
+        "id_country": 82,
+        "nameAve": "EL DORADO(META)"
+    },
+    { "id": 456817, "id_state": 1712, "text": "El Jardín", "id_country": 82 },
+    { "id": 457159, "id_state": 1712, "text": "El Olvido", "id_country": 82 },
+    { "id": 457228, "id_state": 1712, "text": "El Palmar", "id_country": 82 },
+    { "id": 457472, "id_state": 1712, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457584, "id_state": 1712, "text": "El Recreo", "id_country": 82 },
+    { "id": 457654, "id_state": 1712, "text": "El Retiro", "id_country": 82 },
+    { "id": 457721, "id_state": 1712, "text": "El Rodeo", "id_country": 82 },
+    { "id": 458058, "id_state": 1712, "text": "El Trapiche", "id_country": 82 },
+    { "id": 458154, "id_state": 1712, "text": "El Vergel", "id_country": 82 },
+    { "id": 458175, "id_state": 1712, "text": "El Viento", "id_country": 82 },
+    { "id": 458476, "id_state": 1712, "text": "Florida", "id_country": 82 },
+    {
+        "id": 458537,
+        "id_state": 1712,
+        "text": "Fuente de Oro",
+        "id_country": 82,
+        "nameAve": "FUENTE DE ORO(META)"
+    },
+    {
+        "id": 458789,
+        "id_state": 1712,
+        "text": "Granada",
+        "id_country": 82,
+        "nameAve": "GRANADA(META)"
+    },
+    {
+        "id": 458994,
+        "id_state": 1712,
+        "text": "Guamal",
+        "id_country": 82,
+        "nameAve": "GUAMAL(META)"
+    },
+    {
+        "id": 459331,
+        "id_state": 1712,
+        "text": "Hacienda de Santa Cruz",
+        "id_country": 82
+    },
+    { "id": 460802, "id_state": 1712, "text": "La Bermeja", "id_country": 82 },
+    {
+        "id": 461172,
+        "id_state": 1712,
+        "text": "La Concordia",
+        "id_country": 82
+    },
+    {
+        "id": 461384,
+        "id_state": 1712,
+        "text": "La Esperanza",
+        "id_country": 82
+    },
+    { "id": 461539, "id_state": 1712, "text": "La Frontera", "id_country": 82 },
+    {
+        "id": 461661,
+        "id_state": 1712,
+        "text": "La Gualdranera",
+        "id_country": 82
+    },
+    {
+        "id": 462019,
+        "id_state": 1712,
+        "text": "La Macarena",
+        "id_country": 82,
+        "nameAve": "LA MACARENA(META)"
+    },
+    { "id": 462217, "id_state": 1712, "text": "La Morena", "id_country": 82 },
+    { "id": 462512, "id_state": 1712, "text": "La Porfía", "id_country": 82 },
+    {
+        "id": 462558,
+        "id_state": 1712,
+        "text": "La Primavera",
+        "id_country": 82
+    },
+    {
+        "id": 462842,
+        "id_state": 1712,
+        "text": "Las Brisas del Llano",
+        "id_country": 82
+    },
+    { "id": 463548, "id_state": 1712, "text": "La Vainilla", "id_country": 82 },
+    { "id": 463686, "id_state": 1712, "text": "La Vorágine", "id_country": 82 },
+    {
+        "id": 463737,
+        "id_state": 1712,
+        "text": "Lejanías",
+        "id_country": 82,
+        "nameAve": "LEJANIAS(META)"
+    },
+    {
+        "id": 464825,
+        "id_state": 1712,
+        "text": "Mapiripán",
+        "id_country": 82,
+        "nameAve": "MAPIRIPAN(META)"
+    },
+    { "id": 464853, "id_state": 1712, "text": "Maracaibo", "id_country": 82 },
+    { "id": 465004, "id_state": 1712, "text": "Mata Azul", "id_country": 82 },
+    { "id": 465214, "id_state": 1712, "text": "Menegua", "id_country": 82 },
+    {
+        "id": 465259,
+        "id_state": 1712,
+        "text": "Mesetas",
+        "id_country": 82,
+        "nameAve": "MESETAS(META)"
+    },
+    {
+        "id": 465741,
+        "id_state": 1712,
+        "text": "Municipio Juan de Arama",
+        "id_country": 82
+    },
+    {
+        "id": 466172,
+        "id_state": 1712,
+        "text": "Pachaquiaro",
+        "id_country": 82,
+        "nameAve": "PACHAQUIARO(META)"
+    },
+    {
+        "id": 467698,
+        "id_state": 1712,
+        "text": "Puerto Gaitán",
+        "id_country": 82,
+        "nameAve": "PUERTO GAITAN(META)"
+    },
+    {
+        "id": 467747,
+        "id_state": 1712,
+        "text": "Puerto Lleras",
+        "id_country": 82,
+        "nameAve": "PUERTO LLERAS(META)"
+    },
+    {
+        "id": 467752,
+        "id_state": 1712,
+        "text": "Puerto López",
+        "id_country": 82,
+        "nameAve": "PUERTO LOPEZ(META)"
+    },
+    {
+        "id": 467803,
+        "id_state": 1712,
+        "text": "Puerto Nuevo",
+        "id_country": 82
+    },
+    {
+        "id": 467858,
+        "id_state": 1712,
+        "text": "Puerto Rico",
+        "id_country": 82,
+        "nameAve": "PUERTO RICO(META)"
+    },
+    { "id": 468198, "id_state": 1712, "text": "Remanzon", "id_country": 82 },
+    {
+        "id": 468234,
+        "id_state": 1712,
+        "text": "Restrepo",
+        "id_country": 82,
+        "nameAve": "RESTREPO(META)"
+    },
+    { "id": 468243, "id_state": 1712, "text": "Retiro", "id_country": 82 },
+    {
+        "id": 468284,
+        "id_state": 1712,
+        "text": "Rincón de Pompeya",
+        "id_country": 82,
+        "nameAve": "RINCON DE POMPEYA(META)"
+    },
+    {
+        "id": 468782,
+        "id_state": 1712,
+        "text": "San Carlos de Guaroa",
+        "id_country": 82,
+        "nameAve": "SAN CARLOS DE GUAROA(META)"
+    },
+    { "id": 468914, "id_state": 1712, "text": "San Isidro", "id_country": 82 },
+    { "id": 468967, "id_state": 1712, "text": "San Jorge", "id_country": 82 },
+    { "id": 468991, "id_state": 1712, "text": "San José", "id_country": 82 },
+    {
+        "id": 469058,
+        "id_state": 1712,
+        "text": "San Juan de Arama",
+        "id_country": 82,
+        "nameAve": "SAN JUAN DE ARAMA(META)"
+    },
+    {
+        "id": 469081,
+        "id_state": 1712,
+        "text": "San Juanito",
+        "id_country": 82,
+        "nameAve": "SAN JUANITO(META)"
+    },
+    {
+        "id": 469150,
+        "id_state": 1712,
+        "text": "San Martín",
+        "id_country": 82,
+        "nameAve": "SAN MARTIN(META)"
+    },
+    {
+        "id": 469488,
+        "id_state": 1712,
+        "text": "Santa Helena",
+        "id_country": 82
+    },
+    { "id": 469496, "id_state": 1712, "text": "Santa Inés", "id_country": 82 },
+    { "id": 470162, "id_state": 1712, "text": "Surimena", "id_country": 82 },
+    { "id": 470713, "id_state": 1712, "text": "Trapiche", "id_country": 82 },
+    {
+        "id": 470961,
+        "id_state": 1712,
+        "text": "Uribe",
+        "id_country": 82,
+        "nameAve": "URIBE(META)"
+    },
+    { "id": 471090, "id_state": 1712, "text": "Vega Grande", "id_country": 82 },
+    { "id": 471123, "id_state": 1712, "text": "Venecia", "id_country": 82 },
+    { "id": 471163, "id_state": 1712, "text": "Veracruz", "id_country": 82 },
+    { "id": 471201, "id_state": 1712, "text": "Vergel", "id_country": 82 },
+    {
+        "id": 471413,
+        "id_state": 1712,
+        "text": "Villavicencio",
+        "id_country": 82,
+        "nameAve": "VILLAVICENCIO(META)"
+    },
+    {
+        "id": 471444,
+        "id_state": 1712,
+        "text": "Vista Hermosa",
+        "id_country": 82
+    },
+    { "id": 471572, "id_state": 1712, "text": "Yomaira", "id_country": 82 },
+    { "id": 471578, "id_state": 1712, "text": "Yopal", "id_country": 82 },
+    {
+        "id": 790458,
+        "id_state": 1712,
+        "text": "Alto pompeya",
+        "id_country": 82,
+        "nameAve": "ALTO POMPEYA(META)"
+    },
+    {
+        "id": 790474,
+        "id_state": 1712,
+        "text": "Argentina",
+        "id_country": 82,
+        "nameAve": "ARGENTINA(META)"
+    },
+    {
+        "id": 790489,
+        "id_state": 1712,
+        "text": "Barcelona",
+        "id_country": 82,
+        "nameAve": "BARCELONA(META)"
+    },
+    {
+        "id": 790501,
+        "id_state": 1712,
+        "text": "Bella suiza",
+        "id_country": 82,
+        "nameAve": "BELLA SUIZA(META)"
+    },
+    {
+        "id": 790567,
+        "id_state": 1712,
+        "text": "Cecilia",
+        "id_country": 82,
+        "nameAve": "CECILIA(META)"
+    },
+    {
+        "id": 790606,
+        "id_state": 1712,
+        "text": "Cocuy",
+        "id_country": 82,
+        "nameAve": "COCUY(META)"
+    },
+    {
+        "id": 790637,
+        "id_state": 1712,
+        "text": "Concepcion",
+        "id_country": 82,
+        "nameAve": "CONCEPCION(META)"
+    },
+    {
+        "id": 790641,
+        "id_state": 1712,
+        "text": "Condominio de los odontologos",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO DE LOS ODONTOLOGOS(META)"
+    },
+    {
+        "id": 790653,
+        "id_state": 1712,
+        "text": "Condominio santa barbara",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO SANTA BARBARA(META)"
+    },
+    {
+        "id": 790906,
+        "id_state": 1712,
+        "text": "La nohora",
+        "id_country": 82,
+        "nameAve": "LA NOHORA(META)"
+    },
+    {
+        "id": 790962,
+        "id_state": 1712,
+        "text": "Llanerita",
+        "id_country": 82,
+        "nameAve": "LLANERITA(META)"
+    },
+    {
+        "id": 791048,
+        "id_state": 1712,
+        "text": "Naturalia",
+        "id_country": 82,
+        "nameAve": "NATURALIA(META)"
+    },
+    {
+        "id": 791123,
+        "id_state": 1712,
+        "text": "Pipiral",
+        "id_country": 82,
+        "nameAve": "PIPIRAL(META)"
+    },
+    {
+        "id": 791160,
+        "id_state": 1712,
+        "text": "Puerto concordia",
+        "id_country": 82,
+        "nameAve": "PUERTO CONCORDIA(META)"
+    },
+    {
+        "id": 791253,
+        "id_state": 1712,
+        "text": "San luis de ocoa",
+        "id_country": 82,
+        "nameAve": "SAN LUIS DE OCOA(META)"
+    },
+    {
+        "id": 791286,
+        "id_state": 1712,
+        "text": "Santa rosa de rio negro",
+        "id_country": 82,
+        "nameAve": "SANTA ROSA DE RIO NEGRO(META)"
+    },
+    {
+        "id": 791305,
+        "id_state": 1712,
+        "text": "Servita",
+        "id_country": 82,
+        "nameAve": "SERVITA(META)"
+    },
+    {
+        "id": 791411,
+        "id_state": 1712,
+        "text": "Vistahermosa",
+        "id_country": 82,
+        "nameAve": "VISTAHERMOSA(META)"
+    },
+    { "id": 451045, "id_state": 1713, "text": "Achotal", "id_country": 82 },
+    { "id": 451048, "id_state": 1713, "text": "Acón", "id_country": 82 },
+    { "id": 451095, "id_state": 1713, "text": "Aguacate", "id_country": 82 },
+    { "id": 451101, "id_state": 1713, "text": "Aguacillas", "id_country": 82 },
+    { "id": 451105, "id_state": 1713, "text": "Aguaclara", "id_country": 82 },
+    { "id": 451111, "id_state": 1713, "text": "Aguada", "id_country": 82 },
+    {
+        "id": 451216,
+        "id_state": 1713,
+        "text": "Albán",
+        "id_country": 82,
+        "nameAve": "ALBAN(NARINO)"
+    },
+    {
+        "id": 451242,
+        "id_state": 1713,
+        "text": "Aldana",
+        "id_country": 82,
+        "nameAve": "ALDANA(NARINO)"
+    },
+    { "id": 451263, "id_state": 1713, "text": "Ales", "id_country": 82 },
+    {
+        "id": 451265,
+        "id_state": 1713,
+        "text": "Alfonso López",
+        "id_country": 82
+    },
+    { "id": 451316, "id_state": 1713, "text": "Alta", "id_country": 82 },
+    { "id": 451328, "id_state": 1713, "text": "Altamira", "id_country": 82 },
+    { "id": 451348, "id_state": 1713, "text": "Altaquér", "id_country": 82 },
+    { "id": 451359, "id_state": 1713, "text": "Alto Calera", "id_country": 82 },
+    { "id": 451504, "id_state": 1713, "text": "A Nariño", "id_country": 82 },
+    {
+        "id": 451514,
+        "id_state": 1713,
+        "text": "Ancuya",
+        "id_country": 82,
+        "nameAve": "ANCUYA(NARINO)"
+    },
+    {
+        "id": 451574,
+        "id_state": 1713,
+        "text": "Antonio Nariño",
+        "id_country": 82
+    },
+    { "id": 451629, "id_state": 1713, "text": "Aranda", "id_country": 82 },
+    { "id": 451852, "id_state": 1713, "text": "Aurora", "id_country": 82 },
+    {
+        "id": 452003,
+        "id_state": 1713,
+        "text": "Barbacoas",
+        "id_country": 82,
+        "nameAve": "BARBACOAS(NARINO)"
+    },
+    { "id": 452081, "id_state": 1713, "text": "Barrera", "id_country": 82 },
+    {
+        "id": 452172,
+        "id_state": 1713,
+        "text": "Belén",
+        "id_country": 82,
+        "nameAve": "BELEN(NARINO)"
+    },
+    { "id": 452209, "id_state": 1713, "text": "Bella Vista", "id_country": 82 },
+    {
+        "id": 452440,
+        "id_state": 1713,
+        "text": "Bocas de Satinga",
+        "id_country": 82,
+        "nameAve": "BOCAS DE SATINGA(NARINO)"
+    },
+    { "id": 452514, "id_state": 1713, "text": "Bombona", "id_country": 82 },
+    { "id": 452554, "id_state": 1713, "text": "Bordo", "id_country": 82 },
+    { "id": 452607, "id_state": 1713, "text": "Briceño", "id_country": 82 },
+    { "id": 452655, "id_state": 1713, "text": "Buchelli", "id_country": 82 },
+    {
+        "id": 452722,
+        "id_state": 1713,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    {
+        "id": 452731,
+        "id_state": 1713,
+        "text": "Buesaco",
+        "id_country": 82,
+        "nameAve": "BUESACO(NARINO)"
+    },
+    { "id": 452736, "id_state": 1713, "text": "Buga", "id_country": 82 },
+    { "id": 453067, "id_state": 1713, "text": "Campanero", "id_country": 82 },
+    { "id": 453246, "id_state": 1713, "text": "Candelilla", "id_country": 82 },
+    { "id": 453523, "id_state": 1713, "text": "Cartagena", "id_country": 82 },
+    { "id": 453533, "id_state": 1713, "text": "Cartago", "id_country": 82 },
+    { "id": 453551, "id_state": 1713, "text": "Casa Blanca", "id_country": 82 },
+    {
+        "id": 454046,
+        "id_state": 1713,
+        "text": "Catambuco",
+        "id_country": 82,
+        "nameAve": "CATAMBUCO(NARINO)"
+    },
+    {
+        "id": 454200,
+        "id_state": 1713,
+        "text": "Chachagüí",
+        "id_country": 82,
+        "nameAve": "CHACHAGUI(NARINO)"
+    },
+    { "id": 454218, "id_state": 1713, "text": "Chagüí", "id_country": 82 },
+    { "id": 454236, "id_state": 1713, "text": "Chambú", "id_country": 82 },
+    { "id": 454262, "id_state": 1713, "text": "Chapal", "id_country": 82 },
+    { "id": 454305, "id_state": 1713, "text": "Charco", "id_country": 82 },
+    {
+        "id": 454311,
+        "id_state": 1713,
+        "text": "Charco del Gallo",
+        "id_country": 82
+    },
+    { "id": 454390, "id_state": 1713, "text": "Chiles", "id_country": 82 },
+    { "id": 454565, "id_state": 1713, "text": "Cid", "id_country": 82 },
+    { "id": 454703, "id_state": 1713, "text": "Colón", "id_country": 82 },
+    {
+        "id": 454751,
+        "id_state": 1713,
+        "text": "Complementaria",
+        "id_country": 82
+    },
+    { "id": 454753, "id_state": 1713, "text": "Comunidad", "id_country": 82 },
+    { "id": 454773, "id_state": 1713, "text": "Concordia", "id_country": 82 },
+    {
+        "id": 454796,
+        "id_state": 1713,
+        "text": "Consacá",
+        "id_country": 82,
+        "nameAve": "CONSACA(NARINO)"
+    },
+    {
+        "id": 454799,
+        "id_state": 1713,
+        "text": "Contadero",
+        "id_country": 82,
+        "nameAve": "CONTADERO(NARINO)"
+    },
+    {
+        "id": 454852,
+        "id_state": 1713,
+        "text": "Córdoba",
+        "id_country": 82,
+        "nameAve": "CORDOBA(NARINO)"
+    },
+    { "id": 455205, "id_state": 1713, "text": "Cuaspud", "id_country": 82 },
+    {
+        "id": 455332,
+        "id_state": 1713,
+        "text": "Cumbal",
+        "id_country": 82,
+        "nameAve": "CUMBAL(NARINO)"
+    },
+    {
+        "id": 455334,
+        "id_state": 1713,
+        "text": "Cumbitara",
+        "id_country": 82,
+        "nameAve": "CUMBITARA(NARINO)"
+    },
+    { "id": 455599, "id_state": 1713, "text": "4 Esquinas", "id_country": 82 },
+    { "id": 455600, "id_state": 1713, "text": "Égida", "id_country": 82 },
+    { "id": 455826, "id_state": 1713, "text": "El Bordo", "id_country": 82 },
+    { "id": 455983, "id_state": 1713, "text": "El Carmen", "id_country": 82 },
+    {
+        "id": 456122,
+        "id_state": 1713,
+        "text": "El Charco",
+        "id_country": 82,
+        "nameAve": "EL CHARCO(NARINO)"
+    },
+    { "id": 456564, "id_state": 1713, "text": "El Espino", "id_country": 82 },
+    { "id": 456803, "id_state": 1713, "text": "El Jagua", "id_country": 82 },
+    { "id": 457075, "id_state": 1713, "text": "El Morro", "id_country": 82 },
+    { "id": 457328, "id_state": 1713, "text": "El Pedregal", "id_country": 82 },
+    {
+        "id": 457349,
+        "id_state": 1713,
+        "text": "El Peñol",
+        "id_country": 82,
+        "nameAve": "EL PENOL(NARINO)"
+    },
+    { "id": 457395, "id_state": 1713, "text": "El Piñal", "id_country": 82 },
+    { "id": 457626, "id_state": 1713, "text": "El Remolino", "id_country": 82 },
+    {
+        "id": 457732,
+        "id_state": 1713,
+        "text": "El Rosario",
+        "id_country": 82,
+        "nameAve": "EL ROSARIO(NARINO)"
+    },
+    { "id": 457840, "id_state": 1713, "text": "El Silencio", "id_country": 82 },
+    {
+        "id": 457944,
+        "id_state": 1713,
+        "text": "El Tambo",
+        "id_country": 82,
+        "nameAve": "EL TAMBO(NARINO)"
+    },
+    { "id": 458146, "id_state": 1713, "text": "El Vergel", "id_country": 82 },
+    { "id": 458215, "id_state": 1713, "text": "El Zorro", "id_country": 82 },
+    { "id": 458283, "id_state": 1713, "text": "Esmeralda", "id_country": 82 },
+    { "id": 458480, "id_state": 1713, "text": "Florida", "id_country": 82 },
+    {
+        "id": 458585,
+        "id_state": 1713,
+        "text": "Funes",
+        "id_country": 82,
+        "nameAve": "FUNES(NARINO)"
+    },
+    { "id": 458671, "id_state": 1713, "text": "García", "id_country": 82 },
+    {
+        "id": 458713,
+        "id_state": 1713,
+        "text": "Genova",
+        "id_country": 82,
+        "nameAve": "GENOVA(NARINO)"
+    },
+    { "id": 458865, "id_state": 1713, "text": "Guachavés", "id_country": 82 },
+    {
+        "id": 458875,
+        "id_state": 1713,
+        "text": "Guachucal",
+        "id_country": 82,
+        "nameAve": "GUACHUCAL(NARINO)"
+    },
+    {
+        "id": 458966,
+        "id_state": 1713,
+        "text": "Guaitarilla",
+        "id_country": 82,
+        "nameAve": "GUAITARILLA(NARINO)"
+    },
+    {
+        "id": 458980,
+        "id_state": 1713,
+        "text": "Gualmatán",
+        "id_country": 82,
+        "nameAve": "GUALMATAN(NARINO)"
+    },
+    {
+        "id": 460058,
+        "id_state": 1713,
+        "text": "Iles",
+        "id_country": 82,
+        "nameAve": "ILES(NARINO)"
+    },
+    { "id": 460063, "id_state": 1713, "text": "Imbilí", "id_country": 82 },
+    {
+        "id": 460114,
+        "id_state": 1713,
+        "text": "Ipiales",
+        "id_country": 82,
+        "nameAve": "IPIALES(NARINO)"
+    },
+    { "id": 460293, "id_state": 1713, "text": "Jenoy", "id_country": 82 },
+    { "id": 461129, "id_state": 1713, "text": "La Cocha", "id_country": 82 },
+    {
+        "id": 461219,
+        "id_state": 1713,
+        "text": "La Cruz",
+        "id_country": 82,
+        "nameAve": "LA CRUZ(NARINO)"
+    },
+    {
+        "id": 461383,
+        "id_state": 1713,
+        "text": "La Esperanza",
+        "id_country": 82
+    },
+    { "id": 461421, "id_state": 1713, "text": "La Estancia", "id_country": 82 },
+    {
+        "id": 461507,
+        "id_state": 1713,
+        "text": "La Florida",
+        "id_country": 82,
+        "nameAve": "LA FLORIDA(NARINO)"
+    },
+    { "id": 461617, "id_state": 1713, "text": "La Granada", "id_country": 82 },
+    { "id": 461685, "id_state": 1713, "text": "Laguna", "id_country": 82 },
+    {
+        "id": 461868,
+        "id_state": 1713,
+        "text": "La Laguna",
+        "id_country": 82,
+        "nameAve": "LA LAGUNA(NARINO)"
+    },
+    {
+        "id": 461943,
+        "id_state": 1713,
+        "text": "La Llanada",
+        "id_country": 82,
+        "nameAve": "LA LLANADA(NARINO)"
+    },
+    { "id": 461954, "id_state": 1713, "text": "La Loma", "id_country": 82 },
+    { "id": 462478, "id_state": 1713, "text": "La Playa", "id_country": 82 },
+    { "id": 463078, "id_state": 1713, "text": "Las Lajas", "id_country": 82 },
+    { "id": 463371, "id_state": 1713, "text": "Las Vegas", "id_country": 82 },
+    {
+        "id": 463524,
+        "id_state": 1713,
+        "text": "La Unión",
+        "id_country": 82,
+        "nameAve": "LA UNION(NARINO)"
+    },
+    { "id": 463675, "id_state": 1713, "text": "La Virginia", "id_country": 82 },
+    {
+        "id": 463735,
+        "id_state": 1713,
+        "text": "Leiva",
+        "id_country": 82,
+        "nameAve": "LEIVA(NARINO)"
+    },
+    {
+        "id": 463816,
+        "id_state": 1713,
+        "text": "Linares",
+        "id_country": 82,
+        "nameAve": "LINARES(NARINO)"
+    },
+    {
+        "id": 464019,
+        "id_state": 1713,
+        "text": "Los Andes",
+        "id_country": 82,
+        "nameAve": "LOS ANDES(NARINO)"
+    },
+    {
+        "id": 464641,
+        "id_state": 1713,
+        "text": "Magüí",
+        "id_country": 82,
+        "nameAve": "MAGUI(NARINO)"
+    },
+    { "id": 464780, "id_state": 1713, "text": "Mangüi", "id_country": 82 },
+    { "id": 465223, "id_state": 1713, "text": "Mercedes", "id_country": 82 },
+    { "id": 465306, "id_state": 1713, "text": "Minas", "id_country": 82 },
+    { "id": 465333, "id_state": 1713, "text": "Miraflores", "id_country": 82 },
+    {
+        "id": 465696,
+        "id_state": 1713,
+        "text": "Motilón",
+        "id_country": 82,
+        "nameAve": "MOTILON(NARINO)"
+    },
+    {
+        "id": 465831,
+        "id_state": 1713,
+        "text": "Nariño",
+        "id_country": 82,
+        "nameAve": "NARINO(NARINO)"
+    },
+    {
+        "id": 466070,
+        "id_state": 1713,
+        "text": "Olaya Herrera",
+        "id_country": 82
+    },
+    {
+        "id": 466144,
+        "id_state": 1713,
+        "text": "Ospina",
+        "id_country": 82,
+        "nameAve": "OSPINA(NARINO)"
+    },
+    {
+        "id": 466145,
+        "id_state": 1713,
+        "text": "Ospina Pérez",
+        "id_country": 82
+    },
+    { "id": 466224, "id_state": 1713, "text": "Palacio", "id_country": 82 },
+    { "id": 466323, "id_state": 1713, "text": "Palmer", "id_country": 82 },
+    { "id": 466347, "id_state": 1713, "text": "Palmira", "id_country": 82 },
+    { "id": 466397, "id_state": 1713, "text": "Palomo", "id_country": 82 },
+    { "id": 466444, "id_state": 1713, "text": "Panán", "id_country": 82 },
+    { "id": 466459, "id_state": 1713, "text": "Pandiaco", "id_country": 82 },
+    { "id": 466492, "id_state": 1713, "text": "Papayal", "id_country": 82 },
+    {
+        "id": 466631,
+        "id_state": 1713,
+        "text": "Pasto",
+        "id_country": 82,
+        "nameAve": "PASTO(NARINO)"
+    },
+    { "id": 466649, "id_state": 1713, "text": "Patía", "id_country": 82 },
+    { "id": 466682, "id_state": 1713, "text": "Pato", "id_country": 82 },
+    { "id": 466735, "id_state": 1713, "text": "Pedregal", "id_country": 82 },
+    { "id": 466810, "id_state": 1713, "text": "Peñol", "id_country": 82 },
+    { "id": 466919, "id_state": 1713, "text": "Piaramá", "id_country": 82 },
+    {
+        "id": 466947,
+        "id_state": 1713,
+        "text": "Piedra Ancha",
+        "id_country": 82
+    },
+    { "id": 467094, "id_state": 1713, "text": "Pizarro", "id_country": 82 },
+    {
+        "id": 467208,
+        "id_state": 1713,
+        "text": "Policarpa",
+        "id_country": 82,
+        "nameAve": "POLICARPA(NARINO)"
+    },
+    {
+        "id": 467321,
+        "id_state": 1713,
+        "text": "Potosí",
+        "id_country": 82,
+        "nameAve": "POTOSI(NARINO)"
+    },
+    { "id": 467323, "id_state": 1713, "text": "Potrerillo", "id_country": 82 },
+    {
+        "id": 467547,
+        "id_state": 1713,
+        "text": "Puerres",
+        "id_country": 82,
+        "nameAve": "PUERRES(NARINO)"
+    },
+    {
+        "id": 467990,
+        "id_state": 1713,
+        "text": "Pupiales",
+        "id_country": 82,
+        "nameAve": "PUPIALES(NARINO)"
+    },
+    { "id": 468175, "id_state": 1713, "text": "Recodo", "id_country": 82 },
+    {
+        "id": 468261,
+        "id_state": 1713,
+        "text": "Ricaurte",
+        "id_country": 82,
+        "nameAve": "RICAURTE(NARINO)"
+    },
+    { "id": 468386, "id_state": 1713, "text": "Robles", "id_country": 82 },
+    { "id": 468573, "id_state": 1713, "text": "Salahonda", "id_country": 82 },
+    {
+        "id": 468630,
+        "id_state": 1713,
+        "text": "Samaniego",
+        "id_country": 82,
+        "nameAve": "SAMANIEGO(NARINO)"
+    },
+    {
+        "id": 468761,
+        "id_state": 1713,
+        "text": "San Bernardo",
+        "id_country": 82,
+        "nameAve": "SAN BERNARDO(NARINO)"
+    },
+    {
+        "id": 468825,
+        "id_state": 1713,
+        "text": "Sandoná",
+        "id_country": 82,
+        "nameAve": "SANDONA(NARINO)"
+    },
+    { "id": 468833, "id_state": 1713, "text": "San Felipe", "id_country": 82 },
+    {
+        "id": 468858,
+        "id_state": 1713,
+        "text": "San Francisco",
+        "id_country": 82,
+        "nameAve": "SAN FRANCISCO(NARINO)"
+    },
+    { "id": 469039, "id_state": 1713, "text": "San Juan", "id_country": 82 },
+    {
+        "id": 469091,
+        "id_state": 1713,
+        "text": "San Lorenzo",
+        "id_country": 82,
+        "nameAve": "SAN LORENZO(NARINO)"
+    },
+    { "id": 469137, "id_state": 1713, "text": "San Martín", "id_country": 82 },
+    { "id": 469168, "id_state": 1713, "text": "San Miguel", "id_country": 82 },
+    {
+        "id": 469212,
+        "id_state": 1713,
+        "text": "San Pablo",
+        "id_country": 82,
+        "nameAve": "SAN PABLO(NARINO)"
+    },
+    { "id": 469333, "id_state": 1713, "text": "Santa Ana", "id_country": 82 },
+    {
+        "id": 469382,
+        "id_state": 1713,
+        "text": "Santá Barbara",
+        "id_country": 82,
+        "nameAve": "SANTA BARBARA(NARINO)"
+    },
+    {
+        "id": 469386,
+        "id_state": 1713,
+        "text": "Santa Catalina",
+        "id_country": 82
+    },
+    {
+        "id": 469395,
+        "id_state": 1713,
+        "text": "Santa Cecilia",
+        "id_country": 82
+    },
+    {
+        "id": 469430,
+        "id_state": 1713,
+        "text": "Santacruz",
+        "id_country": 82,
+        "nameAve": "SANTACRUZ(NARINO)"
+    },
+    { "id": 469578, "id_state": 1713, "text": "Santa Marta", "id_country": 82 },
+    { "id": 469608, "id_state": 1713, "text": "Santander", "id_country": 82 },
+    { "id": 470111, "id_state": 1713, "text": "Sotomayor", "id_country": 82 },
+    { "id": 470207, "id_state": 1713, "text": "Tablon", "id_country": 82 },
+    { "id": 470279, "id_state": 1713, "text": "Tambo", "id_country": 82 },
+    {
+        "id": 470297,
+        "id_state": 1713,
+        "text": "Taminango",
+        "id_country": 82,
+        "nameAve": "TAMINANGO(NARINO)"
+    },
+    {
+        "id": 470316,
+        "id_state": 1713,
+        "text": "Tangua",
+        "id_country": 82,
+        "nameAve": "TANGUA(NARINO)"
+    },
+    { "id": 470819, "id_state": 1713, "text": "Tucano", "id_country": 82 },
+    {
+        "id": 470840,
+        "id_state": 1713,
+        "text": "Tumaco",
+        "id_country": 82,
+        "nameAve": "TUMACO(NARINO)"
+    },
+    {
+        "id": 470866,
+        "id_state": 1713,
+        "text": "Túquerres",
+        "id_country": 82,
+        "nameAve": "TUQUERRES(NARINO)"
+    },
+    { "id": 470958, "id_state": 1713, "text": "Uribe", "id_country": 82 },
+    { "id": 471198, "id_state": 1713, "text": "Vergel", "id_country": 82 },
+    { "id": 471525, "id_state": 1713, "text": "Yaquanquer", "id_country": 82 },
+    { "id": 471529, "id_state": 1713, "text": "Yari", "id_country": 82 },
+    { "id": 471623, "id_state": 1713, "text": "Yuyero", "id_country": 82 },
+    { "id": 471664, "id_state": 1713, "text": "Zapote", "id_country": 82 },
+    { "id": 471670, "id_state": 1713, "text": "Zaragoza", "id_country": 82 },
+    {
+        "id": 790462,
+        "id_state": 1713,
+        "text": "Anganoy",
+        "id_country": 82,
+        "nameAve": "ANGANOY(NARINO)"
+    },
+    {
+        "id": 790470,
+        "id_state": 1713,
+        "text": "Arboleda",
+        "id_country": 82,
+        "nameAve": "ARBOLEDA(NARINO)"
+    },
+    {
+        "id": 790517,
+        "id_state": 1713,
+        "text": "Botanilla",
+        "id_country": 82,
+        "nameAve": "BOTANILLA(NARINO)"
+    },
+    {
+        "id": 790527,
+        "id_state": 1713,
+        "text": "Buesaquillo",
+        "id_country": 82,
+        "nameAve": "BUESAQUILLO(NARINO)"
+    },
+    {
+        "id": 790531,
+        "id_state": 1713,
+        "text": "Cabrera",
+        "id_country": 82,
+        "nameAve": "CABRERA(NARINO)"
+    },
+    {
+        "id": 790547,
+        "id_state": 1713,
+        "text": "Canchala",
+        "id_country": 82,
+        "nameAve": "CANCHALA(NARINO)"
+    },
+    {
+        "id": 790572,
+        "id_state": 1713,
+        "text": "Cerotal",
+        "id_country": 82,
+        "nameAve": "CEROTAL(NARINO)"
+    },
+    {
+        "id": 790581,
+        "id_state": 1713,
+        "text": "Charguayaco",
+        "id_country": 82,
+        "nameAve": "CHARGUAYACO(NARINO)"
+    },
+    {
+        "id": 790662,
+        "id_state": 1713,
+        "text": "Cruz de amarillo",
+        "id_country": 82,
+        "nameAve": "CRUZ DE AMARILLO(NARINO)"
+    },
+    {
+        "id": 790664,
+        "id_state": 1713,
+        "text": "Cuaspud carlosama",
+        "id_country": 82,
+        "nameAve": "CUASPUD CARLOSAMA(NARINO)"
+    },
+    {
+        "id": 790667,
+        "id_state": 1713,
+        "text": "Cubijan bajo",
+        "id_country": 82,
+        "nameAve": "CUBIJAN BAJO(NARINO)"
+    },
+    {
+        "id": 790671,
+        "id_state": 1713,
+        "text": "Cujacal",
+        "id_country": 82,
+        "nameAve": "CUJACAL(NARINO)"
+    },
+    {
+        "id": 790675,
+        "id_state": 1713,
+        "text": "Daza",
+        "id_country": 82,
+        "nameAve": "DAZA(NARINO)"
+    },
+    {
+        "id": 790676,
+        "id_state": 1713,
+        "text": "Dolores",
+        "id_country": 82,
+        "nameAve": "DOLORES(NARINO)"
+    },
+    {
+        "id": 790692,
+        "id_state": 1713,
+        "text": "El campanero",
+        "id_country": 82,
+        "nameAve": "EL CAMPANERO(NARINO)"
+    },
+    {
+        "id": 790713,
+        "id_state": 1713,
+        "text": "El encano",
+        "id_country": 82,
+        "nameAve": "EL ENCANO(NARINO)"
+    },
+    {
+        "id": 790749,
+        "id_state": 1713,
+        "text": "El puerto",
+        "id_country": 82,
+        "nameAve": "EL PUERTO(NARINO)"
+    },
+    {
+        "id": 790759,
+        "id_state": 1713,
+        "text": "El socorro cimarron",
+        "id_country": 82,
+        "nameAve": "EL SOCORRO CIMARRON(NARINO)"
+    },
+    {
+        "id": 790760,
+        "id_state": 1713,
+        "text": "El tablon de gomez",
+        "id_country": 82,
+        "nameAve": "EL TABLON DE GOMEZ(NARINO)"
+    },
+    {
+        "id": 790781,
+        "id_state": 1713,
+        "text": "Francisco pizarro",
+        "id_country": 82,
+        "nameAve": "FRANCISCO PIZARRO(NARINO)"
+    },
+    {
+        "id": 790791,
+        "id_state": 1713,
+        "text": "Genoy",
+        "id_country": 82,
+        "nameAve": "GENOY(NARINO)"
+    },
+    {
+        "id": 790807,
+        "id_state": 1713,
+        "text": "Gualmatan alto",
+        "id_country": 82,
+        "nameAve": "GUALMATAN ALTO(NARINO)"
+    },
+    {
+        "id": 790829,
+        "id_state": 1713,
+        "text": "Imues",
+        "id_country": 82,
+        "nameAve": "IMUES(NARINO)"
+    },
+    {
+        "id": 790835,
+        "id_state": 1713,
+        "text": "Jamondino",
+        "id_country": 82,
+        "nameAve": "JAMONDINO(NARINO)"
+    },
+    {
+        "id": 790840,
+        "id_state": 1713,
+        "text": "Jongovito",
+        "id_country": 82,
+        "nameAve": "JONGOVITO(NARINO)"
+    },
+    {
+        "id": 790845,
+        "id_state": 1713,
+        "text": "Jurado",
+        "id_country": 82,
+        "nameAve": "JURADO(NARINO)"
+    },
+    {
+        "id": 790861,
+        "id_state": 1713,
+        "text": "La caldera",
+        "id_country": 82,
+        "nameAve": "LA CALDERA(NARINO)"
+    },
+    {
+        "id": 790901,
+        "id_state": 1713,
+        "text": "La merced",
+        "id_country": 82,
+        "nameAve": "LA MERCED(NARINO)"
+    },
+    {
+        "id": 790922,
+        "id_state": 1713,
+        "text": "La tola",
+        "id_country": 82,
+        "nameAve": "LA TOLA(NARINO)"
+    },
+    {
+        "id": 790930,
+        "id_state": 1713,
+        "text": "La victoria",
+        "id_country": 82,
+        "nameAve": "LA VICTORIA(NARINO)"
+    },
+    {
+        "id": 790941,
+        "id_state": 1713,
+        "text": "Las encinas",
+        "id_country": 82,
+        "nameAve": "LAS ENCINAS(NARINO)"
+    },
+    {
+        "id": 790966,
+        "id_state": 1713,
+        "text": "Llorente",
+        "id_country": 82,
+        "nameAve": "LLORENTE(NARINO)"
+    },
+    {
+        "id": 790970,
+        "id_state": 1713,
+        "text": "Los angeles",
+        "id_country": 82,
+        "nameAve": "LOS ANGELES(NARINO)"
+    },
+    {
+        "id": 790991,
+        "id_state": 1713,
+        "text": "Mallama",
+        "id_country": 82,
+        "nameAve": "MALLAMA(NARINO)"
+    },
+    {
+        "id": 790996,
+        "id_state": 1713,
+        "text": "Mapachico alto",
+        "id_country": 82,
+        "nameAve": "MAPACHICO ALTO(NARINO)"
+    },
+    {
+        "id": 790997,
+        "id_state": 1713,
+        "text": "Mapachico san jose",
+        "id_country": 82,
+        "nameAve": "MAPACHICO SAN JOSE(NARINO)"
+    },
+    {
+        "id": 790998,
+        "id_state": 1713,
+        "text": "Mapachico-aticance",
+        "id_country": 82,
+        "nameAve": "MAPACHICO-ATICANCE(NARINO)"
+    },
+    {
+        "id": 791029,
+        "id_state": 1713,
+        "text": "Mocondino",
+        "id_country": 82,
+        "nameAve": "MOCONDINO(NARINO)"
+    },
+    {
+        "id": 791042,
+        "id_state": 1713,
+        "text": "Mosquera",
+        "id_country": 82,
+        "nameAve": "MOSQUERA(NARINO)"
+    },
+    {
+        "id": 791066,
+        "id_state": 1713,
+        "text": "Obonuco",
+        "id_country": 82,
+        "nameAve": "OBONUCO(NARINO)"
+    },
+    {
+        "id": 791143,
+        "id_state": 1713,
+        "text": "Providencia",
+        "id_country": 82,
+        "nameAve": "PROVIDENCIA(NARINO)"
+    },
+    {
+        "id": 791200,
+        "id_state": 1713,
+        "text": "Roberto payan",
+        "id_country": 82,
+        "nameAve": "ROBERTO PAYAN(NARINO)"
+    },
+    {
+        "id": 791234,
+        "id_state": 1713,
+        "text": "San fernando",
+        "id_country": 82,
+        "nameAve": "SAN FERNANDO(NARINO)"
+    },
+    {
+        "id": 791248,
+        "id_state": 1713,
+        "text": "San jose",
+        "id_country": 82,
+        "nameAve": "SAN JOSE(NARINO)"
+    },
+    {
+        "id": 791250,
+        "id_state": 1713,
+        "text": "San juan de anganoy",
+        "id_country": 82,
+        "nameAve": "SAN JUAN DE ANGANOY(NARINO)"
+    },
+    {
+        "id": 791262,
+        "id_state": 1713,
+        "text": "San pedro de cartago",
+        "id_country": 82,
+        "nameAve": "SAN PEDRO DE CARTAGO(NARINO)"
+    },
+    {
+        "id": 791283,
+        "id_state": 1713,
+        "text": "Santa lucia",
+        "id_country": 82,
+        "nameAve": "SANTA LUCIA(NARINO)"
+    },
+    {
+        "id": 791300,
+        "id_state": 1713,
+        "text": "Sapuyes",
+        "id_country": 82,
+        "nameAve": "SAPUYES(NARINO)"
+    },
+    {
+        "id": 791344,
+        "id_state": 1713,
+        "text": "Tescual",
+        "id_country": 82,
+        "nameAve": "TESCUAL(NARINO)"
+    },
+    {
+        "id": 791402,
+        "id_state": 1713,
+        "text": "Villa maria",
+        "id_country": 82,
+        "nameAve": "VILLA MARIA(NARINO)"
+    },
+    {
+        "id": 791415,
+        "id_state": 1713,
+        "text": "Yacuanquer",
+        "id_country": 82,
+        "nameAve": "YACUANQUER(NARINO)"
+    },
+    {
+        "id": 451023,
+        "id_state": 1714,
+        "text": "Ábrego",
+        "id_country": 82,
+        "nameAve": "ABREGO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 451072,
+        "id_state": 1714,
+        "text": "Agua Blanca",
+        "id_country": 82,
+        "nameAve": "AGUA BLANCA(NORTE DE SANTANDER)"
+    },
+    { "id": 451075, "id_state": 1714, "text": "Aguablanca", "id_country": 82 },
+    {
+        "id": 451087,
+        "id_state": 1714,
+        "text": "Agua Caliente",
+        "id_country": 82
+    },
+    { "id": 451107, "id_state": 1714, "text": "Aguaclara", "id_country": 82 },
+    {
+        "id": 451118,
+        "id_state": 1714,
+        "text": "Agua de La Virgen",
+        "id_country": 82
+    },
+    { "id": 451142, "id_state": 1714, "text": "Agualinda", "id_country": 82 },
+    {
+        "id": 451153,
+        "id_state": 1714,
+        "text": "Aguanta-Callao",
+        "id_country": 82
+    },
+    { "id": 451168, "id_state": 1714, "text": "Aguasclaras", "id_country": 82 },
+    { "id": 451205, "id_state": 1714, "text": "Aicalá", "id_country": 82 },
+    { "id": 451236, "id_state": 1714, "text": "Alcalá", "id_country": 82 },
+    { "id": 451257, "id_state": 1714, "text": "Alemania", "id_country": 82 },
+    { "id": 451298, "id_state": 1714, "text": "Almendro", "id_country": 82 },
+    { "id": 451341, "id_state": 1714, "text": "Altamira", "id_country": 82 },
+    {
+        "id": 451376,
+        "id_state": 1714,
+        "text": "Alto de Los Patios",
+        "id_country": 82
+    },
+    { "id": 451437, "id_state": 1714, "text": "Altoviento", "id_country": 82 },
+    { "id": 451587, "id_state": 1714, "text": "Apartadero", "id_country": 82 },
+    { "id": 451588, "id_state": 1714, "text": "Apartaderos", "id_country": 82 },
+    {
+        "id": 451665,
+        "id_state": 1714,
+        "text": "Arboledas",
+        "id_country": 82,
+        "nameAve": "ARBOLEDAS(NORTE DE SANTANDER)"
+    },
+    { "id": 451722, "id_state": 1714, "text": "Argentina", "id_country": 82 },
+    { "id": 451814, "id_state": 1714, "text": "Aspasica", "id_country": 82 },
+    { "id": 451870, "id_state": 1714, "text": "Ayacucho", "id_country": 82 },
+    { "id": 451885, "id_state": 1714, "text": "Bábega", "id_country": 82 },
+    { "id": 451978, "id_state": 1714, "text": "Banco Arena", "id_country": 82 },
+    {
+        "id": 451979,
+        "id_state": 1714,
+        "text": "Banco de Arena",
+        "id_country": 82
+    },
+    { "id": 452021, "id_state": 1714, "text": "Barco", "id_country": 82 },
+    { "id": 452050, "id_state": 1714, "text": "Barrancas", "id_country": 82 },
+    { "id": 452089, "id_state": 1714, "text": "Barrientos", "id_country": 82 },
+    { "id": 452132, "id_state": 1714, "text": "Batatal", "id_country": 82 },
+    { "id": 452204, "id_state": 1714, "text": "Bellaluz", "id_country": 82 },
+    {
+        "id": 452213,
+        "id_state": 1714,
+        "text": "Bella Vista",
+        "id_country": 82,
+        "nameAve": "BELLA VISTA(NORTE DE SANTANDER)"
+    },
+    { "id": 452230, "id_state": 1714, "text": "Bellavista", "id_country": 82 },
+    { "id": 452302, "id_state": 1714, "text": "Betania", "id_country": 82 },
+    {
+        "id": 452453,
+        "id_state": 1714,
+        "text": "Bochalema",
+        "id_country": 82,
+        "nameAve": "BOCHALEMA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 452477,
+        "id_state": 1714,
+        "text": "Bohío Shiroko Kayra",
+        "id_country": 82
+    },
+    { "id": 452618, "id_state": 1714, "text": "Brisas", "id_country": 82 },
+    { "id": 452647, "id_state": 1714, "text": "Bucaracica", "id_country": 82 },
+    {
+        "id": 452651,
+        "id_state": 1714,
+        "text": "Bucarasica",
+        "id_country": 82,
+        "nameAve": "BUCARASICA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 452659,
+        "id_state": 1714,
+        "text": "Buena Esperanza",
+        "id_country": 82,
+        "nameAve": "BUENA ESPERANZA(NORTE DE SANTANDER)"
+    },
+    { "id": 452675, "id_state": 1714, "text": "Buena Vista", "id_country": 82 },
+    { "id": 452689, "id_state": 1714, "text": "Buenavista", "id_country": 82 },
+    {
+        "id": 452725,
+        "id_state": 1714,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    { "id": 452787, "id_state": 1714, "text": "Cabrera", "id_country": 82 },
+    {
+        "id": 452839,
+        "id_state": 1714,
+        "text": "Cáchira",
+        "id_country": 82,
+        "nameAve": "CACHIRA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 452855,
+        "id_state": 1714,
+        "text": "Cacota",
+        "id_country": 82,
+        "nameAve": "CACOTA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 452856,
+        "id_state": 1714,
+        "text": "Cácota",
+        "id_country": 82,
+        "nameAve": "CACOTA(NORTE DE SANTANDER)"
+    },
+    { "id": 452858, "id_state": 1714, "text": "20 de Junio", "id_country": 82 },
+    {
+        "id": 453028,
+        "id_state": 1714,
+        "text": "Camilo Torres",
+        "id_country": 82
+    },
+    { "id": 453064, "id_state": 1714, "text": "Campanario", "id_country": 82 },
+    {
+        "id": 453093,
+        "id_state": 1714,
+        "text": "Campo Alegre",
+        "id_country": 82
+    },
+    {
+        "id": 453110,
+        "id_state": 1714,
+        "text": "Campo Alicia",
+        "id_country": 82
+    },
+    { "id": 453128, "id_state": 1714, "text": "Campo Cinco", "id_country": 82 },
+    {
+        "id": 453133,
+        "id_state": 1714,
+        "text": "Campo de Oso",
+        "id_country": 82
+    },
+    {
+        "id": 453134,
+        "id_state": 1714,
+        "text": "Campo Dos",
+        "id_country": 82,
+        "nameAve": "CAMPO DOS(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 453140,
+        "id_state": 1714,
+        "text": "Campo González",
+        "id_country": 82
+    },
+    {
+        "id": 453141,
+        "id_state": 1714,
+        "text": "Campo Guayabo",
+        "id_country": 82
+    },
+    { "id": 453164, "id_state": 1714, "text": "Campo Seis", "id_country": 82 },
+    { "id": 453170, "id_state": 1714, "text": "Campoyuca", "id_country": 82 },
+    { "id": 453171, "id_state": 1714, "text": "Campo Zulia", "id_country": 82 },
+    { "id": 453178, "id_state": 1714, "text": "Caña Brava", "id_country": 82 },
+    {
+        "id": 453297,
+        "id_state": 1714,
+        "text": "Caño Victoria",
+        "id_country": 82
+    },
+    { "id": 453329, "id_state": 1714, "text": "Canutillo", "id_country": 82 },
+    { "id": 453338, "id_state": 1714, "text": "Capellanía", "id_country": 82 },
+    { "id": 453463, "id_state": 1714, "text": "Carmen", "id_country": 82 },
+    { "id": 453510, "id_state": 1714, "text": "Carrizal", "id_country": 82 },
+    { "id": 453526, "id_state": 1714, "text": "Cartagena", "id_country": 82 },
+    { "id": 453552, "id_state": 1714, "text": "Casa Blanca", "id_country": 82 },
+    {
+        "id": 453577,
+        "id_state": 1714,
+        "text": "Casa de Astillero",
+        "id_country": 82
+    },
+    { "id": 454107, "id_state": 1714, "text": "Cedral", "id_country": 82 },
+    { "id": 454285, "id_state": 1714, "text": "Chapinero", "id_country": 82 },
+    {
+        "id": 454410,
+        "id_state": 1714,
+        "text": "Chinácota",
+        "id_country": 82,
+        "nameAve": "CHINACOTA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 454465,
+        "id_state": 1714,
+        "text": "Chitagá",
+        "id_country": 82,
+        "nameAve": "CHITAGA(NORTE DE SANTANDER)"
+    },
+    { "id": 454598, "id_state": 1714, "text": "Cínera", "id_country": 82 },
+    { "id": 454701, "id_state": 1714, "text": "Colón", "id_country": 82 },
+    { "id": 454717, "id_state": 1714, "text": "Colorados", "id_country": 82 },
+    { "id": 454723, "id_state": 1714, "text": "Colpet", "id_country": 82 },
+    { "id": 454728, "id_state": 1714, "text": "Comarca", "id_country": 82 },
+    { "id": 454760, "id_state": 1714, "text": "Concepción", "id_country": 82 },
+    {
+        "id": 454810,
+        "id_state": 1714,
+        "text": "Convención",
+        "id_country": 82,
+        "nameAve": "CONVENCION(NORTE DE SANTANDER)"
+    },
+    { "id": 454850, "id_state": 1714, "text": "Córdoba", "id_country": 82 },
+    { "id": 454878, "id_state": 1714, "text": "Cornejo", "id_country": 82 },
+    { "id": 455155, "id_state": 1714, "text": "Cristales", "id_country": 82 },
+    {
+        "id": 455217,
+        "id_state": 1714,
+        "text": "Cuatro Esquinas",
+        "id_country": 82
+    },
+    { "id": 455238, "id_state": 1714, "text": "Cuberos", "id_country": 82 },
+    {
+        "id": 455268,
+        "id_state": 1714,
+        "text": "Cúcuta",
+        "id_country": 82,
+        "nameAve": "CUCUTA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 455270,
+        "id_state": 1714,
+        "text": "Cucutilla",
+        "id_country": 82,
+        "nameAve": "CUCUTILLA(NORTE DE SANTANDER)"
+    },
+    { "id": 455308, "id_state": 1714, "text": "Culebra", "id_country": 82 },
+    { "id": 455311, "id_state": 1714, "text": "Culebras", "id_country": 82 },
+    { "id": 455312, "id_state": 1714, "text": "Culebrilla", "id_country": 82 },
+    { "id": 455362, "id_state": 1714, "text": "Curasica", "id_country": 82 },
+    { "id": 455365, "id_state": 1714, "text": "Curazao", "id_country": 82 },
+    { "id": 455481, "id_state": 1714, "text": "Diamante", "id_country": 82 },
+    {
+        "id": 455492,
+        "id_state": 1714,
+        "text": "Diez y Nueve",
+        "id_country": 82
+    },
+    { "id": 455541, "id_state": 1714, "text": "Donjuana", "id_country": 82 },
+    {
+        "id": 455587,
+        "id_state": 1714,
+        "text": "Durania",
+        "id_country": 82,
+        "nameAve": "DURANIA(NORTE DE SANTANDER)"
+    },
+    { "id": 455597, "id_state": 1714, "text": "Eden", "id_country": 82 },
+    { "id": 455674, "id_state": 1714, "text": "El Alto", "id_country": 82 },
+    { "id": 455788, "id_state": 1714, "text": "El Batatal", "id_country": 82 },
+    { "id": 455841, "id_state": 1714, "text": "El Bote", "id_country": 82 },
+    {
+        "id": 455988,
+        "id_state": 1714,
+        "text": "El Carmen",
+        "id_country": 82,
+        "nameAve": "EL CARMEN(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 456001,
+        "id_state": 1714,
+        "text": "El Carmen de Nazaret",
+        "id_country": 82
+    },
+    { "id": 456031, "id_state": 1714, "text": "El Cauca", "id_country": 82 },
+    { "id": 456390, "id_state": 1714, "text": "El Descanso", "id_country": 82 },
+    { "id": 456435, "id_state": 1714, "text": "El Diamante", "id_country": 82 },
+    { "id": 456471, "id_state": 1714, "text": "El Dorado", "id_country": 82 },
+    { "id": 456539, "id_state": 1714, "text": "El Escobal", "id_country": 82 },
+    { "id": 456554, "id_state": 1714, "text": "El Espejo", "id_country": 82 },
+    { "id": 456734, "id_state": 1714, "text": "El Heraldo", "id_country": 82 },
+    { "id": 456892, "id_state": 1714, "text": "El Libano", "id_country": 82 },
+    { "id": 456934, "id_state": 1714, "text": "El Livano", "id_country": 82 },
+    { "id": 457047, "id_state": 1714, "text": "El Mirador", "id_country": 82 },
+    {
+        "id": 457142,
+        "id_state": 1714,
+        "text": "El Ochenta y Ocho",
+        "id_country": 82
+    },
+    { "id": 457168, "id_state": 1714, "text": "El Oriente", "id_country": 82 },
+    {
+        "id": 457188,
+        "id_state": 1714,
+        "text": "El Otro Lado",
+        "id_country": 82
+    },
+    { "id": 457282, "id_state": 1714, "text": "El Paraíso", "id_country": 82 },
+    { "id": 457301, "id_state": 1714, "text": "El Páramo", "id_country": 82 },
+    { "id": 457426, "id_state": 1714, "text": "El Placer", "id_country": 82 },
+    { "id": 457476, "id_state": 1714, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457500, "id_state": 1714, "text": "El Potrero", "id_country": 82 },
+    {
+        "id": 457545,
+        "id_state": 1714,
+        "text": "El Purgatorio",
+        "id_country": 82
+    },
+    { "id": 457637, "id_state": 1714, "text": "El Reposo", "id_country": 82 },
+    { "id": 457652, "id_state": 1714, "text": "El Retén", "id_country": 82 },
+    { "id": 457715, "id_state": 1714, "text": "El Rodeo", "id_country": 82 },
+    { "id": 457735, "id_state": 1714, "text": "El Rosario", "id_country": 82 },
+    { "id": 457772, "id_state": 1714, "text": "El Salado", "id_country": 82 },
+    { "id": 457844, "id_state": 1714, "text": "El Silencio", "id_country": 82 },
+    {
+        "id": 457902,
+        "id_state": 1714,
+        "text": "El Suspiro",
+        "id_country": 82,
+        "nameAve": "EL SUSPIRO(NORTE DE SANTANDER)"
+    },
+    { "id": 457907, "id_state": 1714, "text": "El Tabaco", "id_country": 82 },
+    {
+        "id": 457957,
+        "id_state": 1714,
+        "text": "El Tarra",
+        "id_country": 82,
+        "nameAve": "EL TARRA(NORTE DE SANTANDER)"
+    },
+    { "id": 458056, "id_state": 1714, "text": "El Trapiche", "id_country": 82 },
+    { "id": 458078, "id_state": 1714, "text": "El Triunfo", "id_country": 82 },
+    {
+        "id": 458217,
+        "id_state": 1714,
+        "text": "El Zulia",
+        "id_country": 82,
+        "nameAve": "EL ZULIA(NORTE DE SANTANDER)"
+    },
+    { "id": 458257, "id_state": 1714, "text": "Entre Ríos", "id_country": 82 },
+    {
+        "id": 458322,
+        "id_state": 1714,
+        "text": "Espíritu Santo",
+        "id_country": 82
+    },
+    { "id": 458464, "id_state": 1714, "text": "Floresta", "id_country": 82 },
+    {
+        "id": 458777,
+        "id_state": 1714,
+        "text": "Gramalote",
+        "id_country": 82,
+        "nameAve": "GRAMALOTE(NORTE DE SANTANDER)"
+    },
+    { "id": 458951, "id_state": 1714, "text": "Guaimaral", "id_country": 82 },
+    { "id": 458992, "id_state": 1714, "text": "Guamal", "id_country": 82 },
+    { "id": 458998, "id_state": 1714, "text": "Guamalito", "id_country": 82 },
+    { "id": 459227, "id_state": 1714, "text": "Guimaral", "id_country": 82 },
+    {
+        "id": 459267,
+        "id_state": 1714,
+        "text": "Hacarí",
+        "id_country": 82,
+        "nameAve": "HACARI(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 459865,
+        "id_state": 1714,
+        "text": "Herrán",
+        "id_country": 82,
+        "nameAve": "HERRAN(NORTE DE SANTANDER)"
+    },
+    { "id": 460041, "id_state": 1714, "text": "Icota", "id_country": 82 },
+    {
+        "id": 460708,
+        "id_state": 1714,
+        "text": "La Argentina",
+        "id_country": 82
+    },
+    { "id": 460737, "id_state": 1714, "text": "La Aurora", "id_country": 82 },
+    {
+        "id": 460784,
+        "id_state": 1714,
+        "text": "Labateca",
+        "id_country": 82,
+        "nameAve": "LABATECA(NORTE DE SANTANDER)"
+    },
+    { "id": 461265, "id_state": 1714, "text": "La Curva", "id_country": 82 },
+    { "id": 461270, "id_state": 1714, "text": "La Dalia", "id_country": 82 },
+    { "id": 461304, "id_state": 1714, "text": "La Donjuana", "id_country": 82 },
+    {
+        "id": 461393,
+        "id_state": 1714,
+        "text": "La Esperanza",
+        "id_country": 82,
+        "nameAve": "LA ESPERANZA(NORTE DE SANTANDER)"
+    },
+    { "id": 461438, "id_state": 1714, "text": "La Estrella", "id_country": 82 },
+    {
+        "id": 461492,
+        "id_state": 1714,
+        "text": "La Floresta",
+        "id_country": 82,
+        "nameAve": "LA FLORESTA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 461522,
+        "id_state": 1714,
+        "text": "La Fortaleza",
+        "id_country": 82
+    },
+    {
+        "id": 461550,
+        "id_state": 1714,
+        "text": "La Gabarra",
+        "id_country": 82,
+        "nameAve": "LA GABARRA(NORTE DE SANTANDER)"
+    },
+    { "id": 461564, "id_state": 1714, "text": "La Garita", "id_country": 82 },
+    { "id": 461687, "id_state": 1714, "text": "Laguna", "id_country": 82 },
+    {
+        "id": 461836,
+        "id_state": 1714,
+        "text": "La Jarra",
+        "id_country": 82,
+        "nameAve": "LA JARRA(NORTE DE SANTANDER)"
+    },
+    { "id": 461876, "id_state": 1714, "text": "La Laguna", "id_country": 82 },
+    { "id": 461918, "id_state": 1714, "text": "La Libertad", "id_country": 82 },
+    { "id": 461958, "id_state": 1714, "text": "La Loma", "id_country": 82 },
+    { "id": 462118, "id_state": 1714, "text": "La Matera", "id_country": 82 },
+    { "id": 462225, "id_state": 1714, "text": "La Motilona", "id_country": 82 },
+    {
+        "id": 462267,
+        "id_state": 1714,
+        "text": "La Nueva Donjuana",
+        "id_country": 82
+    },
+    { "id": 462342, "id_state": 1714, "text": "La Palmita", "id_country": 82 },
+    { "id": 462387, "id_state": 1714, "text": "La Paz", "id_country": 82 },
+    {
+        "id": 462395,
+        "id_state": 1714,
+        "text": "La Pedregosa",
+        "id_country": 82
+    },
+    { "id": 462473, "id_state": 1714, "text": "La Plata", "id_country": 82 },
+    {
+        "id": 462488,
+        "id_state": 1714,
+        "text": "La Playa",
+        "id_country": 82,
+        "nameAve": "LA PLAYA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 462587,
+        "id_state": 1714,
+        "text": "La Providencia",
+        "id_country": 82
+    },
+    { "id": 462633, "id_state": 1714, "text": "La Quinta", "id_country": 82 },
+    { "id": 462714, "id_state": 1714, "text": "La Rivera", "id_country": 82 },
+    { "id": 462764, "id_state": 1714, "text": "Las Águilas", "id_country": 82 },
+    { "id": 462831, "id_state": 1714, "text": "Las Brisas", "id_country": 82 },
+    { "id": 463038, "id_state": 1714, "text": "La Silla", "id_country": 82 },
+    {
+        "id": 463145,
+        "id_state": 1714,
+        "text": "Las Mercedes",
+        "id_country": 82
+    },
+    { "id": 463518, "id_state": 1714, "text": "La Unión", "id_country": 82 },
+    { "id": 463632, "id_state": 1714, "text": "La Victoria", "id_country": 82 },
+    { "id": 463771, "id_state": 1714, "text": "Líbano", "id_country": 82 },
+    { "id": 463846, "id_state": 1714, "text": "Llanitos", "id_country": 82 },
+    { "id": 463891, "id_state": 1714, "text": "Locurama", "id_country": 82 },
+    {
+        "id": 463949,
+        "id_state": 1714,
+        "text": "Londres",
+        "id_country": 82,
+        "nameAve": "LONDRES(NORTE DE SANTANDER)"
+    },
+    { "id": 464024, "id_state": 1714, "text": "Los Angeles", "id_country": 82 },
+    {
+        "id": 464089,
+        "id_state": 1714,
+        "text": "Los Cámbulos",
+        "id_country": 82
+    },
+    {
+        "id": 464256,
+        "id_state": 1714,
+        "text": "Los Laureles",
+        "id_country": 82
+    },
+    {
+        "id": 464385,
+        "id_state": 1714,
+        "text": "Los Patios",
+        "id_country": 82,
+        "nameAve": "LOS PATIOS(NORTE DE SANTANDER)"
+    },
+    { "id": 464400, "id_state": 1714, "text": "Los Pinos", "id_country": 82 },
+    { "id": 464472, "id_state": 1714, "text": "Los Vados", "id_country": 82 },
+    {
+        "id": 464481,
+        "id_state": 1714,
+        "text": "Los Volcanes",
+        "id_country": 82
+    },
+    {
+        "id": 464487,
+        "id_state": 1714,
+        "text": "Lourdes",
+        "id_country": 82,
+        "nameAve": "LOURDES(NORTE DE SANTANDER)"
+    },
+    { "id": 464852, "id_state": 1714, "text": "Maracaibo", "id_country": 82 },
+    { "id": 464951, "id_state": 1714, "text": "Marquez", "id_country": 82 },
+    { "id": 465275, "id_state": 1714, "text": "Miami", "id_country": 82 },
+    { "id": 465340, "id_state": 1714, "text": "Miraflores", "id_country": 82 },
+    { "id": 465576, "id_state": 1714, "text": "Monterrey", "id_country": 82 },
+    { "id": 465695, "id_state": 1714, "text": "Motilandia", "id_country": 82 },
+    { "id": 465698, "id_state": 1714, "text": "Motilonia", "id_country": 82 },
+    {
+        "id": 465779,
+        "id_state": 1714,
+        "text": "Mutiscua",
+        "id_country": 82,
+        "nameAve": "MUTISCUA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 465965,
+        "id_state": 1714,
+        "text": "Nueva Granada",
+        "id_country": 82
+    },
+    {
+        "id": 466038,
+        "id_state": 1714,
+        "text": "Ocaña",
+        "id_country": 82,
+        "nameAve": "OCANA(NORTE DE SANTANDER)"
+    },
+    { "id": 466137, "id_state": 1714, "text": "Orú", "id_country": 82 },
+    { "id": 466260, "id_state": 1714, "text": "Palestina", "id_country": 82 },
+    {
+        "id": 466306,
+        "id_state": 1714,
+        "text": "Palmarito",
+        "id_country": 82,
+        "nameAve": "PALMARITO(NORTE DE SANTANDER)"
+    },
+    { "id": 466349, "id_state": 1714, "text": "Palmira", "id_country": 82 },
+    {
+        "id": 466432,
+        "id_state": 1714,
+        "text": "Pamplona",
+        "id_country": 82,
+        "nameAve": "PAMPLONA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 466434,
+        "id_state": 1714,
+        "text": "Pamplonita",
+        "id_country": 82,
+        "nameAve": "PAMPLONITA(NORTE DE SANTANDER)"
+    },
+    { "id": 466531, "id_state": 1714, "text": "Paramo", "id_country": 82 },
+    { "id": 466578, "id_state": 1714, "text": "Parroquia", "id_country": 82 },
+    { "id": 466935, "id_state": 1714, "text": "Picón", "id_country": 82 },
+    { "id": 466943, "id_state": 1714, "text": "Piedecuesta", "id_country": 82 },
+    { "id": 467447, "id_state": 1714, "text": "Pueblo", "id_country": 82 },
+    { "id": 467534, "id_state": 1714, "text": "Puente Real", "id_country": 82 },
+    {
+        "id": 467590,
+        "id_state": 1714,
+        "text": "Puerto Barco",
+        "id_country": 82
+    },
+    {
+        "id": 467847,
+        "id_state": 1714,
+        "text": "Puerto Reyes",
+        "id_country": 82
+    },
+    {
+        "id": 467879,
+        "id_state": 1714,
+        "text": "Puerto Santander",
+        "id_country": 82,
+        "nameAve": "PUERTO SANTANDER(NORTE DE SANTANDER)"
+    },
+    { "id": 468125, "id_state": 1714, "text": "Ramírez", "id_country": 82 },
+    {
+        "id": 468146,
+        "id_state": 1714,
+        "text": "Rancho Grande",
+        "id_country": 82
+    },
+    { "id": 468154, "id_state": 1714, "text": "Rangovalia", "id_country": 82 },
+    { "id": 468320, "id_state": 1714, "text": "Río de Oro", "id_country": 82 },
+    { "id": 468350, "id_state": 1714, "text": "Río Tarra", "id_country": 82 },
+    { "id": 468437, "id_state": 1714, "text": "Rosario", "id_country": 82 },
+    { "id": 468562, "id_state": 1714, "text": "Salado", "id_country": 82 },
+    { "id": 468624, "id_state": 1714, "text": "Salzar", "id_country": 82 },
+    { "id": 468631, "id_state": 1714, "text": "Samanita", "id_country": 82 },
+    { "id": 468658, "id_state": 1714, "text": "San Agustín", "id_country": 82 },
+    {
+        "id": 468792,
+        "id_state": 1714,
+        "text": "San Cayetano",
+        "id_country": 82,
+        "nameAve": "SAN CAYETANO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 468867,
+        "id_state": 1714,
+        "text": "San Francisco",
+        "id_country": 82
+    },
+    { "id": 468920, "id_state": 1714, "text": "San Isidro", "id_country": 82 },
+    { "id": 468989, "id_state": 1714, "text": "San José", "id_country": 82 },
+    {
+        "id": 469006,
+        "id_state": 1714,
+        "text": "San José de Cùcuta",
+        "id_country": 82
+    },
+    {
+        "id": 469013,
+        "id_state": 1714,
+        "text": "San José de la Montaña",
+        "id_country": 82
+    },
+    {
+        "id": 469064,
+        "id_state": 1714,
+        "text": "San Juan de Dios",
+        "id_country": 82
+    },
+    { "id": 469113, "id_state": 1714, "text": "San Luis", "id_country": 82 },
+    {
+        "id": 469153,
+        "id_state": 1714,
+        "text": "San Martín de Loba",
+        "id_country": 82
+    },
+    { "id": 469178, "id_state": 1714, "text": "San Miguel", "id_country": 82 },
+    {
+        "id": 469186,
+        "id_state": 1714,
+        "text": "San Miguelato",
+        "id_country": 82
+    },
+    { "id": 469289, "id_state": 1714, "text": "San Rafael", "id_country": 82 },
+    {
+        "id": 469390,
+        "id_state": 1714,
+        "text": "Santa Catalina",
+        "id_country": 82
+    },
+    { "id": 469439, "id_state": 1714, "text": "Santa Elena", "id_country": 82 },
+    { "id": 469612, "id_state": 1714, "text": "Santander", "id_country": 82 },
+    {
+        "id": 469724,
+        "id_state": 1714,
+        "text": "Santiago",
+        "id_country": 82,
+        "nameAve": "SANTIAGO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 469741,
+        "id_state": 1714,
+        "text": "Santo Domingo",
+        "id_country": 82
+    },
+    {
+        "id": 469809,
+        "id_state": 1714,
+        "text": "Sardinata",
+        "id_country": 82,
+        "nameAve": "SARDINATA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 469955,
+        "id_state": 1714,
+        "text": "Silos",
+        "id_country": 82,
+        "nameAve": "SILOS(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 470413,
+        "id_state": 1714,
+        "text": "Teorama",
+        "id_country": 82,
+        "nameAve": "TEORAMA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 470463,
+        "id_state": 1714,
+        "text": "Tibú",
+        "id_country": 82,
+        "nameAve": "TIBU(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 470470,
+        "id_state": 1714,
+        "text": "Tierra Adentro",
+        "id_country": 82
+    },
+    { "id": 470569, "id_state": 1714, "text": "Toboso", "id_country": 82 },
+    { "id": 470581, "id_state": 1714, "text": "Tocoroca", "id_country": 82 },
+    {
+        "id": 470607,
+        "id_state": 1714,
+        "text": "Toledo",
+        "id_country": 82,
+        "nameAve": "TOLEDO(NORTE DE SANTANDER)"
+    },
+    { "id": 470711, "id_state": 1714, "text": "Trapiche", "id_country": 82 },
+    { "id": 470782, "id_state": 1714, "text": "Trinidad", "id_country": 82 },
+    { "id": 470812, "id_state": 1714, "text": "Trujillo", "id_country": 82 },
+    { "id": 470855, "id_state": 1714, "text": "Tunja", "id_country": 82 },
+    {
+        "id": 471102,
+        "id_state": 1714,
+        "text": "Veinte de Junio",
+        "id_country": 82
+    },
+    {
+        "id": 471267,
+        "id_state": 1714,
+        "text": "Villa Caro",
+        "id_country": 82,
+        "nameAve": "VILLA CARO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 471281,
+        "id_state": 1714,
+        "text": "Villa del Rosario",
+        "id_country": 82,
+        "nameAve": "VILLA DEL ROSARIO(NORTE DE SANTANDER)"
+    },
+    { "id": 471357, "id_state": 1714, "text": "Villa Nueva", "id_country": 82 },
+    { "id": 471392, "id_state": 1714, "text": "Villa Rosa", "id_country": 82 },
+    {
+        "id": 471396,
+        "id_state": 1714,
+        "text": "Villa Rosario",
+        "id_country": 82
+    },
+    { "id": 471408, "id_state": 1714, "text": "Villa Sucre", "id_country": 82 },
+    { "id": 471417, "id_state": 1714, "text": "Villa Zulia", "id_country": 82 },
+    { "id": 471628, "id_state": 1714, "text": "Zalazar", "id_country": 82 },
+    { "id": 471695, "id_state": 1714, "text": "Zulia", "id_country": 82 },
+    { "id": 471699, "id_state": 1714, "text": "Zumbador", "id_country": 82 },
+    {
+        "id": 790443,
+        "id_state": 1714,
+        "text": "Agua clara",
+        "id_country": 82,
+        "nameAve": "AGUA CLARA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790460,
+        "id_state": 1714,
+        "text": "Alto viento",
+        "id_country": 82,
+        "nameAve": "ALTO VIENTO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790476,
+        "id_state": 1714,
+        "text": "Arrayan",
+        "id_country": 82,
+        "nameAve": "ARRAYAN(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790485,
+        "id_state": 1714,
+        "text": "Banco de arenas 2",
+        "id_country": 82,
+        "nameAve": "BANCO DE ARENAS 2(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790486,
+        "id_state": 1714,
+        "text": "Banco de arenas",
+        "id_country": 82,
+        "nameAve": "BANCO DE ARENAS(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790556,
+        "id_state": 1714,
+        "text": "Carmen de tonchala",
+        "id_country": 82,
+        "nameAve": "CARMEN DE TONCHALA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790744,
+        "id_state": 1714,
+        "text": "El plomo",
+        "id_country": 82,
+        "nameAve": "EL PLOMO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790747,
+        "id_state": 1714,
+        "text": "El prado",
+        "id_country": 82,
+        "nameAve": "EL PRADO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790811,
+        "id_state": 1714,
+        "text": "Guaramito",
+        "id_country": 82,
+        "nameAve": "GUARAMITO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790912,
+        "id_state": 1714,
+        "text": "La punta",
+        "id_country": 82,
+        "nameAve": "LA PUNTA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790916,
+        "id_state": 1714,
+        "text": "La sabana",
+        "id_country": 82,
+        "nameAve": "LA SABANA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790956,
+        "id_state": 1714,
+        "text": "Las vacas",
+        "id_country": 82,
+        "nameAve": "LAS VACAS(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 790982,
+        "id_state": 1714,
+        "text": "Los negros",
+        "id_country": 82,
+        "nameAve": "LOS NEGROS(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791061,
+        "id_state": 1714,
+        "text": "Nuevo madrid",
+        "id_country": 82,
+        "nameAve": "NUEVO MADRID(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791070,
+        "id_state": 1714,
+        "text": "Oripaya",
+        "id_country": 82,
+        "nameAve": "ORIPAYA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791096,
+        "id_state": 1714,
+        "text": "Patillales",
+        "id_country": 82,
+        "nameAve": "PATILLALES(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791137,
+        "id_state": 1714,
+        "text": "Portico",
+        "id_country": 82,
+        "nameAve": "PORTICO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791161,
+        "id_state": 1714,
+        "text": "Puerto leon",
+        "id_country": 82,
+        "nameAve": "PUERTO LEON(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791164,
+        "id_state": 1714,
+        "text": "Puerto lleras",
+        "id_country": 82,
+        "nameAve": "PUERTO LLERAS(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791167,
+        "id_state": 1714,
+        "text": "Puerto nuevo",
+        "id_country": 82,
+        "nameAve": "PUERTO NUEVO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791170,
+        "id_state": 1714,
+        "text": "Puerto villamizar",
+        "id_country": 82,
+        "nameAve": "PUERTO VILLAMIZAR(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791181,
+        "id_state": 1714,
+        "text": "Ragonvalia",
+        "id_country": 82,
+        "nameAve": "RAGONVALIA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791192,
+        "id_state": 1714,
+        "text": "Ricaurte",
+        "id_country": 82,
+        "nameAve": "RICAURTE(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791213,
+        "id_state": 1714,
+        "text": "Salazar",
+        "id_country": 82,
+        "nameAve": "SALAZAR(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791218,
+        "id_state": 1714,
+        "text": "San agustin de los pozos",
+        "id_country": 82,
+        "nameAve": "SAN AGUSTIN DE LOS POZOS(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791229,
+        "id_state": 1714,
+        "text": "San calixto",
+        "id_country": 82,
+        "nameAve": "SAN CALIXTO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791233,
+        "id_state": 1714,
+        "text": "San faustino",
+        "id_country": 82,
+        "nameAve": "SAN FAUSTINO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791263,
+        "id_state": 1714,
+        "text": "San pedro",
+        "id_country": 82,
+        "nameAve": "SAN PEDRO(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791276,
+        "id_state": 1714,
+        "text": "Santa cecilia",
+        "id_country": 82,
+        "nameAve": "SANTA CECILIA(NORTE DE SANTANDER)"
+    },
+    {
+        "id": 791391,
+        "id_state": 1714,
+        "text": "Viigilancia",
+        "id_country": 82,
+        "nameAve": "VIIGILANCIA(NORTE DE SANTANDER)"
+    },
+    { "id": 451069, "id_state": 1715, "text": "Agua Blanca", "id_country": 82 },
+    { "id": 451444, "id_state": 1715, "text": "Alvernia", "id_country": 82 },
+    { "id": 452216, "id_state": 1715, "text": "Bellavista", "id_country": 82 },
+    { "id": 452583, "id_state": 1715, "text": "Boyacá", "id_country": 82 },
+    { "id": 452903, "id_state": 1715, "text": "Cajón", "id_country": 82 },
+    { "id": 452906, "id_state": 1715, "text": "Cajones", "id_country": 82 },
+    { "id": 453263, "id_state": 1715, "text": "Canoa Duque", "id_country": 82 },
+    {
+        "id": 454702,
+        "id_state": 1715,
+        "text": "Colón",
+        "id_country": 82,
+        "nameAve": "COLON(PUTUMAYO)"
+    },
+    {
+        "id": 457366,
+        "id_state": 1715,
+        "text": "El Pepino",
+        "id_country": 82,
+        "nameAve": "EL PEPINO(PUTUMAYO)"
+    },
+    { "id": 457491, "id_state": 1715, "text": "El Porvenir", "id_country": 82 },
+    { "id": 460447, "id_state": 1715, "text": "Junguillo", "id_country": 82 },
+    {
+        "id": 461311,
+        "id_state": 1715,
+        "text": "La Dorada",
+        "id_country": 82,
+        "nameAve": "LA DORADA(PUTUMAYO)"
+    },
+    {
+        "id": 461767,
+        "id_state": 1715,
+        "text": "La Hormiga",
+        "id_country": 82,
+        "nameAve": "LA HORMIGA(PUTUMAYO)"
+    },
+    { "id": 463734, "id_state": 1715, "text": "Leguizamo", "id_country": 82 },
+    {
+        "id": 465418,
+        "id_state": 1715,
+        "text": "Mocoa",
+        "id_country": 82,
+        "nameAve": "MOCOA(PUTUMAYO)"
+    },
+    {
+        "id": 466112,
+        "id_state": 1715,
+        "text": "Orito",
+        "id_country": 82,
+        "nameAve": "ORITO(PUTUMAYO)"
+    },
+    { "id": 467185, "id_state": 1715, "text": "Play Boy", "id_country": 82 },
+    {
+        "id": 467564,
+        "id_state": 1715,
+        "text": "Puerto Alegre",
+        "id_country": 82
+    },
+    {
+        "id": 467589,
+        "id_state": 1715,
+        "text": "Puerto Asís",
+        "id_country": 82,
+        "nameAve": "PUERTO ASIS(PUTUMAYO)"
+    },
+    {
+        "id": 467612,
+        "id_state": 1715,
+        "text": "Puerto Caicedo",
+        "id_country": 82,
+        "nameAve": "PUERTO CAICEDO(PUTUMAYO)"
+    },
+    {
+        "id": 467706,
+        "id_state": 1715,
+        "text": "Puerto Guzmán",
+        "id_country": 82,
+        "nameAve": "PUERTO GUZMAN(PUTUMAYO)"
+    },
+    {
+        "id": 467728,
+        "id_state": 1715,
+        "text": "Puerto Leguízamo",
+        "id_country": 82,
+        "nameAve": "PUERTO LEGUIZAMO(PUTUMAYO)"
+    },
+    {
+        "id": 468698,
+        "id_state": 1715,
+        "text": "San Antonio",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO(PUTUMAYO)"
+    },
+    {
+        "id": 468873,
+        "id_state": 1715,
+        "text": "San Francisco",
+        "id_country": 82,
+        "nameAve": "SAN FRANCISCO(PUTUMAYO)"
+    },
+    {
+        "id": 469167,
+        "id_state": 1715,
+        "text": "San Miguel",
+        "id_country": 82,
+        "nameAve": "SAN MIGUEL(PUTUMAYO)"
+    },
+    { "id": 469348, "id_state": 1715, "text": "Santa Ana", "id_country": 82 },
+    {
+        "id": 469723,
+        "id_state": 1715,
+        "text": "Santiago",
+        "id_country": 82,
+        "nameAve": "SANTIAGO(PUTUMAYO)"
+    },
+    {
+        "id": 469929,
+        "id_state": 1715,
+        "text": "Sibundoy",
+        "id_country": 82,
+        "nameAve": "SIBUNDOY(PUTUMAYO)"
+    },
+    {
+        "id": 471035,
+        "id_state": 1715,
+        "text": "Valle del Guamuez",
+        "id_country": 82
+    },
+    {
+        "id": 471303,
+        "id_state": 1715,
+        "text": "Villagarzón",
+        "id_country": 82,
+        "nameAve": "VILLAGARZON(PUTUMAYO)"
+    },
+    {
+        "id": 790452,
+        "id_state": 1715,
+        "text": "Alto afan",
+        "id_country": 82,
+        "nameAve": "ALTO AFAN(PUTUMAYO)"
+    },
+    {
+        "id": 790522,
+        "id_state": 1715,
+        "text": "Brisas del sol",
+        "id_country": 82,
+        "nameAve": "BRISAS DEL SOL(PUTUMAYO)"
+    },
+    {
+        "id": 790921,
+        "id_state": 1715,
+        "text": "La tebaida",
+        "id_country": 82,
+        "nameAve": "LA TEBAIDA(PUTUMAYO)"
+    },
+    {
+        "id": 791131,
+        "id_state": 1715,
+        "text": "Planadas",
+        "id_country": 82,
+        "nameAve": "PLANADAS(PUTUMAYO)"
+    },
+    {
+        "id": 791149,
+        "id_state": 1715,
+        "text": "Pueblo viejo",
+        "id_country": 82,
+        "nameAve": "PUEBLO VIEJO(PUTUMAYO)"
+    },
+    {
+        "id": 791163,
+        "id_state": 1715,
+        "text": "Puerto limon",
+        "id_country": 82,
+        "nameAve": "PUERTO LIMON(PUTUMAYO)"
+    },
+    {
+        "id": 791204,
+        "id_state": 1715,
+        "text": "Rumiyaco",
+        "id_country": 82,
+        "nameAve": "RUMIYACO(PUTUMAYO)"
+    },
+    {
+        "id": 791221,
+        "id_state": 1715,
+        "text": "San antonio 2",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO 2(PUTUMAYO)"
+    },
+    {
+        "id": 791295,
+        "id_state": 1715,
+        "text": "Santana",
+        "id_country": 82,
+        "nameAve": "SANTANA(PUTUMAYO)"
+    },
+    {
+        "id": 791420,
+        "id_state": 1715,
+        "text": "Yunguillo",
+        "id_country": 82,
+        "nameAve": "YUNGUILLO(PUTUMAYO)"
+    },
+    { "id": 451220, "id_state": 1716, "text": "Albania", "id_country": 82 },
+    { "id": 451311, "id_state": 1716, "text": "Alsacia", "id_country": 82 },
+    {
+        "id": 451375,
+        "id_state": 1716,
+        "text": "Alto del Oso",
+        "id_country": 82
+    },
+    {
+        "id": 451379,
+        "id_state": 1716,
+        "text": "Alto del Río",
+        "id_country": 82
+    },
+    { "id": 451387, "id_state": 1716, "text": "Alto El Oso", "id_country": 82 },
+    {
+        "id": 451749,
+        "id_state": 1716,
+        "text": "Armenia",
+        "id_country": 82,
+        "nameAve": "ARMENIA(QUINDIO)"
+    },
+    { "id": 451764, "id_state": 1716, "text": "Arrayanal", "id_country": 82 },
+    { "id": 451965, "id_state": 1716, "text": "Balsora", "id_country": 82 },
+    { "id": 452016, "id_state": 1716, "text": "Barcelona", "id_country": 82 },
+    { "id": 452550, "id_state": 1716, "text": "Boquía", "id_country": 82 },
+    {
+        "id": 452701,
+        "id_state": 1716,
+        "text": "Buenavista",
+        "id_country": 82,
+        "nameAve": "BUENAVISTA(QUINDIO)"
+    },
+    {
+        "id": 452727,
+        "id_state": 1716,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    {
+        "id": 452934,
+        "id_state": 1716,
+        "text": "Calarca",
+        "id_country": 82,
+        "nameAve": "CALARCA(QUINDIO)"
+    },
+    {
+        "id": 452935,
+        "id_state": 1716,
+        "text": "Calarcá",
+        "id_country": 82,
+        "nameAve": "CALARCA(QUINDIO)"
+    },
+    { "id": 454287, "id_state": 1716, "text": "Chapinero", "id_country": 82 },
+    { "id": 454288, "id_state": 1716, "text": "Chapineros", "id_country": 82 },
+    { "id": 454605, "id_state": 1716, "text": "Circacia", "id_country": 82 },
+    {
+        "id": 454608,
+        "id_state": 1716,
+        "text": "Circasia",
+        "id_country": 82,
+        "nameAve": "CIRCASIA(QUINDIO)"
+    },
+    {
+        "id": 454855,
+        "id_state": 1716,
+        "text": "Córdoba",
+        "id_country": 82,
+        "nameAve": "CORDOBA(QUINDIO)"
+    },
+    { "id": 455156, "id_state": 1716, "text": "Cristales", "id_country": 82 },
+    { "id": 455596, "id_state": 1716, "text": "Eden", "id_country": 82 },
+    { "id": 455625, "id_state": 1716, "text": "El Agrado", "id_country": 82 },
+    { "id": 455834, "id_state": 1716, "text": "El Bosque", "id_country": 82 },
+    { "id": 456489, "id_state": 1716, "text": "El Edén", "id_country": 82 },
+    { "id": 457093, "id_state": 1716, "text": "El Naranjal", "id_country": 82 },
+    { "id": 457490, "id_state": 1716, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457592, "id_state": 1716, "text": "El Recreo", "id_country": 82 },
+    { "id": 457704, "id_state": 1716, "text": "El Roble", "id_country": 82 },
+    {
+        "id": 458400,
+        "id_state": 1716,
+        "text": "Filandia",
+        "id_country": 82,
+        "nameAve": "FILANDIA(QUINDIO)"
+    },
+    {
+        "id": 458707,
+        "id_state": 1716,
+        "text": "Génova",
+        "id_country": 82,
+        "nameAve": "GENOVA(QUINDIO)"
+    },
+    {
+        "id": 459903,
+        "id_state": 1716,
+        "text": "Hojas Anchas",
+        "id_country": 82
+    },
+    { "id": 460885, "id_state": 1716, "text": "La Cabaña", "id_country": 82 },
+    {
+        "id": 461376,
+        "id_state": 1716,
+        "text": "La Esmeralda",
+        "id_country": 82
+    },
+    { "id": 461379, "id_state": 1716, "text": "La Española", "id_country": 82 },
+    {
+        "id": 461402,
+        "id_state": 1716,
+        "text": "La Esperanza",
+        "id_country": 82
+    },
+    {
+        "id": 463155,
+        "id_state": 1716,
+        "text": "Las Mercedes",
+        "id_country": 82
+    },
+    {
+        "id": 463412,
+        "id_state": 1716,
+        "text": "La Tebaida",
+        "id_country": 82,
+        "nameAve": "LA TEBAIDA(QUINDIO)"
+    },
+    { "id": 463671, "id_state": 1716, "text": "La Virginia", "id_country": 82 },
+    { "id": 463974, "id_state": 1716, "text": "Los Alamos", "id_country": 82 },
+    {
+        "id": 465560,
+        "id_state": 1716,
+        "text": "Montenegro",
+        "id_country": 82,
+        "nameAve": "MONTENEGRO(QUINDIO)"
+    },
+    { "id": 465813, "id_state": 1716, "text": "Naranjal", "id_country": 82 },
+    { "id": 466709, "id_state": 1716, "text": "Pavas", "id_country": 82 },
+    {
+        "id": 466986,
+        "id_state": 1716,
+        "text": "Pijao",
+        "id_country": 82,
+        "nameAve": "PIJAO(QUINDIO)"
+    },
+    {
+        "id": 467487,
+        "id_state": 1716,
+        "text": "Pueblo Tapado",
+        "id_country": 82,
+        "nameAve": "PUEBLO TAPADO(QUINDIO)"
+    },
+    {
+        "id": 467689,
+        "id_state": 1716,
+        "text": "Puerto Espejo",
+        "id_country": 82
+    },
+    {
+        "id": 468033,
+        "id_state": 1716,
+        "text": "Quebradanegra",
+        "id_country": 82
+    },
+    {
+        "id": 468075,
+        "id_state": 1716,
+        "text": "Quimbaya",
+        "id_country": 82,
+        "nameAve": "QUIMBAYA(QUINDIO)"
+    },
+    { "id": 468351, "id_state": 1716, "text": "Ríoverde", "id_country": 82 },
+    {
+        "id": 468584,
+        "id_state": 1716,
+        "text": "Salento",
+        "id_country": 82,
+        "nameAve": "SALENTO(QUINDIO)"
+    },
+    { "id": 468713, "id_state": 1716, "text": "San Antonio", "id_country": 82 },
+    { "id": 469643, "id_state": 1716, "text": "Santa Rita", "id_country": 82 },
+    { "id": 470382, "id_state": 1716, "text": "Tebaida", "id_country": 82 },
+    { "id": 470432, "id_state": 1716, "text": "Termal", "id_country": 82 },
+    { "id": 471071, "id_state": 1716, "text": "Vasconia", "id_country": 82 },
+    {
+        "id": 790564,
+        "id_state": 1716,
+        "text": "Caserio santa helena",
+        "id_country": 82,
+        "nameAve": "CASERIO SANTA HELENA(QUINDIO)"
+    },
+    {
+        "id": 790642,
+        "id_state": 1716,
+        "text": "Condominio el eden",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO EL EDEN(QUINDIO)"
+    },
+    {
+        "id": 790648,
+        "id_state": 1716,
+        "text": "Condominio palo de agua",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO PALO DE AGUA(QUINDIO)"
+    },
+    {
+        "id": 790649,
+        "id_state": 1716,
+        "text": "Condominio pontevedra",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO PONTEVEDRA(QUINDIO)"
+    },
+    {
+        "id": 790654,
+        "id_state": 1716,
+        "text": "Condominio seniors club",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO SENIORS CLUB(QUINDIO)"
+    },
+    {
+        "id": 790655,
+        "id_state": 1716,
+        "text": "Condominios las vegas, iraka y lagos de iraka",
+        "id_country": 82,
+        "nameAve": "CONDOMINIOS LAS VEGAS, IRAKA Y LAGOS DE IRAKA(QUINDIO)"
+    },
+    {
+        "id": 790691,
+        "id_state": 1716,
+        "text": "El caimo",
+        "id_country": 82,
+        "nameAve": "EL CAIMO(QUINDIO)"
+    },
+    {
+        "id": 791045,
+        "id_state": 1716,
+        "text": "Murillo",
+        "id_country": 82,
+        "nameAve": "MURILLO(QUINDIO)"
+    },
+    {
+        "id": 791060,
+        "id_state": 1716,
+        "text": "Nuevo horizonte - sapera",
+        "id_country": 82,
+        "nameAve": "NUEVO HORIZONTE - SAPERA(QUINDIO)"
+    },
+    {
+        "id": 791304,
+        "id_state": 1716,
+        "text": "Sector cenexpo",
+        "id_country": 82,
+        "nameAve": "SECTOR CENEXPO(QUINDIO)"
+    },
+    { "id": 451014, "id_state": 1717, "text": "Abejero", "id_country": 82 },
+    { "id": 451189, "id_state": 1717, "text": "Aguazul", "id_country": 82 },
+    { "id": 451200, "id_state": 1717, "text": "Agüitas", "id_country": 82 },
+    { "id": 451226, "id_state": 1717, "text": "Albania", "id_country": 82 },
+    {
+        "id": 451248,
+        "id_state": 1717,
+        "text": "Alegrías",
+        "id_country": 82,
+        "nameAve": "ALEGRIAS(RISARALDA)"
+    },
+    {
+        "id": 451324,
+        "id_state": 1717,
+        "text": "Altagracia",
+        "id_country": 82,
+        "nameAve": "ALTAGRACIA(RISARALDA)"
+    },
+    {
+        "id": 451371,
+        "id_state": 1717,
+        "text": "Alto de La Cruz",
+        "id_country": 82
+    },
+    {
+        "id": 451391,
+        "id_state": 1717,
+        "text": "Alto El Toro",
+        "id_country": 82
+    },
+    { "id": 451440, "id_state": 1717, "text": "Alturas", "id_country": 82 },
+    {
+        "id": 451591,
+        "id_state": 1717,
+        "text": "Apía",
+        "id_country": 82,
+        "nameAve": "APIA(RISARALDA)"
+    },
+    {
+        "id": 451617,
+        "id_state": 1717,
+        "text": "Arabia",
+        "id_country": 82,
+        "nameAve": "ARABIA(RISARALDA)"
+    },
+    { "id": 451725, "id_state": 1717, "text": "Argentina", "id_country": 82 },
+    { "id": 451834, "id_state": 1717, "text": "Atarraya", "id_country": 82 },
+    {
+        "id": 451934,
+        "id_state": 1717,
+        "text": "Balboa",
+        "id_country": 82,
+        "nameAve": "BALBOA(RISARALDA)"
+    },
+    { "id": 452108, "id_state": 1717, "text": "Barroblanco", "id_country": 82 },
+    { "id": 452176, "id_state": 1717, "text": "Belén", "id_country": 82 },
+    {
+        "id": 452181,
+        "id_state": 1717,
+        "text": "Belén de Umbría",
+        "id_country": 82,
+        "nameAve": "BELEN DE UMBRIA(RISARALDA)"
+    },
+    { "id": 452241, "id_state": 1717, "text": "Belmonte", "id_country": 82 },
+    { "id": 452244, "id_state": 1717, "text": "Beltrán", "id_country": 82 },
+    {
+        "id": 452330,
+        "id_state": 1717,
+        "text": "Betulia",
+        "id_country": 82,
+        "nameAve": "BETULIA(RISARALDA)"
+    },
+    { "id": 452539, "id_state": 1717, "text": "Boquerón", "id_country": 82 },
+    { "id": 452605, "id_state": 1717, "text": "Bretaña", "id_country": 82 },
+    {
+        "id": 452706,
+        "id_state": 1717,
+        "text": "Buenos Aíres",
+        "id_country": 82
+    },
+    {
+        "id": 452728,
+        "id_state": 1717,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    { "id": 452831, "id_state": 1717, "text": "Cachipay", "id_country": 82 },
+    { "id": 453226, "id_state": 1717, "text": "Cañaveral", "id_country": 82 },
+    {
+        "id": 453534,
+        "id_state": 1717,
+        "text": "Cartago Viejo",
+        "id_country": 82
+    },
+    { "id": 454167, "id_state": 1717, "text": "Cerrito", "id_country": 82 },
+    { "id": 454173, "id_state": 1717, "text": "Cerritos", "id_country": 82 },
+    { "id": 454725, "id_state": 1717, "text": "Columbia", "id_country": 82 },
+    { "id": 454733, "id_state": 1717, "text": "Combia", "id_country": 82 },
+    { "id": 454734, "id_state": 1717, "text": "Combia Alta", "id_country": 82 },
+    { "id": 454735, "id_state": 1717, "text": "Combia Baja", "id_country": 82 },
+    { "id": 455112, "id_state": 1717, "text": "Costa Rica", "id_country": 82 },
+    { "id": 455234, "id_state": 1717, "text": "Cuba", "id_country": 82 },
+    {
+        "id": 455574,
+        "id_state": 1717,
+        "text": "Dos Quebradas",
+        "id_country": 82
+    },
+    {
+        "id": 456266,
+        "id_state": 1717,
+        "text": "El Contento",
+        "id_country": 82,
+        "nameAve": "EL CONTENTO(RISARALDA)"
+    },
+    { "id": 456549, "id_state": 1717, "text": "El Español", "id_country": 82 },
+    {
+        "id": 456816,
+        "id_state": 1717,
+        "text": "El Jardín",
+        "id_country": 82,
+        "nameAve": "EL JARDIN(RISARALDA)"
+    },
+    { "id": 456871, "id_state": 1717, "text": "El Lembo", "id_country": 82 },
+    { "id": 456953, "id_state": 1717, "text": "El Lucero", "id_country": 82 },
+    {
+        "id": 457712,
+        "id_state": 1717,
+        "text": "El Rocío",
+        "id_country": 82,
+        "nameAve": "EL ROCIO(RISARALDA)"
+    },
+    { "id": 457847, "id_state": 1717, "text": "El Silencio", "id_country": 82 },
+    { "id": 457854, "id_state": 1717, "text": "El Sinaí", "id_country": 82 },
+    { "id": 458509, "id_state": 1717, "text": "Frailes", "id_country": 82 },
+    {
+        "id": 459137,
+        "id_state": 1717,
+        "text": "Guática",
+        "id_country": 82,
+        "nameAve": "GUATICA(RISARALDA)"
+    },
+    { "id": 459185, "id_state": 1717, "text": "Guayabo", "id_country": 82 },
+    { "id": 459859, "id_state": 1717, "text": "Hernández", "id_country": 82 },
+    {
+        "id": 460001,
+        "id_state": 1717,
+        "text": "Huertas",
+        "id_country": 82,
+        "nameAve": "HUERTAS(RISARALDA)"
+    },
+    { "id": 460358, "id_state": 1717, "text": "Jordán", "id_country": 82 },
+    {
+        "id": 460713,
+        "id_state": 1717,
+        "text": "La Argentina",
+        "id_country": 82
+    },
+    { "id": 460750, "id_state": 1717, "text": "La Badea", "id_country": 82 },
+    {
+        "id": 460788,
+        "id_state": 1717,
+        "text": "La Bella",
+        "id_country": 82,
+        "nameAve": "LA BELLA(RISARALDA)"
+    },
+    {
+        "id": 460950,
+        "id_state": 1717,
+        "text": "La Candelaria",
+        "id_country": 82
+    },
+    { "id": 460970, "id_state": 1717, "text": "La Capilla", "id_country": 82 },
+    {
+        "id": 461049,
+        "id_state": 1717,
+        "text": "La Celia",
+        "id_country": 82,
+        "nameAve": "LA CELIA(RISARALDA)"
+    },
+    {
+        "id": 461512,
+        "id_state": 1717,
+        "text": "La Florida",
+        "id_country": 82,
+        "nameAve": "LA FLORIDA(RISARALDA)"
+    },
+    { "id": 461615, "id_state": 1717, "text": "La Gramínea", "id_country": 82 },
+    { "id": 461760, "id_state": 1717, "text": "La Honda", "id_country": 82 },
+    { "id": 461922, "id_state": 1717, "text": "La Libertad", "id_country": 82 },
+    { "id": 461929, "id_state": 1717, "text": "La Linda", "id_country": 82 },
+    { "id": 462320, "id_state": 1717, "text": "La Palma", "id_country": 82 },
+    { "id": 462332, "id_state": 1717, "text": "La Palmera", "id_country": 82 },
+    { "id": 462508, "id_state": 1717, "text": "La Popa", "id_country": 82 },
+    { "id": 462734, "id_state": 1717, "text": "La Rosa", "id_country": 82 },
+    { "id": 462783, "id_state": 1717, "text": "La Samaria", "id_country": 82 },
+    { "id": 462966, "id_state": 1717, "text": "La Serna", "id_country": 82 },
+    { "id": 463228, "id_state": 1717, "text": "La Sombra", "id_country": 82 },
+    { "id": 463339, "id_state": 1717, "text": "Las Tazas", "id_country": 82 },
+    { "id": 463514, "id_state": 1717, "text": "La Unión", "id_country": 82 },
+    {
+        "id": 463678,
+        "id_state": 1717,
+        "text": "La Virginia",
+        "id_country": 82,
+        "nameAve": "LA VIRGINIA(RISARALDA)"
+    },
+    {
+        "id": 463875,
+        "id_state": 1717,
+        "text": "Llano Grande",
+        "id_country": 82
+    },
+    {
+        "id": 463916,
+        "id_state": 1717,
+        "text": "Loma Hermosa",
+        "id_country": 82
+    },
+    { "id": 463996, "id_state": 1717, "text": "Los Álpes", "id_country": 82 },
+    {
+        "id": 464352,
+        "id_state": 1717,
+        "text": "Los Naranjos",
+        "id_country": 82
+    },
+    {
+        "id": 464971,
+        "id_state": 1717,
+        "text": "Marsella",
+        "id_country": 82,
+        "nameAve": "MARSELLA(RISARALDA)"
+    },
+    { "id": 465348, "id_state": 1717, "text": "Miraflores", "id_country": 82 },
+    {
+        "id": 465400,
+        "id_state": 1717,
+        "text": "Mistrató",
+        "id_country": 82,
+        "nameAve": "MISTRATO(RISARALDA)"
+    },
+    { "id": 465548, "id_state": 1717, "text": "Montelargo", "id_country": 82 },
+    {
+        "id": 465615,
+        "id_state": 1717,
+        "text": "Morelia",
+        "id_country": 82,
+        "nameAve": "MORELIA(RISARALDA)"
+    },
+    {
+        "id": 465734,
+        "id_state": 1717,
+        "text": "Mundo Nuevo",
+        "id_country": 82,
+        "nameAve": "MUNDO NUEVO(RISARALDA)"
+    },
+    { "id": 465782, "id_state": 1717, "text": "Nacedero", "id_country": 82 },
+    { "id": 466332, "id_state": 1717, "text": "Palmerita", "id_country": 82 },
+    { "id": 466380, "id_state": 1717, "text": "Palogordo", "id_country": 82 },
+    {
+        "id": 466671,
+        "id_state": 1717,
+        "text": "Patio Bonito",
+        "id_country": 82
+    },
+    {
+        "id": 466798,
+        "id_state": 1717,
+        "text": "Peñas Blancas",
+        "id_country": 82
+    },
+    { "id": 466848, "id_state": 1717, "text": "Peralonso", "id_country": 82 },
+    {
+        "id": 466857,
+        "id_state": 1717,
+        "text": "Pereira",
+        "id_country": 82,
+        "nameAve": "PEREIRA(RISARALDA)"
+    },
+    { "id": 466861, "id_state": 1717, "text": "Pérez", "id_country": 82 },
+    { "id": 467403, "id_state": 1717, "text": "Primavera", "id_country": 82 },
+    {
+        "id": 467480,
+        "id_state": 1717,
+        "text": "Pueblo Rico",
+        "id_country": 82,
+        "nameAve": "PUEBLO RICO(RISARALDA)"
+    },
+    { "id": 467483, "id_state": 1717, "text": "Pueblorrico", "id_country": 82 },
+    {
+        "id": 467619,
+        "id_state": 1717,
+        "text": "Puerto Caldas",
+        "id_country": 82,
+        "nameAve": "PUERTO CALDAS(RISARALDA)"
+    },
+    {
+        "id": 467823,
+        "id_state": 1717,
+        "text": "Puerto Pereira",
+        "id_country": 82
+    },
+    {
+        "id": 468083,
+        "id_state": 1717,
+        "text": "Quinchía",
+        "id_country": 82,
+        "nameAve": "QUINCHIA(RISARALDA)"
+    },
+    { "id": 468360, "id_state": 1717, "text": "Risaralda", "id_country": 82 },
+    { "id": 468660, "id_state": 1717, "text": "San Agustín", "id_country": 82 },
+    { "id": 468715, "id_state": 1717, "text": "San Antonio", "id_country": 82 },
+    {
+        "id": 468805,
+        "id_state": 1717,
+        "text": "San Clemente",
+        "id_country": 82
+    },
+    { "id": 468958, "id_state": 1717, "text": "San Joaquín", "id_country": 82 },
+    {
+        "id": 469392,
+        "id_state": 1717,
+        "text": "Santa Cecilia",
+        "id_country": 82
+    },
+    {
+        "id": 469615,
+        "id_state": 1717,
+        "text": "Santander",
+        "id_country": 82,
+        "nameAve": "SANTANDER(RISARALDA)"
+    },
+    { "id": 469642, "id_state": 1717, "text": "Santa Rita", "id_country": 82 },
+    { "id": 469671, "id_state": 1717, "text": "Santa Rosa", "id_country": 82 },
+    {
+        "id": 469673,
+        "id_state": 1717,
+        "text": "Santa Rosa Cabal",
+        "id_country": 82
+    },
+    {
+        "id": 469674,
+        "id_state": 1717,
+        "text": "Santa Rosa de Cabal",
+        "id_country": 82,
+        "nameAve": "SANTA ROSA DE CABAL(RISARALDA)"
+    },
+    {
+        "id": 469711,
+        "id_state": 1717,
+        "text": "Santa Teresita",
+        "id_country": 82
+    },
+    {
+        "id": 469759,
+        "id_state": 1717,
+        "text": "Santuario",
+        "id_country": 82,
+        "nameAve": "SANTUARIO(RISARALDA)"
+    },
+    {
+        "id": 469774,
+        "id_state": 1717,
+        "text": "San Vicente",
+        "id_country": 82,
+        "nameAve": "SAN VICENTE(RISARALDA)"
+    },
+    { "id": 470101, "id_state": 1717, "text": "Soratama", "id_country": 82 },
+    { "id": 470286, "id_state": 1717, "text": "Tambora", "id_country": 82 },
+    { "id": 470323, "id_state": 1717, "text": "Taparcal", "id_country": 82 },
+    {
+        "id": 470753,
+        "id_state": 1717,
+        "text": "Tres Esquinas",
+        "id_country": 82
+    },
+    { "id": 470772, "id_state": 1717, "text": "Tribunas", "id_country": 82 },
+    { "id": 470914, "id_state": 1717, "text": "Umbría", "id_country": 82 },
+    {
+        "id": 790453,
+        "id_state": 1717,
+        "text": "Alto alegrias",
+        "id_country": 82,
+        "nameAve": "ALTO ALEGRIAS(RISARALDA)"
+    },
+    {
+        "id": 790457,
+        "id_state": 1717,
+        "text": "Alto erazo",
+        "id_country": 82,
+        "nameAve": "ALTO ERAZO(RISARALDA)"
+    },
+    {
+        "id": 790493,
+        "id_state": 1717,
+        "text": "Barrio el bosque",
+        "id_country": 82,
+        "nameAve": "BARRIO EL BOSQUE(RISARALDA)"
+    },
+    {
+        "id": 790502,
+        "id_state": 1717,
+        "text": "Belmonte bajo",
+        "id_country": 82,
+        "nameAve": "BELMONTE BAJO(RISARALDA)"
+    },
+    {
+        "id": 790504,
+        "id_state": 1717,
+        "text": "Betania",
+        "id_country": 82,
+        "nameAve": "BETANIA(RISARALDA)"
+    },
+    {
+        "id": 790533,
+        "id_state": 1717,
+        "text": "Caimalito",
+        "id_country": 82,
+        "nameAve": "CAIMALITO(RISARALDA)"
+    },
+    {
+        "id": 790537,
+        "id_state": 1717,
+        "text": "Calle larga",
+        "id_country": 82,
+        "nameAve": "CALLE LARGA(RISARALDA)"
+    },
+    {
+        "id": 790546,
+        "id_state": 1717,
+        "text": "Canceles",
+        "id_country": 82,
+        "nameAve": "CANCELES(RISARALDA)"
+    },
+    {
+        "id": 790551,
+        "id_state": 1717,
+        "text": "Caracol la curva",
+        "id_country": 82,
+        "nameAve": "CARACOL LA CURVA(RISARALDA)"
+    },
+    {
+        "id": 790578,
+        "id_state": 1717,
+        "text": "Cestillal",
+        "id_country": 82,
+        "nameAve": "CESTILLAL(RISARALDA)"
+    },
+    {
+        "id": 790639,
+        "id_state": 1717,
+        "text": "Condina guacary",
+        "id_country": 82,
+        "nameAve": "CONDINA GUACARY(RISARALDA)"
+    },
+    {
+        "id": 790640,
+        "id_state": 1717,
+        "text": "Condominio andaluz",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO ANDALUZ(RISARALDA)"
+    },
+    {
+        "id": 790643,
+        "id_state": 1717,
+        "text": "Condominio el paraiso",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO EL PARAISO(RISARALDA)"
+    },
+    {
+        "id": 790644,
+        "id_state": 1717,
+        "text": "Condominio macondo",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO MACONDO(RISARALDA)"
+    },
+    {
+        "id": 790645,
+        "id_state": 1717,
+        "text": "Condominio maracay",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO MARACAY(RISARALDA)"
+    },
+    {
+        "id": 790647,
+        "id_state": 1717,
+        "text": "Condominio palmar",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO PALMAR(RISARALDA)"
+    },
+    {
+        "id": 790680,
+        "id_state": 1717,
+        "text": "Dosquebradas",
+        "id_country": 82,
+        "nameAve": "DOSQUEBRADAS(RISARALDA)"
+    },
+    {
+        "id": 790704,
+        "id_state": 1717,
+        "text": "El chocho",
+        "id_country": 82,
+        "nameAve": "EL CHOCHO(RISARALDA)"
+    },
+    {
+        "id": 790708,
+        "id_state": 1717,
+        "text": "El congolo",
+        "id_country": 82,
+        "nameAve": "EL CONGOLO(RISARALDA)"
+    },
+    {
+        "id": 790709,
+        "id_state": 1717,
+        "text": "El crucero de combia",
+        "id_country": 82,
+        "nameAve": "EL CRUCERO DE COMBIA(RISARALDA)"
+    },
+    {
+        "id": 790722,
+        "id_state": 1717,
+        "text": "El jazmin",
+        "id_country": 82,
+        "nameAve": "EL JAZMIN(RISARALDA)"
+    },
+    {
+        "id": 790723,
+        "id_state": 1717,
+        "text": "El jordan",
+        "id_country": 82,
+        "nameAve": "EL JORDAN(RISARALDA)"
+    },
+    {
+        "id": 790728,
+        "id_state": 1717,
+        "text": "El manzano",
+        "id_country": 82,
+        "nameAve": "EL MANZANO(RISARALDA)"
+    },
+    {
+        "id": 790746,
+        "id_state": 1717,
+        "text": "El porvenir",
+        "id_country": 82,
+        "nameAve": "EL PORVENIR(RISARALDA)"
+    },
+    {
+        "id": 790771,
+        "id_state": 1717,
+        "text": "Esperanza galicia",
+        "id_country": 82,
+        "nameAve": "ESPERANZA GALICIA(RISARALDA)"
+    },
+    {
+        "id": 790772,
+        "id_state": 1717,
+        "text": "Estacion azufral",
+        "id_country": 82,
+        "nameAve": "ESTACION AZUFRAL(RISARALDA)"
+    },
+    {
+        "id": 790773,
+        "id_state": 1717,
+        "text": "Estacion villegas",
+        "id_country": 82,
+        "nameAve": "ESTACION VILLEGAS(RISARALDA)"
+    },
+    {
+        "id": 790774,
+        "id_state": 1717,
+        "text": "Estrella morron",
+        "id_country": 82,
+        "nameAve": "ESTRELLA MORRON(RISARALDA)"
+    },
+    {
+        "id": 790784,
+        "id_state": 1717,
+        "text": "Gaitan la playa",
+        "id_country": 82,
+        "nameAve": "GAITAN LA PLAYA(RISARALDA)"
+    },
+    {
+        "id": 790786,
+        "id_state": 1717,
+        "text": "Galicia alta",
+        "id_country": 82,
+        "nameAve": "GALICIA ALTA(RISARALDA)"
+    },
+    {
+        "id": 790792,
+        "id_state": 1717,
+        "text": "Gilipinas",
+        "id_country": 82,
+        "nameAve": "GILIPINAS(RISARALDA)"
+    },
+    {
+        "id": 790828,
+        "id_state": 1717,
+        "text": "Heriberto herrera",
+        "id_country": 82,
+        "nameAve": "HERIBERTO HERRERA(RISARALDA)"
+    },
+    {
+        "id": 790832,
+        "id_state": 1717,
+        "text": "Irra",
+        "id_country": 82,
+        "nameAve": "IRRA(RISARALDA)"
+    },
+    {
+        "id": 790855,
+        "id_state": 1717,
+        "text": "La bananera",
+        "id_country": 82,
+        "nameAve": "LA BANANERA(RISARALDA)"
+    },
+    {
+        "id": 790859,
+        "id_state": 1717,
+        "text": "La cabanita",
+        "id_country": 82,
+        "nameAve": "LA CABANITA(RISARALDA)"
+    },
+    {
+        "id": 790863,
+        "id_state": 1717,
+        "text": "La carbonera",
+        "id_country": 82,
+        "nameAve": "LA CARBONERA(RISARALDA)"
+    },
+    {
+        "id": 790871,
+        "id_state": 1717,
+        "text": "La convencion",
+        "id_country": 82,
+        "nameAve": "LA CONVENCION(RISARALDA)"
+    },
+    {
+        "id": 790881,
+        "id_state": 1717,
+        "text": "La estrella",
+        "id_country": 82,
+        "nameAve": "LA ESTRELLA(RISARALDA)"
+    },
+    {
+        "id": 790914,
+        "id_state": 1717,
+        "text": "La renta",
+        "id_country": 82,
+        "nameAve": "LA RENTA(RISARALDA)"
+    },
+    {
+        "id": 790917,
+        "id_state": 1717,
+        "text": "La selva",
+        "id_country": 82,
+        "nameAve": "LA SELVA(RISARALDA)"
+    },
+    {
+        "id": 790920,
+        "id_state": 1717,
+        "text": "La suiza",
+        "id_country": 82,
+        "nameAve": "LA SUIZA(RISARALDA)"
+    },
+    {
+        "id": 790932,
+        "id_state": 1717,
+        "text": "La ye",
+        "id_country": 82,
+        "nameAve": "LA YE(RISARALDA)"
+    },
+    {
+        "id": 790935,
+        "id_state": 1717,
+        "text": "Laguneta",
+        "id_country": 82,
+        "nameAve": "LAGUNETA(RISARALDA)"
+    },
+    {
+        "id": 790960,
+        "id_state": 1717,
+        "text": "Libare",
+        "id_country": 82,
+        "nameAve": "LIBARE(RISARALDA)"
+    },
+    {
+        "id": 791057,
+        "id_state": 1717,
+        "text": "Nueva siria",
+        "id_country": 82,
+        "nameAve": "NUEVA SIRIA(RISARALDA)"
+    },
+    {
+        "id": 791064,
+        "id_state": 1717,
+        "text": "Nuevo sol",
+        "id_country": 82,
+        "nameAve": "NUEVO SOL(RISARALDA)"
+    },
+    {
+        "id": 791105,
+        "id_state": 1717,
+        "text": "Penjamo",
+        "id_country": 82,
+        "nameAve": "PENJAMO(RISARALDA)"
+    },
+    {
+        "id": 791108,
+        "id_state": 1717,
+        "text": "Perez alto",
+        "id_country": 82,
+        "nameAve": "PEREZ ALTO(RISARALDA)"
+    },
+    {
+        "id": 791109,
+        "id_state": 1717,
+        "text": "Perez bajo",
+        "id_country": 82,
+        "nameAve": "PEREZ BAJO(RISARALDA)"
+    },
+    {
+        "id": 791126,
+        "id_state": 1717,
+        "text": "Pital de combia",
+        "id_country": 82,
+        "nameAve": "PITAL DE COMBIA(RISARALDA)"
+    },
+    {
+        "id": 791129,
+        "id_state": 1717,
+        "text": "Plan de vivienda la union",
+        "id_country": 82,
+        "nameAve": "PLAN DE VIVIENDA LA UNION(RISARALDA)"
+    },
+    {
+        "id": 791130,
+        "id_state": 1717,
+        "text": "Plan de vivienda yarumal",
+        "id_country": 82,
+        "nameAve": "PLAN DE VIVIENDA YARUMAL(RISARALDA)"
+    },
+    {
+        "id": 791147,
+        "id_state": 1717,
+        "text": "Pueblo nuevo",
+        "id_country": 82,
+        "nameAve": "PUEBLO NUEVO(RISARALDA)"
+    },
+    {
+        "id": 791230,
+        "id_state": 1717,
+        "text": "San carlos",
+        "id_country": 82,
+        "nameAve": "SAN CARLOS(RISARALDA)"
+    },
+    {
+        "id": 791249,
+        "id_state": 1717,
+        "text": "San jose",
+        "id_country": 82,
+        "nameAve": "SAN JOSE(RISARALDA)"
+    },
+    {
+        "id": 791256,
+        "id_state": 1717,
+        "text": "San marino",
+        "id_country": 82,
+        "nameAve": "SAN MARINO(RISARALDA)"
+    },
+    {
+        "id": 791369,
+        "id_state": 1717,
+        "text": "Tribunas consota",
+        "id_country": 82,
+        "nameAve": "TRIBUNAS CONSOTA(RISARALDA)"
+    },
+    {
+        "id": 791370,
+        "id_state": 1717,
+        "text": "Tribunas corcega",
+        "id_country": 82,
+        "nameAve": "TRIBUNAS CORCEGA(RISARALDA)"
+    },
+    {
+        "id": 791418,
+        "id_state": 1717,
+        "text": "Yarumal",
+        "id_country": 82,
+        "nameAve": "YARUMAL(RISARALDA)"
+    },
+    {
+        "id": 791419,
+        "id_state": 1717,
+        "text": "Yarumito",
+        "id_country": 82,
+        "nameAve": "YARUMITO(RISARALDA)"
+    },
+    { "id": 451126, "id_state": 1718, "text": "Aguadulce", "id_country": 82 },
+    { "id": 451147, "id_state": 1718, "text": "Aguamansa", "id_country": 82 },
+    {
+        "id": 451397,
+        "id_state": 1718,
+        "text": "Alto Harmony Hall",
+        "id_country": 82
+    },
+    {
+        "id": 451403,
+        "id_state": 1718,
+        "text": "Alto La Concordia",
+        "id_country": 82
+    },
+    { "id": 451673, "id_state": 1718, "text": "Archibolds", "id_country": 82 },
+    { "id": 451873, "id_state": 1718, "text": "Ayacucho", "id_country": 82 },
+    {
+        "id": 451903,
+        "id_state": 1718,
+        "text": "Bahía Suroeste",
+        "id_country": 82
+    },
+    { "id": 451904, "id_state": 1718, "text": "Bailey", "id_country": 82 },
+    { "id": 452147, "id_state": 1718, "text": "Bayley", "id_country": 82 },
+    { "id": 452336, "id_state": 1718, "text": "Big Ben", "id_country": 82 },
+    { "id": 452466, "id_state": 1718, "text": "Bogotá", "id_country": 82 },
+    {
+        "id": 452580,
+        "id_state": 1718,
+        "text": "Bottom House",
+        "id_country": 82
+    },
+    {
+        "id": 452581,
+        "id_state": 1718,
+        "text": "Botton House",
+        "id_country": 82
+    },
+    { "id": 452695, "id_state": 1718, "text": "Buenavista", "id_country": 82 },
+    { "id": 454625, "id_state": 1718, "text": "Claremont", "id_country": 82 },
+    {
+        "id": 455291,
+        "id_state": 1718,
+        "text": "Cueva de Morgan",
+        "id_country": 82
+    },
+    { "id": 455435, "id_state": 1718, "text": "Davidsons", "id_country": 82 },
+    { "id": 456300, "id_state": 1718, "text": "El Cove", "id_country": 82 },
+    {
+        "id": 457932,
+        "id_state": 1718,
+        "text": "El Tamarindo",
+        "id_country": 82
+    },
+    { "id": 458119, "id_state": 1718, "text": "El Valle", "id_country": 82 },
+    {
+        "id": 459672,
+        "id_state": 1718,
+        "text": "Harmony Hall Hill",
+        "id_country": 82
+    },
+    { "id": 459891, "id_state": 1718, "text": "The Hill", "id_country": 82 },
+    {
+        "id": 460140,
+        "id_state": 1718,
+        "text": "Isabel Village",
+        "id_country": 82
+    },
+    { "id": 460202, "id_state": 1718, "text": "Jacob", "id_country": 82 },
+    {
+        "id": 460203,
+        "id_state": 1718,
+        "text": "Jacob Ladder",
+        "id_country": 82
+    },
+    { "id": 460353, "id_state": 1718, "text": "Jones Point", "id_country": 82 },
+    { "id": 461962, "id_state": 1718, "text": "La Loma", "id_country": 82 },
+    { "id": 462196, "id_state": 1718, "text": "La Montaña", "id_country": 82 },
+    { "id": 462386, "id_state": 1718, "text": "La Paz", "id_country": 82 },
+    { "id": 463722, "id_state": 1718, "text": "Lazy Hill", "id_country": 82 },
+    { "id": 465651, "id_state": 1718, "text": "Morris Hill", "id_country": 82 },
+    { "id": 465702, "id_state": 1718, "text": "Mountain", "id_country": 82 },
+    { "id": 466075, "id_state": 1718, "text": "Old Tawn", "id_country": 82 },
+    { "id": 466076, "id_state": 1718, "text": "Old Town", "id_country": 82 },
+    { "id": 467066, "id_state": 1718, "text": "Piscinita", "id_country": 82 },
+    {
+        "id": 467494,
+        "id_state": 1718,
+        "text": "Pueblo Viejo",
+        "id_country": 82
+    },
+    {
+        "id": 467500,
+        "id_state": 1718,
+        "text": "Pueblo Viojo",
+        "id_country": 82
+    },
+    {
+        "id": 467977,
+        "id_state": 1718,
+        "text": "Punta Rocosa",
+        "id_country": 82
+    },
+    { "id": 468392, "id_state": 1718, "text": "Rocky Point", "id_country": 82 },
+    { "id": 468686, "id_state": 1718, "text": "San Andrés", "id_country": 82 },
+    { "id": 468836, "id_state": 1718, "text": "San Felipe", "id_country": 82 },
+    {
+        "id": 468869,
+        "id_state": 1718,
+        "text": "San Francisco",
+        "id_country": 82
+    },
+    { "id": 469038, "id_state": 1718, "text": "San Juan", "id_country": 82 },
+    { "id": 469118, "id_state": 1718, "text": "San Luis", "id_country": 82 },
+    {
+        "id": 469518,
+        "id_state": 1718,
+        "text": "Santa Isabel",
+        "id_country": 82
+    },
+    {
+        "id": 470043,
+        "id_state": 1718,
+        "text": "Smooth Water Bay",
+        "id_country": 82
+    },
+    {
+        "id": 470112,
+        "id_state": 1718,
+        "text": "South West Bay",
+        "id_country": 82
+    },
+    {
+        "id": 470451,
+        "id_state": 1718,
+        "text": "The Tamarind Tree",
+        "id_country": 82
+    },
+    { "id": 451053, "id_state": 1719, "text": "Acuña", "id_country": 82 },
+    { "id": 451070, "id_state": 1719, "text": "Agua Blanca", "id_country": 82 },
+    { "id": 451077, "id_state": 1719, "text": "Aguablanca", "id_country": 82 },
+    { "id": 451082, "id_state": 1719, "text": "Agua Bonita", "id_country": 82 },
+    { "id": 451086, "id_state": 1719, "text": "Aguabuena", "id_country": 82 },
+    {
+        "id": 451089,
+        "id_state": 1719,
+        "text": "Aguacaliente",
+        "id_country": 82
+    },
+    {
+        "id": 451117,
+        "id_state": 1719,
+        "text": "Agua de Dios",
+        "id_country": 82
+    },
+    { "id": 451130, "id_state": 1719, "text": "Agua Fría", "id_country": 82 },
+    { "id": 451144, "id_state": 1719, "text": "Agualinda", "id_country": 82 },
+    { "id": 451152, "id_state": 1719, "text": "Aguanegra", "id_country": 82 },
+    {
+        "id": 451166,
+        "id_state": 1719,
+        "text": "Aguas Claras",
+        "id_country": 82
+    },
+    { "id": 451177, "id_state": 1719, "text": "Agua Sucia", "id_country": 82 },
+    { "id": 451195, "id_state": 1719, "text": "Águilas", "id_country": 82 },
+    {
+        "id": 451228,
+        "id_state": 1719,
+        "text": "Albania",
+        "id_country": 82,
+        "nameAve": "ALBANIA(SANTANDER)"
+    },
+    { "id": 451259, "id_state": 1719, "text": "Alemania", "id_country": 82 },
+    { "id": 451334, "id_state": 1719, "text": "Altamira", "id_country": 82 },
+    { "id": 451354, "id_state": 1719, "text": "Alto Bello", "id_country": 82 },
+    {
+        "id": 451360,
+        "id_state": 1719,
+        "text": "Alto Campo Alegre",
+        "id_country": 82
+    },
+    {
+        "id": 451362,
+        "id_state": 1719,
+        "text": "Alto Capilla",
+        "id_country": 82
+    },
+    {
+        "id": 451400,
+        "id_state": 1719,
+        "text": "Alto La Belleza",
+        "id_country": 82
+    },
+    {
+        "id": 451404,
+        "id_state": 1719,
+        "text": "Alto La Meseta",
+        "id_country": 82
+    },
+    {
+        "id": 451406,
+        "id_state": 1719,
+        "text": "Alto Las Niguas",
+        "id_country": 82
+    },
+    { "id": 451415, "id_state": 1719, "text": "Alto Palma", "id_country": 82 },
+    { "id": 451436, "id_state": 1719, "text": "Alto Viento", "id_country": 82 },
+    { "id": 451492, "id_state": 1719, "text": "Anacal", "id_country": 82 },
+    { "id": 451546, "id_state": 1719, "text": "Angosturas", "id_country": 82 },
+    {
+        "id": 451572,
+        "id_state": 1719,
+        "text": "Antonia Santos",
+        "id_country": 82
+    },
+    { "id": 451630, "id_state": 1719, "text": "Aranda", "id_country": 82 },
+    {
+        "id": 451642,
+        "id_state": 1719,
+        "text": "Aratoca",
+        "id_country": 82,
+        "nameAve": "ARATOCA(SANTANDER)"
+    },
+    { "id": 451719, "id_state": 1719, "text": "Argentina", "id_country": 82 },
+    { "id": 451746, "id_state": 1719, "text": "Armenia", "id_country": 82 },
+    { "id": 451837, "id_state": 1719, "text": "Atenas", "id_country": 82 },
+    { "id": 451891, "id_state": 1719, "text": "Baborreal", "id_country": 82 },
+    { "id": 451942, "id_state": 1719, "text": "Balcones", "id_country": 82 },
+    { "id": 451995, "id_state": 1719, "text": "Baraya", "id_country": 82 },
+    { "id": 451999, "id_state": 1719, "text": "Barbacoas", "id_country": 82 },
+    {
+        "id": 452011,
+        "id_state": 1719,
+        "text": "Barbosa",
+        "id_country": 82,
+        "nameAve": "BARBOSA(SANTANDER)"
+    },
+    { "id": 452015, "id_state": 1719, "text": "Barcelona", "id_country": 82 },
+    {
+        "id": 452024,
+        "id_state": 1719,
+        "text": "Barichara",
+        "id_country": 82,
+        "nameAve": "BARICHARA(SANTANDER)"
+    },
+    { "id": 452040, "id_state": 1719, "text": "Barranca", "id_country": 82 },
+    {
+        "id": 452044,
+        "id_state": 1719,
+        "text": "Barrancabermeja",
+        "id_country": 82,
+        "nameAve": "BARRANCABERMEJA(SANTANDER)"
+    },
+    { "id": 452078, "id_state": 1719, "text": "Barranquita", "id_country": 82 },
+    { "id": 452079, "id_state": 1719, "text": "Barranquito", "id_country": 82 },
+    { "id": 452085, "id_state": 1719, "text": "Barríales", "id_country": 82 },
+    {
+        "id": 452130,
+        "id_state": 1719,
+        "text": "Batallón Ingenieros",
+        "id_country": 82
+    },
+    { "id": 452215, "id_state": 1719, "text": "Bella Vista", "id_country": 82 },
+    { "id": 452225, "id_state": 1719, "text": "Bellavista", "id_country": 82 },
+    { "id": 452258, "id_state": 1719, "text": "Berlín", "id_country": 82 },
+    {
+        "id": 452328,
+        "id_state": 1719,
+        "text": "Betulia",
+        "id_country": 82,
+        "nameAve": "BETULIA(SANTANDER)"
+    },
+    {
+        "id": 452386,
+        "id_state": 1719,
+        "text": "Boca de Limón",
+        "id_country": 82
+    },
+    { "id": 452427, "id_state": 1719, "text": "Bocas", "id_country": 82 },
+    { "id": 452469, "id_state": 1719, "text": "Bogotacito", "id_country": 82 },
+    {
+        "id": 452496,
+        "id_state": 1719,
+        "text": "Bolívar",
+        "id_country": 82,
+        "nameAve": "BOLIVAR(SANTANDER)"
+    },
+    { "id": 452517, "id_state": 1719, "text": "Bonaire", "id_country": 82 },
+    { "id": 452519, "id_state": 1719, "text": "Bonanza", "id_country": 82 },
+    { "id": 452538, "id_state": 1719, "text": "Boquerón", "id_country": 82 },
+    { "id": 452562, "id_state": 1719, "text": "Bosque", "id_country": 82 },
+    { "id": 452582, "id_state": 1719, "text": "Botúa", "id_country": 82 },
+    { "id": 452591, "id_state": 1719, "text": "Brasil", "id_country": 82 },
+    {
+        "id": 452650,
+        "id_state": 1719,
+        "text": "Bucaramanga",
+        "id_country": 82,
+        "nameAve": "BUCARAMANGA(SANTANDER)"
+    },
+    { "id": 452652, "id_state": 1719, "text": "Bucarelia", "id_country": 82 },
+    {
+        "id": 452661,
+        "id_state": 1719,
+        "text": "Buena Fortuna",
+        "id_country": 82
+    },
+    {
+        "id": 452670,
+        "id_state": 1719,
+        "text": "Buenaventura",
+        "id_country": 82
+    },
+    { "id": 452688, "id_state": 1719, "text": "Buenavista", "id_country": 82 },
+    {
+        "id": 452720,
+        "id_state": 1719,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    { "id": 452763, "id_state": 1719, "text": "Caballero", "id_country": 82 },
+    {
+        "id": 452771,
+        "id_state": 1719,
+        "text": "Cabecera del Llano",
+        "id_country": 82
+    },
+    {
+        "id": 452788,
+        "id_state": 1719,
+        "text": "Cabrera",
+        "id_country": 82,
+        "nameAve": "CABRERA(SANTANDER)"
+    },
+    { "id": 452838, "id_state": 1719, "text": "Cáchira", "id_country": 82 },
+    { "id": 452941, "id_state": 1719, "text": "Caldas", "id_country": 82 },
+    {
+        "id": 452961,
+        "id_state": 1719,
+        "text": "California",
+        "id_country": 82,
+        "nameAve": "CALIFORNIA(SANTANDER)"
+    },
+    {
+        "id": 453088,
+        "id_state": 1719,
+        "text": "Campo Alegre",
+        "id_country": 82
+    },
+    {
+        "id": 453111,
+        "id_state": 1719,
+        "text": "Campo Alicias",
+        "id_country": 82
+    },
+    {
+        "id": 453142,
+        "id_state": 1719,
+        "text": "Campo Hermosa",
+        "id_country": 82
+    },
+    {
+        "id": 453147,
+        "id_state": 1719,
+        "text": "Campo Hermoso",
+        "id_country": 82
+    },
+    { "id": 453222, "id_state": 1719, "text": "Cañaveral", "id_country": 82 },
+    { "id": 453228, "id_state": 1719, "text": "Cañaverales", "id_country": 82 },
+    {
+        "id": 453356,
+        "id_state": 1719,
+        "text": "Capitanejo",
+        "id_country": 82,
+        "nameAve": "CAPITANEJO(SANTANDER)"
+    },
+    { "id": 453387, "id_state": 1719, "text": "Caracolí", "id_country": 82 },
+    {
+        "id": 453423,
+        "id_state": 1719,
+        "text": "Carcasí",
+        "id_country": 82,
+        "nameAve": "CARCASI(SANTANDER)"
+    },
+    { "id": 453469, "id_state": 1719, "text": "Carmen", "id_country": 82 },
+    { "id": 453602, "id_state": 1719, "text": "Casanueva", "id_country": 82 },
+    { "id": 453618, "id_state": 1719, "text": "Casa Vieja", "id_country": 82 },
+    { "id": 454152, "id_state": 1719, "text": "Centro", "id_country": 82 },
+    {
+        "id": 454170,
+        "id_state": 1719,
+        "text": "Cerrito",
+        "id_country": 82,
+        "nameAve": "CERRITO(SANTANDER)"
+    },
+    {
+        "id": 454298,
+        "id_state": 1719,
+        "text": "Charalá",
+        "id_country": 82,
+        "nameAve": "CHARALA(SANTANDER)"
+    },
+    {
+        "id": 454395,
+        "id_state": 1719,
+        "text": "Chima",
+        "id_country": 82,
+        "nameAve": "CHIMA(SANTANDER)"
+    },
+    {
+        "id": 454436,
+        "id_state": 1719,
+        "text": "Chipatá",
+        "id_country": 82,
+        "nameAve": "CHIPATA(SANTANDER)"
+    },
+    { "id": 454527, "id_state": 1719, "text": "Chucurí", "id_country": 82 },
+    {
+        "id": 454589,
+        "id_state": 1719,
+        "text": "Cimitarra",
+        "id_country": 82,
+        "nameAve": "CIMITARRA(SANTANDER)"
+    },
+    { "id": 454590, "id_state": 1719, "text": "Cincelada", "id_country": 82 },
+    { "id": 454617, "id_state": 1719, "text": "Cite", "id_country": 82 },
+    {
+        "id": 454768,
+        "id_state": 1719,
+        "text": "Concepción",
+        "id_country": 82,
+        "nameAve": "CONCEPCION(SANTANDER)"
+    },
+    {
+        "id": 454806,
+        "id_state": 1719,
+        "text": "Contratación",
+        "id_country": 82,
+        "nameAve": "CONTRATACION(SANTANDER)"
+    },
+    {
+        "id": 454892,
+        "id_state": 1719,
+        "text": "Coromoro",
+        "id_country": 82,
+        "nameAve": "COROMORO(SANTANDER)"
+    },
+    { "id": 454927, "id_state": 1719, "text": "Corralito", "id_country": 82 },
+    { "id": 455157, "id_state": 1719, "text": "Cristales", "id_country": 82 },
+    { "id": 455162, "id_state": 1719, "text": "Cristalina", "id_country": 82 },
+    { "id": 455288, "id_state": 1719, "text": "Cueva", "id_country": 82 },
+    {
+        "id": 455381,
+        "id_state": 1719,
+        "text": "Curití",
+        "id_country": 82,
+        "nameAve": "CURITI(SANTANDER)"
+    },
+    { "id": 455456, "id_state": 1719, "text": "Delicias", "id_country": 82 },
+    { "id": 455639, "id_state": 1719, "text": "El Águila", "id_country": 82 },
+    { "id": 455787, "id_state": 1719, "text": "El Basto", "id_country": 82 },
+    { "id": 455838, "id_state": 1719, "text": "El Bosque", "id_country": 82 },
+    { "id": 455993, "id_state": 1719, "text": "El Carmen", "id_country": 82 },
+    { "id": 456027, "id_state": 1719, "text": "El Catorce", "id_country": 82 },
+    { "id": 456084, "id_state": 1719, "text": "El Centro", "id_country": 82 },
+    { "id": 456106, "id_state": 1719, "text": "El Certro", "id_country": 82 },
+    { "id": 456133, "id_state": 1719, "text": "El Chicho", "id_country": 82 },
+    {
+        "id": 456577,
+        "id_state": 1719,
+        "text": "El Eucalipto",
+        "id_country": 82
+    },
+    { "id": 456866, "id_state": 1719, "text": "El Laurel", "id_country": 82 },
+    { "id": 456887, "id_state": 1719, "text": "El Líbano", "id_country": 82 },
+    { "id": 457086, "id_state": 1719, "text": "El Muerto", "id_country": 82 },
+    { "id": 457132, "id_state": 1719, "text": "El Oasis", "id_country": 82 },
+    { "id": 457229, "id_state": 1719, "text": "El Palmar", "id_country": 82 },
+    { "id": 457293, "id_state": 1719, "text": "El Paraiso", "id_country": 82 },
+    {
+        "id": 457355,
+        "id_state": 1719,
+        "text": "El Peñón",
+        "id_country": 82,
+        "nameAve": "EL PENON(SANTANDER)"
+    },
+    { "id": 457428, "id_state": 1719, "text": "El Placer", "id_country": 82 },
+    {
+        "id": 457442,
+        "id_state": 1719,
+        "text": "El Playón",
+        "id_country": 82,
+        "nameAve": "EL PLAYON(SANTANDER)"
+    },
+    { "id": 457482, "id_state": 1719, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457511, "id_state": 1719, "text": "El Prado", "id_country": 82 },
+    { "id": 457743, "id_state": 1719, "text": "El Rosario", "id_country": 82 },
+    { "id": 457962, "id_state": 1719, "text": "El Tejar", "id_country": 82 },
+    {
+        "id": 458237,
+        "id_state": 1719,
+        "text": "Enciso",
+        "id_country": 82,
+        "nameAve": "ENCISO(SANTANDER)"
+    },
+    { "id": 458282, "id_state": 1719, "text": "Esmeralda", "id_country": 82 },
+    {
+        "id": 458328,
+        "id_state": 1719,
+        "text": "Estación Aguas Claras",
+        "id_country": 82
+    },
+    { "id": 458454, "id_state": 1719, "text": "Florencia", "id_country": 82 },
+    { "id": 458479, "id_state": 1719, "text": "Florida", "id_country": 82 },
+    {
+        "id": 458482,
+        "id_state": 1719,
+        "text": "Floridablanca",
+        "id_country": 82,
+        "nameAve": "FLORIDABLANCA(SANTANDER)"
+    },
+    { "id": 458605, "id_state": 1719, "text": "Gaitán", "id_country": 82 },
+    {
+        "id": 458608,
+        "id_state": 1719,
+        "text": "Galan",
+        "id_country": 82,
+        "nameAve": "GALAN(SANTANDER)"
+    },
+    {
+        "id": 458609,
+        "id_state": 1719,
+        "text": "Galán",
+        "id_country": 82,
+        "nameAve": "GALAN(SANTANDER)"
+    },
+    {
+        "id": 458655,
+        "id_state": 1719,
+        "text": "Gámbita",
+        "id_country": 82,
+        "nameAve": "GAMBITA(SANTANDER)"
+    },
+    { "id": 458716, "id_state": 1719, "text": "Germania", "id_country": 82 },
+    { "id": 458738, "id_state": 1719, "text": "Girardot", "id_country": 82 },
+    {
+        "id": 458741,
+        "id_state": 1719,
+        "text": "Girón",
+        "id_country": 82,
+        "nameAve": "GIRON(SANTANDER)"
+    },
+    { "id": 458750, "id_state": 1719, "text": "Golondrinas", "id_country": 82 },
+    { "id": 458754, "id_state": 1719, "text": "Gomero", "id_country": 82 },
+    {
+        "id": 458903,
+        "id_state": 1719,
+        "text": "Guadalupe",
+        "id_country": 82,
+        "nameAve": "GUADALUPE(SANTANDER)"
+    },
+    { "id": 458979, "id_state": 1719, "text": "Gualmal", "id_country": 82 },
+    { "id": 459031, "id_state": 1719, "text": "Guane", "id_country": 82 },
+    {
+        "id": 459142,
+        "id_state": 1719,
+        "text": "Guavatá",
+        "id_country": 82,
+        "nameAve": "GUAVATA(SANTANDER)"
+    },
+    {
+        "id": 459218,
+        "id_state": 1719,
+        "text": "Güepsa",
+        "id_country": 82,
+        "nameAve": "GUEPSA(SANTANDER)"
+    },
+    {
+        "id": 459485,
+        "id_state": 1719,
+        "text": "Hacienda Las Delicias",
+        "id_country": 82
+    },
+    {
+        "id": 459605,
+        "id_state": 1719,
+        "text": "Hacienda San Fernando",
+        "id_country": 82
+    },
+    {
+        "id": 459649,
+        "id_state": 1719,
+        "text": "Hacienda Vargas",
+        "id_country": 82
+    },
+    { "id": 459913, "id_state": 1719, "text": "Honda", "id_country": 82 },
+    { "id": 460180, "id_state": 1719, "text": "Italia", "id_country": 82 },
+    {
+        "id": 460567,
+        "id_state": 1719,
+        "text": "Kilómetro 16",
+        "id_country": 82
+    },
+    {
+        "id": 460568,
+        "id_state": 1719,
+        "text": "Kilómetro 20",
+        "id_country": 82
+    },
+    { "id": 460732, "id_state": 1719, "text": "La Aurora", "id_country": 82 },
+    {
+        "id": 460793,
+        "id_state": 1719,
+        "text": "La Belleza",
+        "id_country": 82,
+        "nameAve": "LA BELLEZA(SANTANDER)"
+    },
+    { "id": 461029, "id_state": 1719, "text": "La Ceiba", "id_country": 82 },
+    { "id": 461119, "id_state": 1719, "text": "La Cira", "id_country": 82 },
+    { "id": 461306, "id_state": 1719, "text": "La Dorada", "id_country": 82 },
+    {
+        "id": 461464,
+        "id_state": 1719,
+        "text": "La Felicidad",
+        "id_country": 82
+    },
+    { "id": 461491, "id_state": 1719, "text": "La Floresta", "id_country": 82 },
+    { "id": 461511, "id_state": 1719, "text": "La Florida", "id_country": 82 },
+    {
+        "id": 461524,
+        "id_state": 1719,
+        "text": "La Fortuna",
+        "id_country": 82,
+        "nameAve": "LA FORTUNA(SANTANDER)"
+    },
+    { "id": 461626, "id_state": 1719, "text": "La Granja", "id_country": 82 },
+    { "id": 461846, "id_state": 1719, "text": "La Joya", "id_country": 82 },
+    { "id": 462111, "id_state": 1719, "text": "La Maseta", "id_country": 82 },
+    { "id": 462148, "id_state": 1719, "text": "La Mesa", "id_country": 82 },
+    {
+        "id": 462250,
+        "id_state": 1719,
+        "text": "Landázuri",
+        "id_country": 82,
+        "nameAve": "LANDAZURI(SANTANDER)"
+    },
+    {
+        "id": 462385,
+        "id_state": 1719,
+        "text": "La Paz",
+        "id_country": 82,
+        "nameAve": "LA PAZ(SANTANDER)"
+    },
+    {
+        "id": 462396,
+        "id_state": 1719,
+        "text": "La Pedregosa",
+        "id_country": 82
+    },
+    { "id": 462450, "id_state": 1719, "text": "La Piñuela", "id_country": 82 },
+    { "id": 463048, "id_state": 1719, "text": "La Sirena", "id_country": 82 },
+    { "id": 463530, "id_state": 1719, "text": "La Urania", "id_country": 82 },
+    { "id": 463532, "id_state": 1719, "text": "Laurel", "id_country": 82 },
+    { "id": 463626, "id_state": 1719, "text": "La Victoria", "id_country": 82 },
+    {
+        "id": 463725,
+        "id_state": 1719,
+        "text": "Lebrija",
+        "id_country": 82,
+        "nameAve": "LEBRIJA(SANTANDER)"
+    },
+    { "id": 463796, "id_state": 1719, "text": "Limón", "id_country": 82 },
+    { "id": 463802, "id_state": 1719, "text": "Limonar", "id_country": 82 },
+    {
+        "id": 463926,
+        "id_state": 1719,
+        "text": "Loma Mesa de Ruitoque",
+        "id_country": 82
+    },
+    { "id": 463988, "id_state": 1719, "text": "Los Alpes", "id_country": 82 },
+    { "id": 464004, "id_state": 1719, "text": "Los Amores", "id_country": 82 },
+    { "id": 464018, "id_state": 1719, "text": "Los Andes", "id_country": 82 },
+    { "id": 464069, "id_state": 1719, "text": "Los Botes", "id_country": 82 },
+    {
+        "id": 464348,
+        "id_state": 1719,
+        "text": "Los Naranjos",
+        "id_country": 82
+    },
+    { "id": 464556, "id_state": 1719, "text": "Macanal", "id_country": 82 },
+    {
+        "id": 464690,
+        "id_state": 1719,
+        "text": "Málaga",
+        "id_country": 82,
+        "nameAve": "MALAGA(SANTANDER)"
+    },
+    { "id": 464791, "id_state": 1719, "text": "Manizales", "id_country": 82 },
+    { "id": 464950, "id_state": 1719, "text": "Marquetalia", "id_country": 82 },
+    { "id": 465329, "id_state": 1719, "text": "Mirador", "id_country": 82 },
+    { "id": 465351, "id_state": 1719, "text": "Miralindo", "id_country": 82 },
+    { "id": 465373, "id_state": 1719, "text": "Miranda", "id_country": 82 },
+    {
+        "id": 465425,
+        "id_state": 1719,
+        "text": "Mogotes",
+        "id_country": 82,
+        "nameAve": "MOGOTES(SANTANDER)"
+    },
+    {
+        "id": 465435,
+        "id_state": 1719,
+        "text": "Molagavita",
+        "id_country": 82,
+        "nameAve": "MOLAGAVITA(SANTANDER)"
+    },
+    {
+        "id": 466006,
+        "id_state": 1719,
+        "text": "Nuevo Retiro",
+        "id_country": 82
+    },
+    {
+        "id": 466037,
+        "id_state": 1719,
+        "text": "Ocamonte",
+        "id_country": 82,
+        "nameAve": "OCAMONTE(SANTANDER)"
+    },
+    {
+        "id": 466051,
+        "id_state": 1719,
+        "text": "Oiba",
+        "id_country": 82,
+        "nameAve": "OIBA(SANTANDER)"
+    },
+    {
+        "id": 466086,
+        "id_state": 1719,
+        "text": "Onzaga",
+        "id_country": 82,
+        "nameAve": "ONZAGA(SANTANDER)"
+    },
+    { "id": 466183, "id_state": 1719, "text": "Pacomio", "id_country": 82 },
+    { "id": 466315, "id_state": 1719, "text": "Palmas", "id_country": 82 },
+    {
+        "id": 466317,
+        "id_state": 1719,
+        "text": "Palmas del Socorro",
+        "id_country": 82,
+        "nameAve": "PALMAS DEL SOCORRO(SANTANDER)"
+    },
+    { "id": 466344, "id_state": 1719, "text": "Palmira", "id_country": 82 },
+    { "id": 466430, "id_state": 1719, "text": "Pampionilla", "id_country": 82 },
+    {
+        "id": 466455,
+        "id_state": 1719,
+        "text": "Pan de Azúcar",
+        "id_country": 82
+    },
+    {
+        "id": 466534,
+        "id_state": 1719,
+        "text": "Páramo",
+        "id_country": 82,
+        "nameAve": "PARAMO(SANTANDER)"
+    },
+    {
+        "id": 466944,
+        "id_state": 1719,
+        "text": "Piedecuesta",
+        "id_country": 82,
+        "nameAve": "PIEDECUESTA(SANTANDER)"
+    },
+    {
+        "id": 467017,
+        "id_state": 1719,
+        "text": "Pinchote",
+        "id_country": 82,
+        "nameAve": "PINCHOTE(SANTANDER)"
+    },
+    { "id": 467192, "id_state": 1719, "text": "Playon", "id_country": 82 },
+    { "id": 467304, "id_state": 1719, "text": "Porvenir", "id_country": 82 },
+    { "id": 467405, "id_state": 1719, "text": "Primavera", "id_country": 82 },
+    {
+        "id": 467521,
+        "id_state": 1719,
+        "text": "Puente Guillermo",
+        "id_country": 82
+    },
+    {
+        "id": 467528,
+        "id_state": 1719,
+        "text": "Puente Nacional",
+        "id_country": 82,
+        "nameAve": "PUENTE NACIONAL(SANTANDER)"
+    },
+    {
+        "id": 467817,
+        "id_state": 1719,
+        "text": "Puerto Parra",
+        "id_country": 82,
+        "nameAve": "PUERTO PARRA(SANTANDER)"
+    },
+    {
+        "id": 467929,
+        "id_state": 1719,
+        "text": "Puerto Wilches",
+        "id_country": 82,
+        "nameAve": "PUERTO WILCHES(SANTANDER)"
+    },
+    { "id": 468178, "id_state": 1719, "text": "Recreo", "id_country": 82 },
+    { "id": 468263, "id_state": 1719, "text": "Ricaurte", "id_country": 82 },
+    {
+        "id": 468344,
+        "id_state": 1719,
+        "text": "Rionegro",
+        "id_country": 82,
+        "nameAve": "RIONEGRO(SANTANDER)"
+    },
+    {
+        "id": 468491,
+        "id_state": 1719,
+        "text": "Sabana de Torres",
+        "id_country": 82,
+        "nameAve": "SABANA DE TORRES(SANTANDER)"
+    },
+    { "id": 468671, "id_state": 1719, "text": "San Alonso", "id_country": 82 },
+    {
+        "id": 468684,
+        "id_state": 1719,
+        "text": "San Andrés",
+        "id_country": 82,
+        "nameAve": "SAN ANDRES(SANTANDER)"
+    },
+    {
+        "id": 468745,
+        "id_state": 1719,
+        "text": "San Benito",
+        "id_country": 82,
+        "nameAve": "SAN BENITO(SANTANDER)"
+    },
+    {
+        "id": 468757,
+        "id_state": 1719,
+        "text": "San Bernardo",
+        "id_country": 82
+    },
+    {
+        "id": 468865,
+        "id_state": 1719,
+        "text": "San Francisco",
+        "id_country": 82
+    },
+    {
+        "id": 468891,
+        "id_state": 1719,
+        "text": "San Gil",
+        "id_country": 82,
+        "nameAve": "SAN GIL(SANTANDER)"
+    },
+    {
+        "id": 469023,
+        "id_state": 1719,
+        "text": "San José de Miranda",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DE MIRANDA(SANTANDER)"
+    },
+    { "id": 469166, "id_state": 1719, "text": "San Matias", "id_country": 82 },
+    {
+        "id": 469176,
+        "id_state": 1719,
+        "text": "San Miguel",
+        "id_country": 82,
+        "nameAve": "SAN MIGUEL(SANTANDER)"
+    },
+    { "id": 469215, "id_state": 1719, "text": "San Pablo", "id_country": 82 },
+    { "id": 469292, "id_state": 1719, "text": "San Rafael", "id_country": 82 },
+    {
+        "id": 469362,
+        "id_state": 1719,
+        "text": "Santa Barbara",
+        "id_country": 82,
+        "nameAve": "SANTA BARBARA(SANTANDER)"
+    },
+    {
+        "id": 469377,
+        "id_state": 1719,
+        "text": "Santa Bárbara",
+        "id_country": 82,
+        "nameAve": "SANTA BARBARA(SANTANDER)"
+    },
+    {
+        "id": 469388,
+        "id_state": 1719,
+        "text": "Santa Catalina",
+        "id_country": 82
+    },
+    { "id": 469416, "id_state": 1719, "text": "Santa Cruz", "id_country": 82 },
+    { "id": 469452, "id_state": 1719, "text": "Santa Fé", "id_country": 82 },
+    { "id": 469459, "id_state": 1719, "text": "Santa Fe", "id_country": 82 },
+    { "id": 469587, "id_state": 1719, "text": "Santa Marta", "id_country": 82 },
+    {
+        "id": 469602,
+        "id_state": 1719,
+        "text": "Santana de Flores",
+        "id_country": 82
+    },
+    { "id": 469630, "id_state": 1719, "text": "Santa Rita", "id_country": 82 },
+    { "id": 469767, "id_state": 1719, "text": "San Vicente", "id_country": 82 },
+    {
+        "id": 469777,
+        "id_state": 1719,
+        "text": "San Vicente de Chucurí",
+        "id_country": 82,
+        "nameAve": "SAN VICENTE DE CHUCURI(SANTANDER)"
+    },
+    {
+        "id": 470059,
+        "id_state": 1719,
+        "text": "Socorro",
+        "id_country": 82,
+        "nameAve": "SOCORRO(SANTANDER)"
+    },
+    { "id": 470110, "id_state": 1719, "text": "Sotomayor", "id_country": 82 },
+    {
+        "id": 470117,
+        "id_state": 1719,
+        "text": "Suaita",
+        "id_country": 82,
+        "nameAve": "SUAITA(SANTANDER)"
+    },
+    {
+        "id": 470118,
+        "id_state": 1719,
+        "text": "Suaita Viejo",
+        "id_country": 82
+    },
+    {
+        "id": 470160,
+        "id_state": 1719,
+        "text": "Suratá",
+        "id_country": 82,
+        "nameAve": "SURATA(SANTANDER)"
+    },
+    {
+        "id": 470634,
+        "id_state": 1719,
+        "text": "Tona",
+        "id_country": 82,
+        "nameAve": "TONA(SANTANDER)"
+    },
+    {
+        "id": 471037,
+        "id_state": 1719,
+        "text": "Valle de San José",
+        "id_country": 82,
+        "nameAve": "VALLE DE SAN JOSE(SANTANDER)"
+    },
+    { "id": 471056, "id_state": 1719, "text": "Vanegas", "id_country": 82 },
+    { "id": 471077, "id_state": 1719, "text": "Vega", "id_country": 82 },
+    {
+        "id": 471109,
+        "id_state": 1719,
+        "text": "Vélez",
+        "id_country": 82,
+        "nameAve": "VELEZ(SANTANDER)"
+    },
+    {
+        "id": 471265,
+        "id_state": 1719,
+        "text": "Villa Carlina",
+        "id_country": 82
+    },
+    {
+        "id": 471280,
+        "id_state": 1719,
+        "text": "Villa del Rosario",
+        "id_country": 82
+    },
+    {
+        "id": 471329,
+        "id_state": 1719,
+        "text": "Villa Luz",
+        "id_country": 82,
+        "nameAve": "VILLA LUZ(SANTANDER)"
+    },
+    { "id": 471358, "id_state": 1719, "text": "Villa Nueva", "id_country": 82 },
+    {
+        "id": 471369,
+        "id_state": 1719,
+        "text": "Villanueva",
+        "id_country": 82,
+        "nameAve": "VILLANUEVA(SANTANDER)"
+    },
+    { "id": 471394, "id_state": 1719, "text": "Villa Rosa", "id_country": 82 },
+    { "id": 471434, "id_state": 1719, "text": "Virolín", "id_country": 82 },
+    {
+        "id": 471657,
+        "id_state": 1719,
+        "text": "Zapatoca",
+        "id_country": 82,
+        "nameAve": "ZAPATOCA(SANTANDER)"
+    },
+    { "id": 471672, "id_state": 1719, "text": "Zaragoza", "id_country": 82 },
+    {
+        "id": 790440,
+        "id_state": 1719,
+        "text": "Acapulco",
+        "id_country": 82,
+        "nameAve": "ACAPULCO(SANTANDER)"
+    },
+    {
+        "id": 790445,
+        "id_state": 1719,
+        "text": "Aguada",
+        "id_country": 82,
+        "nameAve": "AGUADA(SANTANDER)"
+    },
+    {
+        "id": 790570,
+        "id_state": 1719,
+        "text": "Cepita",
+        "id_country": 82,
+        "nameAve": "CEPITA(SANTANDER)"
+    },
+    {
+        "id": 790583,
+        "id_state": 1719,
+        "text": "Charta",
+        "id_country": 82,
+        "nameAve": "CHARTA(SANTANDER)"
+    },
+    {
+        "id": 790656,
+        "id_state": 1719,
+        "text": "Confines",
+        "id_country": 82,
+        "nameAve": "CONFINES(SANTANDER)"
+    },
+    {
+        "id": 790697,
+        "id_state": 1719,
+        "text": "El carmen de chucuri",
+        "id_country": 82,
+        "nameAve": "EL CARMEN DE CHUCURI(SANTANDER)"
+    },
+    {
+        "id": 790719,
+        "id_state": 1719,
+        "text": "El guacamayo",
+        "id_country": 82,
+        "nameAve": "EL GUACAMAYO(SANTANDER)"
+    },
+    {
+        "id": 790733,
+        "id_state": 1719,
+        "text": "El nogal",
+        "id_country": 82,
+        "nameAve": "EL NOGAL(SANTANDER)"
+    },
+    {
+        "id": 790736,
+        "id_state": 1719,
+        "text": "El pedregal",
+        "id_country": 82,
+        "nameAve": "EL PEDREGAL(SANTANDER)"
+    },
+    {
+        "id": 790769,
+        "id_state": 1719,
+        "text": "Encino",
+        "id_country": 82,
+        "nameAve": "ENCINO(SANTANDER)"
+    },
+    {
+        "id": 790779,
+        "id_state": 1719,
+        "text": "Florian",
+        "id_country": 82,
+        "nameAve": "FLORIAN(SANTANDER)"
+    },
+    {
+        "id": 790795,
+        "id_state": 1719,
+        "text": "Guaca",
+        "id_country": 82,
+        "nameAve": "GUACA(SANTANDER)"
+    },
+    {
+        "id": 790810,
+        "id_state": 1719,
+        "text": "Guapota",
+        "id_country": 82,
+        "nameAve": "GUAPOTA(SANTANDER)"
+    },
+    {
+        "id": 790826,
+        "id_state": 1719,
+        "text": "Hato",
+        "id_country": 82,
+        "nameAve": "HATO(SANTANDER)"
+    },
+    {
+        "id": 790839,
+        "id_state": 1719,
+        "text": "Jesus maria",
+        "id_country": 82,
+        "nameAve": "JESUS MARIA(SANTANDER)"
+    },
+    {
+        "id": 790841,
+        "id_state": 1719,
+        "text": "Jordan",
+        "id_country": 82,
+        "nameAve": "JORDAN(SANTANDER)"
+    },
+    {
+        "id": 790984,
+        "id_state": 1719,
+        "text": "Los santos",
+        "id_country": 82,
+        "nameAve": "LOS SANTOS(SANTANDER)"
+    },
+    {
+        "id": 790988,
+        "id_state": 1719,
+        "text": "Macaravita",
+        "id_country": 82,
+        "nameAve": "MACARAVITA(SANTANDER)"
+    },
+    {
+        "id": 791011,
+        "id_state": 1719,
+        "text": "Matanza",
+        "id_country": 82,
+        "nameAve": "MATANZA(SANTANDER)"
+    },
+    {
+        "id": 791083,
+        "id_state": 1719,
+        "text": "Palmar",
+        "id_country": 82,
+        "nameAve": "PALMAR(SANTANDER)"
+    },
+    {
+        "id": 791155,
+        "id_state": 1719,
+        "text": "Puerto araujo",
+        "id_country": 82,
+        "nameAve": "PUERTO ARAUJO(SANTANDER)"
+    },
+    {
+        "id": 791241,
+        "id_state": 1719,
+        "text": "San joaquin",
+        "id_country": 82,
+        "nameAve": "SAN JOAQUIN(SANTANDER)"
+    },
+    {
+        "id": 791281,
+        "id_state": 1719,
+        "text": "Santa helena del opon",
+        "id_country": 82,
+        "nameAve": "SANTA HELENA DEL OPON(SANTANDER)"
+    },
+    {
+        "id": 791309,
+        "id_state": 1719,
+        "text": "Simacota",
+        "id_country": 82,
+        "nameAve": "SIMACOTA(SANTANDER)"
+    },
+    {
+        "id": 791325,
+        "id_state": 1719,
+        "text": "Sucre",
+        "id_country": 82,
+        "nameAve": "SUCRE(SANTANDER)"
+    },
+    {
+        "id": 791382,
+        "id_state": 1719,
+        "text": "Vado real",
+        "id_country": 82,
+        "nameAve": "VADO REAL(SANTANDER)"
+    },
+    {
+        "id": 791388,
+        "id_state": 1719,
+        "text": "Vetas",
+        "id_country": 82,
+        "nameAve": "VETAS(SANTANDER)"
+    },
+    {
+        "id": 791392,
+        "id_state": 1719,
+        "text": "Vijagual",
+        "id_country": 82,
+        "nameAve": "VIJAGUAL(SANTANDER)"
+    },
+    {
+        "id": 791395,
+        "id_state": 1719,
+        "text": "Villa carmelo",
+        "id_country": 82,
+        "nameAve": "VILLA CARMELO(SANTANDER)"
+    },
+    {
+        "id": 791417,
+        "id_state": 1719,
+        "text": "Yarima",
+        "id_country": 82,
+        "nameAve": "YARIMA(SANTANDER)"
+    },
+    { "id": 451057, "id_state": 1720, "text": "Admirable", "id_country": 82 },
+    { "id": 451076, "id_state": 1720, "text": "Aguablanca", "id_country": 82 },
+    { "id": 451092, "id_state": 1720, "text": "Aguacatal", "id_country": 82 },
+    { "id": 451097, "id_state": 1720, "text": "Aguacate", "id_country": 82 },
+    { "id": 451129, "id_state": 1720, "text": "Aguaflorida", "id_country": 82 },
+    {
+        "id": 451157,
+        "id_state": 1720,
+        "text": "Aguas Blancas",
+        "id_country": 82
+    },
+    {
+        "id": 451174,
+        "id_state": 1720,
+        "text": "Aguas Negras",
+        "id_country": 82
+    },
+    { "id": 451193, "id_state": 1720, "text": "Aguilar", "id_country": 82 },
+    { "id": 451221, "id_state": 1720, "text": "Albania", "id_country": 82 },
+    { "id": 451256, "id_state": 1720, "text": "Alemania", "id_country": 82 },
+    { "id": 451295, "id_state": 1720, "text": "Almagra", "id_country": 82 },
+    { "id": 451745, "id_state": 1720, "text": "Armenia", "id_country": 82 },
+    { "id": 452329, "id_state": 1720, "text": "Betulia", "id_country": 82 },
+    { "id": 452418, "id_state": 1720, "text": "Boca María", "id_country": 82 },
+    {
+        "id": 452559,
+        "id_state": 1720,
+        "text": "Bosa Navarro",
+        "id_country": 82
+    },
+    { "id": 452566, "id_state": 1720, "text": "Boston", "id_country": 82 },
+    { "id": 452603, "id_state": 1720, "text": "Bremen", "id_country": 82 },
+    {
+        "id": 452691,
+        "id_state": 1720,
+        "text": "Buenavista",
+        "id_country": 82,
+        "nameAve": "BUENAVISTA(SUCRE)"
+    },
+    {
+        "id": 452717,
+        "id_state": 1720,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    {
+        "id": 452884,
+        "id_state": 1720,
+        "text": "Caimito",
+        "id_country": 82,
+        "nameAve": "CAIMITO(SUCRE)"
+    },
+    { "id": 452921, "id_state": 1720, "text": "Calabozo", "id_country": 82 },
+    { "id": 452968, "id_state": 1720, "text": "California", "id_country": 82 },
+    { "id": 453137, "id_state": 1720, "text": "Campoflores", "id_country": 82 },
+    { "id": 453241, "id_state": 1720, "text": "Candelaria", "id_country": 82 },
+    { "id": 453306, "id_state": 1720, "text": "Cantagalla", "id_country": 82 },
+    { "id": 453373, "id_state": 1720, "text": "Caracas", "id_country": 82 },
+    { "id": 453530, "id_state": 1720, "text": "Cartagenita", "id_country": 82 },
+    {
+        "id": 453821,
+        "id_state": 1720,
+        "text": "Caserío La Ceja del Mango",
+        "id_country": 82
+    },
+    {
+        "id": 453840,
+        "id_state": 1720,
+        "text": "Caserío La Palma",
+        "id_country": 82
+    },
+    {
+        "id": 453903,
+        "id_state": 1720,
+        "text": "Caserio Monteria",
+        "id_country": 82
+    },
+    {
+        "id": 453942,
+        "id_state": 1720,
+        "text": "Caserio Puerto Viejo",
+        "id_country": 82
+    },
+    { "id": 454282, "id_state": 1720, "text": "Chapinero", "id_country": 82 },
+    { "id": 454428, "id_state": 1720, "text": "Chinú", "id_country": 82 },
+    {
+        "id": 454474,
+        "id_state": 1720,
+        "text": "Chocho",
+        "id_country": 82,
+        "nameAve": "CHOCHO(SUCRE)"
+    },
+    { "id": 454591, "id_state": 1720, "text": "Cincelejo", "id_country": 82 },
+    { "id": 454601, "id_state": 1720, "text": "Cipataca", "id_country": 82 },
+    {
+        "id": 454721,
+        "id_state": 1720,
+        "text": "Colosó",
+        "id_country": 82,
+        "nameAve": "COLOSO(SUCRE)"
+    },
+    { "id": 454829, "id_state": 1720, "text": "Coraza", "id_country": 82 },
+    { "id": 454851, "id_state": 1720, "text": "Córdoba", "id_country": 82 },
+    {
+        "id": 454908,
+        "id_state": 1720,
+        "text": "Corozal",
+        "id_country": 82,
+        "nameAve": "COROZAL(SUCRE)"
+    },
+    {
+        "id": 454931,
+        "id_state": 1720,
+        "text": "Corral Viejo",
+        "id_country": 82
+    },
+    {
+        "id": 454953,
+        "id_state": 1720,
+        "text": "Corregimiento Canutal",
+        "id_country": 82
+    },
+    {
+        "id": 454961,
+        "id_state": 1720,
+        "text": "Corregimiento Cordoba",
+        "id_country": 82
+    },
+    {
+        "id": 454971,
+        "id_state": 1720,
+        "text": "Corregimiento de Pisa",
+        "id_country": 82
+    },
+    {
+        "id": 454974,
+        "id_state": 1720,
+        "text": "Corregimiento de San Antonio",
+        "id_country": 82
+    },
+    {
+        "id": 454975,
+        "id_state": 1720,
+        "text": "Corregimiento de San Onofre",
+        "id_country": 82
+    },
+    {
+        "id": 454988,
+        "id_state": 1720,
+        "text": "Corregimiento El Sitio",
+        "id_country": 82
+    },
+    {
+        "id": 454995,
+        "id_state": 1720,
+        "text": "Corregimiento Granada",
+        "id_country": 82
+    },
+    {
+        "id": 455002,
+        "id_state": 1720,
+        "text": "Corregimiento La Arena",
+        "id_country": 82
+    },
+    {
+        "id": 455020,
+        "id_state": 1720,
+        "text": "Corregimiento La Ventura",
+        "id_country": 82
+    },
+    {
+        "id": 455034,
+        "id_state": 1720,
+        "text": "Corregimiento Monteria",
+        "id_country": 82
+    },
+    {
+        "id": 455043,
+        "id_state": 1720,
+        "text": "Corregimiento Palmaritico",
+        "id_country": 82
+    },
+    {
+        "id": 455046,
+        "id_state": 1720,
+        "text": "Corregimiento Palmira",
+        "id_country": 82
+    },
+    {
+        "id": 455048,
+        "id_state": 1720,
+        "text": "Corregimiento Palo Alto",
+        "id_country": 82
+    },
+    {
+        "id": 455068,
+        "id_state": 1720,
+        "text": "Corregimiento San Luis",
+        "id_country": 82
+    },
+    {
+        "id": 455138,
+        "id_state": 1720,
+        "text": "Coveñas",
+        "id_country": 82,
+        "nameAve": "COVENAS(SUCRE)"
+    },
+    { "id": 455990, "id_state": 1720, "text": "El Carmen", "id_country": 82 },
+    { "id": 456437, "id_state": 1720, "text": "El Diamante", "id_country": 82 },
+    { "id": 457480, "id_state": 1720, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457538, "id_state": 1720, "text": "El Puerto", "id_country": 82 },
+    { "id": 457679, "id_state": 1720, "text": "El Rincón", "id_country": 82 },
+    {
+        "id": 457687,
+        "id_state": 1720,
+        "text": "El Rincón de Sincé",
+        "id_country": 82
+    },
+    {
+        "id": 457688,
+        "id_state": 1720,
+        "text": "El Rincon Since",
+        "id_country": 82
+    },
+    {
+        "id": 457700,
+        "id_state": 1720,
+        "text": "El Roble",
+        "id_country": 82,
+        "nameAve": "EL ROBLE(SUCRE)"
+    },
+    { "id": 458012, "id_state": 1720, "text": "El Tolima", "id_country": 82 },
+    {
+        "id": 458441,
+        "id_state": 1720,
+        "text": "Flor del Monte",
+        "id_country": 82
+    },
+    { "id": 458448, "id_state": 1720, "text": "Florencia", "id_country": 82 },
+    {
+        "id": 458619,
+        "id_state": 1720,
+        "text": "Galeras",
+        "id_country": 82,
+        "nameAve": "GALERAS(SUCRE)"
+    },
+    { "id": 458638, "id_state": 1720, "text": "Gallera", "id_country": 82 },
+    { "id": 458785, "id_state": 1720, "text": "Granada", "id_country": 82 },
+    {
+        "id": 459059,
+        "id_state": 1720,
+        "text": "Guaranda",
+        "id_country": 82,
+        "nameAve": "GUARANDA(SUCRE)"
+    },
+    { "id": 459155, "id_state": 1720, "text": "Guayabal", "id_country": 82 },
+    {
+        "id": 459604,
+        "id_state": 1720,
+        "text": "Hacienda San Felipe",
+        "id_country": 82
+    },
+    {
+        "id": 460002,
+        "id_state": 1720,
+        "text": "Huertas Chicas",
+        "id_country": 82
+    },
+    { "id": 460028, "id_state": 1720, "text": "Ibagué", "id_country": 82 },
+    {
+        "id": 460160,
+        "id_state": 1720,
+        "text": "Isla del Coco",
+        "id_country": 82
+    },
+    {
+        "id": 462533,
+        "id_state": 1720,
+        "text": "La Poza del Chorro",
+        "id_country": 82
+    },
+    { "id": 462979, "id_state": 1720, "text": "Las Flores", "id_country": 82 },
+    { "id": 463051, "id_state": 1720, "text": "La Siria", "id_country": 82 },
+    {
+        "id": 463091,
+        "id_state": 1720,
+        "text": "Las Llanadas",
+        "id_country": 82
+    },
+    { "id": 463287, "id_state": 1720, "text": "Las Peñas", "id_country": 82 },
+    {
+        "id": 463526,
+        "id_state": 1720,
+        "text": "La Unión",
+        "id_country": 82,
+        "nameAve": "LA UNION(SUCRE)"
+    },
+    { "id": 463683, "id_state": 1720, "text": "La Vivienda", "id_country": 82 },
+    {
+        "id": 463907,
+        "id_state": 1720,
+        "text": "Loma del Latigo",
+        "id_country": 82
+    },
+    {
+        "id": 464380,
+        "id_state": 1720,
+        "text": "Los Palmitos",
+        "id_country": 82,
+        "nameAve": "LOS PALMITOS(SUCRE)"
+    },
+    {
+        "id": 464657,
+        "id_state": 1720,
+        "text": "Majagual",
+        "id_country": 82,
+        "nameAve": "MAJAGUAL(SUCRE)"
+    },
+    { "id": 464664, "id_state": 1720, "text": "Majagul", "id_country": 82 },
+    { "id": 465099, "id_state": 1720, "text": "Mateo Pérez", "id_country": 82 },
+    { "id": 465344, "id_state": 1720, "text": "Miraflores", "id_country": 82 },
+    {
+        "id": 465654,
+        "id_state": 1720,
+        "text": "Morroa",
+        "id_country": 82,
+        "nameAve": "MORROA(SUCRE)"
+    },
+    { "id": 466018, "id_state": 1720, "text": "Numancia", "id_country": 82 },
+    {
+        "id": 466161,
+        "id_state": 1720,
+        "text": "Ovejas",
+        "id_country": 82,
+        "nameAve": "OVEJAS(SUCRE)"
+    },
+    { "id": 466303, "id_state": 1720, "text": "Palmarito", "id_country": 82 },
+    {
+        "id": 466361,
+        "id_state": 1720,
+        "text": "Palmito",
+        "id_country": 82,
+        "nameAve": "PALMITO(SUCRE)"
+    },
+    { "id": 466365, "id_state": 1720, "text": "Palmitos", "id_country": 82 },
+    { "id": 466654, "id_state": 1720, "text": "Patillal", "id_country": 82 },
+    { "id": 466899, "id_state": 1720, "text": "Petaca", "id_country": 82 },
+    {
+        "id": 466974,
+        "id_state": 1720,
+        "text": "Piedras Blancas",
+        "id_country": 82
+    },
+    { "id": 466994, "id_state": 1720, "text": "Pileta", "id_country": 82 },
+    { "id": 467555, "id_state": 1720, "text": "Puerta Roja", "id_country": 82 },
+    { "id": 468274, "id_state": 1720, "text": "Rincón", "id_country": 82 },
+    {
+        "id": 468490,
+        "id_state": 1720,
+        "text": "Sabana de Pedro",
+        "id_country": 82
+    },
+    {
+        "id": 468640,
+        "id_state": 1720,
+        "text": "Sampués",
+        "id_country": 82,
+        "nameAve": "SAMPUES(SUCRE)"
+    },
+    { "id": 468690, "id_state": 1720, "text": "San Ángel", "id_country": 82 },
+    {
+        "id": 468710,
+        "id_state": 1720,
+        "text": "San Antonio",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO(SUCRE)"
+    },
+    {
+        "id": 468749,
+        "id_state": 1720,
+        "text": "San Benito Abab",
+        "id_country": 82
+    },
+    {
+        "id": 468750,
+        "id_state": 1720,
+        "text": "San Benito Abad",
+        "id_country": 82,
+        "nameAve": "SAN BENITO ABAD(SUCRE)"
+    },
+    { "id": 468835, "id_state": 1720, "text": "San Felipe", "id_country": 82 },
+    {
+        "id": 468927,
+        "id_state": 1720,
+        "text": "San Jacinto",
+        "id_country": 82,
+        "nameAve": "SAN JACINTO(SUCRE)"
+    },
+    {
+        "id": 469032,
+        "id_state": 1720,
+        "text": "San José de Rivera",
+        "id_country": 82
+    },
+    {
+        "id": 469060,
+        "id_state": 1720,
+        "text": "San Juan de Betulia",
+        "id_country": 82,
+        "nameAve": "SAN JUAN DE BETULIA(SUCRE)"
+    },
+    { "id": 469114, "id_state": 1720, "text": "San Luis", "id_country": 82 },
+    {
+        "id": 469133,
+        "id_state": 1720,
+        "text": "San Marcos",
+        "id_country": 82,
+        "nameAve": "SAN MARCOS(SUCRE)"
+    },
+    {
+        "id": 469209,
+        "id_state": 1720,
+        "text": "San Onofre",
+        "id_country": 82,
+        "nameAve": "SAN ONOFRE(SUCRE)"
+    },
+    {
+        "id": 469246,
+        "id_state": 1720,
+        "text": "San Pedro",
+        "id_country": 82,
+        "nameAve": "SAN PEDRO(SUCRE)"
+    },
+    { "id": 469444, "id_state": 1720, "text": "Santa Elena", "id_country": 82 },
+    { "id": 469461, "id_state": 1720, "text": "Santa Fe", "id_country": 82 },
+    { "id": 469607, "id_state": 1720, "text": "Santander", "id_country": 82 },
+    { "id": 469980, "id_state": 1720, "text": "Sincé", "id_country": 82 },
+    { "id": 469982, "id_state": 1720, "text": "Sincelejito", "id_country": 82 },
+    {
+        "id": 469987,
+        "id_state": 1720,
+        "text": "Sincelejo",
+        "id_country": 82,
+        "nameAve": "SINCELEJO(SUCRE)"
+    },
+    { "id": 470006, "id_state": 1720, "text": "Siria", "id_country": 82 },
+    { "id": 470020, "id_state": 1720, "text": "Si Te Gusta", "id_country": 82 },
+    {
+        "id": 470138,
+        "id_state": 1720,
+        "text": "Sucre",
+        "id_country": 82,
+        "nameAve": "SUCRE(SUCRE)"
+    },
+    { "id": 470619, "id_state": 1720, "text": "Tolú", "id_country": 82 },
+    { "id": 470620, "id_state": 1720, "text": "Toluviejo", "id_country": 82 },
+    { "id": 470703, "id_state": 1720, "text": "Trampas", "id_country": 82 },
+    { "id": 471209, "id_state": 1720, "text": "Versalles", "id_country": 82 },
+    { "id": 471407, "id_state": 1720, "text": "Villa Sol", "id_country": 82 },
+    {
+        "id": 471422,
+        "id_state": 1720,
+        "text": "Viloria Numero Dos",
+        "id_country": 82
+    },
+    { "id": 471652, "id_state": 1720, "text": "Zapata", "id_country": 82 },
+    { "id": 471655, "id_state": 1720, "text": "Zapatica", "id_country": 82 },
+    { "id": 471669, "id_state": 1720, "text": "Zaragocilla", "id_country": 82 },
+    {
+        "id": 790526,
+        "id_state": 1720,
+        "text": "Buenavistica",
+        "id_country": 82,
+        "nameAve": "BUENAVISTICA(SUCRE)"
+    },
+    {
+        "id": 790574,
+        "id_state": 1720,
+        "text": "Cerrito de la palma",
+        "id_country": 82,
+        "nameAve": "CERRITO DE LA PALMA(SUCRE)"
+    },
+    {
+        "id": 790577,
+        "id_state": 1720,
+        "text": "Cerro del naranjo",
+        "id_country": 82,
+        "nameAve": "CERRO DEL NARANJO(SUCRE)"
+    },
+    {
+        "id": 790580,
+        "id_state": 1720,
+        "text": "Chalan",
+        "id_country": 82,
+        "nameAve": "CHALAN(SUCRE)"
+    },
+    {
+        "id": 790663,
+        "id_state": 1720,
+        "text": "Cruz del beque",
+        "id_country": 82,
+        "nameAve": "CRUZ DEL BEQUE(SUCRE)"
+    },
+    {
+        "id": 790852,
+        "id_state": 1720,
+        "text": "La arena",
+        "id_country": 82,
+        "nameAve": "LA ARENA(SUCRE)"
+    },
+    {
+        "id": 790868,
+        "id_state": 1720,
+        "text": "La chivera",
+        "id_country": 82,
+        "nameAve": "LA CHIVERA(SUCRE)"
+    },
+    {
+        "id": 790886,
+        "id_state": 1720,
+        "text": "La gallera",
+        "id_country": 82,
+        "nameAve": "LA GALLERA(SUCRE)"
+    },
+    {
+        "id": 790934,
+        "id_state": 1720,
+        "text": "Laguna flor",
+        "id_country": 82,
+        "nameAve": "LAGUNA FLOR(SUCRE)"
+    },
+    {
+        "id": 790943,
+        "id_state": 1720,
+        "text": "Las huertas",
+        "id_country": 82,
+        "nameAve": "LAS HUERTAS(SUCRE)"
+    },
+    {
+        "id": 790944,
+        "id_state": 1720,
+        "text": "Las majaguas",
+        "id_country": 82,
+        "nameAve": "LAS MAJAGUAS(SUCRE)"
+    },
+    {
+        "id": 790950,
+        "id_state": 1720,
+        "text": "Las palmas",
+        "id_country": 82,
+        "nameAve": "LAS PALMAS(SUCRE)"
+    },
+    {
+        "id": 791133,
+        "id_state": 1720,
+        "text": "Policarpa",
+        "id_country": 82,
+        "nameAve": "POLICARPA(SUCRE)"
+    },
+    {
+        "id": 791208,
+        "id_state": 1720,
+        "text": "Sabanas del potrero",
+        "id_country": 82,
+        "nameAve": "SABANAS DEL POTRERO(SUCRE)"
+    },
+    {
+        "id": 791254,
+        "id_state": 1720,
+        "text": "San luis de since",
+        "id_country": 82,
+        "nameAve": "SAN LUIS DE SINCE(SUCRE)"
+    },
+    {
+        "id": 791257,
+        "id_state": 1720,
+        "text": "San martin",
+        "id_country": 82,
+        "nameAve": "SAN MARTIN(SUCRE)"
+    },
+    {
+        "id": 791260,
+        "id_state": 1720,
+        "text": "San nicolas",
+        "id_country": 82,
+        "nameAve": "SAN NICOLAS(SUCRE)"
+    },
+    {
+        "id": 791266,
+        "id_state": 1720,
+        "text": "San rafael",
+        "id_country": 82,
+        "nameAve": "SAN RAFAEL(SUCRE)"
+    },
+    {
+        "id": 791278,
+        "id_state": 1720,
+        "text": "Santa cruz",
+        "id_country": 82,
+        "nameAve": "SANTA CRUZ(SUCRE)"
+    },
+    {
+        "id": 791297,
+        "id_state": 1720,
+        "text": "Santiago de tolu",
+        "id_country": 82,
+        "nameAve": "SANTIAGO DE TOLU(SUCRE)"
+    },
+    {
+        "id": 791361,
+        "id_state": 1720,
+        "text": "Tolu viejo",
+        "id_country": 82,
+        "nameAve": "TOLU VIEJO(SUCRE)"
+    },
+    {
+        "id": 791404,
+        "id_state": 1720,
+        "text": "Villa rosita",
+        "id_country": 82,
+        "nameAve": "VILLA ROSITA(SUCRE)"
+    },
+    { "id": 451039, "id_state": 1721, "text": "Aceituno", "id_country": 82 },
+    {
+        "id": 451043,
+        "id_state": 1721,
+        "text": "Acevedo y Gómez",
+        "id_country": 82
+    },
+    { "id": 451047, "id_state": 1721, "text": "Aco", "id_country": 82 },
+    { "id": 451049, "id_state": 1721, "text": "Aco Nuevo", "id_country": 82 },
+    { "id": 451056, "id_state": 1721, "text": "Adelaide", "id_country": 82 },
+    { "id": 451080, "id_state": 1721, "text": "Agua Bonita", "id_country": 82 },
+    {
+        "id": 451088,
+        "id_state": 1721,
+        "text": "Agua Caliente",
+        "id_country": 82
+    },
+    {
+        "id": 451090,
+        "id_state": 1721,
+        "text": "Aguacaliente",
+        "id_country": 82
+    },
+    { "id": 451121, "id_state": 1721, "text": "Aguadita", "id_country": 82 },
+    { "id": 451219, "id_state": 1721, "text": "Albania", "id_country": 82 },
+    { "id": 451251, "id_state": 1721, "text": "Alejandría", "id_country": 82 },
+    {
+        "id": 451308,
+        "id_state": 1721,
+        "text": "Alpujarra",
+        "id_country": 82,
+        "nameAve": "ALPUJARRA(TOLIMA)"
+    },
+    { "id": 451330, "id_state": 1721, "text": "Altamira", "id_country": 82 },
+    {
+        "id": 451345,
+        "id_state": 1721,
+        "text": "Hacienda Altamira",
+        "id_country": 82
+    },
+    {
+        "id": 451368,
+        "id_state": 1721,
+        "text": "Alto de Belleza",
+        "id_country": 82
+    },
+    {
+        "id": 451372,
+        "id_state": 1721,
+        "text": "Alto de La Torre",
+        "id_country": 82
+    },
+    {
+        "id": 451373,
+        "id_state": 1721,
+        "text": "Alto del Cielo",
+        "id_country": 82
+    },
+    {
+        "id": 451383,
+        "id_state": 1721,
+        "text": "Alto de Ortega",
+        "id_country": 82
+    },
+    {
+        "id": 451424,
+        "id_state": 1721,
+        "text": "Alto San Juan",
+        "id_country": 82
+    },
+    { "id": 451425, "id_state": 1721, "text": "Alto Sano", "id_country": 82 },
+    { "id": 451439, "id_state": 1721, "text": "Alturas", "id_country": 82 },
+    {
+        "id": 451442,
+        "id_state": 1721,
+        "text": "Alvarado",
+        "id_country": 82,
+        "nameAve": "ALVARADO(TOLIMA)"
+    },
+    {
+        "id": 451472,
+        "id_state": 1721,
+        "text": "Ambalema",
+        "id_country": 82,
+        "nameAve": "AMBALEMA(TOLIMA)"
+    },
+    { "id": 451499, "id_state": 1721, "text": "Anaime", "id_country": 82 },
+    { "id": 451512, "id_state": 1721, "text": "Anchique", "id_country": 82 },
+    { "id": 451568, "id_state": 1721, "text": "Antioquia", "id_country": 82 },
+    {
+        "id": 451584,
+        "id_state": 1721,
+        "text": "Anzoátegui",
+        "id_country": 82,
+        "nameAve": "ANZOATEGUI(TOLIMA)"
+    },
+    { "id": 451711, "id_state": 1721, "text": "Argelia", "id_country": 82 },
+    {
+        "id": 451751,
+        "id_state": 1721,
+        "text": "Armero",
+        "id_country": 82,
+        "nameAve": "ARMERO(TOLIMA)"
+    },
+    { "id": 451794, "id_state": 1721, "text": "Arroyuelo", "id_country": 82 },
+    {
+        "id": 451828,
+        "id_state": 1721,
+        "text": "Ataco",
+        "id_country": 82,
+        "nameAve": "ATACO(TOLIMA)"
+    },
+    { "id": 451937, "id_state": 1721, "text": "Balconcitos", "id_country": 82 },
+    { "id": 451940, "id_state": 1721, "text": "Balcones", "id_country": 82 },
+    { "id": 451968, "id_state": 1721, "text": "Baltimore", "id_country": 82 },
+    { "id": 452017, "id_state": 1721, "text": "Barcelona", "id_country": 82 },
+    {
+        "id": 452140,
+        "id_state": 1721,
+        "text": "Batería Santa Rosa",
+        "id_country": 82
+    },
+    { "id": 452221, "id_state": 1721, "text": "Bellavista", "id_country": 82 },
+    { "id": 452264, "id_state": 1721, "text": "Berlín", "id_country": 82 },
+    { "id": 452298, "id_state": 1721, "text": "Betania", "id_country": 82 },
+    { "id": 452498, "id_state": 1721, "text": "Bolivia", "id_country": 82 },
+    { "id": 452530, "id_state": 1721, "text": "Boquerón", "id_country": 82 },
+    { "id": 452542, "id_state": 1721, "text": "Boqueron", "id_country": 82 },
+    {
+        "id": 452611,
+        "id_state": 1721,
+        "text": "Briceño",
+        "id_country": 82,
+        "nameAve": "BRICENO(TOLIMA)"
+    },
+    { "id": 452683, "id_state": 1721, "text": "Buenavista", "id_country": 82 },
+    {
+        "id": 452703,
+        "id_state": 1721,
+        "text": "Buenavista Baja",
+        "id_country": 82
+    },
+    {
+        "id": 452708,
+        "id_state": 1721,
+        "text": "Buenos Aires",
+        "id_country": 82,
+        "nameAve": "BUENOS AIRES(TOLIMA)"
+    },
+    {
+        "id": 452892,
+        "id_state": 1721,
+        "text": "Cajamarca",
+        "id_country": 82,
+        "nameAve": "CAJAMARCA(TOLIMA)"
+    },
+    { "id": 452924, "id_state": 1721, "text": "Calamar", "id_country": 82 },
+    {
+        "id": 452943,
+        "id_state": 1721,
+        "text": "Caldas Viejo",
+        "id_country": 82
+    },
+    { "id": 452954, "id_state": 1721, "text": "Calibio", "id_country": 82 },
+    { "id": 453079, "id_state": 1721, "text": "Campiña", "id_country": 82 },
+    { "id": 453343, "id_state": 1721, "text": "Capete", "id_country": 82 },
+    {
+        "id": 453471,
+        "id_state": 1721,
+        "text": "Carmen Apicalá",
+        "id_country": 82
+    },
+    {
+        "id": 453472,
+        "id_state": 1721,
+        "text": "Carmen de Apicalá",
+        "id_country": 82,
+        "nameAve": "CARMEN DE APICALA(TOLIMA)"
+    },
+    {
+        "id": 453548,
+        "id_state": 1721,
+        "text": "Casabianca",
+        "id_country": 82,
+        "nameAve": "CASABIANCA(TOLIMA)"
+    },
+    {
+        "id": 453766,
+        "id_state": 1721,
+        "text": "Caserío El Papayo",
+        "id_country": 82
+    },
+    { "id": 454023, "id_state": 1721, "text": "Castilla", "id_country": 82 },
+    {
+        "id": 454268,
+        "id_state": 1721,
+        "text": "Chaparral",
+        "id_country": 82,
+        "nameAve": "CHAPARRAL(TOLIMA)"
+    },
+    { "id": 454275, "id_state": 1721, "text": "Chapelon", "id_country": 82 },
+    { "id": 454278, "id_state": 1721, "text": "Chapetón", "id_country": 82 },
+    { "id": 454286, "id_state": 1721, "text": "Chapinero", "id_country": 82 },
+    {
+        "id": 454378,
+        "id_state": 1721,
+        "text": "Chicoral",
+        "id_country": 82,
+        "nameAve": "CHICORAL(TOLIMA)"
+    },
+    { "id": 454432, "id_state": 1721, "text": "Chipala", "id_country": 82 },
+    { "id": 454433, "id_state": 1721, "text": "Chipalo", "id_country": 82 },
+    { "id": 454540, "id_state": 1721, "text": "Chupadero", "id_country": 82 },
+    {
+        "id": 454673,
+        "id_state": 1721,
+        "text": "Coello",
+        "id_country": 82,
+        "nameAve": "COELLO(TOLIMA)"
+    },
+    { "id": 454689, "id_state": 1721, "text": "Colombia", "id_country": 82 },
+    { "id": 454699, "id_state": 1721, "text": "Colón", "id_country": 82 },
+    { "id": 454708, "id_state": 1721, "text": "Colorada", "id_country": 82 },
+    { "id": 454736, "id_state": 1721, "text": "Combiema", "id_country": 82 },
+    { "id": 454830, "id_state": 1721, "text": "Corazón", "id_country": 82 },
+    { "id": 455093, "id_state": 1721, "text": "Cortadero", "id_country": 82 },
+    {
+        "id": 455141,
+        "id_state": 1721,
+        "text": "Coyaima",
+        "id_country": 82,
+        "nameAve": "COYAIMA(TOLIMA)"
+    },
+    {
+        "id": 455292,
+        "id_state": 1721,
+        "text": "Cueva de Tununí",
+        "id_country": 82
+    },
+    {
+        "id": 455341,
+        "id_state": 1721,
+        "text": "Cunday",
+        "id_country": 82,
+        "nameAve": "CUNDAY(TOLIMA)"
+    },
+    { "id": 455349, "id_state": 1721, "text": "Cunira", "id_country": 82 },
+    { "id": 455517, "id_state": 1721, "text": "Doima", "id_country": 82 },
+    {
+        "id": 455519,
+        "id_state": 1721,
+        "text": "Dolores",
+        "id_country": 82,
+        "nameAve": "DOLORES(TOLIMA)"
+    },
+    { "id": 455819, "id_state": 1721, "text": "El Boquerón", "id_country": 82 },
+    { "id": 455895, "id_state": 1721, "text": "El Caimáno", "id_country": 82 },
+    { "id": 455984, "id_state": 1721, "text": "El Carmen", "id_country": 82 },
+    { "id": 456057, "id_state": 1721, "text": "El Cedral", "id_country": 82 },
+    { "id": 456277, "id_state": 1721, "text": "El Corazón", "id_country": 82 },
+    { "id": 456386, "id_state": 1721, "text": "El Descanso", "id_country": 82 },
+    { "id": 456517, "id_state": 1721, "text": "El Encanto", "id_country": 82 },
+    { "id": 456562, "id_state": 1721, "text": "El Espinal", "id_country": 82 },
+    { "id": 456656, "id_state": 1721, "text": "El Guamito", "id_country": 82 },
+    {
+        "id": 456758,
+        "id_state": 1721,
+        "text": "El Horizonte",
+        "id_country": 82
+    },
+    { "id": 456784, "id_state": 1721, "text": "El Igua", "id_country": 82 },
+    { "id": 456802, "id_state": 1721, "text": "El Jadrín", "id_country": 82 },
+    { "id": 456812, "id_state": 1721, "text": "El Jardín", "id_country": 82 },
+    { "id": 456819, "id_state": 1721, "text": "El Jardin", "id_country": 82 },
+    { "id": 456842, "id_state": 1721, "text": "El Jordán", "id_country": 82 },
+    { "id": 457046, "id_state": 1721, "text": "El Mirador", "id_country": 82 },
+    { "id": 457067, "id_state": 1721, "text": "El Moral", "id_country": 82 },
+    { "id": 457217, "id_state": 1721, "text": "El Palmar", "id_country": 82 },
+    { "id": 457332, "id_state": 1721, "text": "El Pedregal", "id_country": 82 },
+    { "id": 457522, "id_state": 1721, "text": "El Prodigio", "id_country": 82 },
+    {
+        "id": 457548,
+        "id_state": 1721,
+        "text": "El Quebradón",
+        "id_country": 82
+    },
+    { "id": 457683, "id_state": 1721, "text": "El Rincón", "id_country": 82 },
+    { "id": 457709, "id_state": 1721, "text": "El Rocío", "id_country": 82 },
+    { "id": 457771, "id_state": 1721, "text": "El Salado", "id_country": 82 },
+    { "id": 457989, "id_state": 1721, "text": "El Tigre", "id_country": 82 },
+    { "id": 458017, "id_state": 1721, "text": "El Topacio", "id_country": 82 },
+    { "id": 458114, "id_state": 1721, "text": "El Valle", "id_country": 82 },
+    { "id": 458139, "id_state": 1721, "text": "El Venado", "id_country": 82 },
+    { "id": 458147, "id_state": 1721, "text": "El Vergel", "id_country": 82 },
+    { "id": 458176, "id_state": 1721, "text": "El Viento", "id_country": 82 },
+    { "id": 458216, "id_state": 1721, "text": "El Zorro", "id_country": 82 },
+    {
+        "id": 458315,
+        "id_state": 1721,
+        "text": "Espinal",
+        "id_country": 82,
+        "nameAve": "ESPINAL(TOLIMA)"
+    },
+    {
+        "id": 458320,
+        "id_state": 1721,
+        "text": "Espíritu Santo",
+        "id_country": 82
+    },
+    {
+        "id": 458375,
+        "id_state": 1721,
+        "text": "Falan",
+        "id_country": 82,
+        "nameAve": "FALAN(TOLIMA)"
+    },
+    {
+        "id": 458424,
+        "id_state": 1721,
+        "text": "Flandes",
+        "id_country": 82,
+        "nameAve": "FLANDES(TOLIMA)"
+    },
+    { "id": 458463, "id_state": 1721, "text": "Floresta", "id_country": 82 },
+    { "id": 458473, "id_state": 1721, "text": "Florida", "id_country": 82 },
+    {
+        "id": 458524,
+        "id_state": 1721,
+        "text": "Fresno",
+        "id_country": 82,
+        "nameAve": "FRESNO(TOLIMA)"
+    },
+    { "id": 458606, "id_state": 1721, "text": "Gaitán", "id_country": 82 },
+    {
+        "id": 458607,
+        "id_state": 1721,
+        "text": "Gaitania",
+        "id_country": 82,
+        "nameAve": "GAITANIA(TOLIMA)"
+    },
+    { "id": 458795, "id_state": 1721, "text": "Granate", "id_country": 82 },
+    { "id": 458824, "id_state": 1721, "text": "Guabio", "id_country": 82 },
+    {
+        "id": 458974,
+        "id_state": 1721,
+        "text": "Gualanday",
+        "id_country": 82,
+        "nameAve": "GUALANDAY(TOLIMA)"
+    },
+    {
+        "id": 459016,
+        "id_state": 1721,
+        "text": "Guamo",
+        "id_country": 82,
+        "nameAve": "GUAMO(TOLIMA)"
+    },
+    { "id": 459159, "id_state": 1721, "text": "Guayabal", "id_country": 82 },
+    {
+        "id": 459285,
+        "id_state": 1721,
+        "text": "Hacienda Arroyo",
+        "id_country": 82
+    },
+    { "id": 459854, "id_state": 1721, "text": "Herbeo", "id_country": 82 },
+    {
+        "id": 459867,
+        "id_state": 1721,
+        "text": "Herrera",
+        "id_country": 82,
+        "nameAve": "HERRERA(TOLIMA)"
+    },
+    {
+        "id": 459870,
+        "id_state": 1721,
+        "text": "Herveo",
+        "id_country": 82,
+        "nameAve": "HERVEO(TOLIMA)"
+    },
+    {
+        "id": 459889,
+        "id_state": 1721,
+        "text": "Hilarco Chili",
+        "id_country": 82
+    },
+    {
+        "id": 459912,
+        "id_state": 1721,
+        "text": "Honda",
+        "id_country": 82,
+        "nameAve": "HONDA(TOLIMA)"
+    },
+    { "id": 459928, "id_state": 1721, "text": "Horizonte", "id_country": 82 },
+    {
+        "id": 460029,
+        "id_state": 1721,
+        "text": "Ibagué",
+        "id_country": 82,
+        "nameAve": "IBAGUE(TOLIMA)"
+    },
+    { "id": 460034, "id_state": 1721, "text": "Icarco", "id_country": 82 },
+    {
+        "id": 460040,
+        "id_state": 1721,
+        "text": "Icononzo",
+        "id_country": 82,
+        "nameAve": "ICONONZO(TOLIMA)"
+    },
+    { "id": 460047, "id_state": 1721, "text": "Iguaje", "id_country": 82 },
+    { "id": 460051, "id_state": 1721, "text": "Iguasal", "id_country": 82 },
+    { "id": 460124, "id_state": 1721, "text": "Irca", "id_country": 82 },
+    { "id": 460125, "id_state": 1721, "text": "Irco", "id_country": 82 },
+    { "id": 460182, "id_state": 1721, "text": "Italia", "id_country": 82 },
+    { "id": 460228, "id_state": 1721, "text": "Jamaica", "id_country": 82 },
+    { "id": 460431, "id_state": 1721, "text": "Judea", "id_country": 82 },
+    {
+        "id": 460458,
+        "id_state": 1721,
+        "text": "Juntas",
+        "id_country": 82,
+        "nameAve": "JUNTAS(TOLIMA)"
+    },
+    { "id": 460630, "id_state": 1721, "text": "La Aldea", "id_country": 82 },
+    { "id": 460648, "id_state": 1721, "text": "La Alsacia", "id_country": 82 },
+    { "id": 460655, "id_state": 1721, "text": "La Amargura", "id_country": 82 },
+    {
+        "id": 460703,
+        "id_state": 1721,
+        "text": "La Argentina",
+        "id_country": 82
+    },
+    { "id": 460813, "id_state": 1721, "text": "La Boca", "id_country": 82 },
+    { "id": 460914, "id_state": 1721, "text": "La Calera", "id_country": 82 },
+    { "id": 461015, "id_state": 1721, "text": "La Catalina", "id_country": 82 },
+    { "id": 461224, "id_state": 1721, "text": "La Cruz", "id_country": 82 },
+    { "id": 461355, "id_state": 1721, "text": "La Escalera", "id_country": 82 },
+    { "id": 461632, "id_state": 1721, "text": "La Granja", "id_country": 82 },
+    { "id": 461640, "id_state": 1721, "text": "La Greda", "id_country": 82 },
+    { "id": 461758, "id_state": 1721, "text": "La Honda", "id_country": 82 },
+    { "id": 461800, "id_state": 1721, "text": "LaIlusión", "id_country": 82 },
+    { "id": 461913, "id_state": 1721, "text": "La Libertad", "id_country": 82 },
+    { "id": 462472, "id_state": 1721, "text": "La Plata", "id_country": 82 },
+    {
+        "id": 462566,
+        "id_state": 1721,
+        "text": "La Primavera",
+        "id_country": 82
+    },
+    { "id": 462636, "id_state": 1721, "text": "La Quinta", "id_country": 82 },
+    { "id": 462780, "id_state": 1721, "text": "La Samaria", "id_country": 82 },
+    {
+        "id": 462922,
+        "id_state": 1721,
+        "text": "Las Delícias",
+        "id_country": 82
+    },
+    { "id": 463028, "id_state": 1721, "text": "La Sierra", "id_country": 82 },
+    { "id": 463070, "id_state": 1721, "text": "Las Juntas", "id_country": 82 },
+    {
+        "id": 463115,
+        "id_state": 1721,
+        "text": "Las Margaritas",
+        "id_country": 82
+    },
+    { "id": 463244, "id_state": 1721, "text": "Las Palmas", "id_country": 82 },
+    { "id": 463497, "id_state": 1721, "text": "La Tulia", "id_country": 82 },
+    { "id": 463582, "id_state": 1721, "text": "La Venecia", "id_country": 82 },
+    { "id": 463631, "id_state": 1721, "text": "La Victoria", "id_country": 82 },
+    {
+        "id": 463753,
+        "id_state": 1721,
+        "text": "Lérida",
+        "id_country": 82,
+        "nameAve": "LERIDA(TOLIMA)"
+    },
+    {
+        "id": 463772,
+        "id_state": 1721,
+        "text": "Líbano",
+        "id_country": 82,
+        "nameAve": "LIBANO(TOLIMA)"
+    },
+    { "id": 463825, "id_state": 1721, "text": "Lisboa", "id_country": 82 },
+    {
+        "id": 463849,
+        "id_state": 1721,
+        "text": "Llanitos",
+        "id_country": 82,
+        "nameAve": "LLANITOS(TOLIMA)"
+    },
+    { "id": 463957, "id_state": 1721, "text": "Lorena", "id_country": 82 },
+    {
+        "id": 464255,
+        "id_state": 1721,
+        "text": "Los Laureles",
+        "id_country": 82
+    },
+    { "id": 464313, "id_state": 1721, "text": "Los Medios", "id_country": 82 },
+    {
+        "id": 464347,
+        "id_state": 1721,
+        "text": "Los Naranjos",
+        "id_country": 82
+    },
+    {
+        "id": 464936,
+        "id_state": 1721,
+        "text": "Mariquita",
+        "id_country": 82,
+        "nameAve": "MARIQUITA(TOLIMA)"
+    },
+    { "id": 464967, "id_state": 1721, "text": "Marsella", "id_country": 82 },
+    { "id": 465020, "id_state": 1721, "text": "Matagaima", "id_country": 82 },
+    { "id": 465156, "id_state": 1721, "text": "Meché", "id_country": 82 },
+    {
+        "id": 465204,
+        "id_state": 1721,
+        "text": "Melgar",
+        "id_country": 82,
+        "nameAve": "MELGAR(TOLIMA)"
+    },
+    {
+        "id": 465245,
+        "id_state": 1721,
+        "text": "Mesa de San Juan",
+        "id_country": 82
+    },
+    { "id": 465254, "id_state": 1721, "text": "Meseta", "id_country": 82 },
+    { "id": 465266, "id_state": 1721, "text": "Mesones", "id_country": 82 },
+    { "id": 465492, "id_state": 1721, "text": "Montañita", "id_country": 82 },
+    {
+        "id": 465754,
+        "id_state": 1721,
+        "text": "Murillo",
+        "id_country": 82,
+        "nameAve": "MURILLO(TOLIMA)"
+    },
+    {
+        "id": 465842,
+        "id_state": 1721,
+        "text": "Natagaima",
+        "id_country": 82,
+        "nameAve": "NATAGAIMA(TOLIMA)"
+    },
+    {
+        "id": 466134,
+        "id_state": 1721,
+        "text": "Ortega",
+        "id_country": 82,
+        "nameAve": "ORTEGA(TOLIMA)"
+    },
+    { "id": 466282, "id_state": 1721, "text": "Palmar", "id_country": 82 },
+    { "id": 466333, "id_state": 1721, "text": "Palmero", "id_country": 82 },
+    {
+        "id": 466374,
+        "id_state": 1721,
+        "text": "Palocabildo",
+        "id_country": 82,
+        "nameAve": "PALOCABILDO(TOLIMA)"
+    },
+    { "id": 466497, "id_state": 1721, "text": "Papelito", "id_country": 82 },
+    {
+        "id": 466721,
+        "id_state": 1721,
+        "text": "Payandé",
+        "id_country": 82,
+        "nameAve": "PAYANDE(TOLIMA)"
+    },
+    { "id": 466741, "id_state": 1721, "text": "Pedregal", "id_country": 82 },
+    {
+        "id": 466819,
+        "id_state": 1721,
+        "text": "Peñon Blanco",
+        "id_country": 82
+    },
+    {
+        "id": 466972,
+        "id_state": 1721,
+        "text": "Piedras",
+        "id_country": 82,
+        "nameAve": "PIEDRAS(TOLIMA)"
+    },
+    {
+        "id": 467110,
+        "id_state": 1721,
+        "text": "Planadas",
+        "id_country": 82,
+        "nameAve": "PLANADAS(TOLIMA)"
+    },
+    { "id": 467178, "id_state": 1721, "text": "Playarrica", "id_country": 82 },
+    {
+        "id": 467383,
+        "id_state": 1721,
+        "text": "Prado",
+        "id_country": 82,
+        "nameAve": "PRADO(TOLIMA)"
+    },
+    {
+        "id": 467470,
+        "id_state": 1721,
+        "text": "Pueblo Nuevo",
+        "id_country": 82
+    },
+    {
+        "id": 467542,
+        "id_state": 1721,
+        "text": "Puente Tuamo",
+        "id_country": 82
+    },
+    {
+        "id": 467647,
+        "id_state": 1721,
+        "text": "Puerto Colombia",
+        "id_country": 82
+    },
+    {
+        "id": 467719,
+        "id_state": 1721,
+        "text": "Puerto La Escalera",
+        "id_country": 82
+    },
+    { "id": 467850, "id_state": 1721, "text": "Puerto Rico", "id_country": 82 },
+    {
+        "id": 468001,
+        "id_state": 1721,
+        "text": "Purificación",
+        "id_country": 82,
+        "nameAve": "PURIFICACION(TOLIMA)"
+    },
+    { "id": 468271, "id_state": 1721, "text": "Ricon Santa", "id_country": 82 },
+    {
+        "id": 468308,
+        "id_state": 1721,
+        "text": "Rioblanco",
+        "id_country": 82,
+        "nameAve": "RIOBLANCO(TOLIMA)"
+    },
+    {
+        "id": 468415,
+        "id_state": 1721,
+        "text": "Roncesvalles",
+        "id_country": 82,
+        "nameAve": "RONCESVALLES(TOLIMA)"
+    },
+    {
+        "id": 468456,
+        "id_state": 1721,
+        "text": "Rovira",
+        "id_country": 82,
+        "nameAve": "ROVIRA(TOLIMA)"
+    },
+    { "id": 468566, "id_state": 1721, "text": "Salado", "id_country": 82 },
+    {
+        "id": 468582,
+        "id_state": 1721,
+        "text": "Saldaña",
+        "id_country": 82,
+        "nameAve": "SALDANA(TOLIMA)"
+    },
+    {
+        "id": 468702,
+        "id_state": 1721,
+        "text": "San Antonio",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO(TOLIMA)"
+    },
+    {
+        "id": 469062,
+        "id_state": 1721,
+        "text": "San Juan de China",
+        "id_country": 82
+    },
+    {
+        "id": 469107,
+        "id_state": 1721,
+        "text": "San Luis",
+        "id_country": 82,
+        "nameAve": "SAN LUIS(TOLIMA)"
+    },
+    { "id": 469222, "id_state": 1721, "text": "San Pablo", "id_country": 82 },
+    { "id": 469330, "id_state": 1721, "text": "San Simón", "id_country": 82 },
+    { "id": 469346, "id_state": 1721, "text": "Santa Ana", "id_country": 82 },
+    {
+        "id": 469359,
+        "id_state": 1721,
+        "text": "Santa Barbara",
+        "id_country": 82
+    },
+    {
+        "id": 469369,
+        "id_state": 1721,
+        "text": "Santa Bárbara",
+        "id_country": 82
+    },
+    { "id": 469435, "id_state": 1721, "text": "Santa Elena", "id_country": 82 },
+    { "id": 469455, "id_state": 1721, "text": "Santa Fé", "id_country": 82 },
+    {
+        "id": 469509,
+        "id_state": 1721,
+        "text": "Santa Isabel",
+        "id_country": 82,
+        "nameAve": "SANTA ISABEL(TOLIMA)"
+    },
+    { "id": 469597, "id_state": 1721, "text": "Santana", "id_country": 82 },
+    {
+        "id": 469735,
+        "id_state": 1721,
+        "text": "Santo Domingo",
+        "id_country": 82
+    },
+    { "id": 469937, "id_state": 1721, "text": "Sierra", "id_country": 82 },
+    {
+        "id": 470123,
+        "id_state": 1721,
+        "text": "Suárez",
+        "id_country": 82,
+        "nameAve": "SUAREZ(TOLIMA)"
+    },
+    { "id": 470233, "id_state": 1721, "text": "Tafurito", "id_country": 82 },
+    { "id": 470542, "id_state": 1721, "text": "Tinajas", "id_country": 82 },
+    { "id": 470612, "id_state": 1721, "text": "Tolima", "id_country": 82 },
+    { "id": 470632, "id_state": 1721, "text": "Tomogó", "id_country": 82 },
+    { "id": 470710, "id_state": 1721, "text": "Trapiche", "id_country": 82 },
+    {
+        "id": 470744,
+        "id_state": 1721,
+        "text": "Tres Esquinas",
+        "id_country": 82,
+        "nameAve": "TRES ESQUINAS(TOLIMA)"
+    },
+    { "id": 471026, "id_state": 1721, "text": "Valle", "id_country": 82 },
+    {
+        "id": 471038,
+        "id_state": 1721,
+        "text": "Valle de San Juan",
+        "id_country": 82,
+        "nameAve": "VALLE DE SAN JUAN(TOLIMA)"
+    },
+    {
+        "id": 471079,
+        "id_state": 1721,
+        "text": "Vega Chiquita",
+        "id_country": 82
+    },
+    {
+        "id": 471084,
+        "id_state": 1721,
+        "text": "Vega de Los Padres",
+        "id_country": 82
+    },
+    {
+        "id": 471116,
+        "id_state": 1721,
+        "text": "Venadillo",
+        "id_country": 82,
+        "nameAve": "VENADILLO(TOLIMA)"
+    },
+    { "id": 471211, "id_state": 1721, "text": "Versalles", "id_country": 82 },
+    {
+        "id": 471315,
+        "id_state": 1721,
+        "text": "Villahermosa",
+        "id_country": 82,
+        "nameAve": "VILLAHERMOSA(TOLIMA)"
+    },
+    {
+        "id": 471384,
+        "id_state": 1721,
+        "text": "Villa Restrepo",
+        "id_country": 82
+    },
+    {
+        "id": 471397,
+        "id_state": 1721,
+        "text": "Villarrestrepo",
+        "id_country": 82
+    },
+    {
+        "id": 471399,
+        "id_state": 1721,
+        "text": "Villarrica",
+        "id_country": 82,
+        "nameAve": "VILLARRICA(TOLIMA)"
+    },
+    { "id": 471561, "id_state": 1721, "text": "Yerbabuena", "id_country": 82 },
+    { "id": 471576, "id_state": 1721, "text": "Yopal", "id_country": 82 },
+    { "id": 471593, "id_state": 1721, "text": "Yuca", "id_country": 82 },
+    { "id": 471675, "id_state": 1721, "text": "Zaragoza", "id_country": 82 },
+    {
+        "id": 790464,
+        "id_state": 1721,
+        "text": "Aparco",
+        "id_country": 82,
+        "nameAve": "APARCO(TOLIMA)"
+    },
+    {
+        "id": 790555,
+        "id_state": 1721,
+        "text": "Carmen de bulira",
+        "id_country": 82,
+        "nameAve": "CARMEN DE BULIRA(TOLIMA)"
+    },
+    {
+        "id": 790584,
+        "id_state": 1721,
+        "text": "Chembe",
+        "id_country": 82,
+        "nameAve": "CHEMBE(TOLIMA)"
+    },
+    {
+        "id": 790599,
+        "id_state": 1721,
+        "text": "Chucuni",
+        "id_country": 82,
+        "nameAve": "CHUCUNI(TOLIMA)"
+    },
+    {
+        "id": 790607,
+        "id_state": 1721,
+        "text": "Coello - cocora",
+        "id_country": 82,
+        "nameAve": "COELLO - COCORA(TOLIMA)"
+    },
+    {
+        "id": 790674,
+        "id_state": 1721,
+        "text": "Dantas",
+        "id_country": 82,
+        "nameAve": "DANTAS(TOLIMA)"
+    },
+    {
+        "id": 790700,
+        "id_state": 1721,
+        "text": "El cay",
+        "id_country": 82,
+        "nameAve": "EL CAY(TOLIMA)"
+    },
+    {
+        "id": 790755,
+        "id_state": 1721,
+        "text": "El rodeo",
+        "id_country": 82,
+        "nameAve": "EL RODEO(TOLIMA)"
+    },
+    {
+        "id": 790762,
+        "id_state": 1721,
+        "text": "El totumo",
+        "id_country": 82,
+        "nameAve": "EL TOTUMO(TOLIMA)"
+    },
+    {
+        "id": 790831,
+        "id_state": 1721,
+        "text": "Invasion bella isla de llanitos",
+        "id_country": 82,
+        "nameAve": "INVASION BELLA ISLA DE LLANITOS(TOLIMA)"
+    },
+    {
+        "id": 790850,
+        "id_state": 1721,
+        "text": "La arada",
+        "id_country": 82,
+        "nameAve": "LA ARADA(TOLIMA)"
+    },
+    {
+        "id": 790882,
+        "id_state": 1721,
+        "text": "La flor",
+        "id_country": 82,
+        "nameAve": "LA FLOR(TOLIMA)"
+    },
+    {
+        "id": 790889,
+        "id_state": 1721,
+        "text": "La helena",
+        "id_country": 82,
+        "nameAve": "LA HELENA(TOLIMA)"
+    },
+    {
+        "id": 790903,
+        "id_state": 1721,
+        "text": "La miel",
+        "id_country": 82,
+        "nameAve": "LA MIEL(TOLIMA)"
+    },
+    {
+        "id": 790909,
+        "id_state": 1721,
+        "text": "La palmilla",
+        "id_country": 82,
+        "nameAve": "LA PALMILLA(TOLIMA)"
+    },
+    {
+        "id": 790957,
+        "id_state": 1721,
+        "text": "Laureles",
+        "id_country": 82,
+        "nameAve": "LAURELES(TOLIMA)"
+    },
+    {
+        "id": 790963,
+        "id_state": 1721,
+        "text": "Llano del combeima",
+        "id_country": 82,
+        "nameAve": "LLANO DEL COMBEIMA(TOLIMA)"
+    },
+    {
+        "id": 790985,
+        "id_state": 1721,
+        "text": "Los tuneles",
+        "id_country": 82,
+        "nameAve": "LOS TUNELES(TOLIMA)"
+    },
+    {
+        "id": 791068,
+        "id_state": 1721,
+        "text": "Olaya herrera",
+        "id_country": 82,
+        "nameAve": "OLAYA HERRERA(TOLIMA)"
+    },
+    {
+        "id": 791076,
+        "id_state": 1721,
+        "text": "Padua",
+        "id_country": 82,
+        "nameAve": "PADUA(TOLIMA)"
+    },
+    {
+        "id": 791094,
+        "id_state": 1721,
+        "text": "Pastales nuevo",
+        "id_country": 82,
+        "nameAve": "PASTALES NUEVO(TOLIMA)"
+    },
+    {
+        "id": 791095,
+        "id_state": 1721,
+        "text": "Pastales viejo",
+        "id_country": 82,
+        "nameAve": "PASTALES VIEJO(TOLIMA)"
+    },
+    {
+        "id": 791117,
+        "id_state": 1721,
+        "text": "Pico de oro",
+        "id_country": 82,
+        "nameAve": "PICO DE ORO(TOLIMA)"
+    },
+    {
+        "id": 791214,
+        "id_state": 1721,
+        "text": "Salitre",
+        "id_country": 82,
+        "nameAve": "SALITRE(TOLIMA)"
+    },
+    {
+        "id": 791228,
+        "id_state": 1721,
+        "text": "San bernardo",
+        "id_country": 82,
+        "nameAve": "SAN BERNARDO(TOLIMA)"
+    },
+    {
+        "id": 791251,
+        "id_state": 1721,
+        "text": "San juan de la china",
+        "id_country": 82,
+        "nameAve": "SAN JUAN DE LA CHINA(TOLIMA)"
+    },
+    {
+        "id": 791291,
+        "id_state": 1721,
+        "text": "Santa teresa",
+        "id_country": 82,
+        "nameAve": "SANTA TERESA(TOLIMA)"
+    },
+    {
+        "id": 791298,
+        "id_state": 1721,
+        "text": "Santiago perez",
+        "id_country": 82,
+        "nameAve": "SANTIAGO PEREZ(TOLIMA)"
+    },
+    {
+        "id": 791335,
+        "id_state": 1721,
+        "text": "Tapias",
+        "id_country": 82,
+        "nameAve": "TAPIAS(TOLIMA)"
+    },
+    {
+        "id": 791358,
+        "id_state": 1721,
+        "text": "Toche",
+        "id_country": 82,
+        "nameAve": "TOCHE(TOLIMA)"
+    },
+    {
+        "id": 791360,
+        "id_state": 1721,
+        "text": "Tolemaida/melgar",
+        "id_country": 82,
+        "nameAve": "TOLEMAIDA/MELGAR(TOLIMA)"
+    },
+    {
+        "id": 791409,
+        "id_state": 1721,
+        "text": "Villarestrepo",
+        "id_country": 82,
+        "nameAve": "VILLARESTREPO(TOLIMA)"
+    },
+    {
+        "id": 451024,
+        "id_state": 1722,
+        "text": "Abrego Número Dos",
+        "id_country": 82
+    },
+    { "id": 451029, "id_state": 1722, "text": "Acalá", "id_country": 82 },
+    { "id": 451040, "id_state": 1722, "text": "Acequía", "id_country": 82 },
+    {
+        "id": 451062,
+        "id_state": 1722,
+        "text": "Adriene Morano",
+        "id_country": 82
+    },
+    { "id": 451074, "id_state": 1722, "text": "Aguablanca", "id_country": 82 },
+    { "id": 451104, "id_state": 1722, "text": "Agua Clara", "id_country": 82 },
+    { "id": 451108, "id_state": 1722, "text": "Aguaclara", "id_country": 82 },
+    { "id": 451148, "id_state": 1722, "text": "Agua Mona", "id_country": 82 },
+    {
+        "id": 451160,
+        "id_state": 1722,
+        "text": "Aguas Claras",
+        "id_country": 82
+    },
+    {
+        "id": 451172,
+        "id_state": 1722,
+        "text": "Aguas Lindas",
+        "id_country": 82
+    },
+    { "id": 451217, "id_state": 1722, "text": "Albán", "id_country": 82 },
+    {
+        "id": 451237,
+        "id_state": 1722,
+        "text": "Alcalá",
+        "id_country": 82,
+        "nameAve": "ALCALA(VALLE DEL CAUCA)"
+    },
+    { "id": 451246, "id_state": 1722, "text": "Alegrías", "id_country": 82 },
+    { "id": 451303, "id_state": 1722, "text": "Almorzadero", "id_country": 82 },
+    {
+        "id": 451304,
+        "id_state": 1722,
+        "text": "Alonso Lince",
+        "id_country": 82
+    },
+    { "id": 451318, "id_state": 1722, "text": "Altaflor", "id_country": 82 },
+    { "id": 451343, "id_state": 1722, "text": "Altamira", "id_country": 82 },
+    { "id": 451355, "id_state": 1722, "text": "Alto Bonito", "id_country": 82 },
+    { "id": 451414, "id_state": 1722, "text": "Alto Paez", "id_country": 82 },
+    { "id": 451416, "id_state": 1722, "text": "Alto Pance", "id_country": 82 },
+    { "id": 451419, "id_state": 1722, "text": "Alto Prado", "id_country": 82 },
+    {
+        "id": 451452,
+        "id_state": 1722,
+        "text": "Amaime",
+        "id_country": 82,
+        "nameAve": "AMAIME(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 451458,
+        "id_state": 1722,
+        "text": "Amalia López",
+        "id_country": 82
+    },
+    { "id": 451494, "id_state": 1722, "text": "Anacaro", "id_country": 82 },
+    { "id": 451509, "id_state": 1722, "text": "Añazco", "id_country": 82 },
+    { "id": 451510, "id_state": 1722, "text": "Anchicaya", "id_country": 82 },
+    {
+        "id": 451522,
+        "id_state": 1722,
+        "text": "Andalucía",
+        "id_country": 82,
+        "nameAve": "ANDALUCIA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 451525,
+        "id_state": 1722,
+        "text": "Andianapolis",
+        "id_country": 82
+    },
+    {
+        "id": 451559,
+        "id_state": 1722,
+        "text": "Ansermanueva",
+        "id_country": 82
+    },
+    {
+        "id": 451560,
+        "id_state": 1722,
+        "text": "Ansermanuevo",
+        "id_country": 82,
+        "nameAve": "ANSERMANUEVO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 451575,
+        "id_state": 1722,
+        "text": "Antonio Nariño",
+        "id_country": 82
+    },
+    { "id": 451605, "id_state": 1722, "text": "Aquablanca", "id_country": 82 },
+    { "id": 451647, "id_state": 1722, "text": "Arauca", "id_country": 82 },
+    {
+        "id": 451713,
+        "id_state": 1722,
+        "text": "Argelia",
+        "id_country": 82,
+        "nameAve": "ARGELIA(VALLE DEL CAUCA)"
+    },
+    { "id": 451717, "id_state": 1722, "text": "Argentina", "id_country": 82 },
+    {
+        "id": 451789,
+        "id_state": 1722,
+        "text": "Arroyo Hondo",
+        "id_country": 82
+    },
+    { "id": 451851, "id_state": 1722, "text": "Aures", "id_country": 82 },
+    { "id": 451856, "id_state": 1722, "text": "Australia", "id_country": 82 },
+    { "id": 451907, "id_state": 1722, "text": "Bajo Calima", "id_country": 82 },
+    { "id": 451936, "id_state": 1722, "text": "Balcanes", "id_country": 82 },
+    { "id": 452020, "id_state": 1722, "text": "Barco", "id_country": 82 },
+    { "id": 452037, "id_state": 1722, "text": "Barragán", "id_country": 82 },
+    { "id": 452058, "id_state": 1722, "text": "Barranco", "id_country": 82 },
+    { "id": 452164, "id_state": 1722, "text": "Belalcázar", "id_country": 82 },
+    { "id": 452174, "id_state": 1722, "text": "Belén", "id_country": 82 },
+    { "id": 452183, "id_state": 1722, "text": "Bélgica", "id_country": 82 },
+    { "id": 452214, "id_state": 1722, "text": "Bella Vista", "id_country": 82 },
+    { "id": 452219, "id_state": 1722, "text": "Bellavista", "id_country": 82 },
+    { "id": 452271, "id_state": 1722, "text": "Berlin", "id_country": 82 },
+    {
+        "id": 452443,
+        "id_state": 1722,
+        "text": "Bocas de Tuluá",
+        "id_country": 82
+    },
+    { "id": 452450, "id_state": 1722, "text": "Boca Tulua", "id_country": 82 },
+    { "id": 452456, "id_state": 1722, "text": "Bodega", "id_country": 82 },
+    {
+        "id": 452490,
+        "id_state": 1722,
+        "text": "Bolívar",
+        "id_country": 82,
+        "nameAve": "BOLIVAR(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 452504,
+        "id_state": 1722,
+        "text": "Bolo La Italia",
+        "id_country": 82
+    },
+    {
+        "id": 452507,
+        "id_state": 1722,
+        "text": "Bolo San Isidro",
+        "id_country": 82
+    },
+    {
+        "id": 452510,
+        "id_state": 1722,
+        "text": "Bomba de Agua",
+        "id_country": 82
+    },
+    { "id": 452521, "id_state": 1722, "text": "Bonanza", "id_country": 82 },
+    {
+        "id": 452557,
+        "id_state": 1722,
+        "text": "Borrero Ayerbe",
+        "id_country": 82,
+        "nameAve": "BORRERO AYERBE(VALLE DEL CAUCA)"
+    },
+    { "id": 452586, "id_state": 1722, "text": "Boyacá", "id_country": 82 },
+    { "id": 452594, "id_state": 1722, "text": "Brasil", "id_country": 82 },
+    { "id": 452616, "id_state": 1722, "text": "Brisas", "id_country": 82 },
+    {
+        "id": 452669,
+        "id_state": 1722,
+        "text": "Buenaventura",
+        "id_country": 82,
+        "nameAve": "BUENAVENTURA(VALLE DEL CAUCA)"
+    },
+    { "id": 452700, "id_state": 1722, "text": "Buenavista", "id_country": 82 },
+    {
+        "id": 452737,
+        "id_state": 1722,
+        "text": "Buga",
+        "id_country": 82,
+        "nameAve": "BUGA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 452738,
+        "id_state": 1722,
+        "text": "Bugalagrande",
+        "id_country": 82,
+        "nameAve": "BUGALAGRANDE(VALLE DEL CAUCA)"
+    },
+    { "id": 452742, "id_state": 1722, "text": "Buitrera", "id_country": 82 },
+    { "id": 452750, "id_state": 1722, "text": "Burila", "id_country": 82 },
+    { "id": 452798, "id_state": 1722, "text": "Cabuyal", "id_country": 82 },
+    { "id": 452827, "id_state": 1722, "text": "Cachimba", "id_country": 82 },
+    {
+        "id": 452868,
+        "id_state": 1722,
+        "text": "Caicedonia",
+        "id_country": 82,
+        "nameAve": "CAICEDONIA(VALLE DEL CAUCA)"
+    },
+    { "id": 452879, "id_state": 1722, "text": "Caimital", "id_country": 82 },
+    { "id": 452885, "id_state": 1722, "text": "Cairo", "id_country": 82 },
+    { "id": 452891, "id_state": 1722, "text": "Cajamarca", "id_country": 82 },
+    {
+        "id": 452952,
+        "id_state": 1722,
+        "text": "Cali",
+        "id_country": 82,
+        "nameAve": "CALI(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 452970,
+        "id_state": 1722,
+        "text": "Calima",
+        "id_country": 82,
+        "nameAve": "CALIMA(VALLE DEL CAUCA)"
+    },
+    { "id": 452990, "id_state": 1722, "text": "Calle Larga", "id_country": 82 },
+    { "id": 452993, "id_state": 1722, "text": "Callelarga", "id_country": 82 },
+    { "id": 453003, "id_state": 1722, "text": "Calucé", "id_country": 82 },
+    { "id": 453011, "id_state": 1722, "text": "Camargal", "id_country": 82 },
+    { "id": 453025, "id_state": 1722, "text": "Camelias", "id_country": 82 },
+    { "id": 453044, "id_state": 1722, "text": "Campamento", "id_country": 82 },
+    { "id": 453109, "id_state": 1722, "text": "Campo Algro", "id_country": 82 },
+    { "id": 453182, "id_state": 1722, "text": "Cañada", "id_country": 82 },
+    { "id": 453202, "id_state": 1722, "text": "Canaima", "id_country": 82 },
+    { "id": 453216, "id_state": 1722, "text": "Cañasgordas", "id_country": 82 },
+    {
+        "id": 453227,
+        "id_state": 1722,
+        "text": "Cañaveralejo",
+        "id_country": 82
+    },
+    {
+        "id": 453243,
+        "id_state": 1722,
+        "text": "Candelaria",
+        "id_country": 82,
+        "nameAve": "CANDELARIA(VALLE DEL CAUCA)"
+    },
+    { "id": 453258, "id_state": 1722, "text": "Caney", "id_country": 82 },
+    { "id": 453361, "id_state": 1722, "text": "Capri", "id_country": 82 },
+    { "id": 453381, "id_state": 1722, "text": "Caracolí", "id_country": 82 },
+    { "id": 453422, "id_state": 1722, "text": "Carbonero", "id_country": 82 },
+    { "id": 453456, "id_state": 1722, "text": "Carmelo", "id_country": 82 },
+    { "id": 453467, "id_state": 1722, "text": "Carmen", "id_country": 82 },
+    {
+        "id": 453532,
+        "id_state": 1722,
+        "text": "Cartago",
+        "id_country": 82,
+        "nameAve": "CARTAGO(VALLE DEL CAUCA)"
+    },
+    { "id": 453554, "id_state": 1722, "text": "Casa Blanca", "id_country": 82 },
+    { "id": 453561, "id_state": 1722, "text": "Casablanca", "id_country": 82 },
+    {
+        "id": 453578,
+        "id_state": 1722,
+        "text": "Casa de Balcón",
+        "id_country": 82
+    },
+    { "id": 453630, "id_state": 1722, "text": "Cascajal", "id_country": 82 },
+    {
+        "id": 453811,
+        "id_state": 1722,
+        "text": "Caserío La Bolsa",
+        "id_country": 82
+    },
+    { "id": 454056, "id_state": 1722, "text": "Catre", "id_country": 82 },
+    { "id": 454061, "id_state": 1722, "text": "Cauca", "id_country": 82 },
+    { "id": 454100, "id_state": 1722, "text": "Cebollal", "id_country": 82 },
+    { "id": 454126, "id_state": 1722, "text": "Ceilán", "id_country": 82 },
+    { "id": 454171, "id_state": 1722, "text": "Cerrito", "id_country": 82 },
+    { "id": 454496, "id_state": 1722, "text": "Chontaduro", "id_country": 82 },
+    {
+        "id": 454622,
+        "id_state": 1722,
+        "text": "Ciudad Jardin",
+        "id_country": 82
+    },
+    {
+        "id": 454638,
+        "id_state": 1722,
+        "text": "Club Nautico de Calima",
+        "id_country": 82
+    },
+    { "id": 454713, "id_state": 1722, "text": "Colorado", "id_country": 82 },
+    { "id": 454724, "id_state": 1722, "text": "Columbia", "id_country": 82 },
+    { "id": 454732, "id_state": 1722, "text": "Combia", "id_country": 82 },
+    { "id": 454762, "id_state": 1722, "text": "Concepción", "id_country": 82 },
+    { "id": 454836, "id_state": 1722, "text": "Córcega", "id_country": 82 },
+    { "id": 454853, "id_state": 1722, "text": "Córdoba", "id_country": 82 },
+    { "id": 454874, "id_state": 1722, "text": "Corinto", "id_country": 82 },
+    {
+        "id": 455106,
+        "id_state": 1722,
+        "text": "Costa Rica",
+        "id_country": 82,
+        "nameAve": "COSTA RICA(VALLE DEL CAUCA)"
+    },
+    { "id": 455158, "id_state": 1722, "text": "Cristales", "id_country": 82 },
+    { "id": 455179, "id_state": 1722, "text": "Cruces", "id_country": 82 },
+    {
+        "id": 455406,
+        "id_state": 1722,
+        "text": "Dagua",
+        "id_country": 82,
+        "nameAve": "DAGUA(VALLE DEL CAUCA)"
+    },
+    { "id": 455431, "id_state": 1722, "text": "Dapa", "id_country": 82 },
+    { "id": 455433, "id_state": 1722, "text": "Darién", "id_country": 82 },
+    { "id": 455454, "id_state": 1722, "text": "Delicias", "id_country": 82 },
+    { "id": 455479, "id_state": 1722, "text": "Diamante", "id_country": 82 },
+    { "id": 455511, "id_state": 1722, "text": "Divino Niño", "id_country": 82 },
+    {
+        "id": 455572,
+        "id_state": 1722,
+        "text": "Dos Quebradas",
+        "id_country": 82
+    },
+    {
+        "id": 455576,
+        "id_state": 1722,
+        "text": "Dosquebradas",
+        "id_country": 82
+    },
+    {
+        "id": 455641,
+        "id_state": 1722,
+        "text": "El Águila",
+        "id_country": 82,
+        "nameAve": "EL AGUILA(VALLE DEL CAUCA)"
+    },
+    { "id": 455754, "id_state": 1722, "text": "El Balsal", "id_country": 82 },
+    { "id": 455766, "id_state": 1722, "text": "El Banco", "id_country": 82 },
+    { "id": 455802, "id_state": 1722, "text": "El Billar", "id_country": 82 },
+    { "id": 455813, "id_state": 1722, "text": "El Boleo", "id_country": 82 },
+    {
+        "id": 455854,
+        "id_state": 1722,
+        "text": "El Brillante",
+        "id_country": 82
+    },
+    {
+        "id": 455901,
+        "id_state": 1722,
+        "text": "El Cairo",
+        "id_country": 82,
+        "nameAve": "EL CAIRO(VALLE DEL CAUCA)"
+    },
+    { "id": 455948, "id_state": 1722, "text": "El Caney", "id_country": 82 },
+    {
+        "id": 455980,
+        "id_state": 1722,
+        "text": "El Carmelo",
+        "id_country": 82,
+        "nameAve": "EL CARMELO(VALLE DEL CAUCA)"
+    },
+    { "id": 455997, "id_state": 1722, "text": "El Carmen", "id_country": 82 },
+    {
+        "id": 456081,
+        "id_state": 1722,
+        "text": "El Centenario",
+        "id_country": 82
+    },
+    {
+        "id": 456098,
+        "id_state": 1722,
+        "text": "El Cerrito",
+        "id_country": 82,
+        "nameAve": "EL CERRITO(VALLE DEL CAUCA)"
+    },
+    { "id": 456352, "id_state": 1722, "text": "El Danubio", "id_country": 82 },
+    { "id": 456361, "id_state": 1722, "text": "El Darién", "id_country": 82 },
+    { "id": 456468, "id_state": 1722, "text": "El Dorado", "id_country": 82 },
+    {
+        "id": 456478,
+        "id_state": 1722,
+        "text": "El Dovio",
+        "id_country": 82,
+        "nameAve": "EL DOVIO(VALLE DEL CAUCA)"
+    },
+    { "id": 456495, "id_state": 1722, "text": "El Edén", "id_country": 82 },
+    { "id": 456523, "id_state": 1722, "text": "El Encanto", "id_country": 82 },
+    { "id": 456602, "id_state": 1722, "text": "El Fuerte", "id_country": 82 },
+    { "id": 456632, "id_state": 1722, "text": "El Guabal", "id_country": 82 },
+    { "id": 456809, "id_state": 1722, "text": "El Jardín", "id_country": 82 },
+    { "id": 456912, "id_state": 1722, "text": "El Limón", "id_country": 82 },
+    { "id": 456920, "id_state": 1722, "text": "El Limonar", "id_country": 82 },
+    { "id": 457081, "id_state": 1722, "text": "El Morro", "id_country": 82 },
+    { "id": 457227, "id_state": 1722, "text": "El Palmar", "id_country": 82 },
+    { "id": 457245, "id_state": 1722, "text": "El Pance", "id_country": 82 },
+    { "id": 457358, "id_state": 1722, "text": "El Peñón", "id_country": 82 },
+    {
+        "id": 457423,
+        "id_state": 1722,
+        "text": "El Placer",
+        "id_country": 82,
+        "nameAve": "EL PLACER(VALLE DEL CAUCA)"
+    },
+    { "id": 457489, "id_state": 1722, "text": "El Porvenir", "id_country": 82 },
+    { "id": 457539, "id_state": 1722, "text": "El Puerto", "id_country": 82 },
+    { "id": 457615, "id_state": 1722, "text": "El Refugio", "id_country": 82 },
+    { "id": 457711, "id_state": 1722, "text": "El Rocío", "id_country": 82 },
+    { "id": 457774, "id_state": 1722, "text": "El Salado", "id_country": 82 },
+    { "id": 457948, "id_state": 1722, "text": "El Tambor", "id_country": 82 },
+    { "id": 458115, "id_state": 1722, "text": "El Valle", "id_country": 82 },
+    { "id": 458264, "id_state": 1722, "text": "Ermita", "id_country": 82 },
+    { "id": 458293, "id_state": 1722, "text": "Esmeraldas", "id_country": 82 },
+    { "id": 458309, "id_state": 1722, "text": "Esperanza", "id_country": 82 },
+    { "id": 458387, "id_state": 1722, "text": "Fenicia", "id_country": 82 },
+    { "id": 458452, "id_state": 1722, "text": "Florencia", "id_country": 82 },
+    { "id": 458466, "id_state": 1722, "text": "Floresta", "id_country": 82 },
+    {
+        "id": 458478,
+        "id_state": 1722,
+        "text": "Florida",
+        "id_country": 82,
+        "nameAve": "FLORIDA(VALLE DEL CAUCA)"
+    },
+    { "id": 458621, "id_state": 1722, "text": "Galicía", "id_country": 82 },
+    { "id": 458721, "id_state": 1722, "text": "Gibraltar", "id_country": 82 },
+    {
+        "id": 458730,
+        "id_state": 1722,
+        "text": "Ginebra",
+        "id_country": 82,
+        "nameAve": "GINEBRA(VALLE DEL CAUCA)"
+    },
+    { "id": 458822, "id_state": 1722, "text": "Guabas", "id_country": 82 },
+    { "id": 458825, "id_state": 1722, "text": "Guabitas", "id_country": 82 },
+    {
+        "id": 458849,
+        "id_state": 1722,
+        "text": "Guacarí",
+        "id_country": 82,
+        "nameAve": "GUACARI(VALLE DEL CAUCA)"
+    },
+    { "id": 459078, "id_state": 1722, "text": "Guare", "id_country": 82 },
+    { "id": 459204, "id_state": 1722, "text": "Guayaquil", "id_country": 82 },
+    {
+        "id": 459366,
+        "id_state": 1722,
+        "text": "Hacienda El Dorado",
+        "id_country": 82
+    },
+    { "id": 459902, "id_state": 1722, "text": "Hojas", "id_country": 82 },
+    {
+        "id": 460088,
+        "id_state": 1722,
+        "text": "Ingenio La Providencia",
+        "id_country": 82
+    },
+    {
+        "id": 460090,
+        "id_state": 1722,
+        "text": "Ingenio Maria Lusia",
+        "id_country": 82
+    },
+    {
+        "id": 460092,
+        "id_state": 1722,
+        "text": "Ingenio Providencia",
+        "id_country": 82
+    },
+    { "id": 460181, "id_state": 1722, "text": "Italia", "id_country": 82 },
+    {
+        "id": 460238,
+        "id_state": 1722,
+        "text": "Jamundí",
+        "id_country": 82,
+        "nameAve": "JAMUNDI(VALLE DEL CAUCA)"
+    },
+    { "id": 460261, "id_state": 1722, "text": "Jardín", "id_country": 82 },
+    { "id": 460402, "id_state": 1722, "text": "Juanchito", "id_country": 82 },
+    { "id": 460620, "id_state": 1722, "text": "La Alameda", "id_country": 82 },
+    { "id": 460641, "id_state": 1722, "text": "La Alianza", "id_country": 82 },
+    { "id": 460781, "id_state": 1722, "text": "La Base", "id_country": 82 },
+    { "id": 460935, "id_state": 1722, "text": "La Campina", "id_country": 82 },
+    { "id": 460997, "id_state": 1722, "text": "La Cascada", "id_country": 82 },
+    { "id": 461196, "id_state": 1722, "text": "La Coqueta", "id_country": 82 },
+    { "id": 461255, "id_state": 1722, "text": "La Cumbe", "id_country": 82 },
+    { "id": 461352, "id_state": 1722, "text": "La Ermita", "id_country": 82 },
+    {
+        "id": 461362,
+        "id_state": 1722,
+        "text": "La Esmeralda",
+        "id_country": 82
+    },
+    { "id": 461428, "id_state": 1722, "text": "La Estralla", "id_country": 82 },
+    { "id": 461430, "id_state": 1722, "text": "La Estrella", "id_country": 82 },
+    { "id": 461493, "id_state": 1722, "text": "La Floresta", "id_country": 82 },
+    { "id": 461497, "id_state": 1722, "text": "La Florida", "id_country": 82 },
+    { "id": 461624, "id_state": 1722, "text": "La Granja", "id_country": 82 },
+    { "id": 461724, "id_state": 1722, "text": "La Hacienda", "id_country": 82 },
+    { "id": 462102, "id_state": 1722, "text": "La Marina", "id_country": 82 },
+    { "id": 462137, "id_state": 1722, "text": "La Merced", "id_country": 82 },
+    { "id": 462211, "id_state": 1722, "text": "La Moralia", "id_country": 82 },
+    {
+        "id": 462295,
+        "id_state": 1722,
+        "text": "La Paila",
+        "id_country": 82,
+        "nameAve": "LA PAILA(VALLE DEL CAUCA)"
+    },
+    { "id": 462308, "id_state": 1722, "text": "La Palma", "id_country": 82 },
+    { "id": 462334, "id_state": 1722, "text": "La Palmeras", "id_country": 82 },
+    { "id": 462339, "id_state": 1722, "text": "La Palmita", "id_country": 82 },
+    { "id": 462536, "id_state": 1722, "text": "La Pradera", "id_country": 82 },
+    { "id": 462956, "id_state": 1722, "text": "La Selva", "id_country": 82 },
+    {
+        "id": 463014,
+        "id_state": 1722,
+        "text": "Las Hermosas",
+        "id_country": 82
+    },
+    {
+        "id": 463256,
+        "id_state": 1722,
+        "text": "Las Palmeras",
+        "id_country": 82
+    },
+    { "id": 463377, "id_state": 1722, "text": "Las Vegas", "id_country": 82 },
+    { "id": 463509, "id_state": 1722, "text": "La Unicion", "id_country": 82 },
+    {
+        "id": 463512,
+        "id_state": 1722,
+        "text": "La Unión",
+        "id_country": 82,
+        "nameAve": "LA UNION(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 463622,
+        "id_state": 1722,
+        "text": "La Victoria",
+        "id_country": 82,
+        "nameAve": "LA VICTORIA(VALLE DEL CAUCA)"
+    },
+    { "id": 463763, "id_state": 1722, "text": "Leticia", "id_country": 82 },
+    { "id": 463794, "id_state": 1722, "text": "Limón", "id_country": 82 },
+    { "id": 463803, "id_state": 1722, "text": "Limonar", "id_country": 82 },
+    { "id": 463992, "id_state": 1722, "text": "Los Alpes", "id_country": 82 },
+    {
+        "id": 464009,
+        "id_state": 1722,
+        "text": "Los Andes",
+        "id_country": 82,
+        "nameAve": "LOS ANDES(VALLE DEL CAUCA)"
+    },
+    { "id": 464117, "id_state": 1722, "text": "Los Cedros", "id_country": 82 },
+    { "id": 464180, "id_state": 1722, "text": "Los Cuervos", "id_country": 82 },
+    { "id": 464414, "id_state": 1722, "text": "Los Planes", "id_country": 82 },
+    { "id": 464450, "id_state": 1722, "text": "Los Sauces", "id_country": 82 },
+    { "id": 465177, "id_state": 1722, "text": "Medialuna", "id_country": 82 },
+    { "id": 465201, "id_state": 1722, "text": "Meléndez", "id_country": 82 },
+    {
+        "id": 465202,
+        "id_state": 1722,
+        "text": "Meléndez Arriba",
+        "id_country": 82
+    },
+    { "id": 465345, "id_state": 1722, "text": "Miraflores", "id_country": 82 },
+    { "id": 465437, "id_state": 1722, "text": "Molina", "id_country": 82 },
+    { "id": 465797, "id_state": 1722, "text": "Nápoles", "id_country": 82 },
+    { "id": 465808, "id_state": 1722, "text": "Naranjal", "id_country": 82 },
+    { "id": 465834, "id_state": 1722, "text": "Nariño", "id_country": 82 },
+    { "id": 465930, "id_state": 1722, "text": "Normandía", "id_country": 82 },
+    {
+        "id": 466027,
+        "id_state": 1722,
+        "text": "Obando",
+        "id_country": 82,
+        "nameAve": "OBANDO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 466071,
+        "id_state": 1722,
+        "text": "Olaya Herrera",
+        "id_country": 82
+    },
+    { "id": 466318, "id_state": 1722, "text": "Palmaseca", "id_country": 82 },
+    { "id": 466325, "id_state": 1722, "text": "Palmera", "id_country": 82 },
+    { "id": 466327, "id_state": 1722, "text": "Palmeras", "id_country": 82 },
+    {
+        "id": 466354,
+        "id_state": 1722,
+        "text": "Palmira",
+        "id_country": 82,
+        "nameAve": "PALMIRA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 466449,
+        "id_state": 1722,
+        "text": "Pance",
+        "id_country": 82,
+        "nameAve": "PANCE(VALLE DEL CAUCA)"
+    },
+    { "id": 466490, "id_state": 1722, "text": "Papayal", "id_country": 82 },
+    { "id": 466609, "id_state": 1722, "text": "Paso Ancho", "id_country": 82 },
+    {
+        "id": 466625,
+        "id_state": 1722,
+        "text": "Paso Popayanero",
+        "id_country": 82
+    },
+    { "id": 467174, "id_state": 1722, "text": "Playa Rica", "id_country": 82 },
+    { "id": 467307, "id_state": 1722, "text": "Positos", "id_country": 82 },
+    {
+        "id": 467380,
+        "id_state": 1722,
+        "text": "Pradera",
+        "id_country": 82,
+        "nameAve": "PRADERA(VALLE DEL CAUCA)"
+    },
+    { "id": 467391, "id_state": 1722, "text": "Presidente", "id_country": 82 },
+    {
+        "id": 467464,
+        "id_state": 1722,
+        "text": "Pueblo Nuevo",
+        "id_country": 82,
+        "nameAve": "PUEBLO NUEVO(VALLE DEL CAUCA)"
+    },
+    { "id": 467530, "id_state": 1722, "text": "Puente Palo", "id_country": 82 },
+    {
+        "id": 468037,
+        "id_state": 1722,
+        "text": "Quebradanueva",
+        "id_country": 82
+    },
+    { "id": 468167, "id_state": 1722, "text": "Realpe", "id_country": 82 },
+    {
+        "id": 468236,
+        "id_state": 1722,
+        "text": "Restrepo",
+        "id_country": 82,
+        "nameAve": "RESTREPO(VALLE DEL CAUCA)"
+    },
+    { "id": 468266, "id_state": 1722, "text": "Ricaurte", "id_country": 82 },
+    {
+        "id": 468324,
+        "id_state": 1722,
+        "text": "Riofrío",
+        "id_country": 82,
+        "nameAve": "RIOFRIO(VALLE DEL CAUCA)"
+    },
+    { "id": 468366, "id_state": 1722, "text": "Rivera", "id_country": 82 },
+    {
+        "id": 468402,
+        "id_state": 1722,
+        "text": "Roldanillo",
+        "id_country": 82,
+        "nameAve": "ROLDANILLO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 468458,
+        "id_state": 1722,
+        "text": "Rozo",
+        "id_country": 82,
+        "nameAve": "ROZO(VALLE DEL CAUCA)"
+    },
+    { "id": 468477, "id_state": 1722, "text": "Sabaletas", "id_country": 82 },
+    { "id": 468612, "id_state": 1722, "text": "Salomia", "id_country": 82 },
+    { "id": 468615, "id_state": 1722, "text": "Salónica", "id_country": 82 },
+    { "id": 468664, "id_state": 1722, "text": "San Agustin", "id_country": 82 },
+    { "id": 468701, "id_state": 1722, "text": "San Antonio", "id_country": 82 },
+    {
+        "id": 468727,
+        "id_state": 1722,
+        "text": "San Antonio de Piedras",
+        "id_country": 82
+    },
+    { "id": 468777, "id_state": 1722, "text": "San Carlos", "id_country": 82 },
+    {
+        "id": 468852,
+        "id_state": 1722,
+        "text": "San Fernando",
+        "id_country": 82
+    },
+    { "id": 468908, "id_state": 1722, "text": "San Insidro", "id_country": 82 },
+    { "id": 468978, "id_state": 1722, "text": "San José", "id_country": 82 },
+    { "id": 469108, "id_state": 1722, "text": "San Luis", "id_country": 82 },
+    { "id": 469148, "id_state": 1722, "text": "San Martín", "id_country": 82 },
+    {
+        "id": 469239,
+        "id_state": 1722,
+        "text": "San Pedro",
+        "id_country": 82,
+        "nameAve": "SAN PEDRO(VALLE DEL CAUCA)"
+    },
+    { "id": 469349, "id_state": 1722, "text": "Santa Ana", "id_country": 82 },
+    {
+        "id": 469378,
+        "id_state": 1722,
+        "text": "Santa Bárbara",
+        "id_country": 82
+    },
+    { "id": 469434, "id_state": 1722, "text": "Santa Elena", "id_country": 82 },
+    { "id": 469463, "id_state": 1722, "text": "Santa Fe", "id_country": 82 },
+    {
+        "id": 469476,
+        "id_state": 1722,
+        "text": "Santa Helena",
+        "id_country": 82
+    },
+    { "id": 469552, "id_state": 1722, "text": "Santa Luisa", "id_country": 82 },
+    { "id": 469640, "id_state": 1722, "text": "Santa Rita", "id_country": 82 },
+    { "id": 469654, "id_state": 1722, "text": "Santa Rosa", "id_country": 82 },
+    {
+        "id": 469696,
+        "id_state": 1722,
+        "text": "Santa Teresa",
+        "id_country": 82
+    },
+    {
+        "id": 469709,
+        "id_state": 1722,
+        "text": "Santa Teresita",
+        "id_country": 82
+    },
+    {
+        "id": 469730,
+        "id_state": 1722,
+        "text": "Santiago de Cali",
+        "id_country": 82
+    },
+    { "id": 469812, "id_state": 1722, "text": "Sartanejal", "id_country": 82 },
+    {
+        "id": 469886,
+        "id_state": 1722,
+        "text": "Sevilla",
+        "id_country": 82,
+        "nameAve": "SEVILLA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 469968,
+        "id_state": 1722,
+        "text": "Simon Bolivar",
+        "id_country": 82
+    },
+    { "id": 470348, "id_state": 1722, "text": "Tarfán", "id_country": 82 },
+    { "id": 470405, "id_state": 1722, "text": "Tenerife", "id_country": 82 },
+    { "id": 470409, "id_state": 1722, "text": "Tenjo", "id_country": 82 },
+    { "id": 470551, "id_state": 1722, "text": "Tiple", "id_country": 82 },
+    {
+        "id": 470586,
+        "id_state": 1722,
+        "text": "Todos los Santos",
+        "id_country": 82
+    },
+    {
+        "id": 470590,
+        "id_state": 1722,
+        "text": "Todos Santos",
+        "id_country": 82
+    },
+    {
+        "id": 470655,
+        "id_state": 1722,
+        "text": "Toro",
+        "id_country": 82,
+        "nameAve": "TORO(VALLE DEL CAUCA)"
+    },
+    { "id": 470728, "id_state": 1722, "text": "Trejo Plata", "id_country": 82 },
+    {
+        "id": 470746,
+        "id_state": 1722,
+        "text": "Tres Esquinas",
+        "id_country": 82
+    },
+    { "id": 470784, "id_state": 1722, "text": "Trinidad", "id_country": 82 },
+    {
+        "id": 470813,
+        "id_state": 1722,
+        "text": "Trujillo",
+        "id_country": 82,
+        "nameAve": "TRUJILLO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 470838,
+        "id_state": 1722,
+        "text": "Tuluá",
+        "id_country": 82,
+        "nameAve": "TULUA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 470907,
+        "id_state": 1722,
+        "text": "Ulloa",
+        "id_country": 82,
+        "nameAve": "ULLOA(VALLE DEL CAUCA)"
+    },
+    { "id": 470923, "id_state": 1722, "text": "Unibe", "id_country": 82 },
+    { "id": 470960, "id_state": 1722, "text": "Uribe", "id_country": 82 },
+    { "id": 471001, "id_state": 1722, "text": "Vado", "id_country": 82 },
+    { "id": 471042, "id_state": 1722, "text": "Vallejuelo", "id_country": 82 },
+    {
+        "id": 471210,
+        "id_state": 1722,
+        "text": "Versalles",
+        "id_country": 82,
+        "nameAve": "VERSALLES(VALLE DEL CAUCA)"
+    },
+    { "id": 471232, "id_state": 1722, "text": "Victoria", "id_country": 82 },
+    {
+        "id": 471246,
+        "id_state": 1722,
+        "text": "Vijes",
+        "id_country": 82,
+        "nameAve": "VIJES(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 471274,
+        "id_state": 1722,
+        "text": "Villa Colombia",
+        "id_country": 82
+    },
+    {
+        "id": 471314,
+        "id_state": 1722,
+        "text": "Villahermosa",
+        "id_country": 82
+    },
+    {
+        "id": 471416,
+        "id_state": 1722,
+        "text": "Villa Yolanda",
+        "id_country": 82
+    },
+    { "id": 471535, "id_state": 1722, "text": "Yarumal", "id_country": 82 },
+    {
+        "id": 471585,
+        "id_state": 1722,
+        "text": "Yotoco",
+        "id_country": 82,
+        "nameAve": "YOTOCO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 471600,
+        "id_state": 1722,
+        "text": "Yumbo",
+        "id_country": 82,
+        "nameAve": "YUMBO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 471647,
+        "id_state": 1722,
+        "text": "Zanjón de Piedra",
+        "id_country": 82
+    },
+    {
+        "id": 471648,
+        "id_state": 1722,
+        "text": "Zanjón Hondo",
+        "id_country": 82
+    },
+    {
+        "id": 471677,
+        "id_state": 1722,
+        "text": "Zaragoza",
+        "id_country": 82,
+        "nameAve": "ZARAGOZA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 471682,
+        "id_state": 1722,
+        "text": "Zarzal",
+        "id_country": 82,
+        "nameAve": "ZARZAL(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790521,
+        "id_state": 1722,
+        "text": "Brisas de montebello",
+        "id_country": 82,
+        "nameAve": "BRISAS DE MONTEBELLO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790538,
+        "id_state": 1722,
+        "text": "Callejon tabares",
+        "id_country": 82,
+        "nameAve": "CALLEJON TABARES(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790542,
+        "id_state": 1722,
+        "text": "Campo alegre",
+        "id_country": 82,
+        "nameAve": "CAMPO ALEGRE(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790560,
+        "id_state": 1722,
+        "text": "Cascajal i",
+        "id_country": 82,
+        "nameAve": "CASCAJAL I(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790561,
+        "id_state": 1722,
+        "text": "Cascajal ii",
+        "id_country": 82,
+        "nameAve": "CASCAJAL II(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790562,
+        "id_state": 1722,
+        "text": "Cascajal iii",
+        "id_country": 82,
+        "nameAve": "CASCAJAL III(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790566,
+        "id_state": 1722,
+        "text": "Cauca viejo",
+        "id_country": 82,
+        "nameAve": "CAUCA VIEJO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790598,
+        "id_state": 1722,
+        "text": "Chorro de plata",
+        "id_country": 82,
+        "nameAve": "CHORRO DE PLATA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790646,
+        "id_state": 1722,
+        "text": "Condominio maranon",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO MARANON(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790660,
+        "id_state": 1722,
+        "text": "Crucero alto de los mangos",
+        "id_country": 82,
+        "nameAve": "CRUCERO ALTO DE LOS MANGOS(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790682,
+        "id_state": 1722,
+        "text": "Duquelandia",
+        "id_country": 82,
+        "nameAve": "DUQUELANDIA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790715,
+        "id_state": 1722,
+        "text": "El estero",
+        "id_country": 82,
+        "nameAve": "EL ESTERO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790716,
+        "id_state": 1722,
+        "text": "El filo",
+        "id_country": 82,
+        "nameAve": "EL FILO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790720,
+        "id_state": 1722,
+        "text": "El hormiguero",
+        "id_country": 82,
+        "nameAve": "EL HORMIGUERO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790745,
+        "id_state": 1722,
+        "text": "El portento",
+        "id_country": 82,
+        "nameAve": "EL PORTENTO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790750,
+        "id_state": 1722,
+        "text": "El queremal",
+        "id_country": 82,
+        "nameAve": "EL QUEREMAL(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790757,
+        "id_state": 1722,
+        "text": "El saladito",
+        "id_country": 82,
+        "nameAve": "EL SALADITO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790775,
+        "id_state": 1722,
+        "text": "Felidia",
+        "id_country": 82,
+        "nameAve": "FELIDIA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790794,
+        "id_state": 1722,
+        "text": "Golondrinas",
+        "id_country": 82,
+        "nameAve": "GOLONDRINAS(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790857,
+        "id_state": 1722,
+        "text": "La buitrera",
+        "id_country": 82,
+        "nameAve": "LA BUITRERA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790865,
+        "id_state": 1722,
+        "text": "La castilla",
+        "id_country": 82,
+        "nameAve": "LA CASTILLA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790869,
+        "id_state": 1722,
+        "text": "La colina",
+        "id_country": 82,
+        "nameAve": "LA COLINA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790874,
+        "id_state": 1722,
+        "text": "La cumbre",
+        "id_country": 82,
+        "nameAve": "LA CUMBRE(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790876,
+        "id_state": 1722,
+        "text": "La elvira",
+        "id_country": 82,
+        "nameAve": "LA ELVIRA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790885,
+        "id_state": 1722,
+        "text": "La fragua",
+        "id_country": 82,
+        "nameAve": "LA FRAGUA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790892,
+        "id_state": 1722,
+        "text": "La leonera",
+        "id_country": 82,
+        "nameAve": "LA LEONERA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790896,
+        "id_state": 1722,
+        "text": "La luisa",
+        "id_country": 82,
+        "nameAve": "LA LUISA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790910,
+        "id_state": 1722,
+        "text": "La paz",
+        "id_country": 82,
+        "nameAve": "LA PAZ(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790919,
+        "id_state": 1722,
+        "text": "La sirena",
+        "id_country": 82,
+        "nameAve": "LA SIRENA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790931,
+        "id_state": 1722,
+        "text": "La voragine",
+        "id_country": 82,
+        "nameAve": "LA VORAGINE(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790948,
+        "id_state": 1722,
+        "text": "Las palmas - la castilla",
+        "id_country": 82,
+        "nameAve": "LAS PALMAS - LA CASTILLA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790951,
+        "id_state": 1722,
+        "text": "Las palmas",
+        "id_country": 82,
+        "nameAve": "LAS PALMAS(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790972,
+        "id_state": 1722,
+        "text": "Los cerros",
+        "id_country": 82,
+        "nameAve": "LOS CERROS(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790976,
+        "id_state": 1722,
+        "text": "Los girasoles",
+        "id_country": 82,
+        "nameAve": "LOS GIRASOLES(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 790978,
+        "id_state": 1722,
+        "text": "Los limones",
+        "id_country": 82,
+        "nameAve": "LOS LIMONES(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791037,
+        "id_state": 1722,
+        "text": "Montanitas",
+        "id_country": 82,
+        "nameAve": "MONTANITAS(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791038,
+        "id_state": 1722,
+        "text": "Montebello",
+        "id_country": 82,
+        "nameAve": "MONTEBELLO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791049,
+        "id_state": 1722,
+        "text": "Navarro",
+        "id_country": 82,
+        "nameAve": "NAVARRO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791090,
+        "id_state": 1722,
+        "text": "Parcelacion cantaclaro 1",
+        "id_country": 82,
+        "nameAve": "PARCELACION CANTACLARO 1(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791091,
+        "id_state": 1722,
+        "text": "Parcelacion cantaclaro 2",
+        "id_country": 82,
+        "nameAve": "PARCELACION CANTACLARO 2(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791092,
+        "id_state": 1722,
+        "text": "Parcelacion la trinidad",
+        "id_country": 82,
+        "nameAve": "PARCELACION LA TRINIDAD(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791114,
+        "id_state": 1722,
+        "text": "Piamonte",
+        "id_country": 82,
+        "nameAve": "PIAMONTE(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791116,
+        "id_state": 1722,
+        "text": "Pichinde",
+        "id_country": 82,
+        "nameAve": "PICHINDE(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791121,
+        "id_state": 1722,
+        "text": "Pilas del cabuyal",
+        "id_country": 82,
+        "nameAve": "PILAS DEL CABUYAL(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791128,
+        "id_state": 1722,
+        "text": "Pizamos",
+        "id_country": 82,
+        "nameAve": "PIZAMOS(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791237,
+        "id_state": 1722,
+        "text": "San francisco",
+        "id_country": 82,
+        "nameAve": "SAN FRANCISCO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791239,
+        "id_state": 1722,
+        "text": "San isidro",
+        "id_country": 82,
+        "nameAve": "SAN ISIDRO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791308,
+        "id_state": 1722,
+        "text": "Siloe",
+        "id_country": 82,
+        "nameAve": "SILOE(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791398,
+        "id_state": 1722,
+        "text": "Villa del rosario",
+        "id_country": 82,
+        "nameAve": "VILLA DEL ROSARIO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791399,
+        "id_state": 1722,
+        "text": "Villa flamenco",
+        "id_country": 82,
+        "nameAve": "VILLA FLAMENCO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791401,
+        "id_state": 1722,
+        "text": "Villa gorgona",
+        "id_country": 82,
+        "nameAve": "VILLA GORGONA(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 791406,
+        "id_state": 1722,
+        "text": "Villacarmelo",
+        "id_country": 82,
+        "nameAve": "VILLACARMELO(VALLE DEL CAUCA)"
+    },
+    {
+        "id": 451036,
+        "id_state": 1723,
+        "text": "Acaricuará",
+        "id_country": 82,
+        "nameAve": "ACARICUARA(VAUPES)"
+    },
+    { "id": 451310, "id_state": 1723, "text": "Alsacia", "id_country": 82 },
+    {
+        "id": 453541,
+        "id_state": 1723,
+        "text": "Carurú",
+        "id_country": 82,
+        "nameAve": "CARURU(VAUPES)"
+    },
+    { "id": 461919, "id_state": 1723, "text": "La Libertad", "id_country": 82 },
+    {
+        "id": 465402,
+        "id_state": 1723,
+        "text": "Mitú",
+        "id_country": 82,
+        "nameAve": "MITU(VAUPES)"
+    },
+    {
+        "id": 790439,
+        "id_state": 1723,
+        "text": "12 de octubre",
+        "id_country": 82,
+        "nameAve": "12 DE OCTUBRE(VAUPES)"
+    },
+    {
+        "id": 790539,
+        "id_state": 1723,
+        "text": "Camanaos",
+        "id_country": 82,
+        "nameAve": "CAMANAOS(VAUPES)"
+    },
+    {
+        "id": 790992,
+        "id_state": 1723,
+        "text": "Mandi",
+        "id_country": 82,
+        "nameAve": "MANDI(VAUPES)"
+    },
+    {
+        "id": 791001,
+        "id_state": 1723,
+        "text": "Margen izquierdo",
+        "id_country": 82,
+        "nameAve": "MARGEN IZQUIERDO(VAUPES)"
+    },
+    {
+        "id": 791124,
+        "id_state": 1723,
+        "text": "Piramiri",
+        "id_country": 82,
+        "nameAve": "PIRAMIRI(VAUPES)"
+    },
+    {
+        "id": 791336,
+        "id_state": 1723,
+        "text": "Tapurucuara",
+        "id_country": 82,
+        "nameAve": "TAPURUCUARA(VAUPES)"
+    },
+    {
+        "id": 791337,
+        "id_state": 1723,
+        "text": "Taraira",
+        "id_country": 82,
+        "nameAve": "TARAIRA(VAUPES)"
+    },
+    {
+        "id": 791407,
+        "id_state": 1723,
+        "text": "Villafatima",
+        "id_country": 82,
+        "nameAve": "VILLAFATIMA(VAUPES)"
+    },
+    {
+        "id": 791416,
+        "id_state": 1723,
+        "text": "Yapu",
+        "id_country": 82,
+        "nameAve": "YAPU(VAUPES)"
+    },
+    {
+        "id": 791422,
+        "id_state": 1723,
+        "text": "Yurupari",
+        "id_country": 82,
+        "nameAve": "YURUPARI(VAUPES)"
+    },
+    { "id": 451137, "id_state": 1724, "text": "Agua Linda", "id_country": 82 },
+    {
+        "id": 451162,
+        "id_state": 1724,
+        "text": "Aguas Claras",
+        "id_country": 82
+    },
+    { "id": 451183, "id_state": 1724, "text": "Aguaverde", "id_country": 82 },
+    { "id": 451280, "id_state": 1724, "text": "Algarrobo", "id_country": 82 },
+    { "id": 451567, "id_state": 1724, "text": "Antiguo", "id_country": 82 },
+    { "id": 451621, "id_state": 1724, "text": "Aracure", "id_country": 82 },
+    {
+        "id": 452433,
+        "id_state": 1724,
+        "text": "Bocas del Guaturia",
+        "id_country": 82
+    },
+    { "id": 452676, "id_state": 1724, "text": "Buena Vista", "id_country": 82 },
+    { "id": 453040, "id_state": 1724, "text": "Campamento", "id_country": 82 },
+    {
+        "id": 455330,
+        "id_state": 1724,
+        "text": "Cumaribo",
+        "id_country": 82,
+        "nameAve": "CUMARIBO(VICHADA)"
+    },
+    {
+        "id": 462574,
+        "id_state": 1724,
+        "text": "La Primavera",
+        "id_country": 82,
+        "nameAve": "LA PRIMAVERA(VICHADA)"
+    },
+    { "id": 463687, "id_state": 1724, "text": "La Vorágine", "id_country": 82 },
+    { "id": 465482, "id_state": 1724, "text": "Monserrate", "id_country": 82 },
+    {
+        "id": 465950,
+        "id_state": 1724,
+        "text": "Nueva Antioquia",
+        "id_country": 82
+    },
+    { "id": 466918, "id_state": 1724, "text": "Piapocos", "id_country": 82 },
+    {
+        "id": 467627,
+        "id_state": 1724,
+        "text": "Puerto Carreño",
+        "id_country": 82,
+        "nameAve": "PUERTO CARRENO(VICHADA)"
+    },
+    {
+        "id": 467798,
+        "id_state": 1724,
+        "text": "Puerto Nuevo",
+        "id_country": 82
+    },
+    { "id": 468165, "id_state": 1724, "text": "Raya", "id_country": 82 },
+    {
+        "id": 469680,
+        "id_state": 1724,
+        "text": "Santa Rosalía",
+        "id_country": 82,
+        "nameAve": "SANTA ROSALIA(VICHADA)"
+    },
+    { "id": 471703, "id_state": 1724, "text": "Zunape", "id_country": 82 },
+    {
+        "id": 790441,
+        "id_state": 1724,
+        "text": "Aceitico",
+        "id_country": 82,
+        "nameAve": "ACEITICO(VICHADA)"
+    },
+    {
+        "id": 790565,
+        "id_state": 1724,
+        "text": "Casuarito",
+        "id_country": 82,
+        "nameAve": "CASUARITO(VICHADA)"
+    },
+    {
+        "id": 790790,
+        "id_state": 1724,
+        "text": "Garcitas",
+        "id_country": 82,
+        "nameAve": "GARCITAS(VICHADA)"
+    },
+    {
+        "id": 790813,
+        "id_state": 1724,
+        "text": "Guaripa",
+        "id_country": 82,
+        "nameAve": "GUARIPA(VICHADA)"
+    },
+    {
+        "id": 790926,
+        "id_state": 1724,
+        "text": "La venturosa",
+        "id_country": 82,
+        "nameAve": "LA VENTUROSA(VICHADA)"
+    },
+    {
+        "id": 791039,
+        "id_state": 1724,
+        "text": "Morichada",
+        "id_country": 82,
+        "nameAve": "MORICHADA(VICHADA)"
+    },
+    {
+        "id": 791165,
+        "id_state": 1724,
+        "text": "Puerto murillo",
+        "id_country": 82,
+        "nameAve": "PUERTO MURILLO(VICHADA)"
+    },
+    { "id": 451032, "id_state": 1725, "text": "Acapulco", "id_country": 82 },
+    { "id": 451068, "id_state": 1725, "text": "Agua Azul", "id_country": 82 },
+    { "id": 451109, "id_state": 1725, "text": "Aguaclara", "id_country": 82 },
+    { "id": 451110, "id_state": 1725, "text": "Agua Como", "id_country": 82 },
+    { "id": 451113, "id_state": 1725, "text": "Aguada", "id_country": 82 },
+    { "id": 451135, "id_state": 1725, "text": "Aguajal", "id_country": 82 },
+    { "id": 451138, "id_state": 1725, "text": "Agua Linda", "id_country": 82 },
+    { "id": 451182, "id_state": 1725, "text": "Agua Verde", "id_country": 82 },
+    {
+        "id": 451188,
+        "id_state": 1725,
+        "text": "Aguazul",
+        "id_country": 82,
+        "nameAve": "AGUAZUL(CASANARE)"
+    },
+    { "id": 451273, "id_state": 1725, "text": "Algarrobo", "id_country": 82 },
+    { "id": 451520, "id_state": 1725, "text": "Andalucía", "id_country": 82 },
+    { "id": 451734, "id_state": 1725, "text": "Ariporo", "id_country": 82 },
+    { "id": 451969, "id_state": 1725, "text": "Baltimore", "id_country": 82 },
+    { "id": 451985, "id_state": 1725, "text": "Banquetas", "id_country": 82 },
+    { "id": 452039, "id_state": 1725, "text": "Barranca", "id_country": 82 },
+    { "id": 452222, "id_state": 1725, "text": "Bellavista", "id_country": 82 },
+    { "id": 452256, "id_state": 1725, "text": "Berley", "id_country": 82 },
+    {
+        "id": 452666,
+        "id_state": 1725,
+        "text": "Buenaventura",
+        "id_country": 82
+    },
+    {
+        "id": 453052,
+        "id_state": 1725,
+        "text": "Campamento los Jagüeyes",
+        "id_country": 82
+    },
+    {
+        "id": 453144,
+        "id_state": 1725,
+        "text": "Campo Hermoso",
+        "id_country": 82
+    },
+    {
+        "id": 453272,
+        "id_state": 1725,
+        "text": "Caño Chiquito",
+        "id_country": 82
+    },
+    { "id": 453447, "id_state": 1725, "text": "Carimagua", "id_country": 82 },
+    { "id": 453525, "id_state": 1725, "text": "Cartagena", "id_country": 82 },
+    {
+        "id": 454238,
+        "id_state": 1725,
+        "text": "Chámeza",
+        "id_country": 82,
+        "nameAve": "CHAMEZA(CASANARE)"
+    },
+    { "id": 454338, "id_state": 1725, "text": "Chavinave", "id_country": 82 },
+    { "id": 454691, "id_state": 1725, "text": "Colombia", "id_country": 82 },
+    { "id": 455144, "id_state": 1725, "text": "Cravo Sur", "id_country": 82 },
+    { "id": 455685, "id_state": 1725, "text": "El Amparo", "id_country": 82 },
+    { "id": 457150, "id_state": 1725, "text": "El Olivo", "id_country": 82 },
+    { "id": 458044, "id_state": 1725, "text": "El Totumo", "id_country": 82 },
+    { "id": 458198, "id_state": 1725, "text": "El Yopal", "id_country": 82 },
+    {
+        "id": 459706,
+        "id_state": 1725,
+        "text": "Hato Corozal",
+        "id_country": 82,
+        "nameAve": "HATO COROZAL(CASANARE)"
+    },
+    {
+        "id": 459710,
+        "id_state": 1725,
+        "text": "Hato del Corozal",
+        "id_country": 82
+    },
+    {
+        "id": 459750,
+        "id_state": 1725,
+        "text": "Hato la Delicias",
+        "id_country": 82
+    },
+    { "id": 461064, "id_state": 1725, "text": "La Chapa", "id_country": 82 },
+    { "id": 461501, "id_state": 1725, "text": "La Florida", "id_country": 82 },
+    { "id": 461748, "id_state": 1725, "text": "La Holanda", "id_country": 82 },
+    { "id": 462337, "id_state": 1725, "text": "La Palmira", "id_country": 82 },
+    {
+        "id": 462772,
+        "id_state": 1725,
+        "text": "La Salina",
+        "id_country": 82,
+        "nameAve": "LA SALINA(CASANARE)"
+    },
+    {
+        "id": 464783,
+        "id_state": 1725,
+        "text": "Maní",
+        "id_country": 82,
+        "nameAve": "MANI(CASANARE)"
+    },
+    {
+        "id": 465579,
+        "id_state": 1725,
+        "text": "Monterrey",
+        "id_country": 82,
+        "nameAve": "MONTERREY(CASANARE)"
+    },
+    { "id": 465632, "id_state": 1725, "text": "Morichito", "id_country": 82 },
+    {
+        "id": 465739,
+        "id_state": 1725,
+        "text": "Municipio de San Luis de Palenque",
+        "id_country": 82
+    },
+    {
+        "id": 465742,
+        "id_state": 1725,
+        "text": "Municipio Paz de Ariporo",
+        "id_country": 82
+    },
+    {
+        "id": 466019,
+        "id_state": 1725,
+        "text": "Nunchía",
+        "id_country": 82,
+        "nameAve": "NUNCHIA(CASANARE)"
+    },
+    {
+        "id": 466118,
+        "id_state": 1725,
+        "text": "Orocué",
+        "id_country": 82,
+        "nameAve": "OROCUE(CASANARE)"
+    },
+    { "id": 466343, "id_state": 1725, "text": "Palmira", "id_country": 82 },
+    {
+        "id": 466726,
+        "id_state": 1725,
+        "text": "Paz de Ariporo",
+        "id_country": 82,
+        "nameAve": "PAZ DE ARIPORO(CASANARE)"
+    },
+    { "id": 466855, "id_state": 1725, "text": "Pereira", "id_country": 82 },
+    { "id": 467014, "id_state": 1725, "text": "Piñalito", "id_country": 82 },
+    {
+        "id": 467255,
+        "id_state": 1725,
+        "text": "Pore",
+        "id_country": 82,
+        "nameAve": "PORE(CASANARE)"
+    },
+    {
+        "id": 467493,
+        "id_state": 1725,
+        "text": "Pueblo Viejo",
+        "id_country": 82
+    },
+    {
+        "id": 468505,
+        "id_state": 1725,
+        "text": "Sabanalarga",
+        "id_country": 82,
+        "nameAve": "SABANALARGA(CASANARE)"
+    },
+    {
+        "id": 468545,
+        "id_state": 1725,
+        "text": "Sácama",
+        "id_country": 82,
+        "nameAve": "SACAMA(CASANARE)"
+    },
+    { "id": 468981, "id_state": 1725, "text": "San José", "id_country": 82 },
+    { "id": 469110, "id_state": 1725, "text": "San Luis", "id_country": 82 },
+    {
+        "id": 469127,
+        "id_state": 1725,
+        "text": "San Luis de Palenque",
+        "id_country": 82,
+        "nameAve": "SAN LUIS DE PALENQUE(CASANARE)"
+    },
+    { "id": 469581, "id_state": 1725, "text": "Santa Marta", "id_country": 82 },
+    { "id": 469667, "id_state": 1725, "text": "Santa Rosa", "id_country": 82 },
+    {
+        "id": 470261,
+        "id_state": 1725,
+        "text": "Támara",
+        "id_country": 82,
+        "nameAve": "TAMARA(CASANARE)"
+    },
+    {
+        "id": 470373,
+        "id_state": 1725,
+        "text": "Tauramena",
+        "id_country": 82,
+        "nameAve": "TAURAMENA(CASANARE)"
+    },
+    {
+        "id": 470787,
+        "id_state": 1725,
+        "text": "Trinidad",
+        "id_country": 82,
+        "nameAve": "TRINIDAD(CASANARE)"
+    },
+    { "id": 471039, "id_state": 1725, "text": "Valledupar", "id_country": 82 },
+    { "id": 471362, "id_state": 1725, "text": "Villa Nueva", "id_country": 82 },
+    {
+        "id": 471367,
+        "id_state": 1725,
+        "text": "Villanueva",
+        "id_country": 82,
+        "nameAve": "VILLANUEVA(CASANARE)"
+    },
+    { "id": 471565, "id_state": 1725, "text": "Yere", "id_country": 82 },
+    {
+        "id": 471577,
+        "id_state": 1725,
+        "text": "Yopal",
+        "id_country": 82,
+        "nameAve": "YOPAL(CASANARE)"
+    },
+    { "id": 471579, "id_state": 1725, "text": "Yopalito", "id_country": 82 },
+    { "id": 471580, "id_state": 1725, "text": "Yopito", "id_country": 82 },
+    {
+        "id": 790703,
+        "id_state": 1725,
+        "text": "El charte",
+        "id_country": 82,
+        "nameAve": "EL CHARTE(CASANARE)"
+    },
+    {
+        "id": 790730,
+        "id_state": 1725,
+        "text": "El morro",
+        "id_country": 82,
+        "nameAve": "EL MORRO(CASANARE)"
+    },
+    {
+        "id": 790867,
+        "id_state": 1725,
+        "text": "La chaparrera",
+        "id_country": 82,
+        "nameAve": "LA CHAPARRERA(CASANARE)"
+    },
+    {
+        "id": 790888,
+        "id_state": 1725,
+        "text": "La guafilla",
+        "id_country": 82,
+        "nameAve": "LA GUAFILLA(CASANARE)"
+    },
+    {
+        "id": 790893,
+        "id_state": 1725,
+        "text": "La llanerita",
+        "id_country": 82,
+        "nameAve": "LA LLANERITA(CASANARE)"
+    },
+    {
+        "id": 790905,
+        "id_state": 1725,
+        "text": "La niata",
+        "id_country": 82,
+        "nameAve": "LA NIATA(CASANARE)"
+    },
+    {
+        "id": 791175,
+        "id_state": 1725,
+        "text": "Punto nuevo",
+        "id_country": 82,
+        "nameAve": "PUNTO NUEVO(CASANARE)"
+    },
+    {
+        "id": 791177,
+        "id_state": 1725,
+        "text": "Quebrada seca",
+        "id_country": 82,
+        "nameAve": "QUEBRADA SECA(CASANARE)"
+    },
+    {
+        "id": 791188,
+        "id_state": 1725,
+        "text": "Recetor",
+        "id_country": 82,
+        "nameAve": "RECETOR(CASANARE)"
+    },
+    {
+        "id": 791292,
+        "id_state": 1725,
+        "text": "Santafe de morichal",
+        "id_country": 82,
+        "nameAve": "SANTAFE DE MORICHAL(CASANARE)"
+    },
+    {
+        "id": 791353,
+        "id_state": 1725,
+        "text": "Tilodiran",
+        "id_country": 82,
+        "nameAve": "TILODIRAN(CASANARE)"
+    },
+    { "id": 451044, "id_state": 1726, "text": "Achiote", "id_country": 82 },
+    { "id": 451052, "id_state": 1726, "text": "Acuatá", "id_country": 82 },
+    { "id": 451058, "id_state": 1726, "text": "Adolfo Ríos", "id_country": 82 },
+    {
+        "id": 451116,
+        "id_state": 1726,
+        "text": "Agua de Dios",
+        "id_country": 82,
+        "nameAve": "AGUA DE DIOS(CUNDINAMARCA)"
+    },
+    {
+        "id": 451120,
+        "id_state": 1726,
+        "text": "Agua de Perro",
+        "id_country": 82
+    },
+    { "id": 451127, "id_state": 1726, "text": "Aguadulce", "id_country": 82 },
+    { "id": 451145, "id_state": 1726, "text": "Agualisa", "id_country": 82 },
+    {
+        "id": 451161,
+        "id_state": 1726,
+        "text": "Aguas Claras",
+        "id_country": 82
+    },
+    { "id": 451190, "id_state": 1726, "text": "Aguila", "id_country": 82 },
+    {
+        "id": 451218,
+        "id_state": 1726,
+        "text": "Albán",
+        "id_country": 82,
+        "nameAve": "ALBAN(CUNDINAMARCA)"
+    },
+    { "id": 451234, "id_state": 1726, "text": "Alcalá", "id_country": 82 },
+    { "id": 451249, "id_state": 1726, "text": "Alejandría", "id_country": 82 },
+    { "id": 451261, "id_state": 1726, "text": "Alemania", "id_country": 82 },
+    { "id": 451287, "id_state": 1726, "text": "Algodones", "id_country": 82 },
+    { "id": 451312, "id_state": 1726, "text": "Alsacia", "id_country": 82 },
+    { "id": 451331, "id_state": 1726, "text": "Altamira", "id_country": 82 },
+    { "id": 451392, "id_state": 1726, "text": "Alto Frío", "id_country": 82 },
+    {
+        "id": 451393,
+        "id_state": 1726,
+        "text": "Alto Gavilán",
+        "id_country": 82
+    },
+    { "id": 451413, "id_state": 1726, "text": "Altomira", "id_country": 82 },
+    {
+        "id": 451421,
+        "id_state": 1726,
+        "text": "Alto Redondo",
+        "id_country": 82
+    },
+    { "id": 451427, "id_state": 1726, "text": "Alto Seco", "id_country": 82 },
+    { "id": 451489, "id_state": 1726, "text": "Amsterdam", "id_country": 82 },
+    { "id": 451497, "id_state": 1726, "text": "Anacuta", "id_country": 82 },
+    {
+        "id": 451503,
+        "id_state": 1726,
+        "text": "Anapoima",
+        "id_country": 82,
+        "nameAve": "ANAPOIMA(CUNDINAMARCA)"
+    },
+    { "id": 451517, "id_state": 1726, "text": "Andalucía", "id_country": 82 },
+    {
+        "id": 451555,
+        "id_state": 1726,
+        "text": "Anolaima",
+        "id_country": 82,
+        "nameAve": "ANOLAIMA(CUNDINAMARCA)"
+    },
+    { "id": 451569, "id_state": 1726, "text": "Antioquia", "id_country": 82 },
+    {
+        "id": 451571,
+        "id_state": 1726,
+        "text": "Antonia Santos",
+        "id_country": 82
+    },
+    {
+        "id": 451576,
+        "id_state": 1726,
+        "text": "Antonio Nariño",
+        "id_country": 82
+    },
+    {
+        "id": 451604,
+        "id_state": 1726,
+        "text": "Apulo",
+        "id_country": 82,
+        "nameAve": "APULO(CUNDINAMARCA)"
+    },
+    { "id": 451619, "id_state": 1726, "text": "Aracal", "id_country": 82 },
+    {
+        "id": 451656,
+        "id_state": 1726,
+        "text": "Arbeláez",
+        "id_country": 82,
+        "nameAve": "ARBELAEZ(CUNDINAMARCA)"
+    },
+    {
+        "id": 451695,
+        "id_state": 1726,
+        "text": "Arenal Chico",
+        "id_country": 82
+    },
+    { "id": 451708, "id_state": 1726, "text": "Argel", "id_country": 82 },
+    { "id": 451712, "id_state": 1726, "text": "Argelia", "id_country": 82 },
+    { "id": 451721, "id_state": 1726, "text": "Argentina", "id_country": 82 },
+    { "id": 451743, "id_state": 1726, "text": "Armenia", "id_country": 82 },
+    { "id": 451761, "id_state": 1726, "text": "Arrayán", "id_country": 82 },
+    { "id": 451822, "id_state": 1726, "text": "Astorga", "id_country": 82 },
+    { "id": 451825, "id_state": 1726, "text": "Asturias", "id_country": 82 },
+    { "id": 451897, "id_state": 1726, "text": "Bagaza", "id_country": 82 },
+    { "id": 451898, "id_state": 1726, "text": "Bagazal", "id_country": 82 },
+    { "id": 451949, "id_state": 1726, "text": "Balsa", "id_country": 82 },
+    { "id": 451961, "id_state": 1726, "text": "Balsita", "id_country": 82 },
+    { "id": 451967, "id_state": 1726, "text": "Baltimore", "id_country": 82 },
+    {
+        "id": 452070,
+        "id_state": 1726,
+        "text": "Barranquilla",
+        "id_country": 82
+    },
+    {
+        "id": 452096,
+        "id_state": 1726,
+        "text": "Barrio La Florida",
+        "id_country": 82
+    },
+    {
+        "id": 452097,
+        "id_state": 1726,
+        "text": "Barrio La Granja",
+        "id_country": 82
+    },
+    { "id": 452124, "id_state": 1726, "text": "Basora", "id_country": 82 },
+    { "id": 452136, "id_state": 1726, "text": "Batatas", "id_country": 82 },
+    { "id": 452145, "id_state": 1726, "text": "Bavaria", "id_country": 82 },
+    { "id": 452159, "id_state": 1726, "text": "Bejucales", "id_country": 82 },
+    { "id": 452184, "id_state": 1726, "text": "Bélgica", "id_country": 82 },
+    { "id": 452210, "id_state": 1726, "text": "Bella Vista", "id_country": 82 },
+    { "id": 452220, "id_state": 1726, "text": "Bellavista", "id_country": 82 },
+    {
+        "id": 452243,
+        "id_state": 1726,
+        "text": "Beltrán",
+        "id_country": 82,
+        "nameAve": "BELTRAN(CUNDINAMARCA)"
+    },
+    { "id": 452257, "id_state": 1726, "text": "Berlín", "id_country": 82 },
+    { "id": 452297, "id_state": 1726, "text": "Betania", "id_country": 82 },
+    {
+        "id": 452351,
+        "id_state": 1726,
+        "text": "Bituima",
+        "id_country": 82,
+        "nameAve": "BITUIMA(CUNDINAMARCA)"
+    },
+    { "id": 452357, "id_state": 1726, "text": "Bobadilla", "id_country": 82 },
+    {
+        "id": 452395,
+        "id_state": 1726,
+        "text": "Boca de Monte",
+        "id_country": 82
+    },
+    { "id": 452454, "id_state": 1726, "text": "Bochica", "id_country": 82 },
+    {
+        "id": 452468,
+        "id_state": 1726,
+        "text": "Bogotá",
+        "id_country": 82,
+        "nameAve": "BOGOTA(CUNDINAMARCA)"
+    },
+    { "id": 452482, "id_state": 1726, "text": "Boitá", "id_country": 82 },
+    {
+        "id": 452485,
+        "id_state": 1726,
+        "text": "Bojacá",
+        "id_country": 82,
+        "nameAve": "BOJACA(CUNDINAMARCA)"
+    },
+    { "id": 452493, "id_state": 1726, "text": "Bolívar", "id_country": 82 },
+    { "id": 452541, "id_state": 1726, "text": "Boqueron", "id_country": 82 },
+    {
+        "id": 452543,
+        "id_state": 1726,
+        "text": "Boqueron Capira",
+        "id_country": 82
+    },
+    {
+        "id": 452545,
+        "id_state": 1726,
+        "text": "Boquerón de Capira",
+        "id_country": 82
+    },
+    {
+        "id": 452546,
+        "id_state": 1726,
+        "text": "Boquerón del Oso",
+        "id_country": 82
+    },
+    { "id": 452558, "id_state": 1726, "text": "Bosa", "id_country": 82 },
+    { "id": 452561, "id_state": 1726, "text": "Bosconia", "id_country": 82 },
+    {
+        "id": 452563,
+        "id_state": 1726,
+        "text": "Bosque Calderon Tejada",
+        "id_country": 82
+    },
+    { "id": 452567, "id_state": 1726, "text": "Botadero", "id_country": 82 },
+    { "id": 452588, "id_state": 1726, "text": "Boyero", "id_country": 82 },
+    { "id": 452592, "id_state": 1726, "text": "Brasil", "id_country": 82 },
+    { "id": 452602, "id_state": 1726, "text": "Bremen", "id_country": 82 },
+    {
+        "id": 452610,
+        "id_state": 1726,
+        "text": "Briceño",
+        "id_country": 82,
+        "nameAve": "BRICENO(CUNDINAMARCA)"
+    },
+    { "id": 452639, "id_state": 1726, "text": "Bruselas", "id_country": 82 },
+    { "id": 452648, "id_state": 1726, "text": "Bucaramanga", "id_country": 82 },
+    { "id": 452686, "id_state": 1726, "text": "Buenavista", "id_country": 82 },
+    {
+        "id": 452711,
+        "id_state": 1726,
+        "text": "Buenos Aires",
+        "id_country": 82
+    },
+    { "id": 452768, "id_state": 1726, "text": "Cabaña", "id_country": 82 },
+    {
+        "id": 452789,
+        "id_state": 1726,
+        "text": "Cabrera",
+        "id_country": 82,
+        "nameAve": "CABRERA(CUNDINAMARCA)"
+    },
+    {
+        "id": 452833,
+        "id_state": 1726,
+        "text": "Cachipay",
+        "id_country": 82,
+        "nameAve": "CACHIPAY(CUNDINAMARCA)"
+    },
+    { "id": 452857, "id_state": 1726, "text": "20 de Julio", "id_country": 82 },
+    {
+        "id": 452899,
+        "id_state": 1726,
+        "text": "Cajicá",
+        "id_country": 82,
+        "nameAve": "CAJICA(CUNDINAMARCA)"
+    },
+    { "id": 453078, "id_state": 1726, "text": "Campiña", "id_country": 82 },
+    {
+        "id": 453096,
+        "id_state": 1726,
+        "text": "Campo Alegre",
+        "id_country": 82
+    },
+    { "id": 453098, "id_state": 1726, "text": "Campoalegre", "id_country": 82 },
+    { "id": 453185, "id_state": 1726, "text": "Canadá", "id_country": 82 },
+    { "id": 453290, "id_state": 1726, "text": "Caño Rico", "id_country": 82 },
+    {
+        "id": 453335,
+        "id_state": 1726,
+        "text": "Caparrapí",
+        "id_country": 82,
+        "nameAve": "CAPARRAPI(CUNDINAMARCA)"
+    },
+    {
+        "id": 453345,
+        "id_state": 1726,
+        "text": "Capilla de Belén",
+        "id_country": 82
+    },
+    {
+        "id": 453349,
+        "id_state": 1726,
+        "text": "Capilla de Tenza",
+        "id_country": 82
+    },
+    {
+        "id": 453368,
+        "id_state": 1726,
+        "text": "Cáqueza",
+        "id_country": 82,
+        "nameAve": "CAQUEZA(CUNDINAMARCA)"
+    },
+    {
+        "id": 453474,
+        "id_state": 1726,
+        "text": "Carmen de Carupa",
+        "id_country": 82,
+        "nameAve": "CARMEN DE CARUPA(CUNDINAMARCA)"
+    },
+    { "id": 453538, "id_state": 1726, "text": "Carupa", "id_country": 82 },
+    { "id": 453555, "id_state": 1726, "text": "Casa Blanca", "id_country": 82 },
+    { "id": 453556, "id_state": 1726, "text": "Casablanca", "id_country": 82 },
+    { "id": 453572, "id_state": 1726, "text": "Casacoima", "id_country": 82 },
+    { "id": 453596, "id_state": 1726, "text": "Casanare", "id_country": 82 },
+    {
+        "id": 453609,
+        "id_state": 1726,
+        "text": "Casa Sumapaz",
+        "id_country": 82
+    },
+    { "id": 454022, "id_state": 1726, "text": "Castilla", "id_country": 82 },
+    { "id": 454044, "id_state": 1726, "text": "Cataluña", "id_country": 82 },
+    { "id": 454120, "id_state": 1726, "text": "Ceibal", "id_country": 82 },
+    { "id": 454121, "id_state": 1726, "text": "Ceiba Negra", "id_country": 82 },
+    { "id": 454125, "id_state": 1726, "text": "Ceilán", "id_country": 82 },
+    { "id": 454155, "id_state": 1726, "text": "Centro Alto", "id_country": 82 },
+    { "id": 454332, "id_state": 1726, "text": "Chatosuga", "id_country": 82 },
+    {
+        "id": 454363,
+        "id_state": 1726,
+        "text": "Chía",
+        "id_country": 82,
+        "nameAve": "CHIA(CUNDINAMARCA)"
+    },
+    { "id": 454370, "id_state": 1726, "text": "Chicaque", "id_country": 82 },
+    { "id": 454385, "id_state": 1726, "text": "Chigüiros", "id_country": 82 },
+    {
+        "id": 454434,
+        "id_state": 1726,
+        "text": "Chipaque",
+        "id_country": 82,
+        "nameAve": "CHIPAQUE(CUNDINAMARCA)"
+    },
+    { "id": 454451, "id_state": 1726, "text": "Chirche", "id_country": 82 },
+    {
+        "id": 454472,
+        "id_state": 1726,
+        "text": "Choachí",
+        "id_country": 82,
+        "nameAve": "CHOACHI(CUNDINAMARCA)"
+    },
+    {
+        "id": 454484,
+        "id_state": 1726,
+        "text": "Chocontá",
+        "id_country": 82,
+        "nameAve": "CHOCONTA(CUNDINAMARCA)"
+    },
+    {
+        "id": 454620,
+        "id_state": 1726,
+        "text": "Ciudad Jardín",
+        "id_country": 82
+    },
+    {
+        "id": 454675,
+        "id_state": 1726,
+        "text": "Cogua",
+        "id_country": 82,
+        "nameAve": "COGUA(CUNDINAMARCA)"
+    },
+    { "id": 454683, "id_state": 1726, "text": "Colegio", "id_country": 82 },
+    { "id": 454690, "id_state": 1726, "text": "Colombia", "id_country": 82 },
+    { "id": 454700, "id_state": 1726, "text": "Colón", "id_country": 82 },
+    { "id": 454800, "id_state": 1726, "text": "Contador", "id_country": 82 },
+    { "id": 454831, "id_state": 1726, "text": "Corazón", "id_country": 82 },
+    { "id": 454848, "id_state": 1726, "text": "Córdoba", "id_country": 82 },
+    { "id": 455103, "id_state": 1726, "text": "Costa Rica", "id_country": 82 },
+    {
+        "id": 455123,
+        "id_state": 1726,
+        "text": "Cota",
+        "id_country": 82,
+        "nameAve": "COTA(CUNDINAMARCA)"
+    },
+    {
+        "id": 455213,
+        "id_state": 1726,
+        "text": "Cuatro Caminos",
+        "id_country": 82
+    },
+    {
+        "id": 455263,
+        "id_state": 1726,
+        "text": "Cucunubá",
+        "id_country": 82,
+        "nameAve": "CUCUNUBA(CUNDINAMARCA)"
+    },
+    {
+        "id": 455342,
+        "id_state": 1726,
+        "text": "Cundinamarca",
+        "id_country": 82
+    },
+    { "id": 455358, "id_state": 1726, "text": "Curacavi", "id_country": 82 },
+    { "id": 455486, "id_state": 1726, "text": "Diamante", "id_country": 82 },
+    { "id": 455549, "id_state": 1726, "text": "Doradas", "id_country": 82 },
+    {
+        "id": 455575,
+        "id_state": 1726,
+        "text": "Dosquebradas",
+        "id_country": 82
+    },
+    { "id": 455681, "id_state": 1726, "text": "El Alto", "id_country": 82 },
+    { "id": 455697, "id_state": 1726, "text": "El Antojo", "id_country": 82 },
+    { "id": 455708, "id_state": 1726, "text": "El Arenal", "id_country": 82 },
+    { "id": 455767, "id_state": 1726, "text": "El Banco", "id_country": 82 },
+    { "id": 455836, "id_state": 1726, "text": "El Bosque", "id_country": 82 },
+    { "id": 455917, "id_state": 1726, "text": "El Caliche", "id_country": 82 },
+    { "id": 455985, "id_state": 1726, "text": "El Carmen", "id_country": 82 },
+    { "id": 456008, "id_state": 1726, "text": "El Carrizal", "id_country": 82 },
+    { "id": 456021, "id_state": 1726, "text": "El Castillo", "id_country": 82 },
+    { "id": 456059, "id_state": 1726, "text": "El Cedrito", "id_country": 82 },
+    { "id": 456062, "id_state": 1726, "text": "El Cedro", "id_country": 82 },
+    { "id": 456083, "id_state": 1726, "text": "El Centro", "id_country": 82 },
+    { "id": 456166, "id_state": 1726, "text": "El Chorro", "id_country": 82 },
+    { "id": 456170, "id_state": 1726, "text": "El Chucharo", "id_country": 82 },
+    { "id": 456217, "id_state": 1726, "text": "El Codito", "id_country": 82 },
+    {
+        "id": 456220,
+        "id_state": 1726,
+        "text": "El Colegio",
+        "id_country": 82,
+        "nameAve": "EL COLEGIO(CUNDINAMARCA)"
+    },
+    { "id": 456518, "id_state": 1726, "text": "El Encanto", "id_country": 82 },
+    { "id": 456560, "id_state": 1726, "text": "El Espinal", "id_country": 82 },
+    { "id": 456722, "id_state": 1726, "text": "El Hato", "id_country": 82 },
+    { "id": 456890, "id_state": 1726, "text": "El Líbano", "id_country": 82 },
+    { "id": 457110, "id_state": 1726, "text": "El Neusa", "id_country": 82 },
+    { "id": 457119, "id_state": 1726, "text": "El Nogal", "id_country": 82 },
+    { "id": 457509, "id_state": 1726, "text": "El Prado", "id_country": 82 },
+    { "id": 457536, "id_state": 1726, "text": "El Puerto", "id_country": 82 },
+    { "id": 457594, "id_state": 1726, "text": "El Recuendo", "id_country": 82 },
+    {
+        "id": 457648,
+        "id_state": 1726,
+        "text": "El Resguardo",
+        "id_country": 82
+    },
+    {
+        "id": 457728,
+        "id_state": 1726,
+        "text": "El Rosal",
+        "id_country": 82,
+        "nameAve": "EL ROSAL(CUNDINAMARCA)"
+    },
+    { "id": 457786, "id_state": 1726, "text": "El Salitre", "id_country": 82 },
+    { "id": 457833, "id_state": 1726, "text": "El Silencio", "id_country": 82 },
+    { "id": 457970, "id_state": 1726, "text": "El Tesoro", "id_country": 82 },
+    { "id": 458211, "id_state": 1726, "text": "El Zaque", "id_country": 82 },
+    { "id": 458212, "id_state": 1726, "text": "El Zarcillo", "id_country": 82 },
+    { "id": 458243, "id_state": 1726, "text": "Engativá", "id_country": 82 },
+    { "id": 458284, "id_state": 1726, "text": "Esmeralda", "id_country": 82 },
+    { "id": 458313, "id_state": 1726, "text": "Espinal", "id_country": 82 },
+    { "id": 458362, "id_state": 1726, "text": "Europa", "id_country": 82 },
+    {
+        "id": 458372,
+        "id_state": 1726,
+        "text": "Facatativá",
+        "id_country": 82,
+        "nameAve": "FACATATIVA(CUNDINAMARCA)"
+    },
+    { "id": 458449, "id_state": 1726, "text": "Florencia", "id_country": 82 },
+    { "id": 458470, "id_state": 1726, "text": "Florián", "id_country": 82 },
+    { "id": 458491, "id_state": 1726, "text": "Fontibón", "id_country": 82 },
+    {
+        "id": 458500,
+        "id_state": 1726,
+        "text": "Fosca",
+        "id_country": 82,
+        "nameAve": "FOSCA(CUNDINAMARCA)"
+    },
+    { "id": 458531, "id_state": 1726, "text": "Frutica", "id_country": 82 },
+    {
+        "id": 458586,
+        "id_state": 1726,
+        "text": "Funza",
+        "id_country": 82,
+        "nameAve": "FUNZA(CUNDINAMARCA)"
+    },
+    {
+        "id": 458588,
+        "id_state": 1726,
+        "text": "Fúquene",
+        "id_country": 82,
+        "nameAve": "FUQUENE(CUNDINAMARCA)"
+    },
+    {
+        "id": 458589,
+        "id_state": 1726,
+        "text": "Fusagasuga",
+        "id_country": 82,
+        "nameAve": "FUSAGASUGA(CUNDINAMARCA)"
+    },
+    { "id": 458594, "id_state": 1726, "text": "Gabriel", "id_country": 82 },
+    { "id": 458597, "id_state": 1726, "text": "Gachacipa", "id_country": 82 },
+    {
+        "id": 458598,
+        "id_state": 1726,
+        "text": "Gachalá",
+        "id_country": 82,
+        "nameAve": "GACHALA(CUNDINAMARCA)"
+    },
+    {
+        "id": 458599,
+        "id_state": 1726,
+        "text": "Gachancipá",
+        "id_country": 82,
+        "nameAve": "GACHANCIPA(CUNDINAMARCA)"
+    },
+    {
+        "id": 458600,
+        "id_state": 1726,
+        "text": "Gachetá",
+        "id_country": 82,
+        "nameAve": "GACHETA(CUNDINAMARCA)"
+    },
+    { "id": 458701, "id_state": 1726, "text": "Gazaire", "id_country": 82 },
+    { "id": 458719, "id_state": 1726, "text": "Gibraltar", "id_country": 82 },
+    {
+        "id": 458739,
+        "id_state": 1726,
+        "text": "Girardot",
+        "id_country": 82,
+        "nameAve": "GIRARDOT(CUNDINAMARCA)"
+    },
+    {
+        "id": 458784,
+        "id_state": 1726,
+        "text": "Granada",
+        "id_country": 82,
+        "nameAve": "GRANADA(CUNDINAMARCA)"
+    },
+    { "id": 458800, "id_state": 1726, "text": "Granja", "id_country": 82 },
+    { "id": 458834, "id_state": 1726, "text": "Guacamaya", "id_country": 82 },
+    {
+        "id": 458868,
+        "id_state": 1726,
+        "text": "Guachetá",
+        "id_country": 82,
+        "nameAve": "GUACHETA(CUNDINAMARCA)"
+    },
+    { "id": 458922, "id_state": 1726, "text": "Guadualito", "id_country": 82 },
+    {
+        "id": 458932,
+        "id_state": 1726,
+        "text": "Guaduas",
+        "id_country": 82,
+        "nameAve": "GUADUAS(CUNDINAMARCA)"
+    },
+    {
+        "id": 459104,
+        "id_state": 1726,
+        "text": "Guasca",
+        "id_country": 82,
+        "nameAve": "GUASCA(CUNDINAMARCA)"
+    },
+    {
+        "id": 459129,
+        "id_state": 1726,
+        "text": "Guataquí",
+        "id_country": 82,
+        "nameAve": "GUATAQUI(CUNDINAMARCA)"
+    },
+    {
+        "id": 459132,
+        "id_state": 1726,
+        "text": "Guatavita",
+        "id_country": 82,
+        "nameAve": "GUATAVITA(CUNDINAMARCA)"
+    },
+    { "id": 459150, "id_state": 1726, "text": "Guayabal", "id_country": 82 },
+    {
+        "id": 459261,
+        "id_state": 1726,
+        "text": "Gutiérrez",
+        "id_country": 82,
+        "nameAve": "GUTIERREZ(CUNDINAMARCA)"
+    },
+    {
+        "id": 459508,
+        "id_state": 1726,
+        "text": "Hacienda La Verbena",
+        "id_country": 82
+    },
+    { "id": 459734, "id_state": 1726, "text": "Hato Grande", "id_country": 82 },
+    {
+        "id": 459941,
+        "id_state": 1726,
+        "text": "Hoya El Salitre",
+        "id_country": 82
+    },
+    { "id": 460093, "id_state": 1726, "text": "Inglés", "id_country": 82 },
+    { "id": 460246, "id_state": 1726, "text": "Japón", "id_country": 82 },
+    {
+        "id": 460312,
+        "id_state": 1726,
+        "text": "Jerusalén",
+        "id_country": 82,
+        "nameAve": "JERUSALEN(CUNDINAMARCA)"
+    },
+    { "id": 460609, "id_state": 1726, "text": "La Aguada", "id_country": 82 },
+    { "id": 460718, "id_state": 1726, "text": "La Armenia", "id_country": 82 },
+    {
+        "id": 460789,
+        "id_state": 1726,
+        "text": "La Bella Suiza",
+        "id_country": 82
+    },
+    { "id": 460893, "id_state": 1726, "text": "La Cabrera", "id_country": 82 },
+    {
+        "id": 460912,
+        "id_state": 1726,
+        "text": "La Calera",
+        "id_country": 82,
+        "nameAve": "LA CALERA(CUNDINAMARCA)"
+    },
+    { "id": 460962, "id_state": 1726, "text": "La Capilla", "id_country": 82 },
+    { "id": 460986, "id_state": 1726, "text": "La Carolina", "id_country": 82 },
+    { "id": 460991, "id_state": 1726, "text": "La Carrera", "id_country": 82 },
+    { "id": 461146, "id_state": 1726, "text": "La Colorada", "id_country": 82 },
+    { "id": 461218, "id_state": 1726, "text": "La Cruces", "id_country": 82 },
+    { "id": 461295, "id_state": 1726, "text": "La Diana", "id_country": 82 },
+    {
+        "id": 461363,
+        "id_state": 1726,
+        "text": "La Esmeralda",
+        "id_country": 82
+    },
+    {
+        "id": 461385,
+        "id_state": 1726,
+        "text": "La Esperanza",
+        "id_country": 82
+    },
+    { "id": 461406, "id_state": 1726, "text": "La Esperaza", "id_country": 82 },
+    { "id": 461487, "id_state": 1726, "text": "La Floresta", "id_country": 82 },
+    { "id": 461500, "id_state": 1726, "text": "La Florida", "id_country": 82 },
+    { "id": 461531, "id_state": 1726, "text": "La Fragua", "id_country": 82 },
+    { "id": 461534, "id_state": 1726, "text": "La Fragüita", "id_country": 82 },
+    { "id": 461625, "id_state": 1726, "text": "La Granja", "id_country": 82 },
+    { "id": 461646, "id_state": 1726, "text": "La Guaca", "id_country": 82 },
+    {
+        "id": 461696,
+        "id_state": 1726,
+        "text": "Laguna Verde",
+        "id_country": 82
+    },
+    {
+        "id": 462142,
+        "id_state": 1726,
+        "text": "La Mesa",
+        "id_country": 82,
+        "nameAve": "LA MESA(CUNDINAMARCA)"
+    },
+    { "id": 462193, "id_state": 1726, "text": "La Montaña", "id_country": 82 },
+    { "id": 462384, "id_state": 1726, "text": "La Paz", "id_country": 82 },
+    {
+        "id": 462569,
+        "id_state": 1726,
+        "text": "La Primavera",
+        "id_country": 82
+    },
+    { "id": 462687, "id_state": 1726, "text": "La Reliquia", "id_country": 82 },
+    {
+        "id": 462688,
+        "id_state": 1726,
+        "text": "La República",
+        "id_country": 82
+    },
+    { "id": 462762, "id_state": 1726, "text": "Las Aguas", "id_country": 82 },
+    { "id": 462965, "id_state": 1726, "text": "La Serena", "id_country": 82 },
+    {
+        "id": 462990,
+        "id_state": 1726,
+        "text": "Las Gallinetas",
+        "id_country": 82
+    },
+    { "id": 463162, "id_state": 1726, "text": "Las Mesitas", "id_country": 82 },
+    { "id": 463252, "id_state": 1726, "text": "Las Palmas", "id_country": 82 },
+    { "id": 463363, "id_state": 1726, "text": "La Suiza", "id_country": 82 },
+    { "id": 463373, "id_state": 1726, "text": "Las Vegas", "id_country": 82 },
+    {
+        "id": 463557,
+        "id_state": 1726,
+        "text": "La Vega",
+        "id_country": 82,
+        "nameAve": "LA VEGA(CUNDINAMARCA)"
+    },
+    {
+        "id": 463574,
+        "id_state": 1726,
+        "text": "La Vega de San Juan",
+        "id_country": 82
+    },
+    { "id": 463624, "id_state": 1726, "text": "La Victoria", "id_country": 82 },
+    {
+        "id": 463744,
+        "id_state": 1726,
+        "text": "Lenguazaque",
+        "id_country": 82,
+        "nameAve": "LENGUAZAQUE(CUNDINAMARCA)"
+    },
+    { "id": 463758, "id_state": 1726, "text": "Leticia", "id_country": 82 },
+    { "id": 463775, "id_state": 1726, "text": "Liberia", "id_country": 82 },
+    { "id": 463781, "id_state": 1726, "text": "Libertador", "id_country": 82 },
+    { "id": 463917, "id_state": 1726, "text": "Loma Larga", "id_country": 82 },
+    { "id": 463994, "id_state": 1726, "text": "Los Alpes", "id_country": 82 },
+    { "id": 464118, "id_state": 1726, "text": "Los Cedros", "id_country": 82 },
+    { "id": 464127, "id_state": 1726, "text": "Los Cerezos", "id_country": 82 },
+    { "id": 464169, "id_state": 1726, "text": "Los Corales", "id_country": 82 },
+    {
+        "id": 464250,
+        "id_state": 1726,
+        "text": "Los Laureles",
+        "id_country": 82
+    },
+    { "id": 464328, "id_state": 1726, "text": "Los Monos", "id_country": 82 },
+    { "id": 464442, "id_state": 1726, "text": "Los Reyes", "id_country": 82 },
+    { "id": 464451, "id_state": 1726, "text": "Los Sauces", "id_country": 82 },
+    { "id": 464499, "id_state": 1726, "text": "Luchal", "id_country": 82 },
+    {
+        "id": 464578,
+        "id_state": 1726,
+        "text": "Machetá",
+        "id_country": 82,
+        "nameAve": "MACHETA(CUNDINAMARCA)"
+    },
+    {
+        "id": 464618,
+        "id_state": 1726,
+        "text": "Madrid",
+        "id_country": 82,
+        "nameAve": "MADRID(CUNDINAMARCA)"
+    },
+    { "id": 464787, "id_state": 1726, "text": "Manila", "id_country": 82 },
+    {
+        "id": 464798,
+        "id_state": 1726,
+        "text": "Manta",
+        "id_country": 82,
+        "nameAve": "MANTA(CUNDINAMARCA)"
+    },
+    {
+        "id": 464805,
+        "id_state": 1726,
+        "text": "Manuel Norte",
+        "id_country": 82
+    },
+    { "id": 464854, "id_state": 1726, "text": "Maracaibo", "id_country": 82 },
+    { "id": 464965, "id_state": 1726, "text": "Marsella", "id_country": 82 },
+    {
+        "id": 465182,
+        "id_state": 1726,
+        "text": "Medina",
+        "id_country": 82,
+        "nameAve": "MEDINA(CUNDINAMARCA)"
+    },
+    { "id": 465237, "id_state": 1726, "text": "Mesa", "id_country": 82 },
+    { "id": 465262, "id_state": 1726, "text": "Mesitas", "id_country": 82 },
+    {
+        "id": 465286,
+        "id_state": 1726,
+        "text": "Miguel Antonio Caro",
+        "id_country": 82
+    },
+    { "id": 465294, "id_state": 1726, "text": "Milán", "id_country": 82 },
+    { "id": 465319, "id_state": 1726, "text": "Minipí", "id_country": 82 },
+    { "id": 465346, "id_state": 1726, "text": "Miraflores", "id_country": 82 },
+    { "id": 465421, "id_state": 1726, "text": "Modelia", "id_country": 82 },
+    { "id": 465679, "id_state": 1726, "text": "Moscú", "id_country": 82 },
+    {
+        "id": 465687,
+        "id_state": 1726,
+        "text": "Mosquera",
+        "id_country": 82,
+        "nameAve": "MOSQUERA(CUNDINAMARCA)"
+    },
+    { "id": 465728, "id_state": 1726, "text": "Mundo Nuevo", "id_country": 82 },
+    {
+        "id": 465882,
+        "id_state": 1726,
+        "text": "Nemocón",
+        "id_country": 82,
+        "nameAve": "NEMOCON(CUNDINAMARCA)"
+    },
+    {
+        "id": 465898,
+        "id_state": 1726,
+        "text": "Nilo",
+        "id_country": 82,
+        "nameAve": "NILO(CUNDINAMARCA)"
+    },
+    {
+        "id": 465900,
+        "id_state": 1726,
+        "text": "Nimaima",
+        "id_country": 82,
+        "nameAve": "NIMAIMA(CUNDINAMARCA)"
+    },
+    {
+        "id": 465909,
+        "id_state": 1726,
+        "text": "Nocaima",
+        "id_country": 82,
+        "nameAve": "NOCAIMA(CUNDINAMARCA)"
+    },
+    { "id": 465928, "id_state": 1726, "text": "Normandía", "id_country": 82 },
+    { "id": 465933, "id_state": 1726, "text": "Normandia", "id_country": 82 },
+    { "id": 466061, "id_state": 1726, "text": "Olarte", "id_country": 82 },
+    { "id": 466066, "id_state": 1726, "text": "Olaya", "id_country": 82 },
+    {
+        "id": 466072,
+        "id_state": 1726,
+        "text": "Olaya Herrera",
+        "id_country": 82
+    },
+    {
+        "id": 466176,
+        "id_state": 1726,
+        "text": "Pacho",
+        "id_country": 82,
+        "nameAve": "PACHO(CUNDINAMARCA)"
+    },
+    { "id": 466226, "id_state": 1726, "text": "Palacio", "id_country": 82 },
+    { "id": 466231, "id_state": 1726, "text": "Palanquero", "id_country": 82 },
+    { "id": 466256, "id_state": 1726, "text": "Palestina", "id_country": 82 },
+    { "id": 466275, "id_state": 1726, "text": "Palma", "id_country": 82 },
+    {
+        "id": 466292,
+        "id_state": 1726,
+        "text": "Palmar Arriba",
+        "id_country": 82
+    },
+    {
+        "id": 466458,
+        "id_state": 1726,
+        "text": "Pandi",
+        "id_country": 82,
+        "nameAve": "PANDI(CUNDINAMARCA)"
+    },
+    {
+        "id": 466551,
+        "id_state": 1726,
+        "text": "Paratebueno",
+        "id_country": 82,
+        "nameAve": "PARATEBUENO(CUNDINAMARCA)"
+    },
+    { "id": 466590, "id_state": 1726, "text": "Pasadena", "id_country": 82 },
+    {
+        "id": 466600,
+        "id_state": 1726,
+        "text": "Pasca",
+        "id_country": 82,
+        "nameAve": "PASCA(CUNDINAMARCA)"
+    },
+    { "id": 466761, "id_state": 1726, "text": "Pekin", "id_country": 82 },
+    { "id": 467210, "id_state": 1726, "text": "Polinesia", "id_country": 82 },
+    {
+        "id": 467465,
+        "id_state": 1726,
+        "text": "Pueblo Nuevo",
+        "id_country": 82
+    },
+    { "id": 467497, "id_state": 1726, "text": "Puebloviejo", "id_country": 82 },
+    {
+        "id": 467508,
+        "id_state": 1726,
+        "text": "Puente Aranda",
+        "id_country": 82
+    },
+    {
+        "id": 467511,
+        "id_state": 1726,
+        "text": "Puente Batatas",
+        "id_country": 82
+    },
+    {
+        "id": 467602,
+        "id_state": 1726,
+        "text": "Puerto Bogotá",
+        "id_country": 82
+    },
+    {
+        "id": 467872,
+        "id_state": 1726,
+        "text": "Puerto Salgar",
+        "id_country": 82,
+        "nameAve": "PUERTO SALGAR(CUNDINAMARCA)"
+    },
+    {
+        "id": 468035,
+        "id_state": 1726,
+        "text": "Quebradanegra",
+        "id_country": 82,
+        "nameAve": "QUEBRADANEGRA(CUNDINAMARCA)"
+    },
+    {
+        "id": 468059,
+        "id_state": 1726,
+        "text": "Quetame",
+        "id_country": 82,
+        "nameAve": "QUETAME(CUNDINAMARCA)"
+    },
+    {
+        "id": 468114,
+        "id_state": 1726,
+        "text": "Rafael Reyes",
+        "id_country": 82
+    },
+    { "id": 468177, "id_state": 1726, "text": "Recreo", "id_country": 82 },
+    { "id": 468235, "id_state": 1726, "text": "Restrepo", "id_country": 82 },
+    {
+        "id": 468269,
+        "id_state": 1726,
+        "text": "Ricaurte",
+        "id_country": 82,
+        "nameAve": "RICAURTE(CUNDINAMARCA)"
+    },
+    { "id": 468342, "id_state": 1726, "text": "Ríonegro", "id_country": 82 },
+    { "id": 468403, "id_state": 1726, "text": "Roma", "id_country": 82 },
+    { "id": 468587, "id_state": 1726, "text": "Salgar", "id_country": 82 },
+    { "id": 468607, "id_state": 1726, "text": "Salitre", "id_country": 82 },
+    { "id": 468608, "id_state": 1726, "text": "Salitrico", "id_country": 82 },
+    { "id": 468703, "id_state": 1726, "text": "San Antonio", "id_country": 82 },
+    {
+        "id": 468717,
+        "id_state": 1726,
+        "text": "San Antonio de Aguilera",
+        "id_country": 82
+    },
+    {
+        "id": 468756,
+        "id_state": 1726,
+        "text": "San Bernardo",
+        "id_country": 82,
+        "nameAve": "SAN BERNARDO(CUNDINAMARCA)"
+    },
+    { "id": 468768, "id_state": 1726, "text": "San Blas", "id_country": 82 },
+    { "id": 468771, "id_state": 1726, "text": "San Carlos", "id_country": 82 },
+    {
+        "id": 468784,
+        "id_state": 1726,
+        "text": "San Cayetano",
+        "id_country": 82,
+        "nameAve": "SAN CAYETANO(CUNDINAMARCA)"
+    },
+    {
+        "id": 468808,
+        "id_state": 1726,
+        "text": "San Cristóbal",
+        "id_country": 82
+    },
+    {
+        "id": 468848,
+        "id_state": 1726,
+        "text": "San Fernando",
+        "id_country": 82
+    },
+    {
+        "id": 468857,
+        "id_state": 1726,
+        "text": "San Fracisco",
+        "id_country": 82
+    },
+    {
+        "id": 468863,
+        "id_state": 1726,
+        "text": "San Francisco",
+        "id_country": 82,
+        "nameAve": "SAN FRANCISCO(CUNDINAMARCA)"
+    },
+    { "id": 468915, "id_state": 1726, "text": "San Isidro", "id_country": 82 },
+    {
+        "id": 468950,
+        "id_state": 1726,
+        "text": "San Joaquín",
+        "id_country": 82,
+        "nameAve": "SAN JOAQUIN(CUNDINAMARCA)"
+    },
+    { "id": 468980, "id_state": 1726, "text": "San José", "id_country": 82 },
+    { "id": 468997, "id_state": 1726, "text": "San Jose", "id_country": 82 },
+    {
+        "id": 469072,
+        "id_state": 1726,
+        "text": "San Juan de Rioseco",
+        "id_country": 82,
+        "nameAve": "SAN JUAN DE RIOSECO(CUNDINAMARCA)"
+    },
+    { "id": 469109, "id_state": 1726, "text": "San Luis", "id_country": 82 },
+    {
+        "id": 469128,
+        "id_state": 1726,
+        "text": "San Luis de Palomas",
+        "id_country": 82
+    },
+    { "id": 469132, "id_state": 1726, "text": "San Marcos", "id_country": 82 },
+    { "id": 469157, "id_state": 1726, "text": "San Mateo", "id_country": 82 },
+    { "id": 469197, "id_state": 1726, "text": "San Nicolás", "id_country": 82 },
+    { "id": 469240, "id_state": 1726, "text": "San Pedro", "id_country": 82 },
+    {
+        "id": 469266,
+        "id_state": 1726,
+        "text": "San Pedro de Jagua",
+        "id_country": 82
+    },
+    { "id": 469279, "id_state": 1726, "text": "San Rafael", "id_country": 82 },
+    {
+        "id": 469321,
+        "id_state": 1726,
+        "text": "San Sebastián",
+        "id_country": 82
+    },
+    { "id": 469336, "id_state": 1726, "text": "Santa Ana", "id_country": 82 },
+    {
+        "id": 469363,
+        "id_state": 1726,
+        "text": "Santa Barbara",
+        "id_country": 82
+    },
+    {
+        "id": 469370,
+        "id_state": 1726,
+        "text": "Santa Bárbara",
+        "id_country": 82
+    },
+    { "id": 469436, "id_state": 1726, "text": "Santa Elena", "id_country": 82 },
+    {
+        "id": 469474,
+        "id_state": 1726,
+        "text": "Santa Halena",
+        "id_country": 82
+    },
+    {
+        "id": 469479,
+        "id_state": 1726,
+        "text": "Santa Helena",
+        "id_country": 82
+    },
+    {
+        "id": 469511,
+        "id_state": 1726,
+        "text": "Santa Isabel",
+        "id_country": 82
+    },
+    {
+        "id": 469530,
+        "id_state": 1726,
+        "text": "Santa Librada",
+        "id_country": 82
+    },
+    { "id": 469538, "id_state": 1726, "text": "Santa Lucía", "id_country": 82 },
+    { "id": 469549, "id_state": 1726, "text": "Santa Lucia", "id_country": 82 },
+    { "id": 469580, "id_state": 1726, "text": "Santa Marta", "id_country": 82 },
+    { "id": 469625, "id_state": 1726, "text": "Santa Rita", "id_country": 82 },
+    {
+        "id": 469645,
+        "id_state": 1726,
+        "text": "Santa Rita Alta",
+        "id_country": 82
+    },
+    {
+        "id": 469646,
+        "id_state": 1726,
+        "text": "Santa Rita Baja",
+        "id_country": 82
+    },
+    { "id": 469656, "id_state": 1726, "text": "Santa Rosa", "id_country": 82 },
+    {
+        "id": 469685,
+        "id_state": 1726,
+        "text": "Santa Rosita",
+        "id_country": 82
+    },
+    {
+        "id": 469698,
+        "id_state": 1726,
+        "text": "Santa Teresa",
+        "id_country": 82
+    },
+    { "id": 469755, "id_state": 1726, "text": "Santuario", "id_country": 82 },
+    { "id": 469766, "id_state": 1726, "text": "San Vicente", "id_country": 82 },
+    {
+        "id": 469815,
+        "id_state": 1726,
+        "text": "Sasaima",
+        "id_country": 82,
+        "nameAve": "SASAIMA(CUNDINAMARCA)"
+    },
+    { "id": 469821, "id_state": 1726, "text": "Saucio", "id_country": 82 },
+    {
+        "id": 469875,
+        "id_state": 1726,
+        "text": "Sesquilé",
+        "id_country": 82,
+        "nameAve": "SESQUILE(CUNDINAMARCA)"
+    },
+    {
+        "id": 469913,
+        "id_state": 1726,
+        "text": "Sibaté",
+        "id_country": 82,
+        "nameAve": "SIBATE(CUNDINAMARCA)"
+    },
+    {
+        "id": 469957,
+        "id_state": 1726,
+        "text": "Silvania",
+        "id_country": 82,
+        "nameAve": "SILVANIA(CUNDINAMARCA)"
+    },
+    {
+        "id": 469965,
+        "id_state": 1726,
+        "text": "Simijaca",
+        "id_country": 82,
+        "nameAve": "SIMIJACA(CUNDINAMARCA)"
+    },
+    { "id": 469977, "id_state": 1726, "text": "Sinai", "id_country": 82 },
+    {
+        "id": 470044,
+        "id_state": 1726,
+        "text": "Soacha",
+        "id_country": 82,
+        "nameAve": "SOACHA(CUNDINAMARCA)"
+    },
+    {
+        "id": 470099,
+        "id_state": 1726,
+        "text": "Sopó",
+        "id_country": 82,
+        "nameAve": "SOPO(CUNDINAMARCA)"
+    },
+    { "id": 470127, "id_state": 1726, "text": "Suba", "id_country": 82 },
+    {
+        "id": 470128,
+        "id_state": 1726,
+        "text": "Subachoque",
+        "id_country": 82,
+        "nameAve": "SUBACHOQUE(CUNDINAMARCA)"
+    },
+    {
+        "id": 470144,
+        "id_state": 1726,
+        "text": "Suesca",
+        "id_country": 82,
+        "nameAve": "SUESCA(CUNDINAMARCA)"
+    },
+    { "id": 470153, "id_state": 1726, "text": "Sumapaz", "id_country": 82 },
+    {
+        "id": 470171,
+        "id_state": 1726,
+        "text": "Susa",
+        "id_country": 82,
+        "nameAve": "SUSA(CUNDINAMARCA)"
+    },
+    {
+        "id": 470191,
+        "id_state": 1726,
+        "text": "Tabio",
+        "id_country": 82,
+        "nameAve": "TABIO(CUNDINAMARCA)"
+    },
+    { "id": 470215, "id_state": 1726, "text": "Taboga", "id_country": 82 },
+    {
+        "id": 470410,
+        "id_state": 1726,
+        "text": "Tenjo",
+        "id_country": 82,
+        "nameAve": "TENJO(CUNDINAMARCA)"
+    },
+    { "id": 470412, "id_state": 1726, "text": "Tenza", "id_country": 82 },
+    { "id": 470416, "id_state": 1726, "text": "Tequendama", "id_country": 82 },
+    { "id": 470433, "id_state": 1726, "text": "Termópilas", "id_country": 82 },
+    { "id": 470450, "id_state": 1726, "text": "Teusacá", "id_country": 82 },
+    { "id": 470462, "id_state": 1726, "text": "Tibitó", "id_country": 82 },
+    { "id": 470528, "id_state": 1726, "text": "Tilatá", "id_country": 82 },
+    { "id": 470532, "id_state": 1726, "text": "Timbalá", "id_country": 82 },
+    {
+        "id": 470570,
+        "id_state": 1726,
+        "text": "Tocaima",
+        "id_country": 82,
+        "nameAve": "TOCAIMA(CUNDINAMARCA)"
+    },
+    {
+        "id": 470573,
+        "id_state": 1726,
+        "text": "Tocancipá",
+        "id_country": 82,
+        "nameAve": "TOCANCIPA(CUNDINAMARCA)"
+    },
+    { "id": 470608, "id_state": 1726, "text": "Tolemaida", "id_country": 82 },
+    {
+        "id": 470645,
+        "id_state": 1726,
+        "text": "Topaipí",
+        "id_country": 82,
+        "nameAve": "TOPAIPI(CUNDINAMARCA)"
+    },
+    {
+        "id": 470747,
+        "id_state": 1726,
+        "text": "Tres Esquinas",
+        "id_country": 82
+    },
+    { "id": 470857, "id_state": 1726, "text": "Tunjuelito", "id_country": 82 },
+    { "id": 470858, "id_state": 1726, "text": "Tunjuelo", "id_country": 82 },
+    {
+        "id": 470895,
+        "id_state": 1726,
+        "text": "Ubalá",
+        "id_country": 82,
+        "nameAve": "UBALA(CUNDINAMARCA)"
+    },
+    {
+        "id": 470897,
+        "id_state": 1726,
+        "text": "Ubaque",
+        "id_country": 82,
+        "nameAve": "UBAQUE(CUNDINAMARCA)"
+    },
+    {
+        "id": 470898,
+        "id_state": 1726,
+        "text": "Ubaté",
+        "id_country": 82,
+        "nameAve": "UBATE(CUNDINAMARCA)"
+    },
+    {
+        "id": 470918,
+        "id_state": 1726,
+        "text": "Une",
+        "id_country": 82,
+        "nameAve": "UNE(CUNDINAMARCA)"
+    },
+    { "id": 470985, "id_state": 1726, "text": "Usaquén", "id_country": 82 },
+    { "id": 470988, "id_state": 1726, "text": "Usme", "id_country": 82 },
+    {
+        "id": 470992,
+        "id_state": 1726,
+        "text": "Utica",
+        "id_country": 82,
+        "nameAve": "UTICA(CUNDINAMARCA)"
+    },
+    { "id": 471030, "id_state": 1726, "text": "Valle", "id_country": 82 },
+    { "id": 471076, "id_state": 1726, "text": "Vega", "id_country": 82 },
+    {
+        "id": 471101,
+        "id_state": 1726,
+        "text": "Veinte de Julio",
+        "id_country": 82
+    },
+    {
+        "id": 471124,
+        "id_state": 1726,
+        "text": "Venecia",
+        "id_country": 82,
+        "nameAve": "VENECIA(CUNDINAMARCA)"
+    },
+    {
+        "id": 471197,
+        "id_state": 1726,
+        "text": "Vergara",
+        "id_country": 82,
+        "nameAve": "VERGARA(CUNDINAMARCA)"
+    },
+    { "id": 471203, "id_state": 1726, "text": "Vergel", "id_country": 82 },
+    { "id": 471207, "id_state": 1726, "text": "Versalles", "id_country": 82 },
+    { "id": 471282, "id_state": 1726, "text": "Villa Diana", "id_country": 82 },
+    {
+        "id": 471307,
+        "id_state": 1726,
+        "text": "Villagómez",
+        "id_country": 82,
+        "nameAve": "VILLAGOMEZ(CUNDINAMARCA)"
+    },
+    {
+        "id": 471319,
+        "id_state": 1726,
+        "text": "Villa Javier",
+        "id_country": 82
+    },
+    {
+        "id": 471380,
+        "id_state": 1726,
+        "text": "Villapinzón",
+        "id_country": 82,
+        "nameAve": "VILLAPINZON(CUNDINAMARCA)"
+    },
+    { "id": 471390, "id_state": 1726, "text": "Villa Rosa", "id_country": 82 },
+    { "id": 471415, "id_state": 1726, "text": "Villa Vista", "id_country": 82 },
+    {
+        "id": 471420,
+        "id_state": 1726,
+        "text": "Villeta",
+        "id_country": 82,
+        "nameAve": "VILLETA(CUNDINAMARCA)"
+    },
+    {
+        "id": 471426,
+        "id_state": 1726,
+        "text": "Viotá",
+        "id_country": 82,
+        "nameAve": "VIOTA(CUNDINAMARCA)"
+    },
+    {
+        "id": 471490,
+        "id_state": 1726,
+        "text": "Yacopí",
+        "id_country": 82,
+        "nameAve": "YACOPI(CUNDINAMARCA)"
+    },
+    { "id": 471560, "id_state": 1726, "text": "Yerbabuena", "id_country": 82 },
+    { "id": 471633, "id_state": 1726, "text": "Zamora", "id_country": 82 },
+    { "id": 471687, "id_state": 1726, "text": "Zelandia", "id_country": 82 },
+    {
+        "id": 471689,
+        "id_state": 1726,
+        "text": "Zipacón",
+        "id_country": 82,
+        "nameAve": "ZIPACON(CUNDINAMARCA)"
+    },
+    {
+        "id": 471690,
+        "id_state": 1726,
+        "text": "Zipaquirá",
+        "id_country": 82,
+        "nameAve": "ZIPAQUIRA(CUNDINAMARCA)"
+    },
+    { "id": 471702, "id_state": 1726, "text": "Zumbamicos", "id_country": 82 },
+    {
+        "id": 790540,
+        "id_state": 1726,
+        "text": "Cambao",
+        "id_country": 82,
+        "nameAve": "CAMBAO(CUNDINAMARCA)"
+    },
+    {
+        "id": 790579,
+        "id_state": 1726,
+        "text": "Chaguani",
+        "id_country": 82,
+        "nameAve": "CHAGUANI(CUNDINAMARCA)"
+    },
+    {
+        "id": 790586,
+        "id_state": 1726,
+        "text": "Chinauta",
+        "id_country": 82,
+        "nameAve": "CHINAUTA(CUNDINAMARCA)"
+    },
+    {
+        "id": 790737,
+        "id_state": 1726,
+        "text": "El penon",
+        "id_country": 82,
+        "nameAve": "EL PENON(CUNDINAMARCA)"
+    },
+    {
+        "id": 790780,
+        "id_state": 1726,
+        "text": "Fomeque",
+        "id_country": 82,
+        "nameAve": "FOMEQUE(CUNDINAMARCA)"
+    },
+    {
+        "id": 790787,
+        "id_state": 1726,
+        "text": "Gama",
+        "id_country": 82,
+        "nameAve": "GAMA(CUNDINAMARCA)"
+    },
+    {
+        "id": 790818,
+        "id_state": 1726,
+        "text": "Guayabal de siquima",
+        "id_country": 82,
+        "nameAve": "GUAYABAL DE SIQUIMA(CUNDINAMARCA)"
+    },
+    {
+        "id": 790820,
+        "id_state": 1726,
+        "text": "Guayabetal",
+        "id_country": 82,
+        "nameAve": "GUAYABETAL(CUNDINAMARCA)"
+    },
+    {
+        "id": 790844,
+        "id_state": 1726,
+        "text": "Junin",
+        "id_country": 82,
+        "nameAve": "JUNIN(CUNDINAMARCA)"
+    },
+    {
+        "id": 790908,
+        "id_state": 1726,
+        "text": "La palma",
+        "id_country": 82,
+        "nameAve": "LA PALMA(CUNDINAMARCA)"
+    },
+    {
+        "id": 790911,
+        "id_state": 1726,
+        "text": "La pena",
+        "id_country": 82,
+        "nameAve": "LA PENA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791015,
+        "id_state": 1726,
+        "text": "Maya",
+        "id_country": 82,
+        "nameAve": "MAYA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791047,
+        "id_state": 1726,
+        "text": "Narino",
+        "id_country": 82,
+        "nameAve": "NARINO(CUNDINAMARCA)"
+    },
+    {
+        "id": 791078,
+        "id_state": 1726,
+        "text": "Paime",
+        "id_country": 82,
+        "nameAve": "PAIME(CUNDINAMARCA)"
+    },
+    {
+        "id": 791152,
+        "id_state": 1726,
+        "text": "Puente de piedra",
+        "id_country": 82,
+        "nameAve": "PUENTE DE PIEDRA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791153,
+        "id_state": 1726,
+        "text": "Puente quetame",
+        "id_country": 82,
+        "nameAve": "PUENTE QUETAME(CUNDINAMARCA)"
+    },
+    {
+        "id": 791171,
+        "id_state": 1726,
+        "text": "Puli",
+        "id_country": 82,
+        "nameAve": "PULI(CUNDINAMARCA)"
+    },
+    {
+        "id": 791180,
+        "id_state": 1726,
+        "text": "Quipile",
+        "id_country": 82,
+        "nameAve": "QUIPILE(CUNDINAMARCA)"
+    },
+    {
+        "id": 791227,
+        "id_state": 1726,
+        "text": "San antonio del tequendama",
+        "id_country": 82,
+        "nameAve": "SAN ANTONIO DEL TEQUENDAMA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791296,
+        "id_state": 1726,
+        "text": "Santandercito",
+        "id_country": 82,
+        "nameAve": "SANTANDERCITO(CUNDINAMARCA)"
+    },
+    {
+        "id": 791324,
+        "id_state": 1726,
+        "text": "Subia",
+        "id_country": 82,
+        "nameAve": "SUBIA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791326,
+        "id_state": 1726,
+        "text": "Supata",
+        "id_country": 82,
+        "nameAve": "SUPATA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791330,
+        "id_state": 1726,
+        "text": "Sutatausa",
+        "id_country": 82,
+        "nameAve": "SUTATAUSA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791339,
+        "id_state": 1726,
+        "text": "Tausa",
+        "id_country": 82,
+        "nameAve": "TAUSA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791340,
+        "id_state": 1726,
+        "text": "Tena",
+        "id_country": 82,
+        "nameAve": "TENA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791345,
+        "id_state": 1726,
+        "text": "Tibacuy",
+        "id_country": 82,
+        "nameAve": "TIBACUY(CUNDINAMARCA)"
+    },
+    {
+        "id": 791348,
+        "id_state": 1726,
+        "text": "Tibirita",
+        "id_country": 82,
+        "nameAve": "TIBIRITA(CUNDINAMARCA)"
+    },
+    {
+        "id": 791389,
+        "id_state": 1726,
+        "text": "Viani",
+        "id_country": 82,
+        "nameAve": "VIANI(CUNDINAMARCA)"
+    },
+    {
+        "id": 452091,
+        "id_state": 1727,
+        "text": "Barrio Boyacá",
+        "id_country": 82
+    },
+    { "id": 452296, "id_state": 1727, "text": "Betania", "id_country": 82 },
+    { "id": 452315, "id_state": 1727, "text": "Bethania", "id_country": 82 },
+    { "id": 452584, "id_state": 1727, "text": "Boyacá", "id_country": 82 },
+    { "id": 452598, "id_state": 1727, "text": "Bravo Páez", "id_country": 82 },
+    { "id": 452685, "id_state": 1727, "text": "Buenavista", "id_country": 82 },
+    { "id": 452761, "id_state": 1727, "text": "Caballería", "id_country": 82 },
+    { "id": 452783, "id_state": 1727, "text": "Cabquita", "id_country": 82 },
+    {
+        "id": 467618,
+        "id_state": 1727,
+        "text": "Puerto Caldas",
+        "id_country": 82
+    },
+    {
+        "id": 467673,
+        "id_state": 1727,
+        "text": "Puerto de Oro",
+        "id_country": 82
+    },
+    {
+        "id": 790236,
+        "id_state": 1727,
+        "text": "Antonio Nariño",
+        "id_country": 82
+    },
+    {
+        "id": 790237,
+        "id_state": 1727,
+        "text": "Barrios Unidos",
+        "id_country": 82
+    },
+    { "id": 790238, "id_state": 1727, "text": "Bosa", "id_country": 82 },
+    { "id": 790239, "id_state": 1727, "text": "Chapinero", "id_country": 82 },
+    {
+        "id": 790240,
+        "id_state": 1727,
+        "text": "Ciudad Bolívar",
+        "id_country": 82
+    },
+    { "id": 790241, "id_state": 1727, "text": "Engativá", "id_country": 82 },
+    { "id": 790242, "id_state": 1727, "text": "Fontibón", "id_country": 82 },
+    { "id": 790243, "id_state": 1727, "text": "Kennedy", "id_country": 82 },
+    {
+        "id": 790244,
+        "id_state": 1727,
+        "text": "La Candelaria",
+        "id_country": 82
+    },
+    {
+        "id": 790245,
+        "id_state": 1727,
+        "text": "Los Mártires",
+        "id_country": 82
+    },
+    {
+        "id": 790246,
+        "id_state": 1727,
+        "text": "Puente Aranda",
+        "id_country": 82
+    },
+    {
+        "id": 790247,
+        "id_state": 1727,
+        "text": "Rafael Uribe Uribe",
+        "id_country": 82
+    },
+    {
+        "id": 790248,
+        "id_state": 1727,
+        "text": "San Cristóbal",
+        "id_country": 82
+    },
+    { "id": 790249, "id_state": 1727, "text": "Santa fe", "id_country": 82 },
+    { "id": 790250, "id_state": 1727, "text": "Suba", "id_country": 82 },
+    { "id": 790251, "id_state": 1727, "text": "Sumapaz", "id_country": 82 },
+    { "id": 790252, "id_state": 1727, "text": "Teusaquillo", "id_country": 82 },
+    { "id": 790253, "id_state": 1727, "text": "Tunjuelito", "id_country": 82 },
+    { "id": 790254, "id_state": 1727, "text": "Usaquén", "id_country": 82 },
+    { "id": 790255, "id_state": 1727, "text": "Usme", "id_country": 82 },
+    {
+        "id": 788717,
+        "id_state": 1730,
+        "text": "Manizales",
+        "id_country": 82,
+        "nameAve": "MANIZALES(CALDAS)"
+    },
+    {
+        "id": 790442,
+        "id_state": 1730,
+        "text": "Agua bonita",
+        "id_country": 82,
+        "nameAve": "AGUA BONITA(CALDAS)"
+    },
+    {
+        "id": 790446,
+        "id_state": 1730,
+        "text": "Aguadas",
+        "id_country": 82,
+        "nameAve": "AGUADAS(CALDAS)"
+    },
+    {
+        "id": 790454,
+        "id_state": 1730,
+        "text": "Alto bonito",
+        "id_country": 82,
+        "nameAve": "ALTO BONITO(CALDAS)"
+    },
+    {
+        "id": 790455,
+        "id_state": 1730,
+        "text": "Alto de lisboa",
+        "id_country": 82,
+        "nameAve": "ALTO DE LISBOA(CALDAS)"
+    },
+    {
+        "id": 790456,
+        "id_state": 1730,
+        "text": "Alto del naranjo",
+        "id_country": 82,
+        "nameAve": "ALTO DEL NARANJO(CALDAS)"
+    },
+    {
+        "id": 790459,
+        "id_state": 1730,
+        "text": "Alto tablazo",
+        "id_country": 82,
+        "nameAve": "ALTO TABLAZO(CALDAS)"
+    },
+    {
+        "id": 790463,
+        "id_state": 1730,
+        "text": "Anserma",
+        "id_country": 82,
+        "nameAve": "ANSERMA(CALDAS)"
+    },
+    {
+        "id": 790467,
+        "id_state": 1730,
+        "text": "Aranzazu",
+        "id_country": 82,
+        "nameAve": "ARANZAZU(CALDAS)"
+    },
+    {
+        "id": 790469,
+        "id_state": 1730,
+        "text": "Arauca",
+        "id_country": 82,
+        "nameAve": "ARAUCA(CALDAS)"
+    },
+    {
+        "id": 790484,
+        "id_state": 1730,
+        "text": "Bajo tablazo",
+        "id_country": 82,
+        "nameAve": "BAJO TABLAZO(CALDAS)"
+    },
+    {
+        "id": 790498,
+        "id_state": 1730,
+        "text": "Belalcazar",
+        "id_country": 82,
+        "nameAve": "BELALCAZAR(CALDAS)"
+    },
+    {
+        "id": 790511,
+        "id_state": 1730,
+        "text": "Bolivia",
+        "id_country": 82,
+        "nameAve": "BOLIVIA(CALDAS)"
+    },
+    {
+        "id": 790524,
+        "id_state": 1730,
+        "text": "Buena vista",
+        "id_country": 82,
+        "nameAve": "BUENA VISTA(CALDAS)"
+    },
+    {
+        "id": 790588,
+        "id_state": 1730,
+        "text": "Chinchina",
+        "id_country": 82,
+        "nameAve": "CHINCHINA(CALDAS)"
+    },
+    {
+        "id": 790650,
+        "id_state": 1730,
+        "text": "Condominio portal de los cerezos",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO PORTAL DE LOS CEREZOS(CALDAS)"
+    },
+    {
+        "id": 790651,
+        "id_state": 1730,
+        "text": "Condominio reserva de los alamos",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO RESERVA DE LOS ALAMOS(CALDAS)"
+    },
+    {
+        "id": 790652,
+        "id_state": 1730,
+        "text": "Condominio san bernardo del viento",
+        "id_country": 82,
+        "nameAve": "CONDOMINIO SAN BERNARDO DEL VIENTO(CALDAS)"
+    },
+    {
+        "id": 790686,
+        "id_state": 1730,
+        "text": "El aguila",
+        "id_country": 82,
+        "nameAve": "EL AGUILA(CALDAS)"
+    },
+    {
+        "id": 790688,
+        "id_state": 1730,
+        "text": "El arenillo",
+        "id_country": 82,
+        "nameAve": "EL ARENILLO(CALDAS)"
+    },
+    {
+        "id": 790732,
+        "id_state": 1730,
+        "text": "El naranjo",
+        "id_country": 82,
+        "nameAve": "EL NARANJO(CALDAS)"
+    },
+    {
+        "id": 790776,
+        "id_state": 1730,
+        "text": "Filadelfia",
+        "id_country": 82,
+        "nameAve": "FILADELFIA(CALDAS)"
+    },
+    {
+        "id": 790846,
+        "id_state": 1730,
+        "text": "Kilometro 41 - colombia",
+        "id_country": 82,
+        "nameAve": "KILOMETRO 41 - COLOMBIA(CALDAS)"
+    },
+    {
+        "id": 790853,
+        "id_state": 1730,
+        "text": "La aurora",
+        "id_country": 82,
+        "nameAve": "LA AURORA(CALDAS)"
+    },
+    {
+        "id": 790858,
+        "id_state": 1730,
+        "text": "La cabana",
+        "id_country": 82,
+        "nameAve": "LA CABANA(CALDAS)"
+    },
+    {
+        "id": 790872,
+        "id_state": 1730,
+        "text": "La cuchilla del salado",
+        "id_country": 82,
+        "nameAve": "LA CUCHILLA DEL SALADO(CALDAS)"
+    },
+    {
+        "id": 790875,
+        "id_state": 1730,
+        "text": "La dorada",
+        "id_country": 82,
+        "nameAve": "LA DORADA(CALDAS)"
+    },
+    {
+        "id": 790887,
+        "id_state": 1730,
+        "text": "La garrucha",
+        "id_country": 82,
+        "nameAve": "LA GARRUCHA(CALDAS)"
+    },
+    {
+        "id": 790900,
+        "id_state": 1730,
+        "text": "La merced",
+        "id_country": 82,
+        "nameAve": "LA MERCED(CALDAS)"
+    },
+    {
+        "id": 790954,
+        "id_state": 1730,
+        "text": "Las pavas",
+        "id_country": 82,
+        "nameAve": "LAS PAVAS(CALDAS)"
+    },
+    {
+        "id": 790994,
+        "id_state": 1730,
+        "text": "Manzanares",
+        "id_country": 82,
+        "nameAve": "MANZANARES(CALDAS)"
+    },
+    {
+        "id": 791005,
+        "id_state": 1730,
+        "text": "Marmato",
+        "id_country": 82,
+        "nameAve": "MARMATO(CALDAS)"
+    },
+    {
+        "id": 791006,
+        "id_state": 1730,
+        "text": "Marquetalia",
+        "id_country": 82,
+        "nameAve": "MARQUETALIA(CALDAS)"
+    },
+    {
+        "id": 791009,
+        "id_state": 1730,
+        "text": "Marulanda",
+        "id_country": 82,
+        "nameAve": "MARULANDA(CALDAS)"
+    },
+    {
+        "id": 791023,
+        "id_state": 1730,
+        "text": "Mina rica",
+        "id_country": 82,
+        "nameAve": "MINA RICA(CALDAS)"
+    },
+    {
+        "id": 791050,
+        "id_state": 1730,
+        "text": "Neira",
+        "id_country": 82,
+        "nameAve": "NEIRA(CALDAS)"
+    },
+    {
+        "id": 791053,
+        "id_state": 1730,
+        "text": "Norcasia",
+        "id_country": 82,
+        "nameAve": "NORCASIA(CALDAS)"
+    },
+    {
+        "id": 791074,
+        "id_state": 1730,
+        "text": "Pacora",
+        "id_country": 82,
+        "nameAve": "PACORA(CALDAS)"
+    },
+    {
+        "id": 791082,
+        "id_state": 1730,
+        "text": "Palestina",
+        "id_country": 82,
+        "nameAve": "PALESTINA(CALDAS)"
+    },
+    {
+        "id": 791107,
+        "id_state": 1730,
+        "text": "Pensilvania",
+        "id_country": 82,
+        "nameAve": "PENSILVANIA(CALDAS)"
+    },
+    {
+        "id": 791198,
+        "id_state": 1730,
+        "text": "Riosucio",
+        "id_country": 82,
+        "nameAve": "RIOSUCIO(CALDAS)"
+    },
+    {
+        "id": 791199,
+        "id_state": 1730,
+        "text": "Risaralda",
+        "id_country": 82,
+        "nameAve": "RISARALDA(CALDAS)"
+    },
+    {
+        "id": 791211,
+        "id_state": 1730,
+        "text": "Salamina",
+        "id_country": 82,
+        "nameAve": "SALAMINA(CALDAS)"
+    },
+    {
+        "id": 791216,
+        "id_state": 1730,
+        "text": "Samana",
+        "id_country": 82,
+        "nameAve": "SAMANA(CALDAS)"
+    },
+    {
+        "id": 791247,
+        "id_state": 1730,
+        "text": "San jose",
+        "id_country": 82,
+        "nameAve": "SAN JOSE(CALDAS)"
+    },
+    {
+        "id": 791264,
+        "id_state": 1730,
+        "text": "San peregrino",
+        "id_country": 82,
+        "nameAve": "SAN PEREGRINO(CALDAS)"
+    },
+    {
+        "id": 791327,
+        "id_state": 1730,
+        "text": "Supia",
+        "id_country": 82,
+        "nameAve": "SUPIA(CALDAS)"
+    },
+    {
+        "id": 791390,
+        "id_state": 1730,
+        "text": "Victoria",
+        "id_country": 82,
+        "nameAve": "VICTORIA(CALDAS)"
+    },
+    {
+        "id": 791408,
+        "id_state": 1730,
+        "text": "Villamaria",
+        "id_country": 82,
+        "nameAve": "VILLAMARIA(CALDAS)"
+    },
+    {
+        "id": 791412,
+        "id_state": 1730,
+        "text": "Viterbo",
+        "id_country": 82,
+        "nameAve": "VITERBO(CALDAS)"
+    },
+    {
+        "id": 788718,
+        "id_state": 1731,
+        "text": "Santa Marta",
+        "id_country": 82,
+        "nameAve": "SANTA MARTA(MAGDALENA)"
+    },
+    {
+        "id": 790449,
+        "id_state": 1731,
+        "text": "Algarrobo",
+        "id_country": 82,
+        "nameAve": "ALGARROBO(MAGDALENA)"
+    },
+    {
+        "id": 790466,
+        "id_state": 1731,
+        "text": "Aracataca",
+        "id_country": 82,
+        "nameAve": "ARACATACA(MAGDALENA)"
+    },
+    {
+        "id": 790513,
+        "id_state": 1731,
+        "text": "Bonda",
+        "id_country": 82,
+        "nameAve": "BONDA(MAGDALENA)"
+    },
+    {
+        "id": 790528,
+        "id_state": 1731,
+        "text": "Buritaca",
+        "id_country": 82,
+        "nameAve": "BURITACA(MAGDALENA)"
+    },
+    {
+        "id": 790530,
+        "id_state": 1731,
+        "text": "Cabanas de buritaca",
+        "id_country": 82,
+        "nameAve": "CABANAS DE BURITACA(MAGDALENA)"
+    },
+    {
+        "id": 790534,
+        "id_state": 1731,
+        "text": "Calabazo",
+        "id_country": 82,
+        "nameAve": "CALABAZO(MAGDALENA)"
+    },
+    {
+        "id": 790576,
+        "id_state": 1731,
+        "text": "Cerro de san antonio",
+        "id_country": 82,
+        "nameAve": "CERRO DE SAN ANTONIO(MAGDALENA)"
+    },
+    {
+        "id": 790595,
+        "id_state": 1731,
+        "text": "Chivolo",
+        "id_country": 82,
+        "nameAve": "CHIVOLO(MAGDALENA)"
+    },
+    {
+        "id": 790600,
+        "id_state": 1731,
+        "text": "Cienaga",
+        "id_country": 82,
+        "nameAve": "CIENAGA(MAGDALENA)"
+    },
+    {
+        "id": 790638,
+        "id_state": 1731,
+        "text": "Concordia",
+        "id_country": 82,
+        "nameAve": "CONCORDIA(MAGDALENA)"
+    },
+    {
+        "id": 790673,
+        "id_state": 1731,
+        "text": "Curvalito",
+        "id_country": 82,
+        "nameAve": "CURVALITO(MAGDALENA)"
+    },
+    {
+        "id": 790677,
+        "id_state": 1731,
+        "text": "Don diego",
+        "id_country": 82,
+        "nameAve": "DON DIEGO(MAGDALENA)"
+    },
+    {
+        "id": 790689,
+        "id_state": 1731,
+        "text": "El banco",
+        "id_country": 82,
+        "nameAve": "EL BANCO(MAGDALENA)"
+    },
+    {
+        "id": 790711,
+        "id_state": 1731,
+        "text": "El dificil",
+        "id_country": 82,
+        "nameAve": "EL DIFICIL(MAGDALENA)"
+    },
+    {
+        "id": 790739,
+        "id_state": 1731,
+        "text": "El pinon",
+        "id_country": 82,
+        "nameAve": "EL PINON(MAGDALENA)"
+    },
+    {
+        "id": 790754,
+        "id_state": 1731,
+        "text": "El reten",
+        "id_country": 82,
+        "nameAve": "EL RETEN(MAGDALENA)"
+    },
+    {
+        "id": 790765,
+        "id_state": 1731,
+        "text": "El trompito",
+        "id_country": 82,
+        "nameAve": "EL TROMPITO(MAGDALENA)"
+    },
+    {
+        "id": 790782,
+        "id_state": 1731,
+        "text": "Fundacion",
+        "id_country": 82,
+        "nameAve": "FUNDACION(MAGDALENA)"
+    },
+    {
+        "id": 790796,
+        "id_state": 1731,
+        "text": "Guacamayal",
+        "id_country": 82,
+        "nameAve": "GUACAMAYAL(MAGDALENA)"
+    },
+    {
+        "id": 790799,
+        "id_state": 1731,
+        "text": "Guachaca",
+        "id_country": 82,
+        "nameAve": "GUACHACA(MAGDALENA)"
+    },
+    {
+        "id": 790808,
+        "id_state": 1731,
+        "text": "Guamachito",
+        "id_country": 82,
+        "nameAve": "GUAMACHITO(MAGDALENA)"
+    },
+    {
+        "id": 790809,
+        "id_state": 1731,
+        "text": "Guamal",
+        "id_country": 82,
+        "nameAve": "GUAMAL(MAGDALENA)"
+    },
+    {
+        "id": 790847,
+        "id_state": 1731,
+        "text": "La aguacatera",
+        "id_country": 82,
+        "nameAve": "LA AGUACATERA(MAGDALENA)"
+    },
+    {
+        "id": 790913,
+        "id_state": 1731,
+        "text": "La quinina",
+        "id_country": 82,
+        "nameAve": "LA QUININA(MAGDALENA)"
+    },
+    {
+        "id": 790915,
+        "id_state": 1731,
+        "text": "La revuelta",
+        "id_country": 82,
+        "nameAve": "LA REVUELTA(MAGDALENA)"
+    },
+    {
+        "id": 790961,
+        "id_state": 1731,
+        "text": "Linderos",
+        "id_country": 82,
+        "nameAve": "LINDEROS(MAGDALENA)"
+    },
+    {
+        "id": 790969,
+        "id_state": 1731,
+        "text": "Los andes",
+        "id_country": 82,
+        "nameAve": "LOS ANDES(MAGDALENA)"
+    },
+    {
+        "id": 790973,
+        "id_state": 1731,
+        "text": "Los cocos",
+        "id_country": 82,
+        "nameAve": "LOS COCOS(MAGDALENA)"
+    },
+    {
+        "id": 790981,
+        "id_state": 1731,
+        "text": "Los naranjos",
+        "id_country": 82,
+        "nameAve": "LOS NARANJOS(MAGDALENA)"
+    },
+    {
+        "id": 790989,
+        "id_state": 1731,
+        "text": "Machete pelao",
+        "id_country": 82,
+        "nameAve": "MACHETE PELAO(MAGDALENA)"
+    },
+    {
+        "id": 791022,
+        "id_state": 1731,
+        "text": "Mendihuaca",
+        "id_country": 82,
+        "nameAve": "MENDIHUACA(MAGDALENA)"
+    },
+    {
+        "id": 791024,
+        "id_state": 1731,
+        "text": "Minca",
+        "id_country": 82,
+        "nameAve": "MINCA(MAGDALENA)"
+    },
+    {
+        "id": 791055,
+        "id_state": 1731,
+        "text": "Nueva granada",
+        "id_country": 82,
+        "nameAve": "NUEVA GRANADA(MAGDALENA)"
+    },
+    {
+        "id": 791062,
+        "id_state": 1731,
+        "text": "Nuevo mejico",
+        "id_country": 82,
+        "nameAve": "NUEVO MEJICO(MAGDALENA)"
+    },
+    {
+        "id": 791069,
+        "id_state": 1731,
+        "text": "Orihueca",
+        "id_country": 82,
+        "nameAve": "ORIHUECA(MAGDALENA)"
+    },
+    {
+        "id": 791101,
+        "id_state": 1731,
+        "text": "Paz del caribe",
+        "id_country": 82,
+        "nameAve": "PAZ DEL CARIBE(MAGDALENA)"
+    },
+    {
+        "id": 791102,
+        "id_state": 1731,
+        "text": "Pedraza",
+        "id_country": 82,
+        "nameAve": "PEDRAZA(MAGDALENA)"
+    },
+    {
+        "id": 791110,
+        "id_state": 1731,
+        "text": "Perico aguao",
+        "id_country": 82,
+        "nameAve": "PERICO AGUAO(MAGDALENA)"
+    },
+    {
+        "id": 791120,
+        "id_state": 1731,
+        "text": "Pijino del carmen",
+        "id_country": 82,
+        "nameAve": "PIJINO DEL CARMEN(MAGDALENA)"
+    },
+    {
+        "id": 791127,
+        "id_state": 1731,
+        "text": "Pivijay",
+        "id_country": 82,
+        "nameAve": "PIVIJAY(MAGDALENA)"
+    },
+    {
+        "id": 791132,
+        "id_state": 1731,
+        "text": "Plato",
+        "id_country": 82,
+        "nameAve": "PLATO(MAGDALENA)"
+    },
+    {
+        "id": 791146,
+        "id_state": 1731,
+        "text": "Pueblo nuevo",
+        "id_country": 82,
+        "nameAve": "PUEBLO NUEVO(MAGDALENA)"
+    },
+    {
+        "id": 791150,
+        "id_state": 1731,
+        "text": "Puebloviejo",
+        "id_country": 82,
+        "nameAve": "PUEBLOVIEJO(MAGDALENA)"
+    },
+    {
+        "id": 791178,
+        "id_state": 1731,
+        "text": "Quebrada valencia",
+        "id_country": 82,
+        "nameAve": "QUEBRADA VALENCIA(MAGDALENA)"
+    },
+    {
+        "id": 791189,
+        "id_state": 1731,
+        "text": "Remolino",
+        "id_country": 82,
+        "nameAve": "REMOLINO(MAGDALENA)"
+    },
+    {
+        "id": 791194,
+        "id_state": 1731,
+        "text": "Rio frio",
+        "id_country": 82,
+        "nameAve": "RIO FRIO(MAGDALENA)"
+    },
+    {
+        "id": 791207,
+        "id_state": 1731,
+        "text": "Sabanas de san angel",
+        "id_country": 82,
+        "nameAve": "SABANAS DE SAN ANGEL(MAGDALENA)"
+    },
+    {
+        "id": 791212,
+        "id_state": 1731,
+        "text": "Salamina",
+        "id_country": 82,
+        "nameAve": "SALAMINA(MAGDALENA)"
+    },
+    {
+        "id": 791268,
+        "id_state": 1731,
+        "text": "San sebastian de buenavista",
+        "id_country": 82,
+        "nameAve": "SAN SEBASTIAN DE BUENAVISTA(MAGDALENA)"
+    },
+    {
+        "id": 791270,
+        "id_state": 1731,
+        "text": "San tropel",
+        "id_country": 82,
+        "nameAve": "SAN TROPEL(MAGDALENA)"
+    },
+    {
+        "id": 791271,
+        "id_state": 1731,
+        "text": "San zenon",
+        "id_country": 82,
+        "nameAve": "SAN ZENON(MAGDALENA)"
+    },
+    {
+        "id": 791274,
+        "id_state": 1731,
+        "text": "Santa ana",
+        "id_country": 82,
+        "nameAve": "SANTA ANA(MAGDALENA)"
+    },
+    {
+        "id": 791275,
+        "id_state": 1731,
+        "text": "Santa barbara de pinto",
+        "id_country": 82,
+        "nameAve": "SANTA BARBARA DE PINTO(MAGDALENA)"
+    },
+    {
+        "id": 791289,
+        "id_state": 1731,
+        "text": "Santa rosalia",
+        "id_country": 82,
+        "nameAve": "SANTA ROSALIA(MAGDALENA)"
+    },
+    {
+        "id": 791306,
+        "id_state": 1731,
+        "text": "Sevilla zona bananera",
+        "id_country": 82,
+        "nameAve": "SEVILLA ZONA BANANERA(MAGDALENA)"
+    },
+    {
+        "id": 791311,
+        "id_state": 1731,
+        "text": "Sitionuevo",
+        "id_country": 82,
+        "nameAve": "SITIONUEVO(MAGDALENA)"
+    },
+    {
+        "id": 791333,
+        "id_state": 1731,
+        "text": "Taganga",
+        "id_country": 82,
+        "nameAve": "TAGANGA(MAGDALENA)"
+    },
+    {
+        "id": 791342,
+        "id_state": 1731,
+        "text": "Tenerife",
+        "id_country": 82,
+        "nameAve": "TENERIFE(MAGDALENA)"
+    },
+    {
+        "id": 791352,
+        "id_state": 1731,
+        "text": "Tigrera",
+        "id_country": 82,
+        "nameAve": "TIGRERA(MAGDALENA)"
+    },
+    {
+        "id": 791372,
+        "id_state": 1731,
+        "text": "Tucurinca",
+        "id_country": 82,
+        "nameAve": "TUCURINCA(MAGDALENA)"
+    },
+    {
+        "id": 791384,
+        "id_state": 1731,
+        "text": "Valle de gaira",
+        "id_country": 82,
+        "nameAve": "VALLE DE GAIRA(MAGDALENA)"
+    },
+    {
+        "id": 791423,
+        "id_state": 1731,
+        "text": "Zapayan",
+        "id_country": 82,
+        "nameAve": "ZAPAYAN(MAGDALENA)"
+    },
+    {
+        "id": 790256,
+        "id_state": 2202,
+        "text": "Achí",
+        "id_country": 82,
+        "nameAve": "ACHI(BOLIVAR)"
+    },
+    {
+        "id": 790257,
+        "id_state": 2202,
+        "text": "Altos del Rosario",
+        "id_country": 82,
+        "nameAve": "ALTOS DEL ROSARIO(BOLIVAR)"
+    },
+    {
+        "id": 790258,
+        "id_state": 2202,
+        "text": "Arenal",
+        "id_country": 82,
+        "nameAve": "ARENAL(BOLIVAR)"
+    },
+    {
+        "id": 790259,
+        "id_state": 2202,
+        "text": "Arjona",
+        "id_country": 82,
+        "nameAve": "ARJONA(BOLIVAR)"
+    },
+    {
+        "id": 790260,
+        "id_state": 2202,
+        "text": "Arroyohondo",
+        "id_country": 82,
+        "nameAve": "ARROYOHONDO(BOLIVAR)"
+    },
+    {
+        "id": 790261,
+        "id_state": 2202,
+        "text": "Barranco de Loba",
+        "id_country": 82,
+        "nameAve": "BARRANCO DE LOBA(BOLIVAR)"
+    },
+    {
+        "id": 790262,
+        "id_state": 2202,
+        "text": "Calamar",
+        "id_country": 82,
+        "nameAve": "CALAMAR(BOLIVAR)"
+    },
+    {
+        "id": 790263,
+        "id_state": 2202,
+        "text": "Cantagallo",
+        "id_country": 82,
+        "nameAve": "CANTAGALLO(BOLIVAR)"
+    },
+    {
+        "id": 790264,
+        "id_state": 2202,
+        "text": "El Carmen de Bolívar",
+        "id_country": 82,
+        "nameAve": "EL CARMEN DE BOLIVAR(BOLIVAR)"
+    },
+    {
+        "id": 790265,
+        "id_state": 2202,
+        "text": "Cartagena de Indias",
+        "id_country": 82,
+        "nameAve": "CARTAGENA DE INDIAS(BOLIVAR)"
+    },
+    {
+        "id": 790266,
+        "id_state": 2202,
+        "text": "Cicuco",
+        "id_country": 82,
+        "nameAve": "CICUCO(BOLIVAR)"
+    },
+    {
+        "id": 790267,
+        "id_state": 2202,
+        "text": "Clemencia",
+        "id_country": 82,
+        "nameAve": "CLEMENCIA(BOLIVAR)"
+    },
+    {
+        "id": 790268,
+        "id_state": 2202,
+        "text": "Córdoba",
+        "id_country": 82,
+        "nameAve": "CORDOBA(BOLIVAR)"
+    },
+    {
+        "id": 790269,
+        "id_state": 2202,
+        "text": "El Guamo",
+        "id_country": 82,
+        "nameAve": "EL GUAMO(BOLIVAR)"
+    },
+    {
+        "id": 790270,
+        "id_state": 2202,
+        "text": "El Peñón",
+        "id_country": 82,
+        "nameAve": "EL PENON(BOLIVAR)"
+    },
+    {
+        "id": 790271,
+        "id_state": 2202,
+        "text": "Hatillo de Loba",
+        "id_country": 82,
+        "nameAve": "HATILLO DE LOBA(BOLIVAR)"
+    },
+    {
+        "id": 790272,
+        "id_state": 2202,
+        "text": "Magangué",
+        "id_country": 82,
+        "nameAve": "MAGANGUE(BOLIVAR)"
+    },
+    {
+        "id": 790273,
+        "id_state": 2202,
+        "text": "Mahates",
+        "id_country": 82,
+        "nameAve": "MAHATES(BOLIVAR)"
+    },
+    {
+        "id": 790274,
+        "id_state": 2202,
+        "text": "Margarita",
+        "id_country": 82,
+        "nameAve": "MARGARITA(BOLIVAR)"
+    },
+    {
+        "id": 790275,
+        "id_state": 2202,
+        "text": "María La Baja",
+        "id_country": 82,
+        "nameAve": "MARIA LA BAJA(BOLIVAR)"
+    },
+    {
+        "id": 790276,
+        "id_state": 2202,
+        "text": "Montecristo",
+        "id_country": 82,
+        "nameAve": "MONTECRISTO(BOLIVAR)"
+    },
+    {
+        "id": 790277,
+        "id_state": 2202,
+        "text": "Morales",
+        "id_country": 82,
+        "nameAve": "MORALES(BOLIVAR)"
+    },
+    {
+        "id": 790278,
+        "id_state": 2202,
+        "text": "Norosí",
+        "id_country": 82,
+        "nameAve": "NOROSI(BOLIVAR)"
+    },
+    {
+        "id": 790279,
+        "id_state": 2202,
+        "text": "Pinillos",
+        "id_country": 82,
+        "nameAve": "PINILLOS(BOLIVAR)"
+    },
+    {
+        "id": 790280,
+        "id_state": 2202,
+        "text": "Regidor",
+        "id_country": 82,
+        "nameAve": "REGIDOR(BOLIVAR)"
+    },
+    {
+        "id": 790281,
+        "id_state": 2202,
+        "text": "Río Viejo",
+        "id_country": 82,
+        "nameAve": "RIO VIEJO(BOLIVAR)"
+    },
+    {
+        "id": 790282,
+        "id_state": 2202,
+        "text": "San Cristóbal",
+        "id_country": 82,
+        "nameAve": "SAN CRISTOBAL(BOLIVAR)"
+    },
+    {
+        "id": 790283,
+        "id_state": 2202,
+        "text": "San Estanislao",
+        "id_country": 82,
+        "nameAve": "SAN ESTANISLAO(BOLIVAR)"
+    },
+    {
+        "id": 790284,
+        "id_state": 2202,
+        "text": "San Fernando",
+        "id_country": 82,
+        "nameAve": "SAN FERNANDO(BOLIVAR)"
+    },
+    {
+        "id": 790285,
+        "id_state": 2202,
+        "text": "San Jacinto",
+        "id_country": 82,
+        "nameAve": "SAN JACINTO(BOLIVAR)"
+    },
+    {
+        "id": 790286,
+        "id_state": 2202,
+        "text": "San Jacinto del Cauca",
+        "id_country": 82,
+        "nameAve": "SAN JACINTO DEL CAUCA(BOLIVAR)"
+    },
+    {
+        "id": 790287,
+        "id_state": 2202,
+        "text": "San Juan Nepomuceno",
+        "id_country": 82,
+        "nameAve": "SAN JUAN NEPOMUCENO(BOLIVAR)"
+    },
+    {
+        "id": 790288,
+        "id_state": 2202,
+        "text": "San Martín de Loba",
+        "id_country": 82,
+        "nameAve": "SAN MARTIN DE LOBA(BOLIVAR)"
+    },
+    {
+        "id": 790289,
+        "id_state": 2202,
+        "text": "San Pablo",
+        "id_country": 82,
+        "nameAve": "SAN PABLO(BOLIVAR)"
+    },
+    {
+        "id": 790290,
+        "id_state": 2202,
+        "text": "Santa Catalina",
+        "id_country": 82,
+        "nameAve": "SANTA CATALINA(BOLIVAR)"
+    },
+    {
+        "id": 790291,
+        "id_state": 2202,
+        "text": "Santa Cruz de Mompox",
+        "id_country": 82
+    },
+    { "id": 790292, "id_state": 2202, "text": "Santa Rosa", "id_country": 82 },
+    {
+        "id": 790293,
+        "id_state": 2202,
+        "text": "Santa Rosa del Sur",
+        "id_country": 82,
+        "nameAve": "SANTA ROSA DEL SUR(BOLIVAR)"
+    },
+    {
+        "id": 790294,
+        "id_state": 2202,
+        "text": "Simití",
+        "id_country": 82,
+        "nameAve": "SIMITI(BOLIVAR)"
+    },
+    {
+        "id": 790295,
+        "id_state": 2202,
+        "text": "Soplaviento",
+        "id_country": 82,
+        "nameAve": "SOPLAVIENTO(BOLIVAR)"
+    },
+    {
+        "id": 790296,
+        "id_state": 2202,
+        "text": "Talaigua Nuevo",
+        "id_country": 82,
+        "nameAve": "TALAIGUA NUEVO(BOLIVAR)"
+    },
+    {
+        "id": 790297,
+        "id_state": 2202,
+        "text": "Tiquisio",
+        "id_country": 82,
+        "nameAve": "TIQUISIO(BOLIVAR)"
+    },
+    {
+        "id": 790298,
+        "id_state": 2202,
+        "text": "Turbaco",
+        "id_country": 82,
+        "nameAve": "TURBACO(BOLIVAR)"
+    },
+    {
+        "id": 790299,
+        "id_state": 2202,
+        "text": "Turbaná",
+        "id_country": 82,
+        "nameAve": "TURBANA(BOLIVAR)"
+    },
+    {
+        "id": 790300,
+        "id_state": 2202,
+        "text": "Villanueva",
+        "id_country": 82,
+        "nameAve": "VILLANUEVA(BOLIVAR)"
+    },
+    {
+        "id": 790301,
+        "id_state": 2202,
+        "text": "Zambrano",
+        "id_country": 82,
+        "nameAve": "ZAMBRANO(BOLIVAR)"
+    },
+    {
+        "id": 790468,
+        "id_state": 2202,
+        "text": "Ararca",
+        "id_country": 82,
+        "nameAve": "ARARCA(BOLIVAR)"
+    },
+    {
+        "id": 790478,
+        "id_state": 2202,
+        "text": "Arroyo de las canoas",
+        "id_country": 82,
+        "nameAve": "ARROYO DE LAS CANOAS(BOLIVAR)"
+    },
+    {
+        "id": 790479,
+        "id_state": 2202,
+        "text": "Arroyo de piedra",
+        "id_country": 82,
+        "nameAve": "ARROYO DE PIEDRA(BOLIVAR)"
+    },
+    {
+        "id": 790480,
+        "id_state": 2202,
+        "text": "Arroyo grande",
+        "id_country": 82,
+        "nameAve": "ARROYO GRANDE(BOLIVAR)"
+    },
+    {
+        "id": 790488,
+        "id_state": 2202,
+        "text": "Barcelona de indias",
+        "id_country": 82,
+        "nameAve": "BARCELONA DE INDIAS(BOLIVAR)"
+    },
+    {
+        "id": 790490,
+        "id_state": 2202,
+        "text": "Barranca de yuca",
+        "id_country": 82,
+        "nameAve": "BARRANCA DE YUCA(BOLIVAR)"
+    },
+    {
+        "id": 790496,
+        "id_state": 2202,
+        "text": "Baru",
+        "id_country": 82,
+        "nameAve": "BARU(BOLIVAR)"
+    },
+    {
+        "id": 790497,
+        "id_state": 2202,
+        "text": "Bayunca",
+        "id_country": 82,
+        "nameAve": "BAYUNCA(BOLIVAR)"
+    },
+    {
+        "id": 790510,
+        "id_state": 2202,
+        "text": "Bocachica",
+        "id_country": 82,
+        "nameAve": "BOCACHICA(BOLIVAR)"
+    },
+    {
+        "id": 790549,
+        "id_state": 2202,
+        "text": "Cano del oro",
+        "id_country": 82,
+        "nameAve": "CANO DEL ORO(BOLIVAR)"
+    },
+    {
+        "id": 790559,
+        "id_state": 2202,
+        "text": "Casas del mar",
+        "id_country": 82,
+        "nameAve": "CASAS DEL MAR(BOLIVAR)"
+    },
+    {
+        "id": 790748,
+        "id_state": 2202,
+        "text": "El pueblito",
+        "id_country": 82,
+        "nameAve": "EL PUEBLITO(BOLIVAR)"
+    },
+    {
+        "id": 790752,
+        "id_state": 2202,
+        "text": "El recreo",
+        "id_country": 82,
+        "nameAve": "EL RECREO(BOLIVAR)"
+    },
+    {
+        "id": 790833,
+        "id_state": 2202,
+        "text": "Isla fuerte",
+        "id_country": 82,
+        "nameAve": "ISLA FUERTE(BOLIVAR)"
+    },
+    {
+        "id": 790856,
+        "id_state": 2202,
+        "text": "La boquilla",
+        "id_country": 82,
+        "nameAve": "LA BOQUILLA(BOLIVAR)"
+    },
+    {
+        "id": 790942,
+        "id_state": 2202,
+        "text": "Las europas",
+        "id_country": 82,
+        "nameAve": "LAS EUROPAS(BOLIVAR)"
+    },
+    {
+        "id": 790959,
+        "id_state": 2202,
+        "text": "Leticia",
+        "id_country": 82,
+        "nameAve": "LETICIA(BOLIVAR)"
+    },
+    {
+        "id": 790990,
+        "id_state": 2202,
+        "text": "Malagana",
+        "id_country": 82,
+        "nameAve": "MALAGANA(BOLIVAR)"
+    },
+    {
+        "id": 790995,
+        "id_state": 2202,
+        "text": "Manzanillo del mar",
+        "id_country": 82,
+        "nameAve": "MANZANILLO DEL MAR(BOLIVAR)"
+    },
+    {
+        "id": 791021,
+        "id_state": 2202,
+        "text": "Membrillal",
+        "id_country": 82,
+        "nameAve": "MEMBRILLAL(BOLIVAR)"
+    },
+    {
+        "id": 791032,
+        "id_state": 2202,
+        "text": "Mompos",
+        "id_country": 82,
+        "nameAve": "MOMPOS(BOLIVAR)"
+    },
+    {
+        "id": 791044,
+        "id_state": 2202,
+        "text": "Mucura",
+        "id_country": 82,
+        "nameAve": "MUCURA(BOLIVAR)"
+    },
+    {
+        "id": 791093,
+        "id_state": 2202,
+        "text": "Pasacaballos",
+        "id_country": 82,
+        "nameAve": "PASACABALLOS(BOLIVAR)"
+    },
+    {
+        "id": 791134,
+        "id_state": 2202,
+        "text": "Pontezuela",
+        "id_country": 82,
+        "nameAve": "PONTEZUELA(BOLIVAR)"
+    },
+    {
+        "id": 791157,
+        "id_state": 2202,
+        "text": "Puerto bello",
+        "id_country": 82,
+        "nameAve": "PUERTO BELLO(BOLIVAR)"
+    },
+    {
+        "id": 791168,
+        "id_state": 2202,
+        "text": "Puerto rey",
+        "id_country": 82,
+        "nameAve": "PUERTO REY(BOLIVAR)"
+    },
+    {
+        "id": 791172,
+        "id_state": 2202,
+        "text": "Punta arena",
+        "id_country": 82,
+        "nameAve": "PUNTA ARENA(BOLIVAR)"
+    },
+    {
+        "id": 791173,
+        "id_state": 2202,
+        "text": "Punta canoa",
+        "id_country": 82,
+        "nameAve": "PUNTA CANOA(BOLIVAR)"
+    },
+    {
+        "id": 791273,
+        "id_state": 2202,
+        "text": "Santa ana",
+        "id_country": 82,
+        "nameAve": "SANTA ANA(BOLIVAR)"
+    },
+    {
+        "id": 791285,
+        "id_state": 2202,
+        "text": "Santa rosa de lima",
+        "id_country": 82,
+        "nameAve": "SANTA ROSA DE LIMA(BOLIVAR)"
+    },
+    {
+        "id": 791334,
+        "id_state": 2202,
+        "text": "Talaigua viejo",
+        "id_country": 82,
+        "nameAve": "TALAIGUA VIEJO(BOLIVAR)"
+    },
+    {
+        "id": 791349,
+        "id_state": 2202,
+        "text": "Tierra baja",
+        "id_country": 82,
+        "nameAve": "TIERRA BAJA(BOLIVAR)"
+    },
+    {
+        "id": 791350,
+        "id_state": 2202,
+        "text": "Tierra bomba",
+        "id_country": 82,
+        "nameAve": "TIERRA BOMBA(BOLIVAR)"
+    },
+    { "id": 790302, "id_state": 2203, "text": "Centro", "id_country": 82 },
+    { "id": 790303, "id_state": 2203, "text": "Gutiérrez", "id_country": 82 },
+    { "id": 790304, "id_state": 2203, "text": "La Libertad", "id_country": 82 },
+    { "id": 790305, "id_state": 2203, "text": "Lengupá", "id_country": 82 },
+    { "id": 790306, "id_state": 2203, "text": "Márquez", "id_country": 82 },
+    { "id": 790307, "id_state": 2203, "text": "Neira", "id_country": 82 },
+    { "id": 790308, "id_state": 2203, "text": "Norte", "id_country": 82 },
+    { "id": 790309, "id_state": 2203, "text": "Occidente", "id_country": 82 },
+    { "id": 790310, "id_state": 2203, "text": "Oriente", "id_country": 82 },
+    { "id": 790311, "id_state": 2203, "text": "Ricaurte", "id_country": 82 },
+    { "id": 790312, "id_state": 2203, "text": "Sugamuxi", "id_country": 82 },
+    { "id": 790313, "id_state": 2203, "text": "Tundama", "id_country": 82 },
+    { "id": 790314, "id_state": 2203, "text": "Valderrama", "id_country": 82 },
+    {
+        "id": 790450,
+        "id_state": 2203,
+        "text": "Almeida",
+        "id_country": 82,
+        "nameAve": "ALMEIDA(BOYACA)"
+    },
+    {
+        "id": 790465,
+        "id_state": 2203,
+        "text": "Aquitania",
+        "id_country": 82,
+        "nameAve": "AQUITANIA(BOYACA)"
+    },
+    {
+        "id": 790471,
+        "id_state": 2203,
+        "text": "Arcabuco",
+        "id_country": 82,
+        "nameAve": "ARCABUCO(BOYACA)"
+    },
+    {
+        "id": 790500,
+        "id_state": 2203,
+        "text": "Belen",
+        "id_country": 82,
+        "nameAve": "BELEN(BOYACA)"
+    },
+    {
+        "id": 790503,
+        "id_state": 2203,
+        "text": "Berbeo",
+        "id_country": 82,
+        "nameAve": "BERBEO(BOYACA)"
+    },
+    {
+        "id": 790505,
+        "id_state": 2203,
+        "text": "Beteitiva",
+        "id_country": 82,
+        "nameAve": "BETEITIVA(BOYACA)"
+    },
+    {
+        "id": 790506,
+        "id_state": 2203,
+        "text": "Boavita",
+        "id_country": 82,
+        "nameAve": "BOAVITA(BOYACA)"
+    },
+    {
+        "id": 790518,
+        "id_state": 2203,
+        "text": "Boyaca",
+        "id_country": 82,
+        "nameAve": "BOYACA(BOYACA)"
+    },
+    {
+        "id": 790519,
+        "id_state": 2203,
+        "text": "Briceno",
+        "id_country": 82,
+        "nameAve": "BRICENO(BOYACA)"
+    },
+    {
+        "id": 790525,
+        "id_state": 2203,
+        "text": "Buenavista",
+        "id_country": 82,
+        "nameAve": "BUENAVISTA(BOYACA)"
+    },
+    {
+        "id": 790529,
+        "id_state": 2203,
+        "text": "Busbanza",
+        "id_country": 82,
+        "nameAve": "BUSBANZA(BOYACA)"
+    },
+    {
+        "id": 790536,
+        "id_state": 2203,
+        "text": "Caldas",
+        "id_country": 82,
+        "nameAve": "CALDAS(BOYACA)"
+    },
+    {
+        "id": 790544,
+        "id_state": 2203,
+        "text": "Campohermoso",
+        "id_country": 82,
+        "nameAve": "CAMPOHERMOSO(BOYACA)"
+    },
+    {
+        "id": 790571,
+        "id_state": 2203,
+        "text": "Cerinza",
+        "id_country": 82,
+        "nameAve": "CERINZA(BOYACA)"
+    },
+    {
+        "id": 790587,
+        "id_state": 2203,
+        "text": "Chinavita",
+        "id_country": 82,
+        "nameAve": "CHINAVITA(BOYACA)"
+    },
+    {
+        "id": 790589,
+        "id_state": 2203,
+        "text": "Chiquinquira",
+        "id_country": 82,
+        "nameAve": "CHIQUINQUIRA(BOYACA)"
+    },
+    {
+        "id": 790590,
+        "id_state": 2203,
+        "text": "Chiquiza",
+        "id_country": 82,
+        "nameAve": "CHIQUIZA(BOYACA)"
+    },
+    {
+        "id": 790591,
+        "id_state": 2203,
+        "text": "Chiscas",
+        "id_country": 82,
+        "nameAve": "CHISCAS(BOYACA)"
+    },
+    {
+        "id": 790592,
+        "id_state": 2203,
+        "text": "Chita",
+        "id_country": 82,
+        "nameAve": "CHITA(BOYACA)"
+    },
+    {
+        "id": 790593,
+        "id_state": 2203,
+        "text": "Chitaraque",
+        "id_country": 82,
+        "nameAve": "CHITARAQUE(BOYACA)"
+    },
+    {
+        "id": 790594,
+        "id_state": 2203,
+        "text": "Chivata",
+        "id_country": 82,
+        "nameAve": "CHIVATA(BOYACA)"
+    },
+    {
+        "id": 790596,
+        "id_state": 2203,
+        "text": "Chivor",
+        "id_country": 82,
+        "nameAve": "CHIVOR(BOYACA)"
+    },
+    {
+        "id": 790601,
+        "id_state": 2203,
+        "text": "Cienega",
+        "id_country": 82,
+        "nameAve": "CIENEGA(BOYACA)"
+    },
+    {
+        "id": 790608,
+        "id_state": 2203,
+        "text": "Combita",
+        "id_country": 82,
+        "nameAve": "COMBITA(BOYACA)"
+    },
+    {
+        "id": 790657,
+        "id_state": 2203,
+        "text": "Coper",
+        "id_country": 82,
+        "nameAve": "COPER(BOYACA)"
+    },
+    {
+        "id": 790658,
+        "id_state": 2203,
+        "text": "Corrales",
+        "id_country": 82,
+        "nameAve": "CORRALES(BOYACA)"
+    },
+    {
+        "id": 790659,
+        "id_state": 2203,
+        "text": "Covarachia",
+        "id_country": 82,
+        "nameAve": "COVARACHIA(BOYACA)"
+    },
+    {
+        "id": 790666,
+        "id_state": 2203,
+        "text": "Cubara",
+        "id_country": 82,
+        "nameAve": "CUBARA(BOYACA)"
+    },
+    {
+        "id": 790668,
+        "id_state": 2203,
+        "text": "Cucaita",
+        "id_country": 82,
+        "nameAve": "CUCAITA(BOYACA)"
+    },
+    {
+        "id": 790670,
+        "id_state": 2203,
+        "text": "Cuitiva",
+        "id_country": 82,
+        "nameAve": "CUITIVA(BOYACA)"
+    },
+    {
+        "id": 790681,
+        "id_state": 2203,
+        "text": "Duitama",
+        "id_country": 82,
+        "nameAve": "DUITAMA(BOYACA)"
+    },
+    {
+        "id": 790706,
+        "id_state": 2203,
+        "text": "El cocuy",
+        "id_country": 82,
+        "nameAve": "EL COCUY(BOYACA)"
+    },
+    {
+        "id": 790714,
+        "id_state": 2203,
+        "text": "El espino",
+        "id_country": 82,
+        "nameAve": "EL ESPINO(BOYACA)"
+    },
+    {
+        "id": 790777,
+        "id_state": 2203,
+        "text": "Firavitoba",
+        "id_country": 82,
+        "nameAve": "FIRAVITOBA(BOYACA)"
+    },
+    {
+        "id": 790778,
+        "id_state": 2203,
+        "text": "Floresta",
+        "id_country": 82,
+        "nameAve": "FLORESTA(BOYACA)"
+    },
+    {
+        "id": 790783,
+        "id_state": 2203,
+        "text": "Gachantiva",
+        "id_country": 82,
+        "nameAve": "GACHANTIVA(BOYACA)"
+    },
+    {
+        "id": 790788,
+        "id_state": 2203,
+        "text": "Gameza",
+        "id_country": 82,
+        "nameAve": "GAMEZA(BOYACA)"
+    },
+    {
+        "id": 790789,
+        "id_state": 2203,
+        "text": "Garagoa",
+        "id_country": 82,
+        "nameAve": "GARAGOA(BOYACA)"
+    },
+    {
+        "id": 790797,
+        "id_state": 2203,
+        "text": "Guacamayas",
+        "id_country": 82,
+        "nameAve": "GUACAMAYAS(BOYACA)"
+    },
+    {
+        "id": 790816,
+        "id_state": 2203,
+        "text": "Guateque",
+        "id_country": 82,
+        "nameAve": "GUATEQUE(BOYACA)"
+    },
+    {
+        "id": 790822,
+        "id_state": 2203,
+        "text": "Guayata",
+        "id_country": 82,
+        "nameAve": "GUAYATA(BOYACA)"
+    },
+    {
+        "id": 790824,
+        "id_state": 2203,
+        "text": "Guican de la sierra",
+        "id_country": 82,
+        "nameAve": "GUICAN DE LA SIERRA(BOYACA)"
+    },
+    {
+        "id": 790834,
+        "id_state": 2203,
+        "text": "Iza",
+        "id_country": 82,
+        "nameAve": "IZA(BOYACA)"
+    },
+    {
+        "id": 790837,
+        "id_state": 2203,
+        "text": "Jenesano",
+        "id_country": 82,
+        "nameAve": "JENESANO(BOYACA)"
+    },
+    {
+        "id": 790838,
+        "id_state": 2203,
+        "text": "Jerico",
+        "id_country": 82,
+        "nameAve": "JERICO(BOYACA)"
+    },
+    {
+        "id": 790862,
+        "id_state": 2203,
+        "text": "La capilla",
+        "id_country": 82,
+        "nameAve": "LA CAPILLA(BOYACA)"
+    },
+    {
+        "id": 790924,
+        "id_state": 2203,
+        "text": "La uvita",
+        "id_country": 82,
+        "nameAve": "LA UVITA(BOYACA)"
+    },
+    {
+        "id": 790928,
+        "id_state": 2203,
+        "text": "La victoria",
+        "id_country": 82,
+        "nameAve": "LA VICTORIA(BOYACA)"
+    },
+    {
+        "id": 790933,
+        "id_state": 2203,
+        "text": "Labranzagrande",
+        "id_country": 82,
+        "nameAve": "LABRANZAGRANDE(BOYACA)"
+    },
+    {
+        "id": 790987,
+        "id_state": 2203,
+        "text": "Macanal",
+        "id_country": 82,
+        "nameAve": "MACANAL(BOYACA)"
+    },
+    {
+        "id": 791003,
+        "id_state": 2203,
+        "text": "Maripi",
+        "id_country": 82,
+        "nameAve": "MARIPI(BOYACA)"
+    },
+    {
+        "id": 791026,
+        "id_state": 2203,
+        "text": "Miraflores",
+        "id_country": 82,
+        "nameAve": "MIRAFLORES(BOYACA)"
+    },
+    {
+        "id": 791033,
+        "id_state": 2203,
+        "text": "Mongua",
+        "id_country": 82,
+        "nameAve": "MONGUA(BOYACA)"
+    },
+    {
+        "id": 791034,
+        "id_state": 2203,
+        "text": "Mongui",
+        "id_country": 82,
+        "nameAve": "MONGUI(BOYACA)"
+    },
+    {
+        "id": 791035,
+        "id_state": 2203,
+        "text": "Moniquira",
+        "id_country": 82,
+        "nameAve": "MONIQUIRA(BOYACA)"
+    },
+    {
+        "id": 791043,
+        "id_state": 2203,
+        "text": "Motavita",
+        "id_country": 82,
+        "nameAve": "MOTAVITA(BOYACA)"
+    },
+    {
+        "id": 791046,
+        "id_state": 2203,
+        "text": "Muzo",
+        "id_country": 82,
+        "nameAve": "MUZO(BOYACA)"
+    },
+    {
+        "id": 791051,
+        "id_state": 2203,
+        "text": "Nobsa",
+        "id_country": 82,
+        "nameAve": "NOBSA(BOYACA)"
+    },
+    {
+        "id": 791058,
+        "id_state": 2203,
+        "text": "Nuevo colon",
+        "id_country": 82,
+        "nameAve": "NUEVO COLON(BOYACA)"
+    },
+    {
+        "id": 791067,
+        "id_state": 2203,
+        "text": "Oicata",
+        "id_country": 82,
+        "nameAve": "OICATA(BOYACA)"
+    },
+    {
+        "id": 791072,
+        "id_state": 2203,
+        "text": "Otanche",
+        "id_country": 82,
+        "nameAve": "OTANCHE(BOYACA)"
+    },
+    {
+        "id": 791073,
+        "id_state": 2203,
+        "text": "Pachavita",
+        "id_country": 82,
+        "nameAve": "PACHAVITA(BOYACA)"
+    },
+    {
+        "id": 791077,
+        "id_state": 2203,
+        "text": "Paez",
+        "id_country": 82,
+        "nameAve": "PAEZ(BOYACA)"
+    },
+    {
+        "id": 791079,
+        "id_state": 2203,
+        "text": "Paipa",
+        "id_country": 82,
+        "nameAve": "PAIPA(BOYACA)"
+    },
+    {
+        "id": 791080,
+        "id_state": 2203,
+        "text": "Pajarito",
+        "id_country": 82,
+        "nameAve": "PAJARITO(BOYACA)"
+    },
+    {
+        "id": 791088,
+        "id_state": 2203,
+        "text": "Panqueba",
+        "id_country": 82,
+        "nameAve": "PANQUEBA(BOYACA)"
+    },
+    {
+        "id": 791098,
+        "id_state": 2203,
+        "text": "Pauna",
+        "id_country": 82,
+        "nameAve": "PAUNA(BOYACA)"
+    },
+    {
+        "id": 791099,
+        "id_state": 2203,
+        "text": "Paya",
+        "id_country": 82,
+        "nameAve": "PAYA(BOYACA)"
+    },
+    {
+        "id": 791100,
+        "id_state": 2203,
+        "text": "Paz de rio",
+        "id_country": 82,
+        "nameAve": "PAZ DE RIO(BOYACA)"
+    },
+    {
+        "id": 791112,
+        "id_state": 2203,
+        "text": "Pesca",
+        "id_country": 82,
+        "nameAve": "PESCA(BOYACA)"
+    },
+    {
+        "id": 791125,
+        "id_state": 2203,
+        "text": "Pisba",
+        "id_country": 82,
+        "nameAve": "PISBA(BOYACA)"
+    },
+    {
+        "id": 791158,
+        "id_state": 2203,
+        "text": "Puerto boyaca",
+        "id_country": 82,
+        "nameAve": "PUERTO BOYACA(BOYACA)"
+    },
+    {
+        "id": 791179,
+        "id_state": 2203,
+        "text": "Quipama",
+        "id_country": 82,
+        "nameAve": "QUIPAMA(BOYACA)"
+    },
+    {
+        "id": 791184,
+        "id_state": 2203,
+        "text": "Ramiriqui",
+        "id_country": 82,
+        "nameAve": "RAMIRIQUI(BOYACA)"
+    },
+    {
+        "id": 791186,
+        "id_state": 2203,
+        "text": "Raquira",
+        "id_country": 82,
+        "nameAve": "RAQUIRA(BOYACA)"
+    },
+    {
+        "id": 791202,
+        "id_state": 2203,
+        "text": "Rondon",
+        "id_country": 82,
+        "nameAve": "RONDON(BOYACA)"
+    },
+    {
+        "id": 791209,
+        "id_state": 2203,
+        "text": "Saboya",
+        "id_country": 82,
+        "nameAve": "SABOYA(BOYACA)"
+    },
+    {
+        "id": 791210,
+        "id_state": 2203,
+        "text": "Sachica",
+        "id_country": 82,
+        "nameAve": "SACHICA(BOYACA)"
+    },
+    {
+        "id": 791215,
+        "id_state": 2203,
+        "text": "Samaca",
+        "id_country": 82,
+        "nameAve": "SAMACA(BOYACA)"
+    },
+    {
+        "id": 791232,
+        "id_state": 2203,
+        "text": "San eduardo",
+        "id_country": 82,
+        "nameAve": "SAN EDUARDO(BOYACA)"
+    },
+    {
+        "id": 791243,
+        "id_state": 2203,
+        "text": "San jose de pare",
+        "id_country": 82,
+        "nameAve": "SAN JOSE DE PARE(BOYACA)"
+    },
+    {
+        "id": 791252,
+        "id_state": 2203,
+        "text": "San luis de gaceno",
+        "id_country": 82,
+        "nameAve": "SAN LUIS DE GACENO(BOYACA)"
+    },
+    {
+        "id": 791258,
+        "id_state": 2203,
+        "text": "San mateo",
+        "id_country": 82,
+        "nameAve": "SAN MATEO(BOYACA)"
+    },
+    {
+        "id": 791259,
+        "id_state": 2203,
+        "text": "San miguel de sema",
+        "id_country": 82,
+        "nameAve": "SAN MIGUEL DE SEMA(BOYACA)"
+    },
+    {
+        "id": 791261,
+        "id_state": 2203,
+        "text": "San pablo de borbur",
+        "id_country": 82,
+        "nameAve": "SAN PABLO DE BORBUR(BOYACA)"
+    },
+    {
+        "id": 791284,
+        "id_state": 2203,
+        "text": "Santa maria",
+        "id_country": 82,
+        "nameAve": "SANTA MARIA(BOYACA)"
+    },
+    {
+        "id": 791287,
+        "id_state": 2203,
+        "text": "Santa rosa de viterbo",
+        "id_country": 82,
+        "nameAve": "SANTA ROSA DE VITERBO(BOYACA)"
+    },
+    {
+        "id": 791290,
+        "id_state": 2203,
+        "text": "Santa sofia",
+        "id_country": 82,
+        "nameAve": "SANTA SOFIA(BOYACA)"
+    },
+    {
+        "id": 791294,
+        "id_state": 2203,
+        "text": "Santana",
+        "id_country": 82,
+        "nameAve": "SANTANA(BOYACA)"
+    },
+    {
+        "id": 791301,
+        "id_state": 2203,
+        "text": "Sativanorte",
+        "id_country": 82,
+        "nameAve": "SATIVANORTE(BOYACA)"
+    },
+    {
+        "id": 791302,
+        "id_state": 2203,
+        "text": "Sativasur",
+        "id_country": 82,
+        "nameAve": "SATIVASUR(BOYACA)"
+    },
+    {
+        "id": 791307,
+        "id_state": 2203,
+        "text": "Siachoque",
+        "id_country": 82,
+        "nameAve": "SIACHOQUE(BOYACA)"
+    },
+    {
+        "id": 791312,
+        "id_state": 2203,
+        "text": "Soata",
+        "id_country": 82,
+        "nameAve": "SOATA(BOYACA)"
+    },
+    {
+        "id": 791313,
+        "id_state": 2203,
+        "text": "Socha",
+        "id_country": 82,
+        "nameAve": "SOCHA(BOYACA)"
+    },
+    {
+        "id": 791314,
+        "id_state": 2203,
+        "text": "Socota",
+        "id_country": 82,
+        "nameAve": "SOCOTA(BOYACA)"
+    },
+    {
+        "id": 791315,
+        "id_state": 2203,
+        "text": "Sogamoso",
+        "id_country": 82,
+        "nameAve": "SOGAMOSO(BOYACA)"
+    },
+    {
+        "id": 791318,
+        "id_state": 2203,
+        "text": "Somondoco",
+        "id_country": 82,
+        "nameAve": "SOMONDOCO(BOYACA)"
+    },
+    {
+        "id": 791319,
+        "id_state": 2203,
+        "text": "Sora",
+        "id_country": 82,
+        "nameAve": "SORA(BOYACA)"
+    },
+    {
+        "id": 791320,
+        "id_state": 2203,
+        "text": "Soraca",
+        "id_country": 82,
+        "nameAve": "SORACA(BOYACA)"
+    },
+    {
+        "id": 791321,
+        "id_state": 2203,
+        "text": "Sotaquira",
+        "id_country": 82,
+        "nameAve": "SOTAQUIRA(BOYACA)"
+    },
+    {
+        "id": 791328,
+        "id_state": 2203,
+        "text": "Susacon",
+        "id_country": 82,
+        "nameAve": "SUSACON(BOYACA)"
+    },
+    {
+        "id": 791329,
+        "id_state": 2203,
+        "text": "Sutamarchan",
+        "id_country": 82,
+        "nameAve": "SUTAMARCHAN(BOYACA)"
+    },
+    {
+        "id": 791331,
+        "id_state": 2203,
+        "text": "Sutatenza",
+        "id_country": 82,
+        "nameAve": "SUTATENZA(BOYACA)"
+    },
+    {
+        "id": 791338,
+        "id_state": 2203,
+        "text": "Tasco",
+        "id_country": 82,
+        "nameAve": "TASCO(BOYACA)"
+    },
+    {
+        "id": 791343,
+        "id_state": 2203,
+        "text": "Tenza",
+        "id_country": 82,
+        "nameAve": "TENZA(BOYACA)"
+    },
+    {
+        "id": 791346,
+        "id_state": 2203,
+        "text": "Tibana",
+        "id_country": 82,
+        "nameAve": "TIBANA(BOYACA)"
+    },
+    {
+        "id": 791347,
+        "id_state": 2203,
+        "text": "Tibasosa",
+        "id_country": 82,
+        "nameAve": "TIBASOSA(BOYACA)"
+    },
+    {
+        "id": 791355,
+        "id_state": 2203,
+        "text": "Tinjaca",
+        "id_country": 82,
+        "nameAve": "TINJACA(BOYACA)"
+    },
+    {
+        "id": 791356,
+        "id_state": 2203,
+        "text": "Tipacoque",
+        "id_country": 82,
+        "nameAve": "TIPACOQUE(BOYACA)"
+    },
+    {
+        "id": 791357,
+        "id_state": 2203,
+        "text": "Toca",
+        "id_country": 82,
+        "nameAve": "TOCA(BOYACA)"
+    },
+    {
+        "id": 791359,
+        "id_state": 2203,
+        "text": "Togui",
+        "id_country": 82,
+        "nameAve": "TOGUI(BOYACA)"
+    },
+    {
+        "id": 791364,
+        "id_state": 2203,
+        "text": "Topaga",
+        "id_country": 82,
+        "nameAve": "TOPAGA(BOYACA)"
+    },
+    {
+        "id": 791365,
+        "id_state": 2203,
+        "text": "Tota",
+        "id_country": 82,
+        "nameAve": "TOTA(BOYACA)"
+    },
+    {
+        "id": 791373,
+        "id_state": 2203,
+        "text": "Tunja",
+        "id_country": 82,
+        "nameAve": "TUNJA(BOYACA)"
+    },
+    {
+        "id": 791374,
+        "id_state": 2203,
+        "text": "Tunungua",
+        "id_country": 82,
+        "nameAve": "TUNUNGUA(BOYACA)"
+    },
+    {
+        "id": 791375,
+        "id_state": 2203,
+        "text": "Turmeque",
+        "id_country": 82,
+        "nameAve": "TURMEQUE(BOYACA)"
+    },
+    {
+        "id": 791376,
+        "id_state": 2203,
+        "text": "Tuta",
+        "id_country": 82,
+        "nameAve": "TUTA(BOYACA)"
+    },
+    {
+        "id": 791377,
+        "id_state": 2203,
+        "text": "Tutaza",
+        "id_country": 82,
+        "nameAve": "TUTAZA(BOYACA)"
+    },
+    {
+        "id": 791378,
+        "id_state": 2203,
+        "text": "Umbita",
+        "id_country": 82,
+        "nameAve": "UMBITA(BOYACA)"
+    },
+    {
+        "id": 791386,
+        "id_state": 2203,
+        "text": "Ventaquemada",
+        "id_country": 82,
+        "nameAve": "VENTAQUEMADA(BOYACA)"
+    },
+    {
+        "id": 791397,
+        "id_state": 2203,
+        "text": "Villa de leyva",
+        "id_country": 82,
+        "nameAve": "VILLA DE LEYVA(BOYACA)"
+    },
+    {
+        "id": 791410,
+        "id_state": 2203,
+        "text": "Viracacha",
+        "id_country": 82,
+        "nameAve": "VIRACACHA(BOYACA)"
+    },
+    {
+        "id": 791424,
+        "id_state": 2203,
+        "text": "Zetaquira",
+        "id_country": 82,
+        "nameAve": "ZETAQUIRA(BOYACA)"
+    }
+]
+
+
+const main = async () => {
+    const nCitys = citys.map(e=>{
+        const f = cityAVE.find(a=>a.id == e.id) ?? {}
+        return {
+            ...e,
+            ...f
+        }
+    })
+    await Bun.write("./bun/citys-news-_city.json", JSON.stringify(nCitys));
+
+   
+};
+main();

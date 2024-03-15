@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 787706, id_state: 2092, text: "Consuelo", id_country: 138 },
+    { id: 787720, id_state: 2092, text: "El Puerto", id_country: 138 },
+    { id: 787784, id_state: 2092, text: "Los Llanos", id_country: 138 },
+    { id: 787828, id_state: 2092, text: "Quisqueya", id_country: 138 },
+    { id: 787829, id_state: 2092, text: "Ramón Santana", id_country: 138 },
+    {
+        id: 787850,
+        id_state: 2092,
+        text: "San Pedro de Macorís",
+        id_country: 138,
+    },
+];
+//# sourceMappingURL=citys.js.map

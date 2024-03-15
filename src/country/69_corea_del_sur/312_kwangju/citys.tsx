@@ -1,0 +1,3 @@
+export const citys = [
+    { id: 4590, id_state: 312, text: "Kwangju", id_country: 69 },
+];

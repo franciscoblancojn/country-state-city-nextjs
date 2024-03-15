@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 229657, id_state: 988, text: "San Juliá", id_country: 145 },
+    {
+        id: 229659,
+        id_state: 988,
+        text: "Santa Juliá de Loria",
+        id_country: 145,
+    },
+    { id: 229662, id_state: 988, text: "Sant Juliá", id_country: 145 },
+    { id: 229663, id_state: 988, text: "Sant Julià de Lòria", id_country: 145 },
+];
+//# sourceMappingURL=citys.js.map

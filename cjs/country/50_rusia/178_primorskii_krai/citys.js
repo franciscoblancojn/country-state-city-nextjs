@@ -1,0 +1,19 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.citys = void 0;
+exports.citys = [
+    { id: 2678, id_state: 178, text: "Arsenev", id_country: 50 },
+    { id: 2679, id_state: 178, text: "Artem", id_country: 50 },
+    { id: 2683, id_state: 178, text: "Vladivostok", id_country: 50 },
+    { id: 2687, id_state: 178, text: "Dalnegorsk", id_country: 50 },
+    {
+        id: 2698,
+        id_state: 178,
+        text: "Nahodka (Primorskii krai)",
+        id_country: 50,
+    },
+    { id: 2701, id_state: 178, text: "Partizansk", id_country: 50 },
+    { id: 2702, id_state: 178, text: "Pogranichnyi", id_country: 50 },
+    { id: 2709, id_state: 178, text: "Ussuriisk", id_country: 50 },
+];
+//# sourceMappingURL=citys.js.map
