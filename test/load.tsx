@@ -1,9 +1,9 @@
 
 // import {getRuteDir, getRuteStatesByCountry} from '../src'
-import {getRuteDir, getRuteStatesByCountry} from '../cjs'
+import {getRuteDir, getDataStatesByCountry} from '../cjs'
 
 const main = async () => {
-    const result = getRuteStatesByCountry({id:82,text:"Colombia"})
+    const result = await getDataStatesByCountry({id:82,text:"Colombia"})
     console.log(result);
     
 
