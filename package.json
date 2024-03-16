@@ -1,6 +1,6 @@
 {
   "name": "country-state-city-nextjs",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "description": "Get all countrys, states and citys of world",
   "main": "./cjs/index.js",
   "module": "./cjs/index.js",
