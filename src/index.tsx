@@ -106,29 +106,32 @@ export const getFetchCode = async (url: string) => {
 };
 
 export const getDataCountrys = async () => {
-    return await getFetchCode(getRuteCountrys())
+    return await getFetchCode(getRuteCountrys());
 };
 export const getDataCountrysWithImg = async () => {
-    return await getFetchCode(getRuteCountrysWithImg())
+    return await getFetchCode(getRuteCountrysWithImg());
 };
 export const getDataStates = async () => {
-    return await getFetchCode(getRuteStates())
+    return await getFetchCode(getRuteStates());
 };
 export const getDataStatesByCountry = async (country: {
     text: string;
     id: number;
 }) => {
-    return await getFetchCode(getRuteStatesByCountry(country))
+    return await getFetchCode(getRuteStatesByCountry(country));
 };
 export const getDataCitys = async () => {
-    return await getFetchCode(getRuteCitys())
+    return await getFetchCode(getRuteCitys());
 };
-export const getDataCitysByStateAndCountry = async (country: {
-    text: string;
-    id: number;
-},state: {
-    text: string;
-    id: number;
-}) => {
-    return await getFetchCode(getRuteCitysByStateAndCountry(country,state))
+export const getDataCitysByStateAndCountry = async (
+    country: {
+        text: string;
+        id: number;
+    },
+    state: {
+        text: string;
+        id: number;
+    }
+) => {
+    return await getFetchCode(getRuteCitysByStateAndCountry(country, state));
 };

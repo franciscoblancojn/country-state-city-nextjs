@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getRuteCitysByStateAndCountry = exports.getRuteCitys = exports.getRuteStatesByCountry = exports.getRuteStates = exports.getRuteCountrysWidthImg = exports.getRuteCountrys = exports.getRuteDir = exports.parseNameFolder = exports.loadCitys = exports.loadStates = exports.loadCountrysWidthImg = exports.loadCountrys = void 0;
+exports.getDataCitysByStateAndCountry = exports.getDataCitys = exports.getDataStatesByCountry = exports.getDataStates = exports.getDataCountrysWithImg = exports.getDataCountrys = exports.getFetchCode = exports.getRuteCitysByStateAndCountry = exports.getRuteCitys = exports.getRuteStatesByCountry = exports.getRuteStates = exports.getRuteCountrysWithImg = exports.getRuteCountrys = exports.getRuteDir = exports.parseNameFolder = exports.loadCitys = exports.loadStates = exports.loadCountrysWidthImg = exports.loadCountrys = void 0;
 const loadCountrys = async () => {
     const { countrys } = await Promise.resolve().then(() => __importStar(require("./country")));
     return countrys;
@@ -58,31 +58,67 @@ const parseNameFolder = (e) => {
 };
 exports.parseNameFolder = parseNameFolder;
 const getRuteDir = () => {
-    return `${__dirname}`;
+    return `https://country-state-city-nextjs.vercel.app/`;
 };
 exports.getRuteDir = getRuteDir;
 const getRuteCountrys = () => {
-    return `${(0, exports.getRuteDir)()}/country`;
+    return `${(0, exports.getRuteDir)()}/country/index.js`;
 };
 exports.getRuteCountrys = getRuteCountrys;
-const getRuteCountrysWidthImg = () => {
-    return `${(0, exports.getRuteDir)()}/country_img`;
+const getRuteCountrysWithImg = () => {
+    return `${(0, exports.getRuteDir)()}/country_img.js`;
 };
-exports.getRuteCountrysWidthImg = getRuteCountrysWidthImg;
+exports.getRuteCountrysWithImg = getRuteCountrysWithImg;
 const getRuteStates = () => {
-    return `${(0, exports.getRuteDir)()}/state`;
+    return `${(0, exports.getRuteDir)()}/state/index.js`;
 };
 exports.getRuteStates = getRuteStates;
 const getRuteStatesByCountry = (country) => {
-    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/states`;
+    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/states.js`;
 };
 exports.getRuteStatesByCountry = getRuteStatesByCountry;
 const getRuteCitys = () => {
-    return `${(0, exports.getRuteDir)()}/city`;
+    return `${(0, exports.getRuteDir)()}/city/index.js`;
 };
 exports.getRuteCitys = getRuteCitys;
 const getRuteCitysByStateAndCountry = (country, state) => {
-    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/${(0, exports.parseNameFolder)(state)}/citys`;
+    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/${(0, exports.parseNameFolder)(state)}/citys.js`;
 };
 exports.getRuteCitysByStateAndCountry = getRuteCitysByStateAndCountry;
+const getFetchCode = async (url) => {
+    const response = await fetch(url);
+    if (response.ok) {
+        const text = await response.text();
+        const resultado = text.replaceAll("\n", "").match(/\[(.*?)\]/)?.[0];
+        return eval(resultado ?? "[]");
+    }
+    else {
+        throw new Error(`Error fetching ${url}: ${response.statusText}`);
+    }
+};
+exports.getFetchCode = getFetchCode;
+const getDataCountrys = async () => {
+    return await (0, exports.getFetchCode)((0, exports.getRuteCountrys)());
+};
+exports.getDataCountrys = getDataCountrys;
+const getDataCountrysWithImg = async () => {
+    return await (0, exports.getFetchCode)((0, exports.getRuteCountrysWithImg)());
+};
+exports.getDataCountrysWithImg = getDataCountrysWithImg;
+const getDataStates = async () => {
+    return await (0, exports.getFetchCode)((0, exports.getRuteStates)());
+};
+exports.getDataStates = getDataStates;
+const getDataStatesByCountry = async (country) => {
+    return await (0, exports.getFetchCode)((0, exports.getRuteStatesByCountry)(country));
+};
+exports.getDataStatesByCountry = getDataStatesByCountry;
+const getDataCitys = async () => {
+    return await (0, exports.getFetchCode)((0, exports.getRuteCitys)());
+};
+exports.getDataCitys = getDataCitys;
+const getDataCitysByStateAndCountry = async (country, state) => {
+    return await (0, exports.getFetchCode)((0, exports.getRuteCitysByStateAndCountry)(country, state));
+};
+exports.getDataCitysByStateAndCountry = getDataCitysByStateAndCountry;
 //# sourceMappingURL=index.js.map
