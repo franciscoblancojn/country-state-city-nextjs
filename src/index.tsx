@@ -93,15 +93,19 @@ export const getRuteCitysByStateAndCountry = (
 };
 
 export const getFetchCode = async (url: string) => {
-    const response = await fetch(url);
-    if (response.ok) {
-        const text = await response.text();
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            const text = await response.text();
 
-        const resultado = text.replaceAll("\n", "").match(/\[(.*?)\]/)?.[0];
+            const resultado = text.replaceAll("\n", "").match(/\[(.*?)\]/)?.[0];
 
-        return eval(resultado ?? "[]");
-    } else {
-        throw new Error(`Error fetching ${url}: ${response.statusText}`);
+            return eval(resultado ?? "[]");
+        } else {
+            return [];
+        }
+    } catch {
+        return [];
     }
 };
 
