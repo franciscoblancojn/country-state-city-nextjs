@@ -9994,4 +9994,14 @@ export const states = [
         id_country: 82,
         text: "Boyacá",
     },
+    {
+        id: 2204,
+        id_country: 247,
+        text: "Bonaire",
+    },
+    {
+        id: 2205,
+        id_country: 248,
+        text: "Curazao",
+    },
 ];
