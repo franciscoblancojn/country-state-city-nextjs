@@ -24,6 +24,12 @@ const main = async () => {
         { createDirs: true }
     );
 
+    await Bun.write(
+        "./src/country/index.json",
+        `${JSON.stringify(countrys)}`,
+        { createDirs: true }
+    );
+
     const listExportStates: string[] = [];
     const listExportCity: string[] = [];
 
@@ -38,6 +44,7 @@ const main = async () => {
 
             const stateName = parseName(state);
             const stateFile = `./src/country/${countryName}/${stateName}/citys.tsx`;
+            const stateFileJson = `./src/country/${countryName}/${stateName}/citys.json`;
             console.log(stateFile);
 
             listExportCitysByCountry.push(
@@ -48,9 +55,15 @@ const main = async () => {
                 stateFile,
                 `export const citys = ${JSON.stringify(citysStates)}`
             );
+            await Bun.write(
+                stateFileJson,
+                `${JSON.stringify(citysStates)}`
+            );
         }
         const countryFileState = `./src/country/${countryName}/states.tsx`;
         const countryFileCity = `./src/country/${countryName}/citys.tsx`;
+        const countryFileStateJson = `./src/country/${countryName}/states.json`;
+
 
         listExportStates.push(
             `import {states as states_${country.id}} from "../country/${countryName}/states";`
@@ -62,6 +75,10 @@ const main = async () => {
         await Bun.write(
             countryFileState,
             `export const states = ${JSON.stringify(statesCountry)}`
+        );
+        await Bun.write(
+            countryFileStateJson,
+            `${JSON.stringify(statesCountry)}`
         );
         await Bun.write(
             countryFileCity,

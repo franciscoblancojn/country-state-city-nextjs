@@ -1,6 +1,1 @@
-export const citys = [
-    { id: 269797, id_state: 1045, text: "Cakovec", id_country: 71 },
-    { id: 270771, id_state: 1045, text: "Donji Mihaljevec", id_country: 71 },
-    { id: 275288, id_state: 1045, text: "Orehovica", id_country: 71 },
-    { id: 276226, id_state: 1045, text: "Prelog", id_country: 71 },
-];
+export const citys = [{"id":269797,"id_state":1045,"text":"Cakovec","id_country":71},{"id":270771,"id_state":1045,"text":"Donji Mihaljevec","id_country":71},{"id":275288,"id_state":1045,"text":"Orehovica","id_country":71},{"id":276226,"id_state":1045,"text":"Prelog","id_country":71}]
