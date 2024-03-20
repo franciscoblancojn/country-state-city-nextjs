@@ -1,1 +1,9 @@
-export const states = [{"id":984,"id_country":145,"text":"Canillo"},{"id":985,"id_country":145,"text":"Encamp"},{"id":986,"id_country":145,"text":"La Massana"},{"id":987,"id_country":145,"text":"Ordino"},{"id":988,"id_country":145,"text":"Sant Julia de Loria"},{"id":989,"id_country":145,"text":"Andorra la Vella"},{"id":990,"id_country":145,"text":"Escaldes-Engordany"}]
+export const states = [
+    { id: 984, id_country: 145, text: "Canillo" },
+    { id: 985, id_country: 145, text: "Encamp" },
+    { id: 986, id_country: 145, text: "La Massana" },
+    { id: 987, id_country: 145, text: "Ordino" },
+    { id: 988, id_country: 145, text: "Sant Julia de Loria" },
+    { id: 989, id_country: 145, text: "Andorra la Vella" },
+    { id: 990, id_country: 145, text: "Escaldes-Engordany" },
+];

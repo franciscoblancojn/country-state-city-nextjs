@@ -96,11 +96,7 @@ export const getFetchCode = async (url: string) => {
     try {
         const response = await fetch(url);
         if (response.ok) {
-            const text = await response.text();
-
-            const resultado = text.replaceAll("\n", "").match(/\[(.*?)\]/)?.[0];
-
-            return eval(resultado ?? "[]");
+            return await response.json();
         } else {
             return [];
         }

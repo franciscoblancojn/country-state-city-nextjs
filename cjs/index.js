@@ -62,36 +62,34 @@ const getRuteDir = () => {
 };
 exports.getRuteDir = getRuteDir;
 const getRuteCountrys = () => {
-    return `${(0, exports.getRuteDir)()}/country/index.js`;
+    return `${(0, exports.getRuteDir)()}/countrys.json`;
 };
 exports.getRuteCountrys = getRuteCountrys;
 const getRuteCountrysWithImg = () => {
-    return `${(0, exports.getRuteDir)()}/country_img.js`;
+    return `${(0, exports.getRuteDir)()}/countrys_img.json`;
 };
 exports.getRuteCountrysWithImg = getRuteCountrysWithImg;
 const getRuteStates = () => {
-    return `${(0, exports.getRuteDir)()}/state/index.js`;
+    return `${(0, exports.getRuteDir)()}/states.json`;
 };
 exports.getRuteStates = getRuteStates;
 const getRuteStatesByCountry = (country) => {
-    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/states.js`;
+    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/states.json`;
 };
 exports.getRuteStatesByCountry = getRuteStatesByCountry;
 const getRuteCitys = () => {
-    return `${(0, exports.getRuteDir)()}/city/index.js`;
+    return `${(0, exports.getRuteDir)()}/citys.json`;
 };
 exports.getRuteCitys = getRuteCitys;
 const getRuteCitysByStateAndCountry = (country, state) => {
-    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/${(0, exports.parseNameFolder)(state)}/citys.js`;
+    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/${(0, exports.parseNameFolder)(state)}/citys.json`;
 };
 exports.getRuteCitysByStateAndCountry = getRuteCitysByStateAndCountry;
 const getFetchCode = async (url) => {
     try {
         const response = await fetch(url);
         if (response.ok) {
-            const text = await response.text();
-            const resultado = text.replaceAll("\n", "").match(/\[(.*?)\]/)?.[0];
-            return eval(resultado ?? "[]");
+            return await response.json();
         }
         else {
             return [];
