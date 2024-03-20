@@ -58,23 +58,23 @@ export const getRuteDir = () => {
 };
 
 export const getRuteCountrys = () => {
-    return `${getRuteDir()}/country/index.js`;
+    return `${getRuteDir()}/countrys.json`;
 };
 export const getRuteCountrysWithImg = () => {
-    return `${getRuteDir()}/country_img.js`;
+    return `${getRuteDir()}/countrys_img.json`;
 };
 export const getRuteStates = () => {
-    return `${getRuteDir()}/state/index.js`;
+    return `${getRuteDir()}/states.json`;
 };
 
 export const getRuteStatesByCountry = (country: {
     text: string;
     id: number;
 }) => {
-    return `${getRuteDir()}/country/${parseNameFolder(country)}/states.js`;
+    return `${getRuteDir()}/country/${parseNameFolder(country)}/states.json`;
 };
 export const getRuteCitys = () => {
-    return `${getRuteDir()}/city/index.js`;
+    return `${getRuteDir()}/citys.json`;
 };
 
 export const getRuteCitysByStateAndCountry = (
@@ -89,7 +89,7 @@ export const getRuteCitysByStateAndCountry = (
 ) => {
     return `${getRuteDir()}/country/${parseNameFolder(
         country
-    )}/${parseNameFolder(state)}/citys.js`;
+    )}/${parseNameFolder(state)}/citys.json`;
 };
 
 export const getFetchCode = async (url: string) => {

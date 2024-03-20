@@ -1,7 +1,1 @@
-export const citys = [
-    { id: 789407, id_state: 2139, text: "Sung Noen", id_country: 92 },
-    { id: 789408, id_state: 2139, text: "Nakhon Ratchasima", id_country: 92 },
-    { id: 789415, id_state: 2139, text: "Bua Yai", id_country: 92 },
-    { id: 789417, id_state: 2139, text: "Ban Lueam", id_country: 92 },
-    { id: 789420, id_state: 2139, text: "Chum Phuang", id_country: 92 },
-];
+export const citys = [{"id":789407,"id_state":2139,"text":"Sung Noen","id_country":92},{"id":789408,"id_state":2139,"text":"Nakhon Ratchasima","id_country":92},{"id":789415,"id_state":2139,"text":"Bua Yai","id_country":92},{"id":789417,"id_state":2139,"text":"Ban Lueam","id_country":92},{"id":789420,"id_state":2139,"text":"Chum Phuang","id_country":92}]

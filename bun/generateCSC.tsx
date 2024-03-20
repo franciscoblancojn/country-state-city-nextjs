@@ -1,4 +1,5 @@
 import { countrys } from "../src/_country";
+import { countrys as country_img } from "../src/country_img";
 import { states } from "../src/_state";
 import { citys } from "../src/_city";
 import Bun from "bun";
@@ -26,7 +27,35 @@ const main = async () => {
 
     await Bun.write(
         "./json/index.json",
+        `${JSON.stringify({
+            countrys:"/json/countrys.json",
+            countrys_img:"/json/countrys_img.json",
+            states:"/json/states.json",
+            citys:"/json/citys.json",
+            statesByCountry:"/json/country/${countryName}/states.json",
+            citysByCountryAndState:"/json/country/${countryName}/${stateName}/citys.json",
+
+        })}`,
+        { createDirs: true }
+    );
+    await Bun.write(
+        "./json/countrys.json",
         `${JSON.stringify(countrys)}`,
+        { createDirs: true }
+    );
+    await Bun.write(
+        "./json/countrys_img.json",
+        `${JSON.stringify(country_img)}`,
+        { createDirs: true }
+    );
+    await Bun.write(
+        "./json/states.json",
+        `${JSON.stringify(states)}`,
+        { createDirs: true }
+    );
+    await Bun.write(
+        "./json/citys.json",
+        `${JSON.stringify(citys)}`,
         { createDirs: true }
     );
 
@@ -44,7 +73,7 @@ const main = async () => {
 
             const stateName = parseName(state);
             const stateFile = `./src/country/${countryName}/${stateName}/citys.tsx`;
-            const stateFileJson = `./json/${countryName}/${stateName}/citys.json`;
+            const stateFileJson = `./json/country/${countryName}/${stateName}/citys.json`;
             console.log(stateFile);
 
             listExportCitysByCountry.push(
@@ -62,7 +91,7 @@ const main = async () => {
         }
         const countryFileState = `./src/country/${countryName}/states.tsx`;
         const countryFileCity = `./src/country/${countryName}/citys.tsx`;
-        const countryFileStateJson = `./json/${countryName}/states.json`;
+        const countryFileStateJson = `./json/country/${countryName}/states.json`;
 
 
         listExportStates.push(

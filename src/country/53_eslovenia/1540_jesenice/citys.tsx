@@ -1,3 +1,1 @@
-export const citys = [
-    { id: 788783, id_state: 1540, text: "Upper Carniola", id_country: 53 },
-];
+export const citys = [{"id":788783,"id_state":1540,"text":"Upper Carniola","id_country":53}]

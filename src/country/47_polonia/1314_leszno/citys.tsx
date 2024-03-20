@@ -1,8 +1,1 @@
-export const citys = [
-    { id: 324703, id_state: 1314, text: "Augustopol", id_country: 47 },
-    { id: 328684, id_state: 1314, text: "Bukowiec Górny", id_country: 47 },
-    { id: 335659, id_state: 1314, text: "Gostyn", id_country: 47 },
-    { id: 346953, id_state: 1314, text: "Leszno", id_country: 47 },
-    { id: 350649, id_state: 1314, text: "Moraczewo", id_country: 47 },
-    { id: 358475, id_state: 1314, text: "Racot", id_country: 47 },
-];
+export const citys = [{"id":324703,"id_state":1314,"text":"Augustopol","id_country":47},{"id":328684,"id_state":1314,"text":"Bukowiec Górny","id_country":47},{"id":335659,"id_state":1314,"text":"Gostyn","id_country":47},{"id":346953,"id_state":1314,"text":"Leszno","id_country":47},{"id":350649,"id_state":1314,"text":"Moraczewo","id_country":47},{"id":358475,"id_state":1314,"text":"Racot","id_country":47}]
