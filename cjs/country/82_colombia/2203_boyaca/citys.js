@@ -876,5 +876,12 @@ exports.citys = [
         id_country: 82,
         nameAve: "ZETAQUIRA(BOYACA)",
     },
+    {
+        id: 791424,
+        id_state: 2203,
+        text: "Zetaquira",
+        id_country: 82,
+        nameAve: "ZETAQUIRA(BOYACA)",
+    },
 ];
 //# sourceMappingURL=citys.js.map

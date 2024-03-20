@@ -1,1 +1,6 @@
-export const citys = [{"id":324867,"id_state":1316,"text":"Bacze Suche","id_country":47},{"id":324869,"id_state":1316,"text":"Baczki","id_country":47},{"id":339296,"id_state":1316,"text":"Jeziorko","id_country":47},{"id":355270,"id_state":1316,"text":"Piatnica Poduchowna","id_country":47}]
+export const citys = [
+    { id: 324867, id_state: 1316, text: "Bacze Suche", id_country: 47 },
+    { id: 324869, id_state: 1316, text: "Baczki", id_country: 47 },
+    { id: 339296, id_state: 1316, text: "Jeziorko", id_country: 47 },
+    { id: 355270, id_state: 1316, text: "Piatnica Poduchowna", id_country: 47 },
+];

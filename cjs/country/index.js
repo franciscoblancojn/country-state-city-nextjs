@@ -216,5 +216,7 @@ exports.countrys = [
     { id: 243, text: "Yemen", code: "YE" },
     { id: 116, text: "Zambia", code: "ZM" },
     { id: 96, text: "Zimbabue", code: "ZW" },
+    { id: 247, text: "Bonaire", code: "BON" },
+    { id: 248, text: "Curazao", code: "CUR" },
 ];
 //# sourceMappingURL=index.js.map
