@@ -1,1 +1,6 @@
-export const citys = [{"id":384778,"id_state":1365,"text":"Grosswardein","id_country":72},{"id":389018,"id_state":1365,"text":"Nagy-Várad","id_country":72},{"id":389742,"id_state":1365,"text":"Oradea","id_country":72},{"id":389743,"id_state":1365,"text":"Oradea-Mare","id_country":72}]
+export const citys = [
+    { id: 384778, id_state: 1365, text: "Grosswardein", id_country: 72 },
+    { id: 389018, id_state: 1365, text: "Nagy-Várad", id_country: 72 },
+    { id: 389742, id_state: 1365, text: "Oradea", id_country: 72 },
+    { id: 389743, id_state: 1365, text: "Oradea-Mare", id_country: 72 },
+];

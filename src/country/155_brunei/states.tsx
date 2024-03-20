@@ -1,1 +1,1 @@
-export const states = [{"id":691,"id_country":155,"text":"Brunei"}]
+export const states = [{ id: 691, id_country: 155, text: "Brunei" }];
