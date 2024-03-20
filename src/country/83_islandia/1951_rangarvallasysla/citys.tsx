@@ -1,9 +1,1 @@
-export const citys = [
-    { id: 640598, id_state: 1951, text: "Bjóluhverfi", id_country: 83 },
-    { id: 640610, id_state: 1951, text: "Breiðabólsstaðir", id_country: 83 },
-    { id: 640630, id_state: 1951, text: "Búðarhólshverfi", id_country: 83 },
-    { id: 640736, id_state: 1951, text: "Hella", id_country: 83 },
-    { id: 640809, id_state: 1951, text: "Hvolsvöllur", id_country: 83 },
-    { id: 640824, id_state: 1951, text: "Kálfholt", id_country: 83 },
-    { id: 641052, id_state: 1951, text: "Stóri-Dalur", id_country: 83 },
-];
+export const citys = [{"id":640598,"id_state":1951,"text":"Bjóluhverfi","id_country":83},{"id":640610,"id_state":1951,"text":"Breiðabólsstaðir","id_country":83},{"id":640630,"id_state":1951,"text":"Búðarhólshverfi","id_country":83},{"id":640736,"id_state":1951,"text":"Hella","id_country":83},{"id":640809,"id_state":1951,"text":"Hvolsvöllur","id_country":83},{"id":640824,"id_state":1951,"text":"Kálfholt","id_country":83},{"id":641052,"id_state":1951,"text":"Stóri-Dalur","id_country":83}]

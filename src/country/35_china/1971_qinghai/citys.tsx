@@ -1,5 +1,1 @@
-export const citys = [
-    { id: 641180, id_state: 1971, text: "Adoi", id_country: 35 },
-    { id: 744608, id_state: 1971, text: "Xining", id_country: 35 },
-    { id: 744611, id_state: 1971, text: "Xining Shi", id_country: 35 },
-];
+export const citys = [{"id":641180,"id_state":1971,"text":"Adoi","id_country":35},{"id":744608,"id_state":1971,"text":"Xining","id_country":35},{"id":744611,"id_state":1971,"text":"Xining Shi","id_country":35}]

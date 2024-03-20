@@ -1,8 +1,1 @@
-export const citys = [
-    { id: 787687, id_state: 2081, text: "Baníca", id_country: 138 },
-    { id: 787704, id_state: 2081, text: "Comendador", id_country: 138 },
-    { id: 787716, id_state: 2081, text: "El Llano", id_country: 138 },
-    { id: 787743, id_state: 2081, text: "Hondo Valle", id_country: 138 },
-    { id: 787759, id_state: 2081, text: "Juan Santiago", id_country: 138 },
-    { id: 787817, id_state: 2081, text: "Pedro Santana", id_country: 138 },
-];
+export const citys = [{"id":787687,"id_state":2081,"text":"Baníca","id_country":138},{"id":787704,"id_state":2081,"text":"Comendador","id_country":138},{"id":787716,"id_state":2081,"text":"El Llano","id_country":138},{"id":787743,"id_state":2081,"text":"Hondo Valle","id_country":138},{"id":787759,"id_state":2081,"text":"Juan Santiago","id_country":138},{"id":787817,"id_state":2081,"text":"Pedro Santana","id_country":138}]
