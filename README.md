@@ -34,8 +34,8 @@ import {
 
 ## Use custom repository 
 -   Download zip [here](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Ffranciscoblancojn%2Fcountry-state-city-nextjs%2Ftree%2Fmaster%2Fjson)
--   Save File in your repository
--   Config in .env NEXT_PUBLIC_CSC=your_url_repo
+-   Save Files in your repository
+-   Config .env with NEXT_PUBLIC_CSC=your_url_repository
 
 
 ## Developer
