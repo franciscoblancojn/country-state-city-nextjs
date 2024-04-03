@@ -54,7 +54,7 @@ export const parseNameFolder = (e: { text: string; id: number }) => {
 };
 
 export const getRuteDir = () => {
-    return `https://country-state-city-nextjs.vercel.app`;
+    return process?.env?.["NEXT_PUBLIC_CSC"] ?? `https://country-state-city-nextjs.vercel.app`;
 };
 
 export const getRuteCountrys = () => {

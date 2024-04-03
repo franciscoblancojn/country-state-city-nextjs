@@ -23,23 +23,23 @@ import {
     countryProps,
     stateProps,
     cityProps,
-    loadCountrys,
-    loadStates,
-    loadCitys,
-    loadCountrysWidthImg,
-    loadStatesByCountry,
-    loadCitysByStateAndCountry,
-} from "country-state-city-nextjs/cjs/index";
+    getDataCountrys,
+    getDataCountrysWithImg,
+    getDataStates,
+    getDataStatesByCountry,
+    getDataCitys,
+    getDataCitysByStateAndCountry,
+} from "country-state-city-nextjs";
 ```
 
 ## Developer
 
 [Francisco Blanco](https://franciscoblanco.vercel.app/)
 
-[Gitlab franciscoblancojn](https://gitlab.com/franciscoblancojn)
+[Github franciscoblancojn](https://github.com/franciscoblancojn)
 
 [Email blancofrancisco34@gmail.com](mailto:blancofrancisco34@gmail.com)
 
 ## Repositories
 
--   [Gitlab](https://gitlab.com/franciscoblancojn/country-state-city)
+-   [Github](https://github.com/franciscoblancojn/country-state-city-nextjs)
