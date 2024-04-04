@@ -24,7 +24,7 @@ export const parseNameFolder = (e: { text: string; id: number }) => {
         .toLowerCase()
         .split(" ")
         .join("_")
-        .replace(/[^a-zA-Z0-9_]/g, '');
+        .replace(/[^a-zA-Z0-9_]/g, "");
 };
 
 export const getRuteDir = () => {
