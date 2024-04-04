@@ -54,6 +54,8 @@ const parseNameFolder = (e) => {
         .split(",")
         .join("")
         .split("'")
+        .join("")
+        .split(".")
         .join("");
 };
 exports.parseNameFolder = parseNameFolder;

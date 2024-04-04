@@ -1,1 +1,4 @@
-export const citys = [{"id":229701,"id_state":1001,"text":"Agarakadzor","id_country":6},{"id":230634,"id_state":1001,"text":"Ghyotur","id_country":6}]
+export const citys = [
+    { id: 229701, id_state: 1001, text: "Agarakadzor", id_country: 6 },
+    { id: 230634, id_state: 1001, text: "Ghyotur", id_country: 6 },
+];
