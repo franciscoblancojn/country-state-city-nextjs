@@ -1,8 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.citys = void 0;
-exports.citys = [
-    { id: 67246, id_state: 718, text: "El-Auyn", id_country: 242 },
-    { id: 67247, id_state: 718, text: "Nuadibu", id_country: 242 },
-];
-//# sourceMappingURL=citys.js.map

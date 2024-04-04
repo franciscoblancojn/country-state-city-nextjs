@@ -4,30 +4,11 @@ export interface countryProps {
     code: string;
     img?: string;
 }
-
-export const loadCountrys = async () => {
-    const { countrys }: { countrys: countryProps[] } = await import(
-        "./country"
-    );
-    return countrys;
-};
-export const loadCountrysWidthImg = async () => {
-    const { countrys }: { countrys: countryProps[] } = await import(
-        "./country_img"
-    );
-    return countrys;
-};
-
 export interface stateProps {
     id: number;
     text: string;
     id_country: number;
 }
-export const loadStates = async () => {
-    const { states }: { states: stateProps[] } = await import("./state");
-    return states;
-};
-
 export interface cityProps {
     id: number;
     text: string;
@@ -35,10 +16,6 @@ export interface cityProps {
     id_country: number;
     nameAve?: string | undefined;
 }
-export const loadCitys = async () => {
-    const { citys }: { citys: cityProps[] } = await import("./city");
-    return citys;
-};
 
 export const parseNameFolder = (e: { text: string; id: number }) => {
     return `${e.id}_${e.text}`
@@ -47,12 +24,7 @@ export const parseNameFolder = (e: { text: string; id: number }) => {
         .toLowerCase()
         .split(" ")
         .join("_")
-        .split(",")
-        .join("")
-        .split("'")
-        .join("")
-        .split(".")
-        .join("");
+        .replace(/[^a-zA-Z0-9_]/g, '');
 };
 
 export const getRuteDir = () => {

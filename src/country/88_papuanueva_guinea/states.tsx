@@ -1,0 +1,1 @@
+export const states = [{"id":675,"id_country":88,"text":"Papua New Guinea"}]
