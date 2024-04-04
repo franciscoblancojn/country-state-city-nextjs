@@ -1,0 +1,1 @@
+export const citys = [{"id":1999,"id_state":160,"text":"Kostroma","id_country":50}]

@@ -50,6 +50,8 @@ export const parseNameFolder = (e: { text: string; id: number }) => {
         .split(",")
         .join("")
         .split("'")
+        .join("")
+        .split(".")
         .join("");
 };
 

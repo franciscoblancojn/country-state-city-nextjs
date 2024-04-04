@@ -1,6 +1,1 @@
-export const states = [
-    { id: 98, id_country: 31, text: "Littoral" },
-    { id: 99, id_country: 31, text: "Southwest Region" },
-    { id: 100, id_country: 31, text: "North" },
-    { id: 101, id_country: 31, text: "Central" },
-];
+export const states = [{"id":98,"id_country":31,"text":"Littoral"},{"id":99,"id_country":31,"text":"Southwest Region"},{"id":100,"id_country":31,"text":"North"},{"id":101,"id_country":31,"text":"Central"}]
