@@ -37,10 +37,7 @@ export const getRuteDir = () => {
 export const getRuteCountrys = () => {
     return `${getRuteDir()}/countrys.json`;
 };
-export const getRuteCountryImg = (country: {
-    text: string;
-    id: number;
-}) => {
+export const getRuteCountryImg = (country: { text: string; id: number }) => {
     return `${getRuteDir()}/country/${parseNameFolder(country)}/img.png`;
 };
 export const getRuteStates = () => {

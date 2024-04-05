@@ -22,6 +22,10 @@ export declare const parseNameFolder: (e: {
 }) => string;
 export declare const getRuteDir: () => string;
 export declare const getRuteCountrys: () => string;
+export declare const getRuteCountryImg: (country: {
+    text: string;
+    id: number;
+}) => string;
 export declare const getRuteStates: () => string;
 export declare const getRuteStatesByCountry: (country: {
     text: string;

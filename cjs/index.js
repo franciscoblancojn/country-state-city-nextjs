@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getDataCitysByStateAndCountry = exports.getDataCitys = exports.getDataStatesByCountry = exports.getDataStates = exports.getDataCountrys = exports.getFetchCode = exports.getRuteCitysByStateAndCountry = exports.getRuteCitys = exports.getRuteStatesByCountry = exports.getRuteStates = exports.getRuteCountrys = exports.getRuteDir = exports.parseNameFolder = void 0;
+exports.getDataCitysByStateAndCountry = exports.getDataCitys = exports.getDataStatesByCountry = exports.getDataStates = exports.getDataCountrys = exports.getFetchCode = exports.getRuteCitysByStateAndCountry = exports.getRuteCitys = exports.getRuteStatesByCountry = exports.getRuteStates = exports.getRuteCountryImg = exports.getRuteCountrys = exports.getRuteDir = exports.parseNameFolder = void 0;
 const parseNameFolder = (e) => {
     return `${e.id}_${e.text}`
         .normalize("NFD")
@@ -20,6 +20,10 @@ const getRuteCountrys = () => {
     return `${(0, exports.getRuteDir)()}/countrys.json`;
 };
 exports.getRuteCountrys = getRuteCountrys;
+const getRuteCountryImg = (country) => {
+    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/img.png`;
+};
+exports.getRuteCountryImg = getRuteCountryImg;
 const getRuteStates = () => {
     return `${(0, exports.getRuteDir)()}/states.json`;
 };

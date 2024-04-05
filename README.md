@@ -24,7 +24,7 @@ import {
     stateProps,
     cityProps,
     getDataCountrys,
-    getDataCountrysWithImg,
+    getRuteCountryImg,
     getDataStates,
     getDataStatesByCountry,
     getDataCitys,
