@@ -3,6 +3,7 @@ import { countrys as country_img } from "../src/country_img";
 import { states } from "../src/_state";
 import { citys } from "../src/_city";
 import Bun from "bun";
+import fs from "fs";
 
 const main = async () => {
     const parseName = (e: { text: string; id: number }) => {
@@ -12,7 +13,7 @@ const main = async () => {
             .toLowerCase()
             .split(" ")
             .join("_")
-            .replace(/[^a-zA-Z0-9_]/g, '');
+            .replace(/[^a-zA-Z0-9_]/g, "");
     };
 
     // const file = Bun.file("./src/country/index.tsx")
@@ -25,36 +26,30 @@ const main = async () => {
     await Bun.write(
         "./json/index.json",
         `${JSON.stringify({
-            countrys:"/json/countrys.json",
-            countrys_img:"/json/countrys_img.json",
-            states:"/json/states.json",
-            citys:"/json/citys.json",
-            statesByCountry:"/json/country/${countryName}/states.json",
-            citysByCountryAndState:"/json/country/${countryName}/${stateName}/citys.json",
-
+            countrys: "/json/countrys.json",
+            // countrys_img: "/json/countrys_img.json",
+            states: "/json/states.json",
+            citys: "/json/citys.json",
+            statesByCountry: "/json/country/${countryName}/states.json",
+            citysByCountryAndState:
+                "/json/country/${countryName}/${stateName}/citys.json",
         })}`,
         { createDirs: true }
     );
-    await Bun.write(
-        "./json/countrys.json",
-        `${JSON.stringify(countrys)}`,
-        { createDirs: true }
-    );
-    await Bun.write(
-        "./json/countrys_img.json",
-        `${JSON.stringify(country_img)}`,
-        { createDirs: true }
-    );
-    await Bun.write(
-        "./json/states.json",
-        `${JSON.stringify(states)}`,
-        { createDirs: true }
-    );
-    await Bun.write(
-        "./json/citys.json",
-        `${JSON.stringify(citys)}`,
-        { createDirs: true }
-    );
+    await Bun.write("./json/countrys.json", `${JSON.stringify(countrys)}`, {
+        createDirs: true,
+    });
+    // await Bun.write(
+    //     "./json/countrys_img.json",
+    //     `${JSON.stringify(country_img)}`,
+    //     { createDirs: true }
+    // );
+    await Bun.write("./json/states.json", `${JSON.stringify(states)}`, {
+        createDirs: true,
+    });
+    await Bun.write("./json/citys.json", `${JSON.stringify(citys)}`, {
+        createDirs: true,
+    });
 
     const listExportStates: string[] = [];
     const listExportCity: string[] = [];
@@ -64,6 +59,20 @@ const main = async () => {
         const countryName = parseName(country);
         const statesCountry = states.filter((s) => s.id_country == country.id);
         const listExportCitysByCountry: string[] = [];
+
+        const img = (country_img[i]?.img ?? "").replace(/^data:image\/png;base64,/, "");
+
+        const imgUrl = `./json/country/${countryName}/img.png`;
+
+        const buffer = Buffer.from(img, "base64");
+
+        //PENDING: add file img
+        await Bun.write(
+            imgUrl,
+            img,
+            { createDirs: true ,base64:true}
+        );
+        await fs.writeFile(imgUrl, img,"base64",console.log);
         for (let j = 0; j < statesCountry.length; j++) {
             const state = statesCountry[j];
             const citysStates = citys.filter((s) => s.id_state == state.id);
@@ -81,15 +90,11 @@ const main = async () => {
                 stateFile,
                 `export const citys = ${JSON.stringify(citysStates)}`
             );
-            await Bun.write(
-                stateFileJson,
-                `${JSON.stringify(citysStates)}`
-            );
+            await Bun.write(stateFileJson, `${JSON.stringify(citysStates)}`);
         }
         const countryFileState = `./src/country/${countryName}/states.tsx`;
         const countryFileCity = `./src/country/${countryName}/citys.tsx`;
         const countryFileStateJson = `./json/country/${countryName}/states.json`;
-
 
         listExportStates.push(
             `import {states as states_${country.id}} from "../country/${countryName}/states";`

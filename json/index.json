@@ -1,1 +1,1 @@
-{"countrys":"/json/countrys.json","countrys_img":"/json/countrys_img.json","states":"/json/states.json","citys":"/json/citys.json","statesByCountry":"/json/country/${countryName}/states.json","citysByCountryAndState":"/json/country/${countryName}/${stateName}/citys.json"}
+{"countrys":"/json/countrys.json","states":"/json/states.json","citys":"/json/citys.json","statesByCountry":"/json/country/${countryName}/states.json","citysByCountryAndState":"/json/country/${countryName}/${stateName}/citys.json"}
