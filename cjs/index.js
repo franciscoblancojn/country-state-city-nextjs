@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getDataCitysByStateAndCountry = exports.getDataCitys = exports.getDataStatesByCountry = exports.getDataStates = exports.getDataCountrysWithImg = exports.getDataCountrys = exports.getFetchCode = exports.getRuteCitysByStateAndCountry = exports.getRuteCitys = exports.getRuteStatesByCountry = exports.getRuteStates = exports.getRuteCountrysWithImg = exports.getRuteCountrys = exports.getRuteDir = exports.parseNameFolder = void 0;
+exports.getDataCitysByStateAndCountry = exports.getDataCitys = exports.getDataStatesByCountry = exports.getDataStates = exports.getDataCountrys = exports.getFetchCode = exports.getRuteCitysByStateAndCountry = exports.getRuteCitys = exports.getRuteStatesByCountry = exports.getRuteStates = exports.getRuteCountrys = exports.getRuteDir = exports.parseNameFolder = void 0;
 const parseNameFolder = (e) => {
     return `${e.id}_${e.text}`
         .normalize("NFD")
@@ -20,10 +20,6 @@ const getRuteCountrys = () => {
     return `${(0, exports.getRuteDir)()}/countrys.json`;
 };
 exports.getRuteCountrys = getRuteCountrys;
-const getRuteCountrysWithImg = () => {
-    return `${(0, exports.getRuteDir)()}/countrys_img.json`;
-};
-exports.getRuteCountrysWithImg = getRuteCountrysWithImg;
 const getRuteStates = () => {
     return `${(0, exports.getRuteDir)()}/states.json`;
 };
@@ -59,10 +55,6 @@ const getDataCountrys = async () => {
     return await (0, exports.getFetchCode)((0, exports.getRuteCountrys)());
 };
 exports.getDataCountrys = getDataCountrys;
-const getDataCountrysWithImg = async () => {
-    return await (0, exports.getFetchCode)((0, exports.getRuteCountrysWithImg)());
-};
-exports.getDataCountrysWithImg = getDataCountrysWithImg;
 const getDataStates = async () => {
     return await (0, exports.getFetchCode)((0, exports.getRuteStates)());
 };

@@ -1,1 +1,4 @@
-export const states = [{"id":102,"id_country":33,"text":"Government controlled area"},{"id":103,"id_country":33,"text":"Turkish controlled area"}]
+export const states = [
+    { id: 102, id_country: 33, text: "Government controlled area" },
+    { id: 103, id_country: 33, text: "Turkish controlled area" },
+];

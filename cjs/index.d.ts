@@ -22,7 +22,6 @@ export declare const parseNameFolder: (e: {
 }) => string;
 export declare const getRuteDir: () => string;
 export declare const getRuteCountrys: () => string;
-export declare const getRuteCountrysWithImg: () => string;
 export declare const getRuteStates: () => string;
 export declare const getRuteStatesByCountry: (country: {
     text: string;
@@ -38,7 +37,6 @@ export declare const getRuteCitysByStateAndCountry: (country: {
 }) => string;
 export declare const getFetchCode: (url: string) => Promise<any>;
 export declare const getDataCountrys: () => Promise<any>;
-export declare const getDataCountrysWithImg: () => Promise<any>;
 export declare const getDataStates: () => Promise<any>;
 export declare const getDataStatesByCountry: (country: {
     text: string;

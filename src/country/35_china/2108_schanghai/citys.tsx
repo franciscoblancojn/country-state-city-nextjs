@@ -1,1 +1,1 @@
-export const citys = []
+export const citys = [];

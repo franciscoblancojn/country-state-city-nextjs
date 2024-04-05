@@ -37,9 +37,6 @@ export const getRuteDir = () => {
 export const getRuteCountrys = () => {
     return `${getRuteDir()}/countrys.json`;
 };
-export const getRuteCountrysWithImg = () => {
-    return `${getRuteDir()}/countrys_img.json`;
-};
 export const getRuteStates = () => {
     return `${getRuteDir()}/states.json`;
 };
@@ -84,9 +81,6 @@ export const getFetchCode = async (url: string) => {
 
 export const getDataCountrys = async () => {
     return await getFetchCode(getRuteCountrys());
-};
-export const getDataCountrysWithImg = async () => {
-    return await getFetchCode(getRuteCountrysWithImg());
 };
 export const getDataStates = async () => {
     return await getFetchCode(getRuteStates());
