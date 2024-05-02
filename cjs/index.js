@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getDataCitysByStateAndCountry = exports.getDataCitys = exports.getDataStatesByCountry = exports.getDataStates = exports.getDataCountrys = exports.getFetchCode = exports.getRuteCitysByStateAndCountry = exports.getRuteCitys = exports.getRuteStatesByCountry = exports.getRuteStates = exports.getRuteCountryImg = exports.getRuteCountrys = exports.getRuteDir = exports.parseNameFolder = void 0;
+exports.getDataCitysByStateAndCountry = exports.getDataCitysByCountry = exports.getDataCitys = exports.getDataStatesByCountry = exports.getDataStates = exports.getDataCountrys = exports.getFetchCode = exports.getRuteCitysByStateAndCountry = exports.getRuteCitysByCountry = exports.getRuteCitys = exports.getRuteStatesByCountry = exports.getRuteStates = exports.getRuteCountryImg = exports.getRuteCountrys = exports.getRuteDir = exports.parseNameFolder = void 0;
 const parseNameFolder = (e) => {
     return `${e.id}_${e.text}`
         .normalize("NFD")
@@ -36,6 +36,10 @@ const getRuteCitys = () => {
     return `${(0, exports.getRuteDir)()}/citys.json`;
 };
 exports.getRuteCitys = getRuteCitys;
+const getRuteCitysByCountry = (country) => {
+    return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/citys.json`;
+};
+exports.getRuteCitysByCountry = getRuteCitysByCountry;
 const getRuteCitysByStateAndCountry = (country, state) => {
     return `${(0, exports.getRuteDir)()}/country/${(0, exports.parseNameFolder)(country)}/${(0, exports.parseNameFolder)(state)}/citys.json`;
 };
@@ -71,6 +75,10 @@ const getDataCitys = async () => {
     return await (0, exports.getFetchCode)((0, exports.getRuteCitys)());
 };
 exports.getDataCitys = getDataCitys;
+const getDataCitysByCountry = async (country) => {
+    return await (0, exports.getFetchCode)((0, exports.getRuteCitysByCountry)(country));
+};
+exports.getDataCitysByCountry = getDataCitysByCountry;
 const getDataCitysByStateAndCountry = async (country, state) => {
     return await (0, exports.getFetchCode)((0, exports.getRuteCitysByStateAndCountry)(country, state));
 };

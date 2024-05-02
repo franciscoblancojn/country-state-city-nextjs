@@ -32,6 +32,10 @@ export declare const getRuteStatesByCountry: (country: {
     id: number;
 }) => string;
 export declare const getRuteCitys: () => string;
+export declare const getRuteCitysByCountry: (country: {
+    text: string;
+    id: number;
+}) => string;
 export declare const getRuteCitysByStateAndCountry: (country: {
     text: string;
     id: number;
@@ -47,6 +51,10 @@ export declare const getDataStatesByCountry: (country: {
     id: number;
 }) => Promise<any>;
 export declare const getDataCitys: () => Promise<any>;
+export declare const getDataCitysByCountry: (country: {
+    text: string;
+    id: number;
+}) => Promise<any>;
 export declare const getDataCitysByStateAndCountry: (country: {
     text: string;
     id: number;
