@@ -54,6 +54,13 @@ export const getRuteCitys = () => {
     return `${getRuteDir()}/citys.json`;
 };
 
+export const getRuteCitysByCountry = (country: {
+    text: string;
+    id: number;
+}) => {
+    return `${getRuteDir()}/country/${parseNameFolder(country)}/citys.json`;
+};
+
 export const getRuteCitysByStateAndCountry = (
     country: {
         text: string;
@@ -97,6 +104,13 @@ export const getDataStatesByCountry = async (country: {
 export const getDataCitys = async () => {
     return await getFetchCode(getRuteCitys());
 };
+export const getDataCitysByCountry = async (country: {
+    text: string;
+    id: number;
+}) => {
+    return await getFetchCode(getRuteCitysByCountry(country));
+};
+
 export const getDataCitysByStateAndCountry = async (
     country: {
         text: string;
