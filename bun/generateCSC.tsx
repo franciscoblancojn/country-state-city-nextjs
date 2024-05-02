@@ -53,12 +53,12 @@ const main = async () => {
         );
         await fs.writeFile(imgUrl, img,"base64",console.log);
 
-        const citysCountry :any = []
+        let citysCountry :any = []
 
         for (let j = 0; j < statesCountry.length; j++) {
             const state = statesCountry[j];
             const citysStates = citys.filter((s) => s.id_state == state.id);
-            citysCountry.push(citysStates)
+            citysCountry = [...citysCountry,...citysStates,]
             const stateName = parseName(state);
             const stateFileJson = `./json/country/${countryName}/${stateName}/citys.json`;
             await Bun.write(stateFileJson, `${JSON.stringify(citysStates)}`);
