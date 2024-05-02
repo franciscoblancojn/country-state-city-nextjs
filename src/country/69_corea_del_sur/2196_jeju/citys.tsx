@@ -1,3 +1,0 @@
-export const citys = [
-    { id: 790021, id_state: 2196, text: "Jeju City", id_country: 69 },
-];

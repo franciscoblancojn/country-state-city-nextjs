@@ -1,3 +1,0 @@
-export const citys = [
-    { id: 409940, id_state: 1574, text: "Saint Peter Port", id_country: 186 },
-];

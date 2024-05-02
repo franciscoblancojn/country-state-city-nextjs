@@ -1,1 +1,0 @@
-export const states = [{ id: 667, id_country: 119, text: "Angola" }];

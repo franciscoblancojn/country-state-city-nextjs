@@ -1,5 +1,0 @@
-export const citys = [
-    { id: 392190, id_state: 1398, text: "Râmnicul Vâlcea", id_country: 72 },
-    { id: 392192, id_state: 1398, text: "Râmnicu Vâlcea", id_country: 72 },
-    { id: 392524, id_state: 1398, text: "Rîmnicu Vîlcea", id_country: 72 },
-];

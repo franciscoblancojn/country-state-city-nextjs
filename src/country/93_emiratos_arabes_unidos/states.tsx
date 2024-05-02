@@ -1,5 +1,0 @@
-export const states = [
-    { id: 383, id_country: 93, text: "Dubai" },
-    { id: 406, id_country: 93, text: "Sharjah" },
-    { id: 407, id_country: 93, text: "Abu Dhabi" },
-];

@@ -1,8 +1,0 @@
-export const citys = [
-    {
-        id: 1743,
-        id_state: 151,
-        text: "Kaliningrad (Kenigsberg)",
-        id_country: 50,
-    },
-];
