@@ -18,14 +18,14 @@ const main = async () => {
     await Bun.write(
         "./json/index.json",
         `${JSON.stringify({
-            countrys: "/json/countrys.json",
-            states: "/json/states.json",
-            citys: "/json/citys.json",
-            statesByCountry: "/json/country/${countryName}/states.json",
+            countrys: "/countrys.json",
+            states: "/states.json",
+            citys: "/citys.json",
+            statesByCountry: "/country/${countryName}/states.json",
             citysByCountry:
-                "/json/country/${countryName}/citys.json",
+                "/country/${countryName}/citys.json",
             citysByCountryAndState:
-                "/json/country/${countryName}/${stateName}/citys.json",
+                "/country/${countryName}/${stateName}/citys.json",
         })}`,
         { createDirs: true }
     );
