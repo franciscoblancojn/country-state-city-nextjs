@@ -1,9 +1,10 @@
 {
-    "include": ["src/*"],
+    "include": ["src/index.tsx"],
     "exclude": [
         "cjs",
         "esm",
         "src/country_img.tsx",
+        "src/_phone.tsx",
         "src/_city.tsx",
         "src/_state.tsx",
         "src/_country.tsx",
