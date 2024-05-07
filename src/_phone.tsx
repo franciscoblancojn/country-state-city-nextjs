@@ -1006,8 +1006,6 @@ export const phones: phoneProps[] = [
     },
 ];
 
-
-
 export const countrys: {
     id: number;
     text: string;
@@ -1114,7 +1112,12 @@ export const countrys: {
     { id: 83, text: "Islandia", code: "IS", code_phone: "+354" },
     { id: 228, text: "Islas Salomón", code: "SB", code_phone: "+677" },
     { id: 58, text: "Islas Turcas y Caicos", code: "TC", code_phone: "+1" },
-    { id: 154, text: "Islas Vírgenes Británicas", code: "VG", code_phone: "+1" },
+    {
+        id: 154,
+        text: "Islas Vírgenes Británicas",
+        code: "VG",
+        code_phone: "+1",
+    },
     { id: 24, text: "Israel", code: "IL", code_phone: "+972" },
     { id: 29, text: "Italia", code: "IT", code_phone: "+39" },
     { id: 132, text: "Jamaica", code: "JM", code_phone: "+1" },
@@ -1180,7 +1183,12 @@ export const countrys: {
     { id: 239, text: "Puerto Rico", code: "PR", code_phone: "+1" },
     { id: 87, text: "Qatar", code: "QA", code_phone: "+974" },
     { id: 240, text: "Reino Unido", code: "GB", code_phone: "+44" },
-    { id: 127, text: "República Centroafricana", code: "CF", code_phone: "+236" },
+    {
+        id: 127,
+        text: "República Centroafricana",
+        code: "CF",
+        code_phone: "+236",
+    },
     { id: 106, text: "República Dominicana", code: "DO", code_phone: "+1" },
     { id: 73, text: "Reunión", code: "RE", code_phone: "+262" },
     { id: 68, text: "Ruanda", code: "RW", code_phone: "+250" },
@@ -1193,7 +1201,12 @@ export const countrys: {
     { id: 247, text: "San Marino", code: "SM", code_phone: "+378" },
     { id: 248, text: "San Martín (Francia)", code: "MF", code_phone: "+590" },
     { id: 249, text: "San Pedro y Miquelón", code: "PM", code_phone: "+508" },
-    { id: 250, text: "San Vicente y las Granadinas", code: "VC", code_phone: "+1" },
+    {
+        id: 250,
+        text: "San Vicente y las Granadinas",
+        code: "VC",
+        code_phone: "+1",
+    },
     { id: 251, text: "Santa Elena", code: "SH", code_phone: "+290" },
     { id: 252, text: "Santa Lucía", code: "LC", code_phone: "+1" },
     { id: 134, text: "Santo Tomé y Príncipe", code: "ST", code_phone: "+239" },
@@ -1216,7 +1229,12 @@ export const countrys: {
     { id: 264, text: "Taiwán", code: "TW", code_phone: "+886" },
     { id: 265, text: "Tanzania", code: "TZ", code_phone: "+255" },
     { id: 41, text: "Tayikistán", code: "TJ", code_phone: "+992" },
-    { id: 266, text: "Territorios Australes Franceses", code: "TF", code_phone: "+262" },
+    {
+        id: 266,
+        text: "Territorios Australes Franceses",
+        code: "TF",
+        code_phone: "+262",
+    },
     { id: 267, text: "Timor Oriental", code: "TL", code_phone: "+670" },
     { id: 42, text: "Togo", code: "TG", code_phone: "+228" },
     { id: 130, text: "Tokelau", code: "TK", code_phone: "+690" },
@@ -1240,81 +1258,76 @@ export const countrys: {
     { id: 279, text: "Zambia", code: "ZM", code_phone: "+260" },
     { id: 66, text: "Zimbabue", code: "ZW", code_phone: "+263" },
 
-    
-        {
-            "id": 125,
-            "text": "Malaui",
-            "code": "MW",
-            "code_phone": "+265"
-        },
-        {
-            "id": 133,
-            "text": "Malí",
-            "code": "ML",
-            "code_phone": "+223"
-        },
-        {
-            "id": 131,
-            "text": "Isla de Man",
-            "code": "IM",
-            "code_phone": "+44"
-        },
-        {
-            "id": 205,
-            "text": "Myanmar",
-            "code": "MM",
-            "code_phone": "+95"
-        },
-        {
-            "id": 19,
-            "text": "Países Bajos, Holanda",
-            "code": "NL",
-            "code_phone": "+31"
-        },
-        {
-            "id": 88,
-            "text": "Papúa-Nueva Guinea",
-            "code": "PG",
-            "code_phone": "+675"
-        },
-        {
-            "id": 65,
-            "text": "República Checa",
-            "code": "CZ",
-            "code_phone": "+420"
-        },
-        {
-            "id": 242,
-            "text": "Sáhara Occidental",
-            "code": "EH",
-            "code_phone": "+212"
-        },
-        {
-            "id": 225,
-            "text": "San Tomé y Príncipe",
-            "code": "ST",
-            "code_phone": "+239"
-        },
-        {
-            "id": 226,
-            "text": "Serbia y Montenegro",
-            "code": "CS",
-            "code_phone": "+381"
-        },
-        {
-            "id": 247,
-            "text": "Bonaire",
-            "code": "BON",
-            "code_phone": "+599"
-        },
-        {
-            "id": 248,
-            "text": "Curazao",
-            "code": "CUR",
-            "code_phone": "+599"
-        }
-    
-    
+    {
+        id: 125,
+        text: "Malaui",
+        code: "MW",
+        code_phone: "+265",
+    },
+    {
+        id: 133,
+        text: "Malí",
+        code: "ML",
+        code_phone: "+223",
+    },
+    {
+        id: 131,
+        text: "Isla de Man",
+        code: "IM",
+        code_phone: "+44",
+    },
+    {
+        id: 205,
+        text: "Myanmar",
+        code: "MM",
+        code_phone: "+95",
+    },
+    {
+        id: 19,
+        text: "Países Bajos, Holanda",
+        code: "NL",
+        code_phone: "+31",
+    },
+    {
+        id: 88,
+        text: "Papúa-Nueva Guinea",
+        code: "PG",
+        code_phone: "+675",
+    },
+    {
+        id: 65,
+        text: "República Checa",
+        code: "CZ",
+        code_phone: "+420",
+    },
+    {
+        id: 242,
+        text: "Sáhara Occidental",
+        code: "EH",
+        code_phone: "+212",
+    },
+    {
+        id: 225,
+        text: "San Tomé y Príncipe",
+        code: "ST",
+        code_phone: "+239",
+    },
+    {
+        id: 226,
+        text: "Serbia y Montenegro",
+        code: "CS",
+        code_phone: "+381",
+    },
+    {
+        id: 247,
+        text: "Bonaire",
+        code: "BON",
+        code_phone: "+599",
+    },
+    {
+        id: 248,
+        text: "Curazao",
+        code: "CUR",
+        code_phone: "+599",
+    },
 ];
-
-
