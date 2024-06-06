@@ -1301,4 +1301,10 @@ export const countrys: {
         code: "CUR",
         code_phone: "+599",
     },
+    {
+        id: 249,
+        text: "Chipre",
+        code: "CHI",
+        code_phone: "+357",
+    },
 ];

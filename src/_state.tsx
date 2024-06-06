@@ -10004,4 +10004,34 @@ export const states = [
         id_country: 248,
         text: "Curazao",
     },
+    {
+        id: 2206,
+        id_country: 249,
+        text: "Limsol",
+    },
+    {
+        id: 2207,
+        id_country: 249,
+        text: "Larnaca",
+    },
+    {
+        id: 2208,
+        id_country: 249,
+        text: "Nicosia",
+    },
+    {
+        id: 2209,
+        id_country: 249,
+        text: "Famagusta",
+    },
+    {
+        id: 2210,
+        id_country: 249,
+        text: "Pafos",
+    },
+    {
+        id: 2211,
+        id_country: 249,
+        text: "Kyrenia",
+    },
 ];
