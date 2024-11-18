@@ -34,6 +34,7 @@
     "bun-state-co": "bun ./bun/state-co.tsx",
     "bun-generate-csc": "bun ./bun/generateCSC.tsx",
     "bun-generate-phone": "bun ./bun/generatePhone.tsx",
+    "bun-generate-lang": "bun ./bun/generateLang.tsx",
     "test-load": "bun ./test/load.tsx"
   },
   "dependencies": { },

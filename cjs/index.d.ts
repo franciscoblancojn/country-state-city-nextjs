@@ -4,6 +4,7 @@ export interface countryProps {
     code: string;
     img?: string;
     code_phone?: string;
+    lang?: string;
 }
 export interface stateProps {
     id: number;
